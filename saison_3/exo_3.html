@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoSite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
+    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+</head>
+
+<body>
+<div class="home">
+    <header>
+    <?php include('../commun/header.php');?>
+    </header>
+    <div class="container-fluid ">
+            <h4>ALGORITHME ET PSEUDO-CODE:</h4>
+            <hr width="75%" size="1px" color="olivedrab" />
+            <div class="row">
+                <div class="col-md-2 myAside">
+                    <?php
+                    include('../commun/menunav.php');
+                    ?>
+                </div>
+                <div class="col-md-8">
+                    <div id="accordion">
+                        <div class="card"id="exos">
+                            <div class="card-body">
+                                <h4>Exercice 3.3</h4>
+                                <p>Ecrire un algorithme qui demande trois noms à l’utilisateur et l’informe ensuite s’ils sont rangés ou non dans l’ordre
+                                    alphabétique.
+                                </p>
+                            </div>
+                            <div class="pseudoCode">
+                                    <h4>Pseudocode:</h4>
+                                    <p>nom1,nom2,nom3 en string
+                                        debut
+                                        ecrire "entrez 3 noms"
+                                        ecrire nom1="donnez le nom n°1 )"
+                                        ecrire nom2="donnez le nom n°2 )"
+                                        ecrire nom3="donnez le nom n°3 )"
+                                        lire  nom1  nom2  nom3
+                                        Si nom1 < nom2 ET nom2 < nom3 Alors
+                                          Ecrire "Ces noms sont classés alphabétiquement"
+                                        Sinon
+                                          Ecrire "Ces noms ne sont pas classés"
+                                        Finsi
+                                        Fin
+                                    </p>
+                                </div>
+                            <div class="card-header" id="headingOne">
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        JAVASCRIPT
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+                               
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                    JAVASCRIPT
+                                    <code data-language="javascript"> 
+                                        nom1 = "";
+                                        nom2 = "";
+                                        nom3 = "";
+                                        alert("donnez 3 noms");
+                                        console.log(nom1 = prompt("donnez un nom n°1:"));
+                                        console.log(nom2 = prompt("donnez un nom n°2:"));
+                                        console.log(nom3 = prompt("donnez le nom n°3:"));
+                                        if (nom1 < nom2 && nom2 < nom3) {
+                                            alert("Ces noms sont classés alphabétiquement !");
+                                        }
+                                        else {
+                                            alert("Ces noms ne sont pas classés");
+                                        }
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <div class="language">
+                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false"
+                                        aria-controls="collapseTwo">
+                                        JQUERY
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordion">
+                        
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                    JQUERY
+                                    <code data-language="javascript"> 
+                                    a = 5;
+                                    b = 10;
+                                    c = 15;
+                                    console.log("a->", a, "b->", b, "c->", c);
+
+                                    a = a + b;
+                                    b = a - b;
+                                    a = a - b;
+                                    console.log("b->", b);
+
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <div class="language">
+                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        PHP
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordion">
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                        PHP
+                                    <code data-language="php"> 
+                                   
+                                        include ('include/menunav.php');
+                                        global $db;
+                
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-2 contentRight">
+                <?php
+                    require ('../commun/contentRight.php');
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/rainbow-custom.min.js"></script>
+</body>
+<footer class="text-muted">
+    <?php
+        require ("../commun/footer.php");
+    ?>
+</footer>
+
+</html>

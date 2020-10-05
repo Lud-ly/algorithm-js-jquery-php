@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoSite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
+    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+</head>
+
+<body>
+<div class="home">
+    <header>
+    <?php include('../commun/header.php');?>
+    </header>
+    <div class="container-fluid ">
+            <h4>ALGORITHME ET PSEUDO-CODE:</h4>
+            <hr width="75%" size="1px" color="olivedrab" />
+            <div class="row">
+                <div class="col-md-2 myAside">
+                    <?php
+                    include('../commun/menunav.php');
+                    ?>
+                </div>
+                <div class="col-md-8">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>Exercice 4.5</h4>
+                                <p>Les habitants de Toon’sCity paient l’impôt selon les règles suivantes :
+                                     les hommes de plus de 20 ans paient l’impôt
+                                     les femmes paient l’impôt si elles ont entre 18 et 35 ans
+                                     les autres ne paient pas d’impôt
+                                    Le programme demandera donc l’âge et le sexe du Toon, et se prononcera donc ensuite sur le fait que l’habitant est
+                                    imposable ou non.
+                                </p>
+                            </div>
+                            <div class="pseudoCode">
+                                    <h4>Pseudocode:</h4>
+                                    <p>age=0;
+                                        sexe="";
+                                        début
+                                        Ecrire "Entrez votre age de Toon:"
+                                        lire age
+                                        Ecrire "Entrez votre sexe homme/femme :"
+                                        lire sexe
+                                        si sexe=="homme" && age inferieur 20
+                                        ecrire "Cher Toon, vous n'êtes pas imposable"
+                                        sinon
+                                        ecrire "Vous êtes imposable cher Toon,payer! "
+                                        if sexe=="femme" && 18 inferieur age superieur 35
+                                        ecrire "Chère Toone,vous n'êtes pas imposable"
+                                        sinon
+                                        ecrire "Vous êtes imposable cher Toone,banquer!"
+                                        
+                                    </p>
+                                </div>
+                            <div class="card-header" id="headingOne">
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        JAVASCRIPT
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+                               
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                    JAVASCRIPT
+                                    <code data-language="javascript"> 
+                                        age = 0;
+                                        sexe = "";
+                                        console.log(age = parseInt(prompt("Entrez votre age:")));
+                                        console.log(sexe = (prompt("Entrez votre sexe homme/femme :")));
+                                        //console.log(typeof sexe,typeof age);
+                                        if (sexe == "homme" && age < 20) {
+                                            console.log("Cher Toon, vous n'êtes pas imposable");
+                                        }
+                                        else if(sexe == "homme" && age>20) {
+                                            console.log("Vous êtes imposable cher Toon, payer ! ");
+                                        }
+                                        if (sexe == "femme" && age < 18 || age > 35) {
+                                            console.log("Chère Toone,vous n'êtes pas imposable");
+                                        }
+                                        else if(sexe == "femme" && age > 18 || age < 35) {
+                                            console.log("Vous êtes imposable cher Toone,banquer!");
+                                        }
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <div class="language">
+                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false"
+                                        aria-controls="collapseTwo">
+                                        JQUERY
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordion">
+                        
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                    JQUERY
+                                    <code data-language="javascript"> 
+                                    a = 5;
+                                    b = 10;
+                                    c = 15;
+                                    console.log("a->", a, "b->", b, "c->", c);
+
+                                    a = a + b;
+                                    b = a - b;
+                                    a = a - b;
+                                    console.log("b->", b);
+
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <div class="language">
+                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        PHP
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordion">
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                        PHP
+                                    <code data-language="php"> 
+                                   
+                                        include ('include/menunav.php');
+                                        global $db;
+                
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-2 contentRight">
+                <?php
+                    require ('../commun/contentRight.php');
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/rainbow-custom.min.js"></script>
+</body>
+<footer class="text-muted">
+    <?php
+        require ("../commun/footer.php");
+    ?>
+</footer>
+
+</html>
