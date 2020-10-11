@@ -8,15 +8,118 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_4_3() {
+                // Variables heures, minutes en Numérique
+                //Début
+                var iMinutes;
+                var iHeures;
+                var iSecondes;
+                //Ecrire "Entrez les heures, puis les minutes : "
+                //Lire heures,minutes 
+                iHeures = parseInt(prompt("Entrez les heures"));
+                iMinutes = parseInt(prompt("Entrez les minutes"));
+                iSecondes = parseInt(prompt("Entrez les secondes"));
+                //ecrire "il est", iHeures, "heures et", iMinutes, "minutes"
+                alert("il est " + iHeures + " heures et " + iMinutes + " minutes " + iSecondes + " secondes");
+                iSecondes += 1;
+                //Si secondes = 60 Alors
+                if (iSecondes == 60) {
+                    iSecondes = 0;
+                    iMinutes += 1;
+                }
+                //Si minutes = 60 Alors
+                if (iMinutes == 60) {
+                    //minutes = 0 et heures = heures+1
+                    iMinutes = 0;
+                    iHeures += 1;
+                }
+                // Si heures = 24 Alors
+                if (iHeures == 24) {
+                    // heures = 0;
+                    iHeures = 0;
+                }
+                //ecrire la nouvelle heure
+                alert("Merci Prompt, Dans une minute il sera " + iHeures + " heure(s) " + iMinutes + " minute(s) " + iSecondes + " secondes");
+            }
+            function Exo_4_3_innerHTML() {
+                // Variables heures, minutes en Numérique
+                //Début
+                var iMinutes;
+                var iHeures;
+                var iSecondes;
+                //Ecrire "Entrez les heures, puis les minutes : "
+                //Lire heures,minutes 
+                iHeures = document.getElementById("iHeures").value;
+                iMinutes = document.getElementById("iMinutes").value;
+                iSecondes = document.getElementById("iSecondes").value;
+                //ecrire "il est", iHeures, "heures et", iMinutes, "minutes"
+                document.getElementById("div_resultat_js").innerHTML = "il est " + iHeures + " heures et " + iMinutes + " minutes " + iSecondes + " secondes";
+                iSecondes += 1;
+                //Si secondes = 60 Alors
+                if (iSecondes == 60) {
+                    iSecondes = 0;
+                    iMinutes += 1;
+                }
+                //Si minutes = 60 Alors
+                if (iMinutes == 60) {
+                    //minutes = 0 et heures = heures+1
+                    iMinutes = 0;
+                    iHeures += 1;
+                }
+                // Si heures = 24 Alors
+                if (iHeures == 24) {
+                    // heures = 0;
+                    iHeures = 0;
+                }
+                //ecrire la nouvelle heure
+                document.getElementById("div_resultat_js").innerHTML = "Merci innerHTML il est " + iHeures + " heures et " + iMinutes + " minutes et " + iSecondes + " secondes";
+
+            }
+            function Exo_4_3_jquery() {
+                // Variables heures, minutes en Numérique
+                //Début
+                var iMinutes;
+                var iHeures;
+                var iSecondes;
+                //Ecrire "Entrez les heures, puis les minutes : "
+                //Lire heures,minutes 
+                iHeures = $("#iHeures").val();
+                iMinutes = $("#iMinutes").val();
+                iSecondes = $("#iSecondes").val();
+                //ecrire "il est", iHeures, "heures et", iMinutes, "minutes"
+                $("#div_resultat_js").html("il est " + iHeures + " heures et " + iMinutes + " minutes " + iSecondes + " secondes");
+                iSecondes += 1;
+                //Si secondes = 60 Alors
+                if (iSecondes == 60) {
+                    iSecondes = 0;
+                    iMinutes += 1;
+                }
+                //Si minutes = 60 Alors
+                if (iMinutes == 60) {
+                    //minutes = 0 et heures = heures+1
+                    iMinutes = 0;
+                    iHeures += 1;
+                }
+                // Si heures = 24 Alors
+                if (iHeures == 24) {
+                    // heures = 0;
+                    iHeures = 0;
+                }
+                //ecrire la nouvelle heure
+               $("#div_resultat_js").html("Merci jquery il est " + iHeures + " heures et " + iMinutes + " minutes et " + iSecondes + " secondes");
+
+            }
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -27,45 +130,86 @@
                 </div>
                 <div class="col-md-8">
                     <div id="accordion">
-                        <div class="card"id="exos">
+                        <div class="card" id="exos">
                             <div class="card-body">
                                 <h4>Exercice 4.3</h4>
-                                <p>De même que le précédent, cet algorithme doit demander une heure et en afficher une autre. Mais cette fois, il doit
+                                <p>De même que le précédent, cet algorithme doit demander une heure et en afficher une
+                                    autre. Mais cette fois, il doit
                                     gérer également les secondes, et afficher l'heure qu'il sera une seconde plus tard.
-                                    Par exemple, si l'utilisateur tape 21, puis 32, puis 8, l'algorithme doit répondre : "Dans une seconde, il sera 21
+                                    Par exemple, si l'utilisateur tape 21, puis 32, puis 8, l'algorithme doit répondre :
+                                    "Dans une seconde, il sera 21
                                     heure(s), 32 minute(s) et 9 seconde(s)".
                                     NB : là encore, on suppose que l'utilisateur entre une date valide.
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>Variables heures, minutes en Numérique
-                                        Début
-                                        Ecrire "Entrez les heures, puis les minutes : "
-                                        Lire h, m
-                                        m ← m + 1
-                                        Si m = 60 Alors
-                                          m ← 0
-                                          h ← h + 1
-                                        FinSi
-                                        Si h = 24 Alors
-                                          h ← 0
-                                        FinSi
-                                        Ecrire "Dans une minute il sera ", h, "heure(s) ", m, "minute(s)"
-                                        Fin
-                                    </p>
+                                <h4>Pseudocode:</h4>
+                                <p>Variables heures, minutes en Numérique<br/>
+                                    Début<br/>
+                                    Ecrire "Entrez les heures, puis les minutes : "<br/>
+                                    Lire h, m<br/>
+                                    m ← m + 1<br/>
+                                    Si m = 60 Alors<br/>
+                                    m ← 0<br/>
+                                    h ← h + 1<br/>
+                                    FinSi<br/>
+                                    Si h = 24 Alors<br/>
+                                    h ← 0<br/>
+                                    FinSi
+                                    Ecrire "Dans une minute il sera ", h, "heure(s) ", m, "minute(s)"<br/>
+                                    Fin<br/>
+                                </p>
+                            </div>
+                            <div id="txt_javascript">
+                                <div id="div_resultat_js"></div>
+                                <div>
+                                    <div id="div_resultat_php">
+                                        <h3><?php echo $sMessage; ?></h3>
+                                    </div>
                                 </div>
-                            <div class="card-header" id="headingOne">
+                                <form action="exo_3.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <div>
+                                            <label for="iHeures">Veuillez Entrez les heures
+                                                :</label>
+                                            <input type="text" name="iHeures" id="iHeures">
+                                            <label for="iMinutes">Minutes
+                                                :</label>
+                                            <input type="text" name="iMinutes" id="iMinutes">
+                                            <label for="iSecondes">Secondes
+                                                :</label>
+                                            <input type="text" name="iSecondes" id="iSecondes">
+                                        </div>
+                                        <div class="language">
+                                            <button class="btn_green" type="submit">PHP GO!</button>
+                                        </div>
+                                    </div>
+                                   
+                                </form>
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_4_3()">JS PROMPT</button>
+
+                                    <button class="btn_green" onClick="Exo_4_3_innerHTML()"> JS INNERHTML</button>
+
+                                    <button class="btn_green" onClick="Exo_4_3_jquery()">JQUERY !</button>
+                                </div>
+                            </div>
+
+                            <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Voir les Codes</p>
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -101,15 +245,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -160,7 +303,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

@@ -8,15 +8,91 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+
+        <script type="text/javascript">
+            // ALGORITHME Exo_5_1
+            function Exo_5_1() {
+                // DEBUT
+                // VARIABLE iNombreUtilisateur en NUMERIQUE
+                var iNombreUtilisateur;
+
+                // ECRIRE "Entrez un nombre entre 1 et 3"
+                // LIRE iNombreUtilisateur
+                iNombreUtilisateur = parseInt(prompt("Entrez un nombre entre 1 et 3"));
+
+                // TANTQUE ((iNombreUtilisateur < 1) || (iNombreUtilisateur > 3))
+                while ((iNombreUtilisateur < 1) || (iNombreUtilisateur > 3)) {
+                    // ECRIRE "Veuillez ressaisir un nombre entre 1 et 3 svp"
+                    // LIRE iNombreUtilisateur
+                    iNombreUtilisateur = parseInt(prompt("Entrez un nombre entre 1 et 3"));
+                    // FINTANTQUE
+                }
+
+                // ECRIRE "Bravo, tu as réussi !"
+                alert("Bravo PROMPT, tu as réussi !");
+
+                // FIN
+            }
+
+            // ALGORITHME Exo_5_1_innerHTML
+            function Exo_5_1_innerHTML() {
+                // DEBUT
+                // VARIABLE iNombreUtilisateur en NUMERIQUE
+                var iNombreUtilisateur;
+
+                // ECRIRE "Entrez un nombre entre 1 et 3"
+                // LIRE iNombreUtilisateur
+                iNombreUtilisateur = document.getElementById("iNombreUtilisateur").value;
+
+                // SI ((iNombreUtilisateur < 1) || (iNombreUtilisateur > 3)) ALORS
+                if ((iNombreUtilisateur < 1) || (iNombreUtilisateur > 3)) {
+                    // ECRIRE "Erreur. Veuillez ressaisir un nombre entre 1 et 3."
+                    document.getElementById("div_resultat_js").innerHTML = "Erreur. Veuillez ressaisir un nombre entre 1 et 3.";
+                } else {
+                    // ECRIRE "Bravo, tu as réussi !"
+                    document.getElementById("div_resultat_js").innerHTML = "Bravo innerhtml, tu as réussi !";
+                }
+
+                // FIN
+            }
+
+            var iNombreEsssai = 0;
+
+            // ALGORITHME Exo_5_1_jquery
+            function Exo_5_1_jquery() {
+                // DEBUT
+                // VARIABLE iNombreUtilisateur en NUMERIQUE
+                var iNombreUtilisateur;
+                iNombreEsssai++;
+
+                // ECRIRE "Entrez un nombre entre 1 et 3"
+                // LIRE iNombreUtilisateur
+                iNombreUtilisateur = $("#iNombreUtilisateur").val();
+
+                // SI ((iNombreUtilisateur < 1) || (iNombreUtilisateur > 3)) ALORS
+                if ((iNombreUtilisateur < 1) || (iNombreUtilisateur > 3)) {
+                    // ECRIRE "Erreur. Veuillez ressaisir un nombre entre 1 et 3."
+                    $("#div_resultat_js").html("Essai Jquery " + iNombreEsssai + ". Veuillez ressaisir un nombre entre 1 et 3.");
+                } else {
+                    // ECRIRE "Bravo, tu as réussi !"
+                    $("#div_resultat_js").html("Bravo Jquery, tu as réussi en " + iNombreEsssai + " coups !");
+                }
+
+                // FIN
+            }
+
+
+        </script>
+
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -30,38 +106,102 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 5.1</h4>
-                                <p>Ecrire un algorithme qui demande à l’utilisateur un nombre compris entre 1 et 3 jusqu’à ce que la réponse
+                                <p>Ecrire un algorithme qui demande à l’utilisateur un nombre compris entre 1 et 3
+                                    jusqu’à ce que la réponse
                                     convienne.
-                                 </p>
+                                </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
+                                <h4>Pseudocode:</h4>
+                                <p>
+                                    VARIABLE iNombreUtilisateur en NUMERIQUE<br/>
+                                    DEBUT<br/>
+                                    ECRIRE "Entre un nombre entre 1 et 3"<br/>
+                                    LIRE iNombreUtilisateur<br/>
+                                    TANTQUE ((iNombreUtilisateur < 1) || (iNombreUtilisateur> 3))<br/>
+                                        ECRIRE "Veuillez ressaisir un nombre entre 1 et 3 svp"<br/>
+                                        LIRE iNombreUtilisateur<br/>
+                                        FINTANTQUE<br/>
+
+                                        ECRIRE "Bravo, tu as réussi !"<br/>
+
+                                        FIN<br/>
+                                </p>
+                            </div>
+
+                            <div id="txt_javascript">
+                                <div id="div_resultat_js">
                                 </div>
-                            <div class="card-header" id="headingOne">
+                                <form action="exo_1.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <div>
+                                            <label for="iNombreUtilisateur">Veuillez saisir un nombre entre 1 et 3
+                                                :</label>
+                                            <input type="text" name="iNombreUtilisateur" id="iNombreUtilisateur">
+                                        </div>
+                                        <div>
+                                            <label for="iNombreEsssai">nombre(s)d'essai</label>
+                                            <input type="text" name="iNombreEsssai" id="iNombreEsssai"
+                                                value="<?php echo $iNombreEsssai ?>">
+                                            <div id="div_resultat_php">
+                                                <h3><?php echo $sMessage; ?></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                </form>
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_5_1()">JS WITH PROMPT</button>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button class="btn_green" onClick="Exo_5_1_innerHTML()"> JS WITH INNERHTML</button>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button class="btn_green" onClick="Exo_5_1_jquery()">JQUERY !</button>
+                                </div>
+                            </div>
+                            <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Voir les Codes</p>
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
-                                    JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+                                        function Exo_5_1()
+                                        {
+                                        // DEBUT
+                                            // VARIABLE iNombreUtilisateur en NUMERIQUE
+                                            var iNombreUtilisateur;
+                                            
+                                            // ECRIRE "Entrez un nombre entre 1 et 3"
+                                            // LIRE iNombreUtilisateur
+                                            iNombreUtilisateur= parseInt(prompt("Entrez un nombre entre 1 et 3"));
+                                            
+                                            // TANTQUE ((iNombreUtilisateur < 1) || (iNombreUtilisateur > 3))
+                                            while ((iNombreUtilisateur < 1) || (iNombreUtilisateur > 3))
+                                            {
+                                                // ECRIRE "Veuillez ressaisir un nombre entre 1 et 3 svp"
+                                                // LIRE iNombreUtilisateur
+                                                iNombreUtilisateur= parseInt(prompt("Entrez un nombre entre 1 et 3"));
+                                            // FINTANTQUE
+                                            }
+                                            
+                                            // ECRIRE "Bravo, tu as réussi !"
+                                            alert("Bravo, tu as réussi !");
+                            
+                                        // FIN
                                     </code>
                                  </pre>
                                 </div>
@@ -71,29 +211,42 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
-                                    <pre>
+                                    <pre> 
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
-
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+                                        function Exo_5_1_jquery()
+                                        {
+                                        // DEBUT
+                                            // VARIABLE iNombreUtilisateur en NUMERIQUE
+                                            var iNombreUtilisateur;
+                                            iNombreEsssai++;
+                                            
+                                            // ECRIRE "Entrez un nombre entre 1 et 3"
+                                            // LIRE iNombreUtilisateur
+                                            iNombreUtilisateur= $("#iNombreUtilisateur").val();
+                                            
+                                            // SI ((iNombreUtilisateur < 1) || (iNombreUtilisateur > 3)) ALORS
+                                            if ((iNombreUtilisateur < 1) || (iNombreUtilisateur > 3))
+                                            {
+                                                // ECRIRE "Erreur. Veuillez ressaisir un nombre entre 1 et 3."
+                                                $("#div_resultat_js").html("Essai Jquery " + iNombreEsssai + ". Veuillez ressaisir un nombre entre 1 et 3.");
+                                            }  else  {
+                                                // ECRIRE "Bravo, tu as réussi !"
+                                                $("#div_resultat_js").html("Bravo Jquery, tu as réussi en " + iNombreEsssai + " coups !");
+                                            }
+                                
+                                        // FIN
+                                        }
 
                                     </code>
                                  </pre>
@@ -117,9 +270,34 @@
                                     <pre>
                                         PHP
                                     <code data-language="php"> 
-                                   
-                                        include ('include/menunav.php');
-                                        global $db;
+                                    
+                                        $sMessage= "";
+	
+                                        // SI $_POST["iNombreUtilisateur"] EXISTE ET QUE $_POST["iNombreUtilisateur"] N EST PAS VIDE ALORS
+                                        if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
+                                        {
+                                            // VARIABLE iNombreUtilisateur en NUMERIQUE
+                                            // Inutile
+                                            $iNombreEsssai= $_POST["iNombreEsssai"];
+                                            $iNombreEsssai++;
+                                            
+                                            // ECRIRE "Entrez un nombre entre 1 et 3"
+                                            // LIRE iNombreUtilisateur
+                                            $iNombreUtilisateur= $_POST["iNombreUtilisateur"];
+                                            
+                                            // SI ((iNombreUtilisateur < 1) || (iNombreUtilisateur > 3)) ALORS
+                                            if (($iNombreUtilisateur < 1) || ($iNombreUtilisateur > 3))
+                                            {
+                                                // ECRIRE "Erreur. Veuillez ressaisir un nombre entre 1 et 3."
+                                                $sMessage= "Essai PHP " . $iNombreEsssai . ". Veuillez ressaisir un nombre entre 1 et 3.";
+                                            }  else  {
+                                                // ECRIRE "Bravo, tu as réussi !"
+                                                $sMessage= "Bravo PHP, tu as réussi " . $iNombreEsssai . " coups !";
+                                            }
+                                        }  else  {
+                                            $iNombreEsssai= 0;
+                                        }
+                                    
                 
                                     </code>
                                  </pre>
@@ -130,7 +308,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

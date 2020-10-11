@@ -8,15 +8,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_4_5() {
+                age = 0;
+                sexe = "";
+                age = parseInt(prompt("Entrez votre age:"));
+                sexe = (prompt("Entrez votre sexe homme/femme :"));
+                //console.log(typeof sexe,typeof age);
+                if (sexe == "homme" && age < 20) {
+                    alert("Cher Toon, vous n'êtes pas imposable");
+                }
+                else if (sexe == "homme" && age > 20) {
+                    alert("Vous êtes imposable cher Toon, payer ! ");
+                }
+                if (sexe == "femme" && age < 18 || age > 35) {
+                    alert("Chère Toone,vous n'êtes pas imposable");
+                }
+                else if (sexe == "femme" && age > 18 || age < 35) {
+                    alert("Vous êtes imposable cher Toone,banquer!");
+                }
+            }
+
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -31,66 +53,81 @@
                             <div class="card-body">
                                 <h4>Exercice 4.5</h4>
                                 <p>Les habitants de Toon’sCity paient l’impôt selon les règles suivantes :
-                                     les hommes de plus de 20 ans paient l’impôt
-                                     les femmes paient l’impôt si elles ont entre 18 et 35 ans
-                                     les autres ne paient pas d’impôt
-                                    Le programme demandera donc l’âge et le sexe du Toon, et se prononcera donc ensuite sur le fait que l’habitant est
+                                    les hommes de plus de 20 ans paient l’impôt
+                                    les femmes paient l’impôt si elles ont entre 18 et 35 ans
+                                    les autres ne paient pas d’impôt
+                                    Le programme demandera donc l’âge et le sexe du Toon, et se prononcera donc ensuite
+                                    sur le fait que l’habitant est
                                     imposable ou non.
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>age=0;
-                                        sexe="";
-                                        début
-                                        Ecrire "Entrez votre age de Toon:"
-                                        lire age
-                                        Ecrire "Entrez votre sexe homme/femme :"
-                                        lire sexe
-                                        si sexe=="homme" && age inferieur 20
-                                        ecrire "Cher Toon, vous n'êtes pas imposable"
-                                        sinon
-                                        ecrire "Vous êtes imposable cher Toon,payer! "
-                                        if sexe=="femme" && 18 inferieur age superieur 35
-                                        ecrire "Chère Toone,vous n'êtes pas imposable"
-                                        sinon
-                                        ecrire "Vous êtes imposable cher Toone,banquer!"
-                                        
-                                    </p>
+                                <h4>Pseudocode:</h4>
+                                <p>age en Numérique<br />
+                                    sexe en string<br />
+                                    début<br />
+                                    Ecrire "Entrez votre age de Toon:<br />
+                                    lire age<br />
+                                    Ecrire "Entrez votre sexe homme/femme :<br />
+                                    lire sexe<br />
+                                    si sexe=="homme" && age inferieur 20 alors<br />
+                                    ecrire "Cher Toon, vous n'êtes pas imposable<br />
+                                    sinon<br />
+                                    ecrire "Vous êtes imposable cher Toon,payer!<br />
+                                    if sexe=="femme" && 18 inferieur age superieur 35 alors<br />
+                                    ecrire "Chère Toone,vous n'êtes pas imposable"<br />
+                                    sinon<br />
+                                    ecrire "Vous êtes imposable cher Toone,banquer!<br />
+
+                                </p>
+                            </div>
+                            <div id="txt_javascript">
+                                <div id="div_resultat_js"></div>
+                                <div>
+                                    <div id="div_resultat_php">
+                                        <h3><?php echo $sMessage; ?></h3>
+                                    </div>
                                 </div>
+                                <form action="exo_4.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <div>
+                                            <label for="nbrCopies">Entrez le nombre de photocopies à réaliser
+                                                :</label>
+                                            <input type="text" name="nbrCopies" id="nbrCopies">
+                                        </div>
+                                        <div class="language">
+                                            <button class="btn_green" type="submit">PHP GO!</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <div class="language">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_4_5()">JS PROMPT</button>
+
+                                    <button class="btn_green" onClick="Exo_4_4_innerHTML()"> JS INNERHTML</button>
+
+                                    <button class="btn_green" onClick="Exo_4_4_jquery()">JQUERY !</button>
+                                </div>
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                        age = 0;
-                                        sexe = "";
-                                        console.log(age = parseInt(prompt("Entrez votre age:")));
-                                        console.log(sexe = (prompt("Entrez votre sexe homme/femme :")));
-                                        //console.log(typeof sexe,typeof age);
-                                        if (sexe == "homme" && age < 20) {
-                                            console.log("Cher Toon, vous n'êtes pas imposable");
-                                        }
-                                        else if(sexe == "homme" && age>20) {
-                                            console.log("Vous êtes imposable cher Toon, payer ! ");
-                                        }
-                                        if (sexe == "femme" && age < 18 || age > 35) {
-                                            console.log("Chère Toone,vous n'êtes pas imposable");
-                                        }
-                                        else if(sexe == "femme" && age > 18 || age < 35) {
-                                            console.log("Vous êtes imposable cher Toone,banquer!");
-                                        }
+                                       
                                     </code>
                                  </pre>
                                 </div>
@@ -100,15 +137,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -159,7 +195,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

@@ -4,6 +4,9 @@ body{
   background-image:linear-gradient(#d8e4d8,#fff);
   width: 100%;
 }
+li{
+  list-style: none;
+}
 a{
   color:olivedrab;
   text-decoration: none;
@@ -31,29 +34,27 @@ h3,h4,h5,p{
   }
   /*--------NAVBAR------------*/
 .fixed-top{
-    justify-content: space-between;
+    justify-content: space-around;
    }
    .navbar{
       height: 130px;
        justify-content: space-between;
        flex-direction: row-reverse;
-       color:#fff;
+       color:#333A40;
+       text-align: center;
    }
    .navbar-toggler-icon{
      color:olivedrab!important;
    }
-   .myTitre{
-    display: flex;
-    flex-direction: row;
-    margin-left: 30px;
-    color:black;
-   }
+  
+
 .myAside{
     height: 1000px;
     box-shadow: 3px 3px 3px 2px olivedrab;
 }
 /*------CONTAINER CENTRAL------------*/
 .content{
+    box-shadow:  3px 3px 3px 2px olivedrab;
     height: 1000px;
     padding: 0px;
     margin-bottom: 100px;
@@ -62,24 +63,38 @@ h3,h4,h5,p{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 50px;
+   }
    
-    }
-  .content p{
-    padding: 10px;
-  }
-    .pseudoCode{
-      width: 75%;
-      padding: 0px;
-      height: 200px;
-      text-align: center;
-      margin:0 auto;
-      margin-top: 50px;
-      margin-bottom:50px;
-      background-color: #d8e4d8;
-    }
-    .card-body{
-    text-align: center;
+   .content h3{
     padding: 50px;
+    text-align: center;
+  }
+  .pseudoCode{
+    width: 75%;
+    padding: 10px;
+    margin:0 auto;
+    margin-top: 50px;
+    margin-bottom:50px;
+    background-color: #d8e4d8;
+  }
+  .pseudoCode h4{
+    text-align: center;
+  }
+  .pseudoCode p{
+    text-transform: uppercase;
+  }
+  .card-header p{
+    text-transform: uppercase;
+    text-align: left;
+  }
+  .card-body{
+  text-align: center;
+  padding: 50px;
+  }
+    .card-body p{
+      margin: 50px;
+      font-weight: 400;
     }
     #menu-accordeon {
       padding:0;
@@ -101,7 +116,7 @@ h3,h4,h5,p{
        border-radius: 6px;
        margin-bottom:2px;
        box-shadow: 2px 2px 2px #999;
-       border:solid 1px #333A40
+       border:solid 1px #333A40;
     }
     #menu-accordeon li li {
        max-height:0;
@@ -138,7 +153,7 @@ h3,h4,h5,p{
     }
     .language{
       display:flex;
-     justify-content: space-evenly;
+     justify-content: space-around;
     }
       .language button{
           color: #fff;
@@ -157,9 +172,9 @@ h3,h4,h5,p{
       }
 /*-----------ASIDE RIGHT----------*/
 .contentRight{
-  display: flex;
- flex-direction: column;
- justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     box-shadow:  3px 3px 3px 2px olivedrab;
     height: 1000px;
 }
@@ -172,20 +187,24 @@ h3,h4,h5,p{
     margin: 10px;
     cursor: pointer;
     }
-    .cours button{
-    color: #fff;
-    margin:50px 60px;
-    height: 80px;
-    width: 80px;
-    background-color:olivedrab; 
-    background-image:-webkit-linear-gradient(top, olivedrab 0%, #333A40 100%);
-    background-image: linear-gradient(to bottom, rgb(103, 116, 78) 0%, #333A40 100%);
-    border-radius: 50%;
-    box-shadow: 3px 3px 3px #999;
-    border:solid 1px #333A40
+    .cours a{
+      color: #fff;
+      margin:60px 30px;
+      text-align: center;
+      padding: 15px;
+      height: 60px;
+      width: 120px;
+      text-decoration: none;
+      background-color:olivedrab; 
+      background-image:-webkit-linear-gradient(top, olivedrab 0%, #333A40 100%);
+      background-image: linear-gradient(to bottom, olivedrab 0%, #333A40 100%);
+      border-radius: 6px;
+      box-shadow: 3px 3px 3px #999;
+      border:solid 1px #333A40
 }
-    .cours button:hover{
+    .cours button:hover,.cours a:hover{
       background: olivedrab;
+      color: #fff!important;
     }
     /*-----------FOOTER----------*/
 footer{

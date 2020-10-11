@@ -1,4 +1,4 @@
-<img src="../img/AFPA_logo.png" height="80px" class="float-left">
+<img src="../img/afpalab_logo_green.gif" height="80px" class="float-left">
     <p class="float-right">
         <a href="#">
             <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor"
@@ -9,4 +9,4 @@
         </a>
     </p>
     <p>Exalgo is ©Ludovic Mouly example, but please download and customize it for yourself!</p>
-    <p>New to Code ? <a href="https://metis.afpa.fr/login" target="_blank">Visit the afpa metis page</a>
+    <p>New to Code ? <a href="https://ludovic-mouly.com" target="_blank">Visit the afpa metis page</a>

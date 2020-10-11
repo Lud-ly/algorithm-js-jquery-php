@@ -8,15 +8,87 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_3_2() {
+                // nombre1 en numerique
+                //nombre2 en numerique
+                var iNombre;
+                var iNombre2;
+                // debut
+                // ecrire nombre1="donnez un nombre n°1 
+                // ecrire nombre2="donnez un nombre n°2 
+                //lire nombre1 et nombre2
+                iNombre = parseInt(prompt("Donnez un nombre"));
+                iNombre2 = parseInt(prompt("Donnez un 2eme nombre"));
+                // si nombre1 ET nombre2 >0 alors
+                //ecrire alert le produit est positif
+                if (iNombre > 0 && iNombre2 > 0) {
+                    alert("Bravo prompt le produit est positif");
+                }
+                //sinonsi nombre1 ET nombre2 inferieur 0 alors
+                //ecrire alert le produit est negatif
+                else if (iNombre < 0 && iNombre2 < 0) {
+                    alert("Bravo prompt le produit est negatif");
+                }
+                // fin
+            }
+
+            function Exo_3_2_innerHTML() {
+                // DEBUT
+                //nombre en numerique
+                //nombre2 en numerique
+                var iNombre;
+                var iNombre2;
+                //DEBUT
+                // ecrire nombre1="donnez un nombre n°1 
+                // ecrire nombre2="donnez un nombre n°2 
+                //lire nombre1 et nombre2
+                iNombre = document.getElementById("iNombreUtilisateur").value;
+                iNombre2 = document.getElementById("iNombreUtilisateur2").value;
+                // Si Nombre est supérieur à 0 alors
+                if (iNombre > 0 && iNombre2 > 0) {
+                    //  Ecrire le Nombre est positif
+                    document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML le produit est positif !";
+                }
+                // sinonsi iNombre < 0 alors
+                else if(iNombre < 0 && iNombre2 < 0) {
+                    document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML le produit est negatif !";
+                }
+                //Fin
+            }
+            function Exo_3_2_jquery() {
+                // DEBUT
+                //nombre en numerique
+                //nombre2 en numerique
+                var iNombre;
+                var iNombre2;
+                //DEBUT
+                // ecrire nombre1="donnez un nombre n°1 
+                // ecrire nombre2="donnez un nombre n°2 
+                //lire nombre1 et nombre2
+                iNombre = $("#iNombreUtilisateur").val();
+                iNombre2 = $("#iNombreUtilisateur2").val();
+                // Si Nombre est supérieur à 0 alors
+                if (iNombre > 0 && iNombre2 > 0) {
+                    //  Ecrire le Nombre est positif
+                    $("#div_resultat_js").html("Bravo Jquery le produit est positif !");
+                }
+                // sinonsi iNombre < 0 alors
+                else if(iNombre < 0 && iNombre2 < 0) {
+                    $("#div_resultat_js").html("Bravo Jquery le produit est negatif !");
+                }
+                //Fin
+            }
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -27,40 +99,76 @@
                 </div>
                 <div class="col-md-8">
                     <div id="accordion">
-                        <div class="card"id="exos">
+                        <div class="card" id="exos">
                             <div class="card-body">
                                 <h4>Exercice 3.2</h4>
-                                <p>Ecrire un algorithme qui demande deux nombres à l’utilisateur et l’informe ensuite si leur produit est négatif ou
-                                    positif (on laisse de côté le cas où le produit est nul). Attention toutefois : on ne doit pas calculer le produit des deux
+                                <p>Ecrire un algorithme qui demande deux nombres à l’utilisateur et l’informe ensuite si
+                                    leur produit est négatif ou
+                                    positif (on laisse de côté le cas où le produit est nul). Attention toutefois : on
+                                    ne doit pas calculer le produit des deux
                                     nombres.
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>nombre1 en numerique
-                                        nombre2 en numerique
-                                        debut
-                                        ecrire nombre1="donnez un nombre n°1 )"
-                                        ecrire nombre2="donnez un nombre n°2 )"
-                                        lire nombre1 et nombre2
-                                        si nombre1 ET nombre2 >0 alors
-                                        ecrire=alert le nombre est positif
-                                        sinonsi nombre1 ET nombre2 inferieur 0 alors
-                                        ecrire=alert le nombre est negatif
-                                        fin
-                                    </p>
+                                <h4>Pseudocode:</h4>
+                                <p>nombre1 en numerique<br />
+                                    nombre2 en numerique<br />
+                                    debut<br />
+                                    ecrire nombre1="donnez un nombre n°1 "<br />
+                                    ecrire nombre2="donnez un nombre n°2 "<br />
+                                    lire nombre1 et nombre2<br />
+                                    si nombre1 ET nombre2 >0 alors<br />
+                                    ecrire  le nombre est positif<br />
+                                    sinonsi nombre1 ET nombre2 inferieur 0 alors<br />
+                                    ecrire  le nombre est negatif<br />
+                                    fin<br />
+                                </p>
+                            </div>
+                            <div id="txt_javascript">
+                                <div id="div_resultat_js"></div>
+                                <div>
+                                    <div id="div_resultat_php">
+                                        <h3><?php echo $sMessage; ?></h3>
+                                    </div>
                                 </div>
-                            <div class="card-header" id="headingOne">
+                                <form action="exo_2.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <div>
+                                            <label for="iNombreUtilisateur">Veuillez saisir un nombre
+                                                :</label>
+                                            <input type="text" name="iNombreUtilisateur" id="iNombreUtilisateur">
+                                            <label for="iNombreUtilisateur2">Veuillez saisir un 2eme nombre
+                                                :</label>
+                                            <input type="text" name="iNombreUtilisateur2" id="iNombreUtilisateur2">
+                                        </div>
+                                    </div>
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                </form>
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_3_2()">JS WITH PROMPT</button>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button class="btn_green" onClick="Exo_3_2_innerHTML()"> JS WITH INNERHTML</button>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button class="btn_green" onClick="Exo_3_2_jquery()">JQUERY !</button>
+                                </div>
+                            </div>
+                            <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Voir les Codes</p>
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -85,15 +193,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -144,7 +251,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

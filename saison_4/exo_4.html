@@ -8,15 +8,100 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_4_4() {
+                //Variables nombre, prix en Numérique<br />
+                //Début
+                nbrCopies = 0;
+                prix = 0;
+                //Ecrire "Nombre de photocopies : 
+                //Lire nombre
+                nbrCopies = parseInt(prompt("Entrez le nombre de photocopies à réaliser"));
+                //Si nombre <= 10 Alors
+                // prix ← nombre * 0,1
+                if (nbrCopies <= 10) {
+                    prix = nbrCopies * 0.1;
+                }
+                //Sinonsi nombre <= 30 Alors
+                // prix ← nombre * 0,1 pour les 10 premieres plus nombre - 10  (soit 20) à 0.09
+                else if (nbrCopies <= 30) {
+                    prix = 10 * 0.1 + (nbrCopies - 10) * 0.09;
+                }
+                //Sinon
+                // prix ← nombre * 0,1 pour les 10 premieres plus 20 à 0.09 plus nombre-30(soit nombre au delà de 30) à 0.08
+                else {
+                    prix = 10 * 0.1 + 20 * 0.09 + (nbrCopies - 30) * 0.08;
+                }
+                //Ecrire "Le prix total à payer est: ", prix
+                alert("Prompt le prix à payer est de " + prix.toFixed(2) + " €");
+
+            }//fin
+
+            function Exo_4_4_innerHTML() {
+                //Variables nombre, prix en Numérique<br />
+                //Début
+                nbrCopies = 0;
+                prix = 0;
+                //Ecrire "Nombre de photocopies : 
+                //Lire nombre
+                nbrCopies = document.getElementById("nbrCopies").value;
+                //Si nombre <= 10 Alors
+                // prix ← nombre * 0,1
+                if (nbrCopies <= 10) {
+                    prix = nbrCopies * 0.1;
+                }
+                //Sinonsi nombre <= 30 Alors
+                // prix ← nombre * 0,1 pour les 10 premieres plus nombre - 10  (soit 20) à 0.09
+                else if (nbrCopies <= 30) {
+                    prix = 10 * 0.1 + (nbrCopies - 10) * 0.09;
+                }
+                //Sinon
+                // prix ← nombre * 0,1 pour les 10 premieres plus 20 à 0.09 plus nombre-30(soit nombre au delà de 30) à 0.08
+                else {
+                    prix = 10 * 0.1 + 20 * 0.09 + (nbrCopies - 30) * 0.08;
+                }
+                //Ecrire "Le prix total à payer est: ", prix
+                document.getElementById("div_resultat_js").innerHTML = ("innerHTML le prix à payer est de " + prix.toFixed(2) + " €");
+
+            }//fin
+
+            function Exo_4_4_jquery() {
+                //Variables nombre, prix en Numérique<br />
+                //Début
+                var nbrCopies = 0;
+                var prix = 0;
+                //Ecrire "Nombre de photocopies : 
+                //Lire nombre
+                nbrCopies = $("#nbrCopies").val();
+                //Si nombre <= 10 Alors
+                // prix ← nombre * 0,1
+                if (nbrCopies <= 10) {
+                    prix = nbrCopies * 0.1;
+                }
+                //Sinonsi nombre <= 30 Alors
+                // prix ← nombre * 0,1 pour les 10 premieres plus nombre - 10  (soit 20) à 0.09
+                else if (nbrCopies <= 30) {
+                    prix = 10 * 0.1 + (nbrCopies - 10) * 0.09;
+                }
+                //Sinon
+                // prix ← nombre * 0,1 pour les 10 premieres plus 20 à 0.09 plus nombre-30(soit nombre au delà de 30) à 0.08
+                else {
+                    prix = 10 * 0.1 + 20 * 0.09 + (nbrCopies - 30) * 0.08;
+                }
+                //Ecrire "Le prix total à payer est: ", prix
+                $("div_resultat_js").html("Jquery le prix à payer est de " + prix + " €");
+
+            }//fin
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -30,58 +115,108 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 4.4</h4>
-                                <p>Un magasin de reprographie facture 0,10 E les dix premières photocopies, 0,09 E les vingt suivantes et 0,08 E audelà. 
-                                    Ecrivez un algorithme qui demande à l’utilisateur le nombre de photocopies effectuées et qui affiche la facture
+                                <p>Un magasin de reprographie facture 0,10 E les dix premières photocopies, 0,09 E les
+                                    vingt suivantes et 0,08 E audelà.
+                                    Ecrivez un algorithme qui demande à l’utilisateur le nombre de photocopies
+                                    effectuées et qui affiche la facture
                                     correspondante.
-                                    
+
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>Variables nombre, prix en Numérique
-                                        Début
-                                        Ecrire "Nombre de photocopies : "
-                                        Lire nombre
-                                        Si nombre <= 10 Alors
-                                          prix ← nombre * 0,1
-                                        SinonSi nombre <= 30 Alors
-                                          prix ← 10 * 0,1 + (nombre – 10) * 0,09
-                                        Sinon
-                                          prix ← 10 * 0,1 + 20 * 0,09 + (nombre – 30) * 0,08
-                                        FinSi
-                                        Ecrire "Le prix total à payer est: ", prix
-                                        Fin
-                                    </p>
+                                <h4>Pseudocode:</h4>
+                                <p>Variables nombre, prix en Numérique<br />
+                                    Début<br />
+                                    Ecrire "Nombre de photocopies : "<br />
+                                    Lire nombre<br />
+                                    Si nombre
+                                    <= 10 Alors<br />
+                                    prix ← nombre * 0,1<br />
+                                    SinonSi nombre
+                                    <= 30 Alors<br />
+                                    prix ← 10 * 0,1 + (nombre – 10) * 0,09<br />
+                                    Sinon<br />
+                                    prix ← 10 * 0,1 + 20 * 0,09 + (nombre – 30) * 0,08<br />
+                                    FinSi<br />
+                                    Ecrire "Le prix total à payer est: ", prix<br />
+                                    Fin<br />
+                                </p>
+                            </div>
+                            <div id="txt_javascript">
+                                <div id="div_resultat_js"></div>
+                                <div>
+                                    <div id="div_resultat_php">
+                                        <h3><?php echo $sMessage; ?></h3>
+                                    </div>
                                 </div>
-                            <div class="card-header" id="headingOne">
+                                <form action="exo_4.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <div>
+                                            <label for="nbrCopies">Entrez le nombre de photocopies à réaliser
+                                                :</label>
+                                            <input type="text" name="nbrCopies" id="nbrCopies">
+                                        </div>
+                                        <div class="language">
+                                            <button class="btn_green" type="submit">PHP GO!</button>
+                                        </div>
+                                    </div>
+
+                                </form>
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_4_4()">JS PROMPT</button>
+
+                                    <button class="btn_green" onClick="Exo_4_4_innerHTML()"> JS INNERHTML</button>
+
+                                    <button class="btn_green" onClick="Exo_4_4_jquery()">JQUERY !</button>
+                                </div>
+                            </div>
+                            <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Voir les Codes</p>
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                        nombre=0;
-                                        prix = 0;
-                                       console.log(nombre = parseInt(prompt("Entrez le nombre de photocopies à réaliser")));
-                                       if (nombre <= 10) {
-                                           prix = nombre * 0.1;
-                                       }
-                                       else if (nombre <= 30) {
-                                           prix = 10 * 0.1 + (nombre - 10) * 0.09;
-                                       }
-                                       else {
-                                           prix = 10 * 0.1 + 20 * 0.09 + (nombre - 30) * 0.08;
-                                       }
-                                       console.log("le prix à payer est de", prix, "€")*/
+                                        function Exo_4_4_innerHTML() {
+                                            //Variables nombre, prix en Numérique<br />
+                                            //Début
+                                            nbrCopies = 0;
+                                            prix = 0;
+                                            //Ecrire "Nombre de photocopies : 
+                                            //Lire nombre
+                                            nbrCopies = document.getElementById("nbrCopies").value;
+                                            //Si nombre <= 10 Alors
+                                            // prix ← nombre * 0,1
+                                            if (nbrCopies <= 10) {
+                                                prix = nbrCopies * 0.1;
+                                            }
+                                            //Sinonsi nombre <= 30 Alors
+                                            // prix ← nombre * 0,1 pour les 10 premieres plus nombre - 10  (soit 20) à 0.09
+                                            else if (nbrCopies <= 30) {
+                                                prix = 10 * 0.1 + (nbrCopies - 10) * 0.09;
+                                            }
+                                            //Sinon
+                                            // prix ← nombre * 0,1 pour les 10 premieres plus 20 à 0.09 plus nombre-30(soit nombre au delà de 30) à 0.08
+                                            else {
+                                                prix = 10 * 0.1 + 20 * 0.09 + (nbrCopies - 30) * 0.08;
+                                            }
+                                            //Ecrire "Le prix total à payer est: ", prix
+                                            document.getElementById("div_resultat_js").innerHTML = ("innerHTML le prix à payer est de " + prix.toFixed(2) + " €");
+                            
+                                        }//fin
                                     </code>
                                  </pre>
                                 </div>
@@ -91,30 +226,46 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
-
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
-
+                                        function Exo_4_4_jquery() {
+                                            //Variables nombre, prix en Numérique<br />
+                                            //Début
+                                            nbrCopies = 0;
+                                            prix = 0;
+                                            //Ecrire "Nombre de photocopies : 
+                                            //Lire nombre
+                                            nbrCopies = $("#nbrCopies").val();
+                                            //Si nombre <= 10 Alors
+                                            // prix ← nombre * 0,1
+                                            if (nbrCopies <= 10) {
+                                                prix = nbrCopies * 0.1;
+                                            }
+                                            //Sinonsi nombre <= 30 Alors
+                                            // prix ← nombre * 0,1 pour les 10 premieres plus nombre - 10  (soit 20) à 0.09
+                                            else if (nbrCopies <= 30) {
+                                                prix = 10 * 0.1 + (nbrCopies - 10) * 0.09;
+                                            }
+                                            //Sinon
+                                            // prix ← nombre * 0,1 pour les 10 premieres plus 20 à 0.09 plus nombre-30(soit nombre au delà de 30) à 0.08
+                                            else {
+                                                prix = 10 * 0.1 + 20 * 0.09 + (nbrCopies - 30) * 0.08;
+                                            }
+                                            //Ecrire "Le prix total à payer est: ", prix
+                                            $("div_resultat_js").html("Jquery le prix à payer est de " + prix.toFixed(2) + " €");
+                            
+                                        }//fin
                                     </code>
                                  </pre>
                                 </div>
@@ -138,8 +289,37 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+                                        $sMessage= "";
+                                        // SI $_POST["iNombreUtilisateur"] EXISTE ET QUE $_POST["iNombreUtilisateur"] N EST PAS VIDE ALORS
+                                        if ((isset($_POST["nbrCopies"])) && (!(empty($_POST["nbrCopies"]))))
+                                        {
+                                   
+                                       //Variables nombre, prix en Numérique<br />
+                                       //Début
+                                       //inutile php
+                                       
+                                       //Ecrire "Nombre de photocopies : 
+                                       //Lire nombre
+                                       $nbrCopies = $_POST["nbrCopies"];
+                                       //Si nombre <= 10 Alors
+                                       // prix ← nombre * 0,1
+                                       if ($nbrCopies <= 10) {
+                                           $prix = $nbrCopies * 0.1;
+                                       }
+                                       //Sinonsi nombre <= 30 Alors
+                                       // prix ← nombre * 0,1 pour les 10 premieres plus nombre - 10  (soit 20) à 0.09
+                                       else if ($nbrCopies <= 30) {
+                                           $prix = 10 * 0.1 + ($nbrCopies - 10) * 0.09;
+                                       }
+                                       //Sinon
+                                       // prix ← nombre * 0,1 pour les 10 premieres plus 20 à 0.09 plus nombre-30(soit nombre au delà de 30) à 0.08
+                                       else {
+                                           $prix = 10 * 0.1 + 20 * 0.09 + ($nbrCopies - 30) * 0.08;
+                                       }
+                                       //Ecrire "Le prix total à payer est: ", prix
+                                       $sMessage = ("Bravo PHP le prix à payer est de " . $prix . " €");
+                                   
+                                   }//fin
                 
                                     </code>
                                  </pre>
@@ -150,7 +330,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

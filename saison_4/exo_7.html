@@ -8,15 +8,177 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_4_7() {
+                age = 0; perm = 0; acc = 0; assur = 0, pointContrat = 0;
+                situation = "";
+                //Ecrire "Entrez l’âge: "
+                //Lire age
+                age = (prompt("Entrez l'age de futur assuré :"));
+                //Ecrire "Entrez le nombre d'années de permis: "
+                //Lire perm
+                perm = (prompt("Entrez le nombre d'années de permis:"));
+                //Ecrire "Entrez le nombre d'accidents: "
+                //Lire acc
+                acc = (prompt("Entrez le nombre d'accidents:"));
+                //Ecrire "Entrez le nombre d'années d'assurance: "
+                //Lire assur
+                assur = (prompt("Entrez le nombre d'années d'assurance: "));
+
+                //cas n°1 age superieur à 25
+                cas1 = age >= 25;
+                //cas n°2 permis superieur à 2 ans
+                cas2 = perm >= 2;
+                //cas n°3 nombre d'années d'assurance supeieur a 5
+                cas3 = assur > 5;
+                //Si cas1=false Alors
+                //pointContrat ← pointContrat + 1
+                if (cas1 == false) {
+                    pointContrat += 1;
+                }
+                //Si cas2 = false 
+                //pointContrat ← pointContrat + 1
+                if (cas2 == false) {
+                    pointContrat += 1;
+                }
+                pointContrat = pointContrat + acc;
+                if (pointContrat < 3 && cas3) {
+                    pointContrat -= 1;
+                }
+                if (pointContrat == -1) {
+                    situation = "Contrat Bleu";
+                }
+                else if (pointContrat == 0) {
+                    situation = "Contrat Vert";
+                }
+                else if (pointContrat == 1) {
+                    situation = "Contrat Orange";
+                }
+                else if (pointContrat == 2) {
+                    situation = "Contrat Rouge";
+                }
+                else {
+                    situation = "Contrat Refusé";
+                }
+                alert("Votre situation est : " + situation)
+            }
+
+            function Exo_4_7_innerHTML() {
+                age = 0; perm = 0; acc = 0; assur = 0, pointContrat = 0;
+                situation = "";
+                //Ecrire "Entrez l’âge: "
+                //Lire age
+                age = document.getElementById("iAgeUtilisateur").value;
+                //Ecrire "Entrez le nombre d'années de permis: "
+                //Lire perm
+                perm = document.getElementById("iPermUtilisateur").value;
+                //Ecrire "Entrez le nombre d'accidents: "
+                //Lire acc
+                acc = document.getElementById("iAccUtilisateur").value;
+                //Ecrire "Entrez le nombre d'années d'assurance: "
+                //Lire assur
+                assur = document.getElementById("iAssurUtilisateur ").value;
+
+                //cas n°1 age superieur à 25
+                cas1 = age >= 25;
+                //cas n°2 permis superieur à 2 ans
+                cas2 = perm >= 2;
+                //cas n°3 nombre d'années d'assurance supeieur a 5
+                cas3 = assur > 5;
+                //Si cas1=false Alors
+                //pointContrat ← pointContrat + 1
+                if (cas1 == false) {
+                    pointContrat += 1;
+                }
+                //Si cas2 = false 
+                //pointContrat ← pointContrat + 1
+                if (cas2 == false) {
+                    pointContrat += 1;
+                }
+                pointContrat = pointContrat + acc;
+                if (pointContrat < 3 && cas3) {
+                    pointContrat -= 1;
+                }
+                if (pointContrat == -1) {
+                    situation = "Contrat Bleu";
+                }
+                else if (pointContrat == 0) {
+                    situation = "Contrat Vert";
+                }
+                else if (pointContrat == 1) {
+                    situation = "Contrat Orange";
+                }
+                else if (pointContrat == 2) {
+                    situation = "Contrat Rouge";
+                }
+                else {
+                    situation = "Contrat Refusé";
+                }
+                document.getElementById("div_resultat_js").innerHTML = ("Votre situation est : " + situation);
+            }
+            function Exo_4_7() {
+                age = 0; perm = 0; acc = 0; assur = 0, pointContrat = 0;
+                situation = "";
+                //Ecrire "Entrez l’âge: "
+                //Lire age
+                console.log(age = (prompt("Entrez l'age de futur assuré :")));
+                //Ecrire "Entrez le nombre d'années de permis: "
+                //Lire perm
+                console.log(perm = (prompt("Entrez le nombre d'années de permis:")));
+                //Ecrire "Entrez le nombre d'accidents: "
+                //Lire acc
+                console.log(acc = (prompt("Entrez le nombre d'accidents:")));
+                //Ecrire "Entrez le nombre d'années d'assurance: "
+                //Lire assur
+                console.log(assur = (prompt("Entrez le nombre d'années d'assurance: ")));
+
+                //cas n°1 age superieur à 25
+                cas1 = age >= 25;
+                //cas n°2 permis superieur à 2 ans
+                cas2 = perm >= 2;
+                //cas n°3 nombre d'années d'assurance supeieur a 5
+                cas3 = assur > 5;
+                //Si cas1=false Alors
+                //pointContrat ← pointContrat + 1
+                if (cas1 == false) {
+                    pointContrat += 1;
+                }
+                //Si cas2 = false 
+                //pointContrat ← pointContrat + 1
+                if (cas2 == false) {
+                    pointContrat += 1;
+                }
+                pointContrat = pointContrat + acc;
+                if (pointContrat < 3 && cas3) {
+                    pointContrat -= 1;
+                }
+                if (pointContrat == -1) {
+                    situation = "Contrat Bleu";
+                }
+                else if (pointContrat == 0) {
+                    situation = "Contrat Vert";
+                }
+                else if (pointContrat == 1) {
+                    situation = "Contrat Orange";
+                }
+                else if (pointContrat == 2) {
+                    situation = "Contrat Rouge";
+                }
+                else {
+                    situation = "Contrat Refusé";
+                }
+                console.log("Votre situation est : ", situation)
+            }
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -30,42 +192,133 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 4.7</h4>
-                                <p>Une compagnie d'assurance automobile propose à ses clients quatre familles de tarifs identifiables par une couleur,
-                                    du moins au plus onéreux : tarifs bleu, vert, orange et rouge. Le tarif dépend de la situation du conducteur :
-                                     un conducteur de moins de 25 ans et titulaire du permis depuis moins de deux ans, se voit attribuer
-                                    le tarif rouge, si toutefois il n'a jamais été responsable d'accident. Sinon, la compagnie refuse de l'assurer.
-                                     un conducteur de moins de 25 ans et titulaire du permis depuis plus de deux ans, ou de plus de 25
-                                    ans mais titulaire du permis depuis moins de deux ans a le droit au tarif orange s'il n'a jamais provoqué
+                                <p>Une compagnie d'assurance automobile propose à ses clients quatre familles de tarifs
+                                    identifiables par une couleur,
+                                    du moins au plus onéreux : tarifs bleu, vert, orange et rouge. Le tarif dépend de la
+                                    situation du conducteur :
+                                    un conducteur de moins de 25 ans et titulaire du permis depuis moins de deux ans,
+                                    se voit attribuer
+                                    le tarif rouge, si toutefois il n'a jamais été responsable d'accident. Sinon, la
+                                    compagnie refuse de l'assurer.
+                                    un conducteur de moins de 25 ans et titulaire du permis depuis plus de deux ans,
+                                    ou de plus de 25
+                                    ans mais titulaire du permis depuis moins de deux ans a le droit au tarif orange
+                                    s'il n'a jamais provoqué
                                     d'accident, au tarif rouge pour un accident, sinon il est refusé.
-                                     un conducteur de plus de 25 ans titulaire du permis depuis plus de deux ans bénéficie du tarif vert s'il
-                                    n'est à l'origine d'aucun accident et du tarif orange pour un accident, du tarif rouge pour deux accidents, et
+                                    un conducteur de plus de 25 ans titulaire du permis depuis plus de deux ans
+                                    bénéficie du tarif vert s'il
+                                    n'est à l'origine d'aucun accident et du tarif orange pour un accident, du tarif
+                                    rouge pour deux accidents, et
                                     refusé au-delà
-                                     De plus, pour encourager la fidélité des clients acceptés, la compagnie propose un contrat de la
-                                    couleur immédiatement la plus avantageuse s'il est entré dans la maison depuis plus de cinq ans. Ainsi, s'il
-                                    satisfait à cette exigence, un client normalement "vert" devient "bleu", un client normalement "orange"
+                                    De plus, pour encourager la fidélité des clients acceptés, la compagnie propose un
+                                    contrat de la
+                                    couleur immédiatement la plus avantageuse s'il est entré dans la maison depuis plus
+                                    de cinq ans. Ainsi, s'il
+                                    satisfait à cette exigence, un client normalement "vert" devient "bleu", un client
+                                    normalement "orange"
                                     devient "vert", et le "rouge" devient orange.
-                                    Ecrire l'algorithme permettant de saisir les données nécessaires (sans contrôle de saisie) et de traiter ce problème.
-                                    Avant de se lancer à corps perdu dans cet exercice, on pourra réfléchir un peu et s'apercevoir qu'il est plus simple
+                                    Ecrire l'algorithme permettant de saisir les données nécessaires (sans contrôle de
+                                    saisie) et de traiter ce problème.
+                                    Avant de se lancer à corps perdu dans cet exercice, on pourra réfléchir un peu et
+                                    s'apercevoir qu'il est plus simple
                                     qu'il n'en a l'air (cela s'appelle faire une analyse !)
-                                    E
+
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
+                                <h4>Pseudocode:</h4>
+                                <p>
+                                    Variables age, perm, acc, assur,//pointContrat en Numérique</br>
+                                    Variables Cas1, Cas2, Cas3 en Booléen</br>
+                                    Variable situation en Caractère</br>
+                                    Début</br>
+                                    Ecrire "Entrez l’âge: </br>
+                                    Lire age</br>
+                                    Ecrire "Entrez le nombre d'années de permis:</br>
+                                    Lire perm</br>
+                                    Ecrire "Entrez le nombre d'accidents: </br>
+                                    Lire acc</br>
+                                    Ecrire "Entrez le nombre d'années d'assurance:</br>
+                                    Lire assur</br>
+                                    Cas1 ← age >= 25</br>
+                                    Cas2 ← perm >= 2</br>
+                                    Cas3 ← assur > 5</br>
+                                    pointContrat ← 0</br>
+                                    Si faux(Cas1) Alors</br>
+                                    pointContrat ← pointContrat + 1</br>
+                                    FinSi</br>
+                                    Si faux(Cas2) Alors</br>
+                                    pointContrat ← pointContrat + 1</br>
+                                    FinSi</br>
+                                    pointContrat ← pointContrat + acc</br>
+                                    Si pointContrat < 3 et Cas3 Alors </br>
+                                        pointContrat ← pointContrat - 1 FinSi Si</br>
+                                        pointContrat=-1 Alors</br>
+                                        situation ← "Bleu"</br>
+                                        SinonSi pointContrat=0 Alors</br>
+                                        situation ← "Vert"</br>
+                                        SinonSi pointContrat=1 Alors</br>
+                                        situation ← "Orange"</br>
+                                        SinonSi</br>
+                                        pointContrat=2 Alors</br>
+                                        situation ← "Rouge"</br>
+                                        Sinon</br>
+                                        situation ← "Refusé"</br>
+                                        FinSi</br>
+                                        Ecrire "Votre situation : " , situation Fin</br>
+                                </p>
+                            </div>
+                            <div id="txt_javascript">
+                                <div id="div_resultat_js"></div>
+                                <div>
+                                    <div id="div_resultat_php">
+                                        <h3><?php echo $sMessage; ?></h3>
+                                    </div>
                                 </div>
+                                <form action="exo_7.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <div>
+                                            <label for="iAgeUtilisateur">Entrez l’âge:
+                                                :</label>
+                                            <input type="text" name="iAgeUtilisateur" id="iAgeUtilisateur">
+                                            <label for="iPermUtilisateur">Entrez le nombre d'années de permis:
+                                                :</label>
+                                            <input type="text" name="iPermUtilisateur" id="iPermUtilisateur">
+                                            <label for="iAccUtilisateur">Entrez le nombre d'accidents:
+                                                :</label>
+                                            <input type="text" name="iAccUtilisateur" id="iAccUtilisateur">
+                                            <label for="iAssurUtilisateur">Entrez le nombre d'années d'assurance:
+                                                :</label>
+                                            <input type="text" name="iAssurUtilisateur" id="iAssurUtilisateur">
+
+                                        </div>
+                                        <div class="language">
+                                            <button class="btn_green" type="submit">PHP GO!</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <div class="language">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_4_7()">JS PROMPT</button>
+
+                                    <button class="btn_green" onClick="Exo_4_7_innerHTML()"> JS INNERHTML</button>
+
+                                    <button class="btn_green" onClick="Exo_4_4_jquery()">JQUERY !</button>
+                                </div>
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -87,15 +340,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -146,7 +398,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>
