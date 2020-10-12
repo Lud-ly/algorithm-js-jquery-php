@@ -18,24 +18,106 @@
         </header>
         <script>
             function Exo_4_5() {
-                age = 0;
-                sexe = "";
+                //age en Numérique
+                // sexe en string
+                var age;
+                var sexe;
+                // début
+                // Ecrire "Entrez votre age de Toon:
+                //lire age
                 age = parseInt(prompt("Entrez votre age:"));
+                //Ecrire "Entrez votre sexe homme/femme :
+                //lire sexe
                 sexe = (prompt("Entrez votre sexe homme/femme :"));
-                //console.log(typeof sexe,typeof age);
+                // si sexe=="homme" && age inferieur 20 alors
                 if (sexe == "homme" && age < 20) {
-                    alert("Cher Toon, vous n'êtes pas imposable");
+                    //ecrire "Cher Toon, vous n'êtes pas imposable
+                    alert("Cher Mr Toon, vous n'êtes pas imposable");
                 }
+                //sinonsi sexe == "homme" && age > 20 alors
                 else if (sexe == "homme" && age > 20) {
-                    alert("Vous êtes imposable cher Toon, payer ! ");
+                    // ecrire "Vous êtes imposable cher Toon,payer!
+                    alert("Vous êtes imposable cher Mr Toon, payer ! ");
                 }
+                //si (sexe == "femme" && age < 18 || age > 35) 
                 if (sexe == "femme" && age < 18 || age > 35) {
-                    alert("Chère Toone,vous n'êtes pas imposable");
+                    //ecrire "Chère Toone,vous n'êtes pas imposable"
+                    alert("Chère Mme Toone,vous n'êtes pas imposable");
                 }
+                //sinonsi sexe == "femme" && age > 18 || age < 35
                 else if (sexe == "femme" && age > 18 || age < 35) {
-                    alert("Vous êtes imposable cher Toone,banquer!");
+                    //ecrire "Vous êtes imposable cher Toone,banquer!
+                    alert("Vous êtes imposable cher Mme Toone,banquer!");
+                }//fin sinonsi
+            }//fin
+
+            function Exo_4_5_innerHTML() {
+                //age en Numérique
+                // sexe en string
+               var age;
+                var sexe;
+                // début
+                // Ecrire "Entrez votre age de Toon:
+                //lire age
+                age = parseInt(document.getElementById("iAgeUtilisateur").value);
+                //Ecrire "Entrez votre sexe homme/femme :
+                //lire sexe
+                sexe = String(document.getElementById("sSexeUtilisateur").value);
+                // si sexe=="homme" && age inferieur 20 alors
+                if (sexe == "homme" && age < 20) {
+                    //ecrire "Cher Mr Toon, vous n'êtes pas imposable
+                    document.getElementById("div_resultat_js").innerHTML = ("InnerHTML Cher Mr Toon, vous n'êtes pas imposable");
                 }
-            }
+                //sinonsi sexe == "homme" && age > 20 alors
+                else if (sexe == "homme" && age > 20) {
+                    // ecrire "Vous êtes imposable cher Toon,payer!
+                    document.getElementById("div_resultat_js").innerHTML = ("InnerHTML Vous êtes imposable cher Mr Toon, payer ! ");
+                }
+                //si (sexe == "femme" && age < 18 || age > 35) 
+                if (sexe == "femme" && age < 18 || age > 35) {
+                    //ecrire "Chère Toone,vous n'êtes pas imposable"
+                    document.getElementById("div_resultat_js").innerHTML = ("InnerHTML Chère Mme Toone,vous n'êtes pas imposable");
+                }
+                //sinonsi sexe == "femme" && age > 18 || age < 35
+                else if (sexe == "femme" && age > 18 || age < 35) {
+                    //ecrire "Vous êtes imposable cher Toone,banquer!
+                    document.getElementById("div_resultat_js").innerHTML = ("InnerHTML Vous êtes imposable cher Toone,banquer!");
+                }//fin sinonsi
+            }//fin
+
+            function Exo_4_5_jquery() {
+                 //age en Numérique
+                // sexe en string
+                var age;
+                var sexe;
+                 // début
+                // Ecrire "Entrez votre age de Toon:
+                //lire age
+                age = parseInt($("#iAgeUtilisateur").val());
+                //Ecrire "Entrez votre sexe homme/femme :
+                //lire sexe
+                sexe = String($("#sSexeUtilisateur").val());
+                 // si sexe=="homme" && age inferieur 20 alors
+                if (sexe == "homme" && age < 20) {
+                      //ecrire "Cher Mr Toon, vous n'êtes pas imposable
+                    $("#div_resultat_js").html("jquery Cher Toon, vous n'êtes pas imposable");
+                }
+                 //sinonsi sexe == "homme" && age > 20 alors
+                else if (sexe == "homme" && age > 20) {
+                    // ecrire "Vous êtes imposable cher Toon,payer!
+                    $("#div_resultat_js").html("jquery Vous êtes imposable cher Toon, payer ! ");
+                }
+                  //si (sexe == "femme" && age < 18 || age > 35) 
+                if (sexe == "femme" && age < 18 || age > 35) {
+                     //ecrire "Chère Toone,vous n'êtes pas imposable"
+                    $("#div_resultat_js").html("jquery Chère Toone,vous n'êtes pas imposable");
+                }
+                 //sinonsi sexe == "femme" && age > 18 || age < 35
+                else if (sexe == "femme" && age > 18 || age < 35) {
+                      //ecrire "Vous êtes imposable cher Toone,banquer!
+                    $("#div_resultat_js").html("jquery Vous êtes imposable cher Toone,banquer!");
+                }//fin sinonsi
+            }//fin
 
         </script>
         <div class="container-fluid ">
@@ -88,14 +170,17 @@
                                         <h3><?php echo $sMessage; ?></h3>
                                     </div>
                                 </div>
-                                <form action="exo_4.php" method="POST">
+                                <form action="exo_5.php" method="POST">
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
                                         <div>
-                                            <label for="nbrCopies">Entrez le nombre de photocopies à réaliser
+                                            <label for="iAgeUtilisateur">Entrez votre age:
                                                 :</label>
-                                            <input type="text" name="nbrCopies" id="nbrCopies">
+                                            <input type="text" name="iAgeUtilisateur" id="iAgeUtilisateur">
+                                            <label for="sSexeUtilisateur">Entrez votre sexe homme/femme :
+                                                :</label>
+                                            <input type="text" name="sSexeUtilisateur" id="sSexeUtilisateur">
                                         </div>
                                         <div class="language">
                                             <button class="btn_green" type="submit">PHP GO!</button>
@@ -106,12 +191,14 @@
                                 <div class="language">
                                     <button class="btn_green" id="btn_js" onClick="Exo_4_5()">JS PROMPT</button>
 
-                                    <button class="btn_green" onClick="Exo_4_4_innerHTML()"> JS INNERHTML</button>
+                                    <button class="btn_green" onClick="Exo_4_5_innerHTML()"> JS INNERHTML</button>
 
-                                    <button class="btn_green" onClick="Exo_4_4_jquery()">JQUERY !</button>
+                                    <button class="btn_green" onClick="Exo_4_5_jquery()">JQUERY !</button>
                                 </div>
                             </div>
                             <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Voir les Codes</p>
                                 <div class="language">
                                     <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
                                         aria-expanded="true" aria-controls="collapseOne">

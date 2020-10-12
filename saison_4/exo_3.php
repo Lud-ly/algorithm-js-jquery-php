@@ -2,8 +2,8 @@
 
 $sMessage= "";
 // SI $_POST["iheures,iminutes,iSecondes"] EXISTE ET QUE $_POST["iheures,iminutes,iSecondes"] N EST PAS VIDE ALORS
-//if ((isset($_POST["iHeures"])) && (!(empty($_POST["iHeures"]))))
-//{
+if ((isset($_POST["iSecondes"])) && (!(empty($_POST["iSecondes"]))))
+{
 // Variables heures, minutes en Numérique
 //inutile php
 //Début
@@ -31,11 +31,12 @@ if ($iHeures == 24) {
 	// heures = 0;
 	$iHeures = 0;
 }
-//}
-
 //ecrire la nouvelle heure
-$sMessage = ("Merci PHP, Dans une minute il sera " .  $iHeures . " heure(s) " . $iMinutes . " minute(s)".$iSecondes . "secondes");
+$sMessage = ("Merci PHP, Dans une minute il sera " .  $iHeures . " heure(s) " . $iMinutes . " minute(s)". $iSecondes . "secondes");
 	
+}
+
+
 	require "exo_3.html";
 
 ?>

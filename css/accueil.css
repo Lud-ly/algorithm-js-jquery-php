@@ -18,7 +18,7 @@ h3,h4,h5,p{
   color:#333A40;
  }
 .home{
-  width:80%;
+  width:75%;
   margin: 0 auto;
 }
 /*----------CONTAINER-----------*/
@@ -50,11 +50,11 @@ h3,h4,h5,p{
 
 .myAside{
     height: 1000px;
-    box-shadow: 3px 3px 3px 2px olivedrab;
+    box-shadow: 3px 3px 3px 2px#999;
 }
 /*------CONTAINER CENTRAL------------*/
 .content{
-    box-shadow:  3px 3px 3px 2px olivedrab;
+  box-shadow: 3px 3px 3px 2px #999;
     height: 1000px;
     padding: 0px;
     margin-bottom: 100px;
@@ -67,7 +67,7 @@ h3,h4,h5,p{
    }
    
    .content h3{
-    padding: 50px;
+    padding: 100px;
     text-align: center;
   }
   .pseudoCode{
@@ -175,7 +175,7 @@ h3,h4,h5,p{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow:  3px 3px 3px 2px olivedrab;
+    box-shadow: 3px 3px 3px 2px #999;
     height: 1000px;
 }
     .myCodeRight{
@@ -189,7 +189,7 @@ h3,h4,h5,p{
     }
     .cours a{
       color: #fff;
-      margin:60px 30px;
+      margin:100px 40px;
       text-align: center;
       padding: 15px;
       height: 60px;
@@ -215,12 +215,13 @@ footer{
   background-color: #fff;
   margin: 50px 20px 50px 20px;
   border-radius: 20%;
-  border: 1px solid olivedrab;
+  border: 1px solid #999;
   border-bottom:none;
   border-left:none;
   border-right: none;
   text-align: center;
   padding: 20px;
+  width: 75%;
   margin: 0 auto!important;
   height: 150px;
 }

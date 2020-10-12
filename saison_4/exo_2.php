@@ -4,9 +4,11 @@ $sMessage= "";
 	// Variables heures, minutes en Numérique
 	//inutile php
 	//Début
-	//if ((isset($_POST["iHeures"])) && (!(empty($_POST["iMinutes"]))))
-	//{
-		
+
+		//SI $_POST["iHeures"] EXISTE ET QUE $_POST["iHeures"] N EST PAS VIDE ALORS
+		//SI $_POST["iMinutes"] EXISTE ET QUE $_POST["iMinutes"] N EST PAS VIDE ALORS
+	if ((isset($_POST["iHeures"])) && (!(empty($_POST["iHeures"]))))
+	{
 	//Ecrire "Entrez les heures, puis les minutes : "
 	//Lire heures,minutes
 	
@@ -24,10 +26,10 @@ $sMessage= "";
 		// heures = 0;
 		$iHeures = 0;
 	}
-//}
-	
 	//ecrire la nouvelle heure
 	$sMessage = ("Merci PHP, Dans une minute il sera " .  $iHeures . " heure(s) " . $iMinutes . " minute(s)");
+}
+
 	
 	require "exo_2.html";
 

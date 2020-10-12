@@ -5,8 +5,8 @@
 	// VARIABLE iNombreUtilisateur2 en NUMERIQUE
 	// Inutile
 	// SI $_POST["iNombreUtilisateur"] EXISTE ET QUE $_POST["iNombreUtilisateur"] N EST PAS VIDE ALORS
-	//if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
-		//	{
+	if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
+			{
 	//DEBUT
 	// ecrire nombre1="donnez un nombre n°1 
 	// ecrire nombre2="donnez un nombre n°2 
@@ -27,7 +27,7 @@
 	else if($iNombreUtilisateur < 0 && $iNombreUtilisateur2 < 0) {
 			$sMessage= "Bravo PHP le Nombre est negatif !";
 	}
-//}
+}
 	//Fin
 
 	require "exo_5.html";

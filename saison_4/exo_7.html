@@ -68,24 +68,25 @@
                 else {
                     situation = "Contrat Refusé";
                 }
-                alert("Votre situation est : " + situation)
+                alert("pROMPT Votre situation est : " + situation)
             }
 
             function Exo_4_7_innerHTML() {
-                age = 0; perm = 0; acc = 0; assur = 0, pointContrat = 0;
+                var age; var perm; var acc; var assur;
+                var pointContrat = 0;
                 situation = "";
                 //Ecrire "Entrez l’âge: "
                 //Lire age
-                age = document.getElementById("iAgeUtilisateur").value;
+                age = parseInt(document.getElementById("iAgeUtilisateur").value);
                 //Ecrire "Entrez le nombre d'années de permis: "
                 //Lire perm
-                perm = document.getElementById("iPermUtilisateur").value;
+                perm = parseInt(document.getElementById("iPermUtilisateur").value);
                 //Ecrire "Entrez le nombre d'accidents: "
                 //Lire acc
-                acc = document.getElementById("iAccUtilisateur").value;
+                acc = parseInt(document.getElementById("iAccUtilisateur").value);
                 //Ecrire "Entrez le nombre d'années d'assurance: "
                 //Lire assur
-                assur = document.getElementById("iAssurUtilisateur ").value;
+                assur = parseInt(document.getElementById("iAssurUtilisateur").value);
 
                 //cas n°1 age superieur à 25
                 cas1 = age >= 25;
@@ -103,43 +104,57 @@
                 if (cas2 == false) {
                     pointContrat += 1;
                 }
+                //pointContrat = pointContrat + accident
                 pointContrat = pointContrat + acc;
+                //si (pointContrat < 3 && cas3)alors
                 if (pointContrat < 3 && cas3) {
+                    //pointContrat -1
                     pointContrat -= 1;
                 }
+                //si (pointContrat == -1)alors
                 if (pointContrat == -1) {
-                    situation = "Contrat Bleu";
+                    //situation contart bleu
+                    situation = "Bravo innerHTML Contrat Bleu";
                 }
+                //sinonsi (pointContrat == 0)alors
                 else if (pointContrat == 0) {
-                    situation = "Contrat Vert";
+                    //situation contart vert
+                    situation = "Bravo innerHTML Contrat Vert";
                 }
+                //sinonsi(pointContrat == 1 )alors
                 else if (pointContrat == 1) {
-                    situation = "Contrat Orange";
+                    //situation contart Orange
+                    situation = "Bravo innerHTML Contrat Orange";
                 }
+                //sinonsi (pointContrat == 2)alors
                 else if (pointContrat == 2) {
-                    situation = "Contrat Rouge";
+                    //situation contart Rouge
+                    situation = "Bravo innerHTML Contrat Rouge";
                 }
+                //sinon
                 else {
+                    //situation refusé
                     situation = "Contrat Refusé";
                 }
-                document.getElementById("div_resultat_js").innerHTML = ("Votre situation est : " + situation);
+                //ecrire "Votre situation est : " + situation
+                document.getElementById("div_resultat_js").innerHTML = ("innerHTML Votre situation est : ", situation);
             }
-            function Exo_4_7() {
-                age = 0; perm = 0; acc = 0; assur = 0, pointContrat = 0;
+            function Exo_4_7_jquery() {
+                var age; var perm; var acc; var assur; 
+                var pointContrat = 0;
                 situation = "";
                 //Ecrire "Entrez l’âge: "
                 //Lire age
-                console.log(age = (prompt("Entrez l'age de futur assuré :")));
+                age = parseInt($("#iAgeUtilisateur").val());
                 //Ecrire "Entrez le nombre d'années de permis: "
                 //Lire perm
-                console.log(perm = (prompt("Entrez le nombre d'années de permis:")));
+                perm = parseInt($("#iPermUtilisateur").val());
                 //Ecrire "Entrez le nombre d'accidents: "
                 //Lire acc
-                console.log(acc = (prompt("Entrez le nombre d'accidents:")));
+                acc = parseInt($("#iAccUtilisateur").val());
                 //Ecrire "Entrez le nombre d'années d'assurance: "
                 //Lire assur
-                console.log(assur = (prompt("Entrez le nombre d'années d'assurance: ")));
-
+                assur = parseInt($("#iAssurUtilisateur").val());
                 //cas n°1 age superieur à 25
                 cas1 = age >= 25;
                 //cas n°2 permis superieur à 2 ans
@@ -148,35 +163,48 @@
                 cas3 = assur > 5;
                 //Si cas1=false Alors
                 //pointContrat ← pointContrat + 1
-                if (cas1 == false) {
-                    pointContrat += 1;
-                }
                 //Si cas2 = false 
                 //pointContrat ← pointContrat + 1
                 if (cas2 == false) {
                     pointContrat += 1;
                 }
+                //pointContrat = pointContrat + accident
                 pointContrat = pointContrat + acc;
+                //si (pointContrat < 3 && cas3)alors
                 if (pointContrat < 3 && cas3) {
+                    //pointContrat -1
                     pointContrat -= 1;
                 }
+                //si (pointContrat == -1)alors
                 if (pointContrat == -1) {
-                    situation = "Contrat Bleu";
+                    //situation contart bleu
+                    situation = "Bravo jquery Contrat Bleu";
                 }
+                //sinonsi (pointContrat == 0)alors
                 else if (pointContrat == 0) {
-                    situation = "Contrat Vert";
+                    //situation contart vert
+                    situation = "Bravo jquery Contrat Vert";
                 }
+                //sinonsi(pointContrat == 1 )alors
                 else if (pointContrat == 1) {
-                    situation = "Contrat Orange";
+                    //situation contart Orange
+                    situation = "Bravo jquery Contrat Orange";
                 }
+                //sinonsi (pointContrat == 2)alors
                 else if (pointContrat == 2) {
-                    situation = "Contrat Rouge";
+                    //situation contart Rouge
+                    situation = "Bravo jquery Contrat Rouge";
                 }
+                //sinon
                 else {
-                    situation = "Contrat Refusé";
+                    //situation refusé
+                    situation = "Bravo jquery Contrat Refusé";
                 }
-                console.log("Votre situation est : ", situation)
+                //ecrire "Votre situation est : " + situation
+                $("#div_resultat_js").html("jQUERY Votre situation est : " + situation);
             }
+
+
         </script>
         <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
@@ -280,7 +308,7 @@
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
                                         <div>
-                                            <label for="iAgeUtilisateur">Entrez l’âge:
+                                            <label for="iAgeUtilisateur">Entrez l'age de futur assuré :
                                                 :</label>
                                             <input type="text" name="iAgeUtilisateur" id="iAgeUtilisateur">
                                             <label for="iPermUtilisateur">Entrez le nombre d'années de permis:
@@ -305,10 +333,12 @@
 
                                     <button class="btn_green" onClick="Exo_4_7_innerHTML()"> JS INNERHTML</button>
 
-                                    <button class="btn_green" onClick="Exo_4_4_jquery()">JQUERY !</button>
+                                    <button class="btn_green" onClick="Exo_4_7_jquery()">JQUERY !</button>
                                 </div>
                             </div>
                             <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Voir les Codes</p>
                                 <div class="language">
                                     <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
                                         aria-expanded="true" aria-controls="collapseOne">
@@ -324,13 +354,74 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+                                        function Exo_4_7_innerHTML() {
+                                            var age; var perm; var acc; var assur;
+                                            var pointContrat = 0;
+                                            situation = "";
+                                            //Ecrire "Entrez l’âge: "
+                                            //Lire age
+                                            age = parseInt(document.getElementById("iAgeUtilisateur").value);
+                                            //Ecrire "Entrez le nombre d'années de permis: "
+                                            //Lire perm
+                                            perm = parseInt(document.getElementById("iPermUtilisateur").value);
+                                            //Ecrire "Entrez le nombre d'accidents: "
+                                            //Lire acc
+                                            acc = parseInt(document.getElementById("iAccUtilisateur").value);
+                                            //Ecrire "Entrez le nombre d'années d'assurance: "
+                                            //Lire assur
+                                            assur = parseInt(document.getElementById("iAssurUtilisateur").value);
+                            
+                                            //cas n°1 age superieur à 25
+                                            cas1 = age >= 25;
+                                            //cas n°2 permis superieur à 2 ans
+                                            cas2 = perm >= 2;
+                                            //cas n°3 nombre d'années d'assurance supeieur a 5
+                                            cas3 = assur > 5;
+                                            //Si cas1=false Alors
+                                            //pointContrat ← pointContrat + 1
+                                            if (cas1 == false) {
+                                                pointContrat += 1;
+                                            }
+                                            //Si cas2 = false 
+                                            //pointContrat ← pointContrat + 1
+                                            if (cas2 == false) {
+                                                pointContrat += 1;
+                                            }
+                                            //pointContrat = pointContrat + accident
+                                            pointContrat = pointContrat + acc;
+                                            //si (pointContrat < 3 && cas3)alors
+                                            if (pointContrat < 3 && cas3) {
+                                                //pointContrat -1
+                                                pointContrat -= 1;
+                                            }
+                                            //si (pointContrat == -1)alors
+                                            if (pointContrat == -1) {
+                                                //situation contart bleu
+                                                situation = "Bravo innerHTML Contrat Bleu";
+                                            }
+                                            //sinonsi (pointContrat == 0)alors
+                                            else if (pointContrat == 0) {
+                                                //situation contart vert
+                                                situation = "Bravo innerHTML Contrat Vert";
+                                            }
+                                            //sinonsi(pointContrat == 1 )alors
+                                            else if (pointContrat == 1) {
+                                                //situation contart Orange
+                                                situation = "Bravo innerHTML Contrat Orange";
+                                            }
+                                            //sinonsi (pointContrat == 2)alors
+                                            else if (pointContrat == 2) {
+                                                //situation contart Rouge
+                                                situation = "Bravo innerHTML Contrat Rouge";
+                                            }
+                                            //sinon
+                                            else {
+                                                //situation refusé
+                                                situation = "Contrat Refusé";
+                                            }
+                                            //ecrire "Votre situation est : " + situation
+                                            document.getElementById("div_resultat_js").innerHTML = ("innerHTML Votre situation est : ", situation);
+                                        }
                                     </code>
                                  </pre>
                                 </div>
@@ -353,15 +444,70 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
-
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+                                        function Exo_4_7_jquery() {
+                                            var age; var perm; var acc; var assur; 
+                                            var pointContrat = 0;
+                                            situation = "";
+                                            //Ecrire "Entrez l’âge: "
+                                            //Lire age
+                                            age = parseInt($("#iAgeUtilisateur").val());
+                                            //Ecrire "Entrez le nombre d'années de permis: "
+                                            //Lire perm
+                                            perm = parseInt($("#iPermUtilisateur").val());
+                                            //Ecrire "Entrez le nombre d'accidents: "
+                                            //Lire acc
+                                            acc = parseInt($("#iAccUtilisateur").val());
+                                            //Ecrire "Entrez le nombre d'années d'assurance: "
+                                            //Lire assur
+                                            assur = parseInt($("#iAssurUtilisateur").val());
+                                            //cas n°1 age superieur à 25
+                                            cas1 = age >= 25;
+                                            //cas n°2 permis superieur à 2 ans
+                                            cas2 = perm >= 2;
+                                            //cas n°3 nombre d'années d'assurance supeieur a 5
+                                            cas3 = assur > 5;
+                                            //Si cas1=false Alors
+                                            //pointContrat ← pointContrat + 1
+                                            //Si cas2 = false 
+                                            //pointContrat ← pointContrat + 1
+                                            if (cas2 == false) {
+                                                pointContrat += 1;
+                                            }
+                                            //pointContrat = pointContrat + accident
+                                            pointContrat = pointContrat + acc;
+                                            //si (pointContrat < 3 && cas3)alors
+                                            if (pointContrat < 3 && cas3) {
+                                                //pointContrat -1
+                                                pointContrat -= 1;
+                                            }
+                                            //si (pointContrat == -1)alors
+                                            if (pointContrat == -1) {
+                                                //situation contart bleu
+                                                situation = "Bravo jquery Contrat Bleu";
+                                            }
+                                            //sinonsi (pointContrat == 0)alors
+                                            else if (pointContrat == 0) {
+                                                //situation contart vert
+                                                situation = "Bravo jquery Contrat Vert";
+                                            }
+                                            //sinonsi(pointContrat == 1 )alors
+                                            else if (pointContrat == 1) {
+                                                //situation contart Orange
+                                                situation = "Bravo jquery Contrat Orange";
+                                            }
+                                            //sinonsi (pointContrat == 2)alors
+                                            else if (pointContrat == 2) {
+                                                //situation contart Rouge
+                                                situation = "Bravo jquery Contrat Rouge";
+                                            }
+                                            //sinon
+                                            else {
+                                                //situation refusé
+                                                situation = "Bravo jquery Contrat Refusé";
+                                            }
+                                            //ecrire "Votre situation est : " + situation
+                                            $("#div_resultat_js").html("jQUERY Votre situation est : " + situation);
+                                        }
 
                                     </code>
                                  </pre>
@@ -386,8 +532,73 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+                                        $sMessage= "";
+                                        if ((isset($_POST["iAgeUtilisateur"])) && (!(empty($_POST["iAgeUtilisateur"]))))
+                                        {
+                                            //Ecrire "Entrez l’âge: "
+                                            //Lire age
+                                            $age = $_POST["iAgeUtilisateur"];
+                                            //Ecrire "Entrez le nombre d'années de permis: "
+                                            //Lire perm
+                                            $perm = $_POST["iPermUtilisateur"];
+                                            //Ecrire "Entrez le nombre d'accidents: "
+                                            //Lire acc
+                                            $acc  = $_POST["iAccUtilisateur"];
+                                            //Ecrire "Entrez le nombre d'années d'assurance: "
+                                            //Lire assur
+                                            $assur = $_POST["iAssurUtilisateur"];
+                                        
+                                            //cas n°1 age superieur à 25
+                                             $cas1 = $age >= 25;
+                                            //cas n°2 permis superieur à 2 ans
+                                            $cas2 = $perm >= 2;
+                                            //cas n°3 nombre d'années d'assurance supeieur a 5
+                                            $cas3 = $assur > 5;
+                                            //Si cas1=false Alors
+                                            //pointContrat ← pointContrat + 1
+                                            if ($cas1 == false) {
+                                                $pointContrat += 1;
+                                            }
+                                            //Si cas2 = false 
+                                            //pointContrat ← pointContrat + 1
+                                            if ($cas2 == false) {
+                                                $pointContrat += 1;
+                                            }
+                                            //pointContrat = pointContrat + accident
+                                            $pointContrat = $pointContrat + $acc;
+                                            //si (pointContrat < 3 && cas3)alors
+                                            if ($pointContrat < 3 && $cas3) {
+                                                //pointContrat -1
+                                                $pointContrat -= 1;
+                                            }
+                                              //si (pointContrat == -1)alors
+                                            if ($pointContrat == -1) {
+                                                //situation contart bleu
+                                                $situation = "Contrat Bleu";
+                                            }
+                                            //sinonsi (pointContrat == 0)alors
+                                            else if ($pointContrat == 0) {
+                                                  //situation contart vert
+                                                $situation = "Contrat Vert";
+                                            } 
+                                             //sinonsi(pointContrat == 1 )alors
+                                            else if ($pointContrat == 1) {
+                                                  //situation contart Orange
+                                                $situation = "Contrat Orange";
+                                            }
+                                            //sinonsi (pointContrat == 2)alors
+                                            else if ($pointContrat == 2) {
+                                                //situation contart Rouge
+                                                $situation = "Contrat Rouge";
+                                            }
+                                            //sinon
+                                            else {
+                                                //situation refusé
+                                                $situation = "Contrat Refusé";
+                                            }
+                                            //ecrire "Votre situation est : " + situation
+                                            $sMessage = ("PHP Votre situation est : " . $situation);
+                                        }
                 
                                     </code>
                                  </pre>

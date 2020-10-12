@@ -51,9 +51,10 @@
                 //Ecrire "Entrez les heures, puis les minutes : "
                 //Lire heures,minutes
                 
-                iHeures = document.getElementById("iHeures").value;
-                iMinutes = document.getElementById("iMinutes").value;
+                iHeures = parseInt(document.getElementById("iHeures").value);
+                iMinutes =  parseInt(document.getElementById("iMinutes").value);
                 //Si minutes = 60 Alors
+                console.log(typeof iMinutes);
                 iMinutes += 1;
                 if (iMinutes == 60) {
                     iMinutes = 0;
@@ -71,13 +72,13 @@
             function Exo_4_2_jquery() {
                 // Variables heures, minutes en Numérique
                 //Début
-                iMinutes;
-                iHeures;
+               var iMinutes;
+               var iHeures;
                 //Ecrire "Entrez les heures, puis les minutes : "
                 //Lire heures,minutes
                 
-                iHeures = $("#iHeures").val();
-                iMinutes = $("#iMinutes").val();
+                iHeures = parseInt($("#iHeures").val());
+                iMinutes = parseInt($("#iMinutes").val());
                 iMinutes += 1;
                 //Si minutes = 60 Alors
                 if (iMinutes == 60) {

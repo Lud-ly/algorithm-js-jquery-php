@@ -76,8 +76,8 @@
             function Exo_4_4_jquery() {
                 //Variables nombre, prix en Numérique<br />
                 //Début
-                var nbrCopies = 0;
-                var prix = 0;
+                nbrCopies = 0;
+                prix = 0;
                 //Ecrire "Nombre de photocopies : 
                 //Lire nombre
                 nbrCopies = $("#nbrCopies").val();
@@ -97,7 +97,7 @@
                     prix = 10 * 0.1 + 20 * 0.09 + (nbrCopies - 30) * 0.08;
                 }
                 //Ecrire "Le prix total à payer est: ", prix
-                $("div_resultat_js").html("Jquery le prix à payer est de " + prix + " €");
+                $("#div_resultat_js").html("jquery le prix à payer est de " + prix.toFixed(2) + " €");
 
             }//fin
         </script>
