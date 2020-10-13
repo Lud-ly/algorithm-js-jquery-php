@@ -20,6 +20,8 @@ h3,h4,h5,p{
 .home{
   width:75%;
   margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0px 0px 3px 2px #999;
 }
 /*----------CONTAINER-----------*/
 .container-fluid{
@@ -27,7 +29,7 @@ h3,h4,h5,p{
   margin-bottom: 100px;
 }
   .container-fluid h4{
-    padding: 10px;
+    padding: 50px;
   }
   .container-fluid hr{
     margin-bottom: 50px;
@@ -38,6 +40,7 @@ h3,h4,h5,p{
    }
    .navbar{
       height: 130px;
+      background-color: #fff!important;
        justify-content: space-between;
        flex-direction: row-reverse;
        color:#333A40;
@@ -50,11 +53,11 @@ h3,h4,h5,p{
 
 .myAside{
     height: 1000px;
-    box-shadow: 3px 3px 3px 2px#999;
+    box-shadow: 0px 0px 3px 2px #999;
 }
 /*------CONTAINER CENTRAL------------*/
 .content{
-  box-shadow: 3px 3px 3px 2px #999;
+  box-shadow: 0px 0px 3px 2px #999;
     height: 1000px;
     padding: 0px;
     margin-bottom: 100px;
@@ -170,12 +173,15 @@ h3,h4,h5,p{
       .language button:hover{
         background: olivedrab;
       }
+form{
+  padding: 30px;
+}      
 /*-----------ASIDE RIGHT----------*/
 .contentRight{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 3px 3px 3px 2px #999;
+    box-shadow: 0px 0px 3px 2px #999;
     height: 1000px;
 }
     .myCodeRight{
@@ -213,7 +219,7 @@ footer{
   align-items: center;
   justify-content: space-between;
   background-color: #fff;
-  margin: 50px 20px 50px 20px;
+  margin: 50px 20px;
   border-radius: 20%;
   border: 1px solid #999;
   border-bottom:none;
@@ -230,13 +236,71 @@ footer{
 
 
    }/* Tablettes 'n' Mobiles */
+   @media only screen and (max-width: 1524px) {
+    #menu-accordeon {
+      width: 100px;
+      margin: 0;
+     }
+    .cours a{
+    margin: 60px -3px;
+    text-align: center;
+    padding: 15px;
+    height: 60px;
+    width: 100px;
+    }
+    .contentRight img {
+      margin: 0;
+    }
+  }
 @media only screen and (max-width: 1024px) {
+  #menu-accordeon {
+    width: 100px;
+    margin: 0;
+   }
+  .cours a{
+  margin: 60px -3px;
+  text-align: center;
+  padding: 15px;
+  height: 60px;
+  width: 100px;
+  }
+  .contentRight img {
+    margin: 0;
+  }
 }
 
 @media only screen and (max-width: 960px) {
+  #menu-accordeon {
+   width: 100px;
+   margin: 0;
+  }
+  .cours a{
+    margin: 60px -3px;
+    text-align: center;
+    padding: 15px;
+    height: 60px;
+    width: 100px;
+    }
+  .contentRight img {
+    margin: 0;
+  }  
 }
 
 @media only screen and (max-width: 800px) {
+  #menu-accordeon {
+    width: 100px;
+    margin: 0;
+   }
+   .cours a{
+     margin: 60px -3px;
+     text-align: center;
+     padding: 15px;
+     height: 60px;
+     width: 100px;
+     }
+   .contentRight img {
+     margin: 0;
+   }  
 }
 
 @media only screen and (max-width: 600px) {

@@ -258,15 +258,40 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
-
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+                                        function Exo_4_3_jquery() {
+                                            // Variables heures, minutes en Numérique
+                                            //Début
+                                            var iMinutes;
+                                            var iHeures;
+                                            var iSecondes;
+                                            //Ecrire "Entrez les heures, puis les minutes : "
+                                            //Lire heures,minutes 
+                                            iHeures = $("#iHeures").val();
+                                            iMinutes = $("#iMinutes").val();
+                                            iSecondes = $("#iSecondes").val();
+                                            //ecrire "il est", iHeures, "heures et", iMinutes, "minutes"
+                                            $("#div_resultat_js").html("il est " + iHeures + " heures et " + iMinutes + " minutes " + iSecondes + " secondes");
+                                            iSecondes += 1;
+                                            //Si secondes = 60 Alors
+                                            if (iSecondes == 60) {
+                                                iSecondes = 0;
+                                                iMinutes += 1;
+                                            }
+                                            //Si minutes = 60 Alors
+                                            if (iMinutes == 60) {
+                                                //minutes = 0 et heures = heures+1
+                                                iMinutes = 0;
+                                                iHeures += 1;
+                                            }
+                                            // Si heures = 24 Alors
+                                            if (iHeures == 24) {
+                                                // heures = 0;
+                                                iHeures = 0;
+                                            }
+                                            //ecrire la nouvelle heure
+                                           $("#div_resultat_js").html("Merci jquery il est " + iHeures + " heures et " + iMinutes + " minutes et " + iSecondes + " secondes");
+                            
+                                        }
 
                                     </code>
                                  </pre>
@@ -291,8 +316,41 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+                                        $sMessage= "";
+                                        // SI $_POST["iheures,iminutes,iSecondes"] EXISTE ET QUE $_POST["iheures,iminutes,iSecondes"] N EST PAS VIDE ALORS
+                                        if ((isset($_POST["iSecondes"])) && (!(empty($_POST["iSecondes"]))))
+                                        {
+                                        // Variables heures, minutes en Numérique
+                                        //inutile php
+                                        //Début
+                                            
+                                        //Ecrire "Entrez les heures, puis les minutes : "
+                                        //Lire heures,minutes,secondes
+                                        
+                                        $iHeures = $_POST["iHeures"];
+                                        $iMinutes =  $_POST["iMinutes"];
+                                        $iSecondes =  $_POST["iSecondes"];
+                                        //Si secondes = 60 Alors
+                                        $iSecondes += 1;
+                                        if($iSecondes==60){
+                                            $iSecondes=0;
+                                            $iMinutes+=1;
+                                        }
+                                        //Si minutes = 60 Alors
+                                        if ($iMinutes == 60) {
+                                            $iMinutes = 0;
+                                            $iHeures += 1;
+                                            //minutes = 0 et heures = heures+1
+                                        }
+                                        // Si heures = 24 Alors
+                                        if ($iHeures == 24) {
+                                            // heures = 0;
+                                            $iHeures = 0;
+                                        }
+                                        //ecrire la nouvelle heure
+                                        $sMessage = ("Merci PHP, Dans une minute il sera " .  $iHeures . " heure(s) " . $iMinutes . " minute(s)". $iSecondes . "secondes");
+                                            
+                                        }
                 
                                     </code>
                                  </pre>

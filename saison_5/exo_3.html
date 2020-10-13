@@ -8,15 +8,70 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+             function Exo_5_3() {
+                //DEBUT
+                //Variable iNum en numerique
+                var iNum = parseInt(prompt("ENTRER UN NOMBRE"));
+                // variable iNum_suivants en numerique
+                var iNum_suivants = iNum + 10;
+                // Ecrire "Les 10 nombres suivants sont : "
+                var sHTML = "Les 10 prochains nombres sont : ";
+                // Tant que iNum < iNum_suivants
+                while (iNum < iNum_suivants) {
+                    sHTML += " " + (iNum + 1) + " ";
+                    iNum = iNum + 1;
+                    //Fin Tant que
+                }
+              alert("Prompt "+sHTML);
+                //FIN
+            }
+            function Exo_5_3_innerHTML() {
+                //DEBUT
+                //Variable iNum en numerique
+                var iNum = document.getElementById("iNombreUtilisateur").value;
+                // variable iNum_suivants en numerique
+                var iNum_suivants = iNum + 10;
+                // Ecrire "Les 10 nombres suivants sont : "
+                var sHTML = "Les 10 prochains nombres sont : ";
+                // Tant que iNum < iNum_suivants
+                while (iNum < iNum_suivants) {
+                    sHTML += " " + (iNum + 1) + " ";
+                    iNum = iNum + 1;
+                    //Fin Tant que
+                }
+                document.getElementById("div_resultat_js").innerHTML = "innerHTML "+sHTML;
+                //FIN
+            }
+            function Exo_5_3_jquery() {
+                //DEBUT
+                //Variable iNum en numerique
+                var iNum = $("#iNombreUtilisateur").val();
+                // variable iNum_suivants en numerique
+                var iNum_suivants = iNum + 10;
+                // Ecrire "Les 10 nombres suivants sont : "
+                var sHTML = "Les 10 prochains nombres sont : ";
+                // Tant que iNum < iNum_suivants
+                while (iNum < iNum_suivants) {
+                    sHTML += " " + (iNum + 1) + " ";
+                    iNum = iNum + 1;
+                    //Fin Tant que
+                }
+                $("#div_resultat_js").html("Jquery "+sHTML);
+                //FIN
+            }
+
+
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -27,29 +82,72 @@
                 </div>
                 <div class="col-md-8">
                     <div id="accordion">
-                        <div class="card"id="exos">
+                        <div class="card" id="exos">
                             <div class="card-body">
                                 <h4>Exercice 5.3</h4>
-                                <p>a) Ecrire un algorithme qui demande un nombre de départ, et qui ensuite affiche les dix nombres suivants. Par
-                                    exemple, si l'utilisateur entre le nombre 17, le programme affichera les nombres de 18 à 27
+                                <p>a) Ecrire un algorithme qui demande un nombre de départ, et qui ensuite affiche les
+                                    dix nombres suivants. Par
+                                    exemple, si l'utilisateur entre le nombre 17, le programme affichera les nombres de
+                                    18 à 27
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
+                                <h4>Pseudocode:</h4>
+                                <p>
+                                    VARIABLE iNombre en NUMERIQUE</br>
+                                    DEBUT</br>
+                                    ECRIRE "VEUILLEZ ENTRER UN NOMBRE"</br>
+                                    LIRE iNombre</br>
+                                    More ← iNombre+10</br>
+                                    Ecrire "Les 10 nombres suivants sont : "</br>
+                                    TantQue iNombre < More</br>
+                                        iNombre ← iNombre+1 </br>
+                                        Ecrire iNombre </br>
+                                        FinTantQue </br>
+                                        Fin </br>
+                                </p>
+                            </div>
+                            <div id="txt_javascript">
+                                <div id="div_resultat_js">
                                 </div>
+                                <form action="exo_3.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <div>
+                                            <label for="iNombreUtilisateur">Veuillez saisir un nombre
+                                                :</label>
+                                            <input type="text" name="iNombreUtilisateur" id="iNombreUtilisateur">
+                                        </div>
+                                        <div>
+                                            <div id="div_resultat_php">
+                                                <h3><?php echo $sMessage; ?></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                </form>
+                                <div class="language">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_5_3()">JS WITH PROMPT</button>
+
+                                    <button class="btn_green" onClick="Exo_5_3_innerHTML()"> JS WITH INNERHTML</button>
+
+                                    <button class="btn_green" onClick="Exo_5_3_jquery()">JQUERY !</button>
+                                </div>
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -71,15 +169,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -130,7 +227,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

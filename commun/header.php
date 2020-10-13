@@ -22,9 +22,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                
-                <h3>ALGO_EXO_LAB</h3>
                     <div class="myTitre">
-                    <img src="../img/animated-sl-dribbble.gif"height="120px">
+                    <img src="../img/animated-sl-dribbble.gif"height="60px">
                     </div>
             </nav>
         </div>

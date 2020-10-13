@@ -18,49 +18,82 @@
         </header>
         <script>
             function Exo_3_3() {
+                //sNom,sNom2,sNom3 en string
                 sNom = "";
                 sNom2 = "";
                 sNom3 = "";
+                //Début
+                //Ecrire "entrez 3 noms" 
                 alert("Donnez 3 noms");
+                //ecrire"donnez le nom n°1 
+                //ecrire "donnez le nom n°2 
+                //ecrire"donnez le nom n°3 
+                //lire sNom,sNom2,sNom3
                 sNom = String(prompt("donnez un nom n°1:"));
                 sNom2 = String(prompt("donnez un nom n°2:"));
                 sNom3 = String(prompt("donnez le nom n°3:"));
+                //Si sNom < sNom2 ET sNom2 < sNom3 Alors 
                 if (sNom < sNom2 && sNom2 < sNom3) {
+                    //Ecrire "Ces noms sont classés alphabétiquement"
                     alert("Bravo prompt Ces noms sont classés alphabétiquement !");
                 }
                 else {
+                    //Sinon Ecrire "Ces noms ne sont pas classés" 
                     alert("Désolé prompt Ces noms ne sont pas classés");
-                }
-            }
+                }// Finsi
+            }//Fin
+
 
             function Exo_3_3_innerHTML() {
+                //sNom,sNom2,sNom3 en string
                 sNom = "";
                 sNom2 = "";
                 sNom3 = "";
+                //Début
+                //Ecrire "entrez 3 noms" 
+                //ecrire"donnez le nom n°1 
+                //ecrire "donnez le nom n°2 
+                //ecrire"donnez le nom n°3 
+                //lire sNom,sNom2,sNom3
                 sNom = document.getElementById("sNom").value;
                 sNom2 = document.getElementById("sNom2").value;
                 sNom3 = document.getElementById("sNom3").value;
+                //Si sNom < sNom2 ET sNom2 < sNom3 Alors 
                 if (sNom < sNom2 && sNom2 < sNom3) {
+                    //Ecrire "Ces noms sont classés alphabétiquement"
                     document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML  Ces noms sont classés alphabétiquement !";
                 }
+                //Sinon 
+                //Ecrire "Ces noms ne sont pas classés" 
                 else {
                     document.getElementById("div_resultat_js").innerHTML = "Désolé innerHTML Ces noms ne sont pas classés";
-                }
-            }
+                }//FinSi
+            }//Fin
+
             function Exo_3_3_jquery() {
+                 //sNom,sNom2,sNom3 en string
                 sNom = "";
                 sNom2 = "";
                 sNom3 = "";
+                 //Début
+                //Ecrire "entrez 3 noms" 
+                //ecrire"donnez le nom n°1 
+                //ecrire "donnez le nom n°2 
+                //ecrire"donnez le nom n°3 
+                //lire sNom,sNom2,sNom3
                 sNom = $("#sNom").val();
                 sNom2 = $("#sNom2").val();
                 sNom3 = $("#sNom3").val();
+                 //Si sNom < sNom2 ET sNom2 < sNom3 Alors 
                 if (sNom < sNom2 && sNom2 < sNom3) {
                     $("#div_resultat_js").html("Bravo jquery  Ces noms sont classés alphabétiquement !");
                 }
+                 //Sinon 
+                //Ecrire "Ces noms ne sont pas classés" 
                 else {
                     $("#div_resultat_js").html("Désolé jquery Ces noms ne sont pas classés");
-                }
-            }
+                }//FinSi
+            }//Fin
         </script>
         <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
@@ -90,8 +123,9 @@
                                     ecrire "donnez le nom n°2 )"<br />
                                     ecrire"donnez le nom n°3 )"<br />
                                     lire sNom,sNom2,sNom3<br />
-                                    Si sNom < sNom2 ET sNom2 < sNom3 Alors<br/>
-                                     Ecrire "Ces noms sont classés alphabétiquement"<br />
+                                    Si sNom
+                                    < sNom2 ET sNom2 < sNom3 Alors<br />
+                                    Ecrire "Ces noms sont classés alphabétiquement"<br />
                                     Sinon Ecrire "Ces noms ne sont pas classés" <br />
                                     Finsi <br />
                                     Fin <br />
@@ -151,19 +185,30 @@
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
                                         function Exo_3_3_innerHTML() {
+                                            //sNom,sNom2,sNom3 en string
                                             sNom = "";
                                             sNom2 = "";
                                             sNom3 = "";
-                                            sNom = document.getElementById("iNom").value;
-                                            sNom2 = document.getElementById("iNom2").value;
-                                            sNom3 = document.getElementById("iNom3").value;
+                                            //Début
+                                            //Ecrire "entrez 3 noms" 
+                                            //ecrire"donnez le nom n°1 
+                                            //ecrire "donnez le nom n°2 
+                                            //ecrire"donnez le nom n°3 
+                                            //lire sNom,sNom2,sNom3
+                                            sNom = document.getElementById("sNom").value;
+                                            sNom2 = document.getElementById("sNom2").value;
+                                            sNom3 = document.getElementById("sNom3").value;
+                                            //Si sNom < sNom2 ET sNom2 < sNom3 Alors 
                                             if (sNom < sNom2 && sNom2 < sNom3) {
+                                                //Ecrire "Ces noms sont classés alphabétiquement"
                                                 document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML  Ces noms sont classés alphabétiquement !";
                                             }
+                                            //Sinon 
+                                            //Ecrire "Ces noms ne sont pas classés" 
                                             else {
                                                 document.getElementById("div_resultat_js").innerHTML = "Désolé innerHTML Ces noms ne sont pas classés";
-                                            }
-                                        }
+                                            }//FinSi
+                                        }//Fin
                                                     </code>
                                  </pre>
                                 </div>
@@ -187,19 +232,29 @@
                                     JQUERY
                                     <code data-language="javascript"> 
                                         function Exo_3_3_jquery() {
-                                            sNom = "";
-                                            sNom2 = "";
-                                            sNom3 = "";
-                                            sNom = $("#iNom").val();
-                                            sNom2 = $("#iNom2").val();
-                                            sNom3 = $("#iNom3").val();
-                                            if (sNom < sNom2 && sNom2 < sNom3) {
-                                                $("#div_resultat_js").html("Bravo innerHTML  Ces noms sont classés alphabétiquement !");
-                                            }
-                                            else {
-                                                $("#div_resultat_js").html("Désolé innerHTML Ces noms ne sont pas classés");
-                                            }
-                                        }
+                                            //sNom,sNom2,sNom3 en string
+                                           sNom = "";
+                                           sNom2 = "";
+                                           sNom3 = "";
+                                            //Début
+                                           //Ecrire "entrez 3 noms" 
+                                           //ecrire"donnez le nom n°1 
+                                           //ecrire "donnez le nom n°2 
+                                           //ecrire"donnez le nom n°3 
+                                           //lire sNom,sNom2,sNom3
+                                           sNom = $("#sNom").val();
+                                           sNom2 = $("#sNom2").val();
+                                           sNom3 = $("#sNom3").val();
+                                            //Si sNom < sNom2 ET sNom2 < sNom3 Alors 
+                                           if (sNom < sNom2 && sNom2 < sNom3) {
+                                               $("#div_resultat_js").html("Bravo jquery  Ces noms sont classés alphabétiquement !");
+                                           }
+                                            //Sinon 
+                                           //Ecrire "Ces noms ne sont pas classés" 
+                                           else {
+                                               $("#div_resultat_js").html("Désolé jquery Ces noms ne sont pas classés");
+                                           }//FinSi
+                                       }//Fin
 
                                     </code>
                                  </pre>
@@ -224,17 +279,29 @@
                                         PHP
                                     <code data-language="php"> 
                                         $sMessage= "";
-
-                                        $sNom = $_POST["sNom"];
-                                        $sNom2 = $_POST["sNom2"];
-                                        $sNom3 = $_POST["sNom3"];
-                                        if ($sNom < $sNom2 && $sNom2 < $sNom3) {
-                                            $sMessage= "Bravo PHP Ces noms sont classés alphabétiquement !";
-                                        }
-                                        else {
-                                            $sMessage= "Désolé PHP Ces noms ne sont pas classés !";
-                                        }
-                                    }
+                                        if ((isset($_POST["sNom"])) && (!(empty($_POST["sNom"]))))
+                                                {
+                                                      //sNom,sNom2,sNom3 en string
+                                                       //Début
+                                                    //Ecrire "entrez 3 noms" 
+                                                    //ecrire"donnez le nom n°1 
+                                                    //ecrire "donnez le nom n°2 
+                                                    //ecrire"donnez le nom n°3 
+                                                    //lire sNom,sNom2,sNom3
+                                                    $sNom = $_POST["sNom"];
+                                                    $sNom2 = $_POST["sNom2"];
+                                                    $sNom3 = $_POST["sNom3"];
+                                                     //Si sNom < sNom2 ET sNom2 < sNom3 Alors 
+                                                    if (($sNom < $sNom2) && ($sNom2 < $sNom3)) {
+                                                        $sMessage= "Bravo PHP Ces noms sont classés alphabétiquement !";
+                                                    }
+                                                     //Sinon 
+                                                    //Ecrire "Ces noms ne sont pas classés" 
+                                                    else {
+                                                        $sMessage= "Désolé PHP Ces noms ne sont pas classés !";
+                                                    }//FinSi
+                                                }//Fin
+                                            
                                     </code>
                                  </pre>
                                 </div>

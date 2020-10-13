@@ -174,15 +174,28 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                        nombre1 = 0;
-                                        nombre2 = 0;
-                                        console.log(nombre1 = prompt("donnez un nombre n°1:"));
-                                        console.log(nombre2 = prompt("donnez un nombre n°2:"));
-                                        if (nombre1 && nombre2 > 0 ) {
-                                            alert("les nombres sont positif")
-                                        }
-                                        else if (nombre1 && nombre2 < 0) {
-                                            alert("le nombre est negatif");
+                                        function Exo_3_2_innerHTML() {
+                                            // DEBUT
+                                            //nombre en numerique
+                                            //nombre2 en numerique
+                                            var iNombre;
+                                            var iNombre2;
+                                            //DEBUT
+                                            // ecrire nombre1="donnez un nombre n°1 
+                                            // ecrire nombre2="donnez un nombre n°2 
+                                            //lire nombre1 et nombre2
+                                            iNombre = document.getElementById("iNombreUtilisateur").value;
+                                            iNombre2 = document.getElementById("iNombreUtilisateur2").value;
+                                            // Si Nombre est supérieur à 0 alors
+                                            if (iNombre > 0 && iNombre2 > 0) {
+                                                //  Ecrire le Nombre est positif
+                                                document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML le produit est positif !";
+                                            }
+                                            // sinonsi iNombre < 0 alors
+                                            else if(iNombre < 0 && iNombre2 < 0) {
+                                                document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML le produit est negatif !";
+                                            }
+                                            //Fin
                                         }
                                     </code>
                                  </pre>
@@ -206,15 +219,29 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
-
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+                                        function Exo_3_2_jquery() {
+                                            // DEBUT
+                                            //nombre en numerique
+                                            //nombre2 en numerique
+                                            var iNombre;
+                                            var iNombre2;
+                                            //DEBUT
+                                            // ecrire nombre1="donnez un nombre n°1 
+                                            // ecrire nombre2="donnez un nombre n°2 
+                                            //lire nombre1 et nombre2
+                                            iNombre = $("#iNombreUtilisateur").val();
+                                            iNombre2 = $("#iNombreUtilisateur2").val();
+                                            // Si Nombre est supérieur à 0 alors
+                                            if (iNombre > 0 && iNombre2 > 0) {
+                                                //  Ecrire le Nombre est positif
+                                                $("#div_resultat_js").html("Bravo Jquery le produit est positif !");
+                                            }
+                                            // sinonsi iNombre < 0 alors
+                                            else if(iNombre < 0 && iNombre2 < 0) {
+                                                $("#div_resultat_js").html("Bravo Jquery le produit est negatif !");
+                                            }
+                                            //Fin
+                                        }
 
                                     </code>
                                  </pre>

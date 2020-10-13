@@ -54,7 +54,7 @@
             function Exo_4_5_innerHTML() {
                 //age en Numérique
                 // sexe en string
-               var age;
+                var age;
                 var sexe;
                 // début
                 // Ecrire "Entrez votre age de Toon:
@@ -86,35 +86,35 @@
             }//fin
 
             function Exo_4_5_jquery() {
-                 //age en Numérique
+                //age en Numérique
                 // sexe en string
                 var age;
                 var sexe;
-                 // début
+                // début
                 // Ecrire "Entrez votre age de Toon:
                 //lire age
                 age = parseInt($("#iAgeUtilisateur").val());
                 //Ecrire "Entrez votre sexe homme/femme :
                 //lire sexe
                 sexe = String($("#sSexeUtilisateur").val());
-                 // si sexe=="homme" && age inferieur 20 alors
+                // si sexe=="homme" && age inferieur 20 alors
                 if (sexe == "homme" && age < 20) {
-                      //ecrire "Cher Mr Toon, vous n'êtes pas imposable
+                    //ecrire "Cher Mr Toon, vous n'êtes pas imposable
                     $("#div_resultat_js").html("jquery Cher Toon, vous n'êtes pas imposable");
                 }
-                 //sinonsi sexe == "homme" && age > 20 alors
+                //sinonsi sexe == "homme" && age > 20 alors
                 else if (sexe == "homme" && age > 20) {
                     // ecrire "Vous êtes imposable cher Toon,payer!
                     $("#div_resultat_js").html("jquery Vous êtes imposable cher Toon, payer ! ");
                 }
-                  //si (sexe == "femme" && age < 18 || age > 35) 
+                //si (sexe == "femme" && age < 18 || age > 35) 
                 if (sexe == "femme" && age < 18 || age > 35) {
-                     //ecrire "Chère Toone,vous n'êtes pas imposable"
+                    //ecrire "Chère Toone,vous n'êtes pas imposable"
                     $("#div_resultat_js").html("jquery Chère Toone,vous n'êtes pas imposable");
                 }
-                 //sinonsi sexe == "femme" && age > 18 || age < 35
+                //sinonsi sexe == "femme" && age > 18 || age < 35
                 else if (sexe == "femme" && age > 18 || age < 35) {
-                      //ecrire "Vous êtes imposable cher Toone,banquer!
+                    //ecrire "Vous êtes imposable cher Toone,banquer!
                     $("#div_resultat_js").html("jquery Vous êtes imposable cher Toone,banquer!");
                 }//fin sinonsi
             }//fin
@@ -214,7 +214,40 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                       
+                                        function Exo_4_5_innerHTML() {
+                                            //age en Numérique
+                                            // sexe en string
+                                            var age;
+                                            var sexe;
+                                            // début
+                                            // Ecrire "Entrez votre age de Toon:
+                                            //lire age
+                                            age = parseInt(document.getElementById("iAgeUtilisateur").value);
+                                            //Ecrire "Entrez votre sexe homme/femme :
+                                            //lire sexe
+                                            sexe = String(document.getElementById("sSexeUtilisateur").value);
+                                            // si sexe=="homme" && age inferieur 20 alors
+                                            if (sexe == "homme" && age < 20) {
+                                                //ecrire "Cher Mr Toon, vous n'êtes pas imposable
+                                                document.getElementById("div_resultat_js").innerHTML = ("InnerHTML Cher Mr Toon, vous n'êtes pas imposable");
+                                            }
+                                            //sinonsi sexe == "homme" && age > 20 alors
+                                            else if (sexe == "homme" && age > 20) {
+                                                // ecrire "Vous êtes imposable cher Toon,payer!
+                                                document.getElementById("div_resultat_js").innerHTML = ("InnerHTML Vous êtes imposable cher Mr Toon, payer ! ");
+                                            }
+                                            //si (sexe == "femme" && age < 18 || age > 35) 
+                                            if (sexe == "femme" && age < 18 || age > 35) {
+                                                //ecrire "Chère Toone,vous n'êtes pas imposable"
+                                                document.getElementById("div_resultat_js").innerHTML = ("InnerHTML Chère Mme Toone,vous n'êtes pas imposable");
+                                            }
+                                            //sinonsi sexe == "femme" && age > 18 || age < 35
+                                            else if (sexe == "femme" && age > 18 || age < 35) {
+                                                //ecrire "Vous êtes imposable cher Toone,banquer!
+                                                document.getElementById("div_resultat_js").innerHTML = ("InnerHTML Vous êtes imposable cher Toone,banquer!");
+                                            }//fin sinonsi
+                                        }//fin
+                            
                                     </code>
                                  </pre>
                                 </div>
@@ -237,15 +270,40 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
-
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+                                    
+            function Exo_4_5_jquery() {
+                //age en Numérique
+               // sexe en string
+               var age;
+               var sexe;
+                // début
+               // Ecrire "Entrez votre age de Toon:
+               //lire age
+               age = parseInt($("#iAgeUtilisateur").val());
+               //Ecrire "Entrez votre sexe homme/femme :
+               //lire sexe
+               sexe = String($("#sSexeUtilisateur").val());
+                // si sexe=="homme" && age inferieur 20 alors
+               if (sexe == "homme" && age < 20) {
+                     //ecrire "Cher Mr Toon, vous n'êtes pas imposable
+                   $("#div_resultat_js").html("jquery Cher Toon, vous n'êtes pas imposable");
+               }
+                //sinonsi sexe == "homme" && age > 20 alors
+               else if (sexe == "homme" && age > 20) {
+                   // ecrire "Vous êtes imposable cher Toon,payer!
+                   $("#div_resultat_js").html("jquery Vous êtes imposable cher Toon, payer ! ");
+               }
+                 //si (sexe == "femme" && age < 18 || age > 35) 
+               if (sexe == "femme" && age < 18 || age > 35) {
+                    //ecrire "Chère Toone,vous n'êtes pas imposable"
+                   $("#div_resultat_js").html("jquery Chère Toone,vous n'êtes pas imposable");
+               }
+                //sinonsi sexe == "femme" && age > 18 || age < 35
+               else if (sexe == "femme" && age > 18 || age < 35) {
+                     //ecrire "Vous êtes imposable cher Toone,banquer!
+                   $("#div_resultat_js").html("jquery Vous êtes imposable cher Toone,banquer!");
+               }//fin sinonsi
+           }//fin
 
                                     </code>
                                  </pre>
@@ -270,8 +328,42 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+                                        $sMessage= "";
+                                        // SI $_POST["iNombreUtilisateur"] EXISTE ET QUE $_POST["iNombreUtilisateur"] N EST PAS VIDE ALORS
+                                        if ((isset($_POST["iAgeUtilisateur"])) && (!(empty($_POST["iAgeUtilisateur"]))))
+                                        {
+                                            //age en Numérique
+                                            // sexe en string
+                                            //inutile php
+                                        
+                                            // début
+                                            // Ecrire "Entrez votre age de Toon:
+                                            //lire age
+                                            $age = $_POST["iAgeUtilisateur"];
+                                             //Ecrire "Entrez votre sexe homme/femme :
+                                            //lire sexe
+                                            $sexe = $_POST["sSexeUtilisateur"];
+                                             // si sexe=="homme" && age inferieur 20 alors
+                                            if ($sexe == "homme" && $age < 20) {
+                                                 //ecrire "Cher Mr Toon, vous n'êtes pas imposable
+                                                $sMessage=("Bravo PHP Cher Toon, vous n'êtes pas imposable");
+                                            }
+                                              //sinonsi sexe == "homme" && age > 20 alors
+                                            else if ($sexe == "homme" && $age > 20) {
+                                                 // ecrire "Vous êtes imposable cher Toon,payer!
+                                                $sMessage=("Bravo PHP Vous êtes imposable cher Toon, payer ! ");
+                                            }
+                                             //si (sexe == "femme" && age < 18 || age > 35) 
+                                            if ($sexe == "femme" && $age < 18 || $age > 35) {
+                                                 //ecrire "Chère Toone,vous n'êtes pas imposable"
+                                            $sMessage = ("Bravo PHP Chère Toone,vous n'êtes pas imposable");
+                                            }
+                                             //sinonsi sexe == "femme" && age > 18 || age < 35
+                                            else if ($sexe == "femme" && $age > 18 || $age < 35) {
+                                                 //ecrire "Vous êtes imposable cher Toone,banquer!
+                                            $sMessage = ("Bravo PHP Vous êtes imposable cher Toone,banquer!");
+                                            }//fin sinonsi
+                                        }//fin
                 
                                     </code>
                                  </pre>

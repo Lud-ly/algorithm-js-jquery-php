@@ -3,5 +3,5 @@
                     </div>
                     <div class="myCodeRight">
                        
-                        <img src="../img/Yuki.gif">
+                        <img src="../img/algorithme.jpg"height="120px">
                     </div>

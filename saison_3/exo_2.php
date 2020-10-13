@@ -3,6 +3,8 @@
 	// VARIABLE iNombreUtilisateur en NUMERIQUE
 	// VARIABLE iNombreUtilisateur2 en NUMERIQUE
 	// Inutile
+	if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
+			{
 	//DEBUT
 	// ecrire nombre1="donnez un nombre n°1 
 	// ecrire nombre2="donnez un nombre n°2 
@@ -20,7 +22,7 @@
 			$sMessage= "Bravo PHP le Nombre est negatif !";
 	}
 	//Fin	
-
+			}
 	
 	require "exo_2.html";
 

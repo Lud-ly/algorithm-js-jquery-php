@@ -18,7 +18,7 @@ if ((isset($_POST["iJourDate"])) && (!(empty($_POST["iJourDate"]))))
 	//Si Mois < 1 ou Mois > 12 Alors
 	if ($iMois < 1 || $iMois > 12) {
 		//Ecrire "Date Invalide"
-	$sMessage = ("innerHTML Date invalide");
+	$sMessage = ("PHP Date invalide");
 	}
 	//SinonSi Mois = 2 Alors
 	else if ($iMois == 2) {
@@ -27,12 +27,12 @@ if ((isset($_POST["iJourDate"])) && (!(empty($_POST["iJourDate"]))))
 			//Si Jour < 1 ou Jour > 29 Alors
 			if ($iJour < 1 || $iJour > 29) {
 				//Ecrire "Date Invalide"
-				$sMessage = ("innerHTML Date invalide");
+				$sMessage = ("PHP Date invalide");
 			}
 			//sinon
 			else {
 				//Ecrire "Date Valide"
-				$sMessage = ("innerHTML Date valide");
+				$sMessage = ("PHP Date valide");
 			}
 		}//finsi
 		//SinonSi Année dp 100 Alors
@@ -40,33 +40,33 @@ if ((isset($_POST["iJourDate"])) && (!(empty($_POST["iJourDate"]))))
 			//Si Jour < 1 ou Jour > 28 Alors
 			if ($iJour < 1 || $iJour > 28) {
 				// Ecrire "Date Invalide"
-				$sMessage = ("innerHTML Date invalide");
+				$sMessage = ("PHP Date invalide");
 			}//sinon
 			else {
 				//Ecrire "Date Valide"
-				$sMessage = ("innerHTML Date valide");
+				$sMessage = ("PHP Date valide");
 			}
 		}//finsi
 		//SinonSi Année dp 4 Alors
 		else if ($iAnnée / 4) {
 			//Si Jour < 1 ou Jour > 29Alors
 			if ($iJour < 1 || $iJour > 29) {
-				$sMessage = ("innerHTML Date invalide");
+				$sMessage = ("PHP Date invalide");
 			}//sinon
 			else {
 				//  Ecrire "Date Valide"
-				$sMessage = ("innerHTML Date valide");
+				$sMessage = ("PHP Date valide");
 			}
 		}//finsi
 		else {
 			//Si Jour < 1 ou Jour > 28 Alors
 			if ($iJour < 1 || $iJour > 28) {
 				//Ecrire "Date Invalide"
-				$sMessage = ("innerHTML Date invalide");
+				$sMessage = ("PHP Date invalide");
 			}
 			else {
 				//Ecrire "Date Valide"
-				$sMessage = ("innerHTML Date valide");
+				$sMessage = ("PHP Date valide");
 			}
 		}
 	}//finsi
@@ -75,11 +75,11 @@ if ((isset($_POST["iJourDate"])) && (!(empty($_POST["iJourDate"]))))
 		//Si Jour < 1 ou Jour > 30 Alors
 		if ($iJour < 1 || $iJour > 30) {
 			//Ecrire "Date Invalide"
-			$sMessage = ("innerHTML Date invalide");
+			$sMessage = ("PHP Date invalide");
 		}
 		else {
 			//Ecrire "Date Valide"
-			$sMessage = ("innerHTML Date valide");
+			$sMessage = ("PHP Date valide");
 		}
 
 	}//sinon
@@ -87,11 +87,11 @@ if ((isset($_POST["iJourDate"])) && (!(empty($_POST["iJourDate"]))))
 		//Si Jour < 1 ou Jour > 31 Alors
 		if ($iJour < 1 || $iJour > 31) {
 			//Ecrire "Date Invalide"
-			$sMessage = ("innerHTML Date invalide");
+			$sMessage = ("PHP Date invalide");
 		}
 		else {
 			// Ecrire "Date Valide"
-			$sMessage = ("innerHTML Date valide");
+			$sMessage = ("PHP Date valide");
 		}//finsi
 	}//finsi
 }
