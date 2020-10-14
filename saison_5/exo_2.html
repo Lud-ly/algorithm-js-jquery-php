@@ -18,6 +18,44 @@
         </header>
 
         <script type="text/javascript">
+         // ALGORITHME Exo_5_2b_prompt
+         function Exo_5_2b() {
+                // DEBUT
+                // VARIABLE iNombreHasard, iRepUtilisateur, iNombreCoup en NUMERIQUE
+                var iRepUtilisateur;
+
+                // ECRIRE "Trouvez le nombre mystère, compris entre 1 et 100"
+                // LIRE iRepUtilisateur
+                iRepUtilisateur = parseInt(prompt("Trouvez le nombre mystère, compris entre 1 et 100"));
+
+                // TANT QUE iRepUtilisateur != iNombreHasard
+                iNombreCoup++;
+                if (iRepUtilisateur != iNombreHasard) {
+                    // SI (iRepUtilisateur < iNombreHasard) ALORS
+                    if (iRepUtilisateur < iNombreHasard) {
+                        // ECRIRE "Plus grand, essayez à nouveau :"
+                        // LIRE iRepUtilisateur
+                        document.getElementById("div_resultat_js").innerHTML = ("Plus grand, essayez à nouveau.");
+                    }
+                    else {
+                        // SINON
+                        // ECRIRE "Plus petit, essayez à nouveau :"
+                        // LIRE iRepUtilisateur
+                        document.getElementById("div_resultat_js").innerHTML = ("Plus petit, essayez à nouveau.");
+                    }
+                    // FINSI
+                }
+                else {
+                    // ECRIRE "Bravo, vous avez trouvé en " + iNombreCoup + " coup(s)."
+                    document.getElementById("div_resultat_js").innerHTML("Bravo, vous avez trouvé en " + iNombreCoup + " coup(s).");
+                }
+                // FINTANTQUE
+
+                document.getElementById("iNombreCoup").value=iNombreCoup;
+                document.getElementById("iNombreHasard").value=iNombreHasard;
+                // FIN	
+            }
+
             var iNombreCoup = 0;
             var iNombreHasard = Math.floor(Math.random() * 100 + 1);
 
@@ -38,19 +76,19 @@
                     if (iRepUtilisateur < iNombreHasard) {
                         // ECRIRE "Plus grand, essayez à nouveau :"
                         // LIRE iRepUtilisateur
-                        document.getElementById("div_resultat_js").innerHTML = "Plus grand, essayez à nouveau.";
+                        document.getElementById("div_resultat_js").innerHTML = "Plus grand innerHTML, essayez à nouveau.";
                     }
                     else {
                         // SINON
                         // ECRIRE "Plus petit, essayez à nouveau :"
                         // LIRE iRepUtilisateur
-                        document.getElementById("div_resultat_js").innerHTML = "Plus petit, essayez à nouveau.";
+                        document.getElementById("div_resultat_js").innerHTML = "Plus petit innerHTML, essayez à nouveau.";
                     }
                     // FINSI
                 }
                 else {
                     // ECRIRE "Bravo, vous avez trouvé en " + iNombreCoup + " coup(s)."
-                    document.getElementById("div_resultat_js").innerHTML = "Bravo, vous avez trouvé en " + iNombreCoup + " coup(s).";
+                    document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML, vous avez trouvé en " + iNombreCoup + " coup(s).";
                 }
                 // FINTANTQUE
 
@@ -59,7 +97,7 @@
                 // FIN	
             }
 
-            // ALGORITHME Exo_5_2b_innerHTML
+            // ALGORITHME Exo_5_2b_jquery
             function Exo_5_2b_jquery() {
                 // DEBUT
                 // VARIABLE iNombreHasard, iRepUtilisateur, iNombreCoup en NUMERIQUE
@@ -76,56 +114,19 @@
                     if (iRepUtilisateur < iNombreHasard) {
                         // ECRIRE "Plus grand, essayez à nouveau :"
                         // LIRE iRepUtilisateur
-                        $("#div_resultat_js").html("Plus grand, essayez à nouveau.");
+                        $("#div_resultat_js").html("Plus grand JQUERY , essayez à nouveau.");
                     }
                     else {
                         // SINON
                         // ECRIRE "Plus petit, essayez à nouveau :"
                         // LIRE iRepUtilisateur
-                        $("#div_resultat_js").html("Plus petit, essayez à nouveau.");
+                        $("#div_resultat_js").html("Plus petit JQUERY, essayez à nouveau.");
                     }
                     // FINSI
                 }
                 else {
                     // ECRIRE "Bravo, vous avez trouvé en " + iNombreCoup + " coup(s)."
-                    $("#div_resultat_js").html("Bravo, vous avez trouvé en " + iNombreCoup + " coup(s).");
-                }
-                // FINTANTQUE
-
-                $("#iNombreCoup").val(iNombreCoup);
-                $("#iNombreHasard").val(iNombreHasard);
-                // FIN	
-            }
-            // ALGORITHME Exo_5_2b_innerHTML
-            function Exo_5_2b_jquery() {
-                // DEBUT
-                // VARIABLE iNombreHasard, iRepUtilisateur, iNombreCoup en NUMERIQUE
-                var iRepUtilisateur;
-
-                // ECRIRE "Trouvez le nombre mystère, compris entre 1 et 100"
-                // LIRE iRepUtilisateur
-                iRepUtilisateur = $("#iRepUtilisateur").val();
-
-                // TANT QUE iRepUtilisateur != iNombreHasard
-                iNombreCoup++;
-                if (iRepUtilisateur != iNombreHasard) {
-                    // SI (iRepUtilisateur < iNombreHasard) ALORS
-                    if (iRepUtilisateur < iNombreHasard) {
-                        // ECRIRE "Plus grand, essayez à nouveau :"
-                        // LIRE iRepUtilisateur
-                        $("#div_resultat_js").html("Plus grand, essayez à nouveau.");
-                    }
-                    else {
-                        // SINON
-                        // ECRIRE "Plus petit, essayez à nouveau :"
-                        // LIRE iRepUtilisateur
-                        $("#div_resultat_js").html("Plus petit, essayez à nouveau.");
-                    }
-                    // FINSI
-                }
-                else {
-                    // ECRIRE "Bravo, vous avez trouvé en " + iNombreCoup + " coup(s)."
-                    $("#div_resultat_js").html("Bravo, vous avez trouvé en " + iNombreCoup + " coup(s).");
+                    $("#div_resultat_js").html("Bravo JQUERY, vous avez trouvé en " + iNombreCoup + " coup(s).");
                 }
                 // FINTANTQUE
 
@@ -177,7 +178,12 @@
                             </div>
                             <div id="txt_javascript">
                                 <div id="div_resultat_js"></div>
-                                <form action="exo_5_2b.php" method="POST">
+                                <div>
+                                    <div id="div_resultat_php">
+                                        <h3><?php echo $sMessage; ?></h3>
+                                    </div>
+                                </div>
+                                <form action="exo_2.php" method="POST">
                                     <div>
                                     <h3>Trouvez le nombre mystère :</h3>
                                         <label for="iRepUtilisateur">Compris entre 1 et 100 
@@ -200,6 +206,7 @@
                                     </div>
                                 </form>
                                 <div class="language">
+                                    <button class="btn_green" onClick="Exo_5_2b()">JS WITH PROMPT</button>
                                     <button class="btn_green" onClick="Exo_5_2b_innerHTML()"> JS WITH INNERHTML</button>
                                     <button class="btn_green" onClick="Exo_5_2b_jquery()">JQUERY !</button>
                                 </div>
@@ -222,48 +229,48 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                        // ALGORITHME Exo_5_2b_innerHTML
-                                        function Exo_5_2b_innerHTML()
-                                        {
-                                        // DEBUT
-                                            // VARIABLE iNombreHasard, iRepUtilisateur, iNombreCoup en NUMERIQUE
-                                            var iRepUtilisateur;
-                                            
-                                            // ECRIRE "Trouvez le nombre mystère, compris entre 1 et 100"
-                                            // LIRE iRepUtilisateur
-                                            iRepUtilisateur= document.getElementById("iRepUtilisateur").value;
-                                            
-                                            // TANT QUE iRepUtilisateur != iNombreHasard
-                                            iNombreCoup++;
-                                            if (iRepUtilisateur != iNombreHasard)
-                                            {
-                                                // SI (iRepUtilisateur < iNombreHasard) ALORS
-                                                if (iRepUtilisateur < iNombreHasard)
-                                                {
-                                                    // ECRIRE "Plus grand, essayez à nouveau :"
-                                                    // LIRE iRepUtilisateur
-                                                    document.getElementById("div_resultat_js").innerHTML= "Plus grand, essayez à nouveau.";
-                                                }
-                                                else
-                                                {
-                                                // SINON
-                                                    // ECRIRE "Plus petit, essayez à nouveau :"
-                                                    // LIRE iRepUtilisateur
-                                                    document.getElementById("div_resultat_js").innerHTML= "Plus petit, essayez à nouveau.";
-                                                }
-                                                // FINSI
-                                            }
-                                            else
-                                            {
-                                                // ECRIRE "Bravo, vous avez trouvé en " + iNombreCoup + " coup(s)."
-                                                document.getElementById("div_resultat_js").innerHTML= "Bravo, vous avez trouvé en " + iNombreCoup + " coup(s).";
-                                            }
-                                            // FINTANTQUE
-                                            
-                                            document.getElementById("iNombreCoup").value= iNombreCoup;
-                                            document.getElementById("iNombreHasard").value= iNombreHasard;
-                                        // FIN	
-                                        }
+        // ALGORITHME Exo_5_2b_innerHTML
+        function Exo_5_2b_innerHTML()
+        {
+        // DEBUT
+            // VARIABLE iNombreHasard, iRepUtilisateur, iNombreCoup en NUMERIQUE
+            var iRepUtilisateur;
+            
+            // ECRIRE "Trouvez le nombre mystère, compris entre 1 et 100"
+            // LIRE iRepUtilisateur
+            iRepUtilisateur= document.getElementById("iRepUtilisateur").value;
+            
+            // TANT QUE iRepUtilisateur != iNombreHasard
+            iNombreCoup++;
+            if (iRepUtilisateur != iNombreHasard)
+            {
+                // SI (iRepUtilisateur < iNombreHasard) ALORS
+                if (iRepUtilisateur < iNombreHasard)
+                {
+                    // ECRIRE "Plus grand, essayez à nouveau :"
+                    // LIRE iRepUtilisateur
+                    document.getElementById("div_resultat_js").innerHTML= "Plus grand, essayez à nouveau.";
+                }
+                else
+                {
+                // SINON
+                    // ECRIRE "Plus petit, essayez à nouveau :"
+                    // LIRE iRepUtilisateur
+                    document.getElementById("div_resultat_js").innerHTML= "Plus petit, essayez à nouveau.";
+                }
+                // FINSI
+            }
+            else
+            {
+                // ECRIRE "Bravo, vous avez trouvé en " + iNombreCoup + " coup(s)."
+                document.getElementById("div_resultat_js").innerHTML= "Bravo, vous avez trouvé en " + iNombreCoup + " coup(s).";
+            }
+            // FINTANTQUE
+            
+            document.getElementById("iNombreCoup").value= iNombreCoup;
+            document.getElementById("iNombreHasard").value= iNombreHasard;
+        // FIN	
+        }
                                     </code>
                                  </pre>
                                 </div>
@@ -286,47 +293,47 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                        function Exo_5_2b_jquery()
-                                        {
-                                        // DEBUT
-                                            // VARIABLE iNombreHasard, iRepUtilisateur, iNombreCoup en NUMERIQUE
-                                            var iRepUtilisateur;
-                                            
-                                            // ECRIRE "Trouvez le nombre mystère, compris entre 1 et 100"
-                                            // LIRE iRepUtilisateur
-                                            iRepUtilisateur= $("#iRepUtilisateur").val();
-                                            
-                                            // TANT QUE iRepUtilisateur != iNombreHasard
-                                            iNombreCoup++;
-                                            if (iRepUtilisateur != iNombreHasard)
-                                            {
-                                                // SI (iRepUtilisateur < iNombreHasard) ALORS
-                                                if (iRepUtilisateur < iNombreHasard)
-                                                {
-                                                    // ECRIRE "Plus grand, essayez à nouveau :"
-                                                    // LIRE iRepUtilisateur
-                                                    $("#div_resultat_js").html("Plus grand, essayez à nouveau.");
-                                                }
-                                                else
-                                                {
-                                                // SINON
-                                                    // ECRIRE "Plus petit, essayez à nouveau :"
-                                                    // LIRE iRepUtilisateur
-                                                    $("#div_resultat_js").html("Plus petit, essayez à nouveau.");
-                                                }
-                                                // FINSI
-                                            }
-                                            else
-                                            {
-                                                // ECRIRE "Bravo, vous avez trouvé en " + iNombreCoup + " coup(s)."
-                                                $("#div_resultat_js").html("Bravo, vous avez trouvé en " + iNombreCoup + " coup(s).");
-                                            }
-                                            // FINTANTQUE
-                                            
-                                            $("#iNombreCoup").val(iNombreCoup);
-                                            $("#iNombreHasard").val(iNombreHasard);
-                                        // FIN	
-                                        }
+    function Exo_5_2b_jquery()
+    {
+    // DEBUT
+        // VARIABLE iNombreHasard, iRepUtilisateur, iNombreCoup en NUMERIQUE
+        var iRepUtilisateur;
+        
+        // ECRIRE "Trouvez le nombre mystère, compris entre 1 et 100"
+        // LIRE iRepUtilisateur
+        iRepUtilisateur= $("#iRepUtilisateur").val();
+        
+        // TANT QUE iRepUtilisateur != iNombreHasard
+        iNombreCoup++;
+        if (iRepUtilisateur != iNombreHasard)
+        {
+            // SI (iRepUtilisateur < iNombreHasard) ALORS
+            if (iRepUtilisateur < iNombreHasard)
+            {
+                // ECRIRE "Plus grand, essayez à nouveau :"
+                // LIRE iRepUtilisateur
+                $("#div_resultat_js").html("Plus grand, essayez à nouveau.");
+            }
+            else
+            {
+            // SINON
+                // ECRIRE "Plus petit, essayez à nouveau :"
+                // LIRE iRepUtilisateur
+                $("#div_resultat_js").html("Plus petit, essayez à nouveau.");
+            }
+            // FINSI
+        }
+        else
+        {
+            // ECRIRE "Bravo, vous avez trouvé en " + iNombreCoup + " coup(s)."
+            $("#div_resultat_js").html("Bravo, vous avez trouvé en " + iNombreCoup + " coup(s).");
+        }
+        // FINTANTQUE
+        
+        $("#iNombreCoup").val(iNombreCoup);
+        $("#iNombreHasard").val(iNombreHasard);
+    // FIN	
+    }
 
                                     </code>
                                  </pre>
@@ -351,8 +358,53 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+        $sMessage= "";
+
+        // SI $_POST["iRepUtilisateur"] EXISTE ET QUE $_POST["iRepUtilisateur"] N EST PAS VIDE ALORS
+        if ((isset($_POST["iRepUtilisateur"])) && (!(empty($_POST["iRepUtilisateur"]))))
+        {
+                // VARIABLE iNombreHasard, iRepUtilisateur, iNombreCoup en NUMERIQUE
+                // var iRepUtilisateur;
+                
+                // ECRIRE "Trouvez le nombre mystère, compris entre 1 et 100"
+                // LIRE iRepUtilisateur
+                $iRepUtilisateur= $_POST["iRepUtilisateur"];
+                
+                // TANT QUE iRepUtilisateur != iNombreHasard
+                $iNombreCoup= $_POST["iNombreCoup"];
+                $iNombreHasard= $_POST["iNombreHasard"];
+        
+                $iNombreCoup++;
+                if ($iRepUtilisateur != $iNombreHasard)
+                {
+                    // SI (iRepUtilisateur < iNombreHasard) ALORS
+                    if ($iRepUtilisateur < $iNombreHasard)
+                    {
+                        // ECRIRE "Plus grand, essayez à nouveau :"
+                        // LIRE iRepUtilisateur
+                        $sMessage= "Plus grand, essayez à nouveau.";
+                    }
+                    else
+                    {
+                    // SINON
+                        // ECRIRE "Plus petit, essayez à nouveau :"
+                        // LIRE iRepUtilisateur
+                        $sMessage= "Plus petit, essayez à nouveau.";
+                    }
+                    // FINSI
+                }
+                else
+                {
+                    // ECRIRE "Bravo, vous avez trouvé en " + iNombreCoup + " coup(s)."
+                    $sMessage= "Bravo, vous avez trouvé en " . $iNombreCoup . " coup(s).";
+                }
+                // FINTANTQUE
+                
+        }  else  {
+            $iNombreCoup= 0;
+            $iNombreHasard= rand(1, 100);
+        }
+                                        
                 
                                     </code>
                                  </pre>

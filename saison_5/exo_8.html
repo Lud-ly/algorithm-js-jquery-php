@@ -8,15 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -30,33 +30,49 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 5.8</h4>
-                                <p>a) Ecrire un algorithme qui demande successivement 20 nombres à l’utilisateur, et qui lui dise ensuite quel était le
+                                <p>a) Ecrire un algorithme qui demande successivement 20 nombres à l’utilisateur, et qui
+                                    lui dise ensuite quel était le
                                     plus grand parmi ces 20 nombres :
                                     Entrez le nombre numéro 1 : 12
                                     Entrez le nombre numéro 2 : 14
                                     etc.
                                     Entrez le nombre numéro 20 : 6
                                     Le plus grand de ces nombres est : 14
-                                    b) Modifiez ensuite l’algorithme pour que le programme affiche de surcroît en quelle position avait été saisie ce
+                                    b) Modifiez ensuite l’algorithme pour que le programme affiche de surcroît en quelle
+                                    position avait été saisie ce
                                     nombre : C’était le nombre numéro 2
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
-                                </div>
+                                <h4>Pseudocode:</h4>
+                                <p>
+                                    Variables iNombre, i, iNombrePGrand, IDNombrePG en Entier
+                                    Debut
+                                    iNombrePG ← 0
+                                    Pour i ← 1 à 20
+                                    Ecrire "Entrez un nombre : "
+                                    Lire iNombre
+                                    Si i = 1 ou iNombre > iNombrePG Alors
+                                    iNombrePG ← iNombre
+                                    IDNombrePG ← i
+                                    FinSi
+                                    i Suivant
+                                    Ecrire "Le nombre le plus grand était : ", iNombrePG
+                                    Ecrire "Il a été saisi en position numéro ", IDNombrePG
+                                    Fin
+                                </p>
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -78,15 +94,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -137,7 +152,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

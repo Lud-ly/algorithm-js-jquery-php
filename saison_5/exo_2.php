@@ -24,21 +24,21 @@ if ((isset($_POST["iRepUtilisateur"])) && (!(empty($_POST["iRepUtilisateur"]))))
 			{
 				// ECRIRE "Plus grand, essayez à nouveau :"
 				// LIRE iRepUtilisateur
-				$sMessage= "Plus grand, essayez à nouveau.";
+				$sMessage= "PHP Plus grand, essayez à nouveau.";
 			}
 			else
 			{
 			// SINON
 				// ECRIRE "Plus petit, essayez à nouveau :"
 				// LIRE iRepUtilisateur
-				$sMessage= "Plus petit, essayez à nouveau.";
+				$sMessage= "PHP Plus petit, essayez à nouveau.";
 			}
 			// FINSI
 		}
 		else
 		{
 			// ECRIRE "Bravo, vous avez trouvé en " + iNombreCoup + " coup(s)."
-			$sMessage= "Bravo, vous avez trouvé en " . $iNombreCoup . " coup(s).";
+			$sMessage= "Bravo PHP, vous avez trouvé en " . $iNombreCoup . " coup(s).";
 		}
 		// FINTANTQUE
 		

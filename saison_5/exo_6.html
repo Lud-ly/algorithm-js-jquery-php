@@ -8,15 +8,81 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_5_6() {
+                //Variables iNombre, i, Somme en Entier
+                var iNombre;
+                var i;
+                var iSomme;
+                // Debut
+                //Ecrire "Entrez un nombre : "
+                //Lire iNombre
+                iNombre = parseInt(prompt("Entrez un nombre : "));
+                //Somme = 0
+                iSomme = 0;
+                //Pour i = 1 à iNombre
+                for (i = 0; i <= iNombre; i++) {
+                    // iSomme ← iSomme + i
+                    iSomme = iSomme + i;
+                }//fin pour
+                //Ecrire "La somme est : ", Somme
+                alert("La somme est : " + iSomme);
+            }//fin
+
+            function Exo_5_6_innerHTML() {
+                //Variables iNombre, i, Somme en Entier
+                var iNombre;
+                var i;
+                var iSomme;
+                // Debut
+                //Ecrire "Entrez un nombre : "
+                //Lire iNombre
+                iNombre = parseInt(document.getElementById("iNombreUtilisateur").value);
+                //Somme = 0
+                iSomme = 0;
+                //Pour i = 1 à iNombre
+                for (i = 0; i <= iNombre; i++) {
+                    // iSomme ← iSomme + i
+                    iSomme = iSomme + i;
+                }//fin pour
+                //Ecrire "La somme est : ", Somme
+                document.getElementById("div_resultat_js").innerHTML = ("innerHTML La somme est : " + iSomme);
+            }//fin
+
+            function Exo_5_6_jquery() {
+                //Variables iNombre, i, Somme en Entier
+                var iNombre;
+                var i;
+                var iSomme;
+                // Debut
+                //Ecrire "Entrez un nombre : "
+                //Lire iNombre
+                iNombre = parseInt($("#iNombreUtilisateur").val());
+                //Somme = 0
+                iSomme = 0;
+                //Pour i = 1 à iNombre
+                for (i = 0; i <= iNombre; i++) {
+                    // iSomme ← iSomme + i
+                    iSomme = iSomme + i;
+                }//fin pour
+                //Ecrire "La somme est : ", Somme
+                $("#div_resultat_js").html("En jquery La somme est : " + iSomme);
+            }//fin
+
+
+
+
+
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -30,40 +96,95 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 5.6</h4>
-                                <p>Ecrire un algorithme qui demande un nombre de départ, et qui calcule la somme des entiers jusqu’à ce nombre. Par
+                                <p>Ecrire un algorithme qui demande un nombre de départ, et qui calcule la somme des
+                                    entiers jusqu’à ce nombre. Par
                                     exemple, si l’on entre 5, le programme doit calculer :
                                     1 + 2 + 3 + 4 + 5 = 15
                                     NB : on souhaite afficher uniquement le résultat, pas la décomposition du calcul.
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
+                                <h4>Pseudocode:</h4>
+                                <p>
+                                    Variables iNombre, i, Somme en Entier<br/>
+                                    Debut<br/>
+                                    Ecrire "Entrez un nombre : <br/>
+                                    Lire iNombre<br/>
+                                    Somme ← 0<br/>
+                                    Pour i ← 1 à iNombre<br/>
+                                    Somme ← Somme + i<br/>
+                                    i Suivant<br/>
+                                    Ecrire "La somme est : ", Somme<br/>
+                                    Fin<br/>
+                                </p>
+                            </div>
+                            <div id="txt_javascript">
+                                <div id="div_resultat_js">
                                 </div>
-                            <div class="card-header" id="headingOne">
+                                <div>
+                                    <div id="div_resultat_php">
+                                        <h3><?php echo $sMessage; ?></h3>
+                                    </div>
+                                </div>
+                                <form action="exo_6.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <div>
+                                            <label for="iNombreUtilisateur">Veuillez saisir un nombre
+                                                :</label>
+                                            <input type="text" name="iNombreUtilisateur" id="iNombreUtilisateur">
+                                        </div>
+                                    </div>
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                </form>
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_5_6()">JS WITH PROMPT</button>
+
+                                    <button class="btn_green" onClick="Exo_5_6_innerHTML()"> JS WITH INNERHTML</button>
+
+                                    <button class="btn_green" onClick="Exo_5_6_jquery()">JQUERY !</button>
+                                </div>
+                            </div>
+                            <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Voir les Codes</p>
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+        function Exo_5_6_innerHTML() {
+            //Variables iNombre, i, Somme en Entier
+            var iNombre;
+            var i;
+            var iSomme;
+            // Debut
+            //Ecrire "Entrez un nombre : "
+            //Lire iNombre
+            iNombre = parseInt(document.getElementById("iNombreUtilisateur").value);
+            //Somme = 0
+            iSomme = 0;
+            //Pour i = 1 à iNombre
+            for (i = 0; i <= iNombre; i++) {
+                // iSomme ← iSomme + i
+                iSomme = iSomme + i;
+            }//fin pour
+            //Ecrire "La somme est : ", Somme
+            document.getElementById("div_resultat_js").innerHTML = ("innerHTML La somme est : " + iSomme);
+        }//fin
                                     </code>
                                  </pre>
                                 </div>
@@ -73,29 +194,39 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
-
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+        function Exo_5_6_jquery() {
+            //Variables iNombre, i, Somme en Entier
+            var iNombre;
+            var i;
+            var iSomme;
+            // Debut
+            //Ecrire "Entrez un nombre : "
+            //Lire iNombre
+            iNombre = parseInt($("#iNombreUtilisateur").val());
+            //Somme = 0
+            iSomme = 0;
+            //Pour i = 1 à iNombre
+            for (i = 0; i <= iNombre; i++) {
+                // iSomme ← iSomme + i
+                iSomme = iSomme + i;
+            }//fin pour
+            //Ecrire "La somme est : ", Somme
+            $("#div_resultat_js").html("En jquery La somme est : " + iSomme);
+        }//fin
+                            
 
                                     </code>
                                  </pre>
@@ -120,8 +251,28 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+                                        $sMessage= "";
+
+	// SI $_POST["iRepUtilisateur"] EXISTE ET QUE $_POST["iRepUtilisateur"] N EST PAS VIDE ALORS
+if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
+{
+		//Variables iNombre, i, Somme en Entier
+		
+		// Debut
+		//Ecrire "Entrez un nombre : "
+		//Lire iNombre
+		$iNombre = $_POST["iNombreUtilisateur"];
+		//Somme = 0
+		$iSomme = 0;
+		//Pour i = 1 à iNombre
+		for ($i = 0; $i <= $iNombre; $i++) {
+			// iSomme ← iSomme + i
+			$iSomme = $iSomme + $i;
+		}//fin pour
+		//Ecrire "La somme est : ", Somme
+		$sMessage  = ("PHP La somme est : " . $iSomme);
+	}//fin
+
                 
                                     </code>
                                  </pre>
@@ -132,7 +283,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

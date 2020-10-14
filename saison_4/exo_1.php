@@ -25,7 +25,7 @@
 		// Tutu ← Tutu + 1
 		$iValeurTutu +=1;
 	}
-	$sMessage= ($iValeurTutu);
+	$sMessage= ("Merci PHP Tutu vaut" . $iValeurTutu);
 	//fin
 	}
 

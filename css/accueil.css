@@ -29,7 +29,7 @@ h3,h4,h5,p{
   margin-bottom: 100px;
 }
   .container-fluid h4{
-    padding: 50px;
+    padding: 30px;
   }
   .container-fluid hr{
     margin-bottom: 50px;
@@ -84,12 +84,12 @@ h3,h4,h5,p{
   .pseudoCode h4{
     text-align: center;
   }
-  .pseudoCode p{
-    text-transform: uppercase;
-  }
   .card-header p{
     text-transform: uppercase;
     text-align: left;
+  }
+  form h3{
+    margin-bottom: 50px;
   }
   .card-body{
   text-align: center;
@@ -98,6 +98,7 @@ h3,h4,h5,p{
     .card-body p{
       margin: 50px;
       font-weight: 400;
+      font-size: 18px;
     }
     #menu-accordeon {
       padding:0;
