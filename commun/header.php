@@ -1,14 +1,13 @@
 <div class="fixed-top">
             <div class="collapse" id="navbarToggleExternalContent">
                 <div class="bg-light p-4">
-                <img src="../img/eloce.jpg" height="80px">
                     <h5 class="text-black h4">Bienvenue</h5>
-                    <button class="btn btn-secondary plus">Python</button>
-                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
+                    <button class="btn btn-success plus">Python</button>
+                    <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top"
                         title="Tooltip on top">
                         Java
                     </button>
-                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
+                    <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top"
                         title="Tooltip on top">
                         Plus
                     </button>
@@ -23,7 +22,7 @@
                 </button>
                
                     <div class="myTitre">
-                    <img src="../img/animated-sl-dribbble.gif"height="60px">
+                    <img src="../img/Testtube.gif"height="60px">
                     </div>
             </nav>
         </div>

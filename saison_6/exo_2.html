@@ -8,15 +8,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_6_2() {
+                var sAphbLatin = ["A", "E", "i", "O", "U", "Y"];
+                var voyelles = [];
+                for (i = 0; i <= 5; i++) {
+                   
+                    voyelles = voyelles + "[ " + sAphbLatin[i] + " ]";
+
+                }
+                alert(" PROMPT " + voyelles);
+                //Fin
+            }
+
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -27,27 +41,37 @@
                 </div>
                 <div class="col-md-8">
                     <div id="accordion">
-                        <div class="card"id="exos">
+                        <div class="card" id="exos">
                             <div class="card-body">
                                 <h4>Exercice 6.2</h4>
-                                <p>Ecrire un algorithme qui déclare et remplisse un tableau contenant les six voyelles de l’alphabet latin.</p>
+                                <p>Ecrire un algorithme qui déclare et remplisse un tableau contenant les six voyelles
+                                    de l’alphabet latin.</p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
-                                </div>
+                                <h4>Pseudocode:</h4>
+                                <p>
+                                    Tableau Truc(5) en Caractère
+                                    Debut
+                                    Truc(0) ← "a"
+                                    Truc(1) ← "e"
+                                    Truc(2) ← "i"
+                                    Truc(3) ← "o"
+                                    Truc(4) ← "u"
+                                    Truc(5) ← "y"
+                                    Fin
+                                </p>
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -69,15 +93,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -128,7 +151,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

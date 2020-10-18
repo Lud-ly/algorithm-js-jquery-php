@@ -19,7 +19,7 @@ if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur
 		$iFacto = $iFacto * $i;
 	}//fin pour
 	//  Ecrire "La factorielle est : ", Facto
-	$sMessage = "PHP La factorielle est : " .  $iFacto;
+	$sMessage = "PHP La factorielle de ". $iNombre . " est : " .  $iFacto;
 }//fin
 	
 	require "exo_7.html";

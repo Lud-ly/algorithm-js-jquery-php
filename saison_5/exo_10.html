@@ -8,15 +8,168 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_5_10() {
+                //Variabes price;montant_verse;bill10E;bill5E;Reste en Numerique
+                var price = 1000;
+                var montant_verse = 0;
+                var bil50E = 0;
+                var bil10E = 0;
+                var bil5E = 0;
+                var reste = 0;
+                //Ecrire "vous nous devez :,price"
+                alert("Vous nous devez :" + price + "€");
+                //Ecrire "SVP Payer la somme dûe :"
+                //Lire Montant_verse
+                montant_verse = (parseFloat(prompt("SVP Payer un accompte de la somme dûe :")));
+                //reste = price- montant_verse
+                reste = price - montant_verse;
+                //Tantque reste est superieur ou egal à 50 alors
+                while (reste >= 50) {
+                    //bil50E = bil50E + 1 et reste = reste - 50
+                    bil50E = bil50E + 1;
+                    reste = reste - 50;
+                }//Fin Tantque
+                //Tantque reste est superieur ou egal à 10 alors
+                while (reste >= 10) {
+                    //bil10E = bil10E + 1 et reste = reste - 10
+                    bil10E = bil10E + 1;
+                    reste = reste - 10;
+                }//Fin Tantque
+                //Tantque reste est superieur ou egal à 5 alors
+                while (reste >= 5) {
+                    //  bil5E += 1 reste = reste - 5
+                    bil5E += 1;
+                    reste = reste - 5;
+                }//Fin Tantque
+                //Ecrire "Retour de la monnaie :"
+                //bil10E + " Billet(s) de 10"
+                //bil5E + " Billet(s) de 5"
+                //reste + " Piece(s) de 1€"
+                alert("Retour de la monnaie :");
+                alert(bil50E + " Billet(s) de 50€");
+                alert(bil10E + " Billet(s) de 10€");
+                alert(bil5E + " Billet(s) de 5€");
+                alert(reste + " Piece(s) de 1€");
+            }//Fin
+
+            function Exo_5_10_innerHTML() {
+                //Variabes price;montant_verse;bill10E;bill5E;Reste en Numerique
+                var price = 1000;
+                var montant_verse = 0;
+                var bil50E = 0;
+                var bil10E = 0;
+                var bil5E = 0;
+                var reste = 0;
+                //Ecrire "vous nous devez :,price"
+                //Ecrire "SVP Payer la somme 1000€ :"
+                //Lire Montant_verse
+                parseFloat(montant_verse = document.getElementById("montant_verse").value);
+                //reste = price- montant_verse
+                reste = price - montant_verse;
+                //Tantque reste est superieur ou egal à 50 alors
+                while (reste >= 50) {
+                    //bil50E = bil50E + 1 et reste = reste - 10
+                    bil50E = bil50E + 1;
+                    reste = reste - 50;
+                }//Fin Tantque
+                //Tantque reste est superieur ou egal à 10 alors
+                while (reste >= 10) {
+                    //bil10E = bil10E + 1 et reste = reste - 10
+                    bil10E = bil10E + 1;
+                    reste = reste - 10;
+                }//Fin Tantque
+                //Tantque reste est superieur ou egal à 5 alors
+                while (reste >= 5) {
+                    //  bil5E += 1 reste = reste - 5
+                    bil5E += 1;
+                    reste = reste - 5;
+                }//Fin Tantque
+                //Ecrire "Retour de la monnaie :"
+                //bil10E + " Billet(s) de 10"
+                //bil5E + " Billet(s) de 5"
+                //reste + " Piece(s) de 1€"
+                document.getElementById("info_resultat").innerHTML = ("innerHTML Retour de la monnaie :");
+                document.getElementById("resteBil50").innerHTML = (bil50E + " Billet(s) de 50€");
+                document.getElementById("resteBil10").innerHTML = (bil10E + " Billet(s) de 10€");
+                document.getElementById("resteBil5").innerHTML = (bil5E + " Billet(s) de 5€");
+                document.getElementById("restePi1").innerHTML = (reste + " Piece(s) de 1€");
+            }//Fin
+
+            function Exo_5_10_jquery() {
+                //Variabes price;montant_verse;bill10E;bill5E;Reste en Numerique
+                var price = 1000;
+                var montant_verse = 0;
+                var bil50E = 0;
+                var bil10E = 0;
+                var bil5E = 0;
+                var reste = 0;
+                //Ecrire "vous nous devez :,price"
+                //Ecrire "SVP Payer la somme 1000€ :"
+                //Lire Montant_verse
+                parseFloat(montant_verse = $("#montant_verse").val());
+                //reste = price- montant_verse
+                reste = price - montant_verse;
+                //Tantque reste est superieur ou egal à 50 alors
+                while (reste >= 50) {
+                    //bil50E = bil50E + 1 et reste = reste - 10
+                    bil50E = bil50E + 1;
+                    reste = reste - 50;
+                }//Fin Tantque
+                //Tantque reste est superieur ou egal à 10 alors
+                while (reste >= 10) {
+                    //bil10E = bil10E + 1 et reste = reste - 10
+                    bil10E = bil10E + 1;
+                    reste = reste - 10;
+                }//Fin Tantque
+                //Tantque reste est superieur ou egal à 5 alors
+                while (reste >= 5) {
+                    //  bil5E += 1 reste = reste - 5
+                    bil5E += 1;
+                    reste = reste - 5;
+                }//Fin Tantque
+                //Ecrire "Retour de la monnaie :"
+                //bil10E + " Billet(s) de 10"
+                //bil5E + " Billet(s) de 5"
+                //reste + " Piece(s) de 1€"
+                $("#info_resultat").html(" Jquery Retour de la monnaie :");
+                $("#resteBil50").html(bil50E + " Billet(s) de 50€");
+                $("#resteBil10").html(bil10E + " Billet(s) de 10€");
+                $("#resteBil5").html(bil5E + " Billet(s) de 5€");
+                $("#restePi1").html(reste + " Piece(s) de 1€");
+            }//Fin
+
+            /*--------------EFFECT----------------
+            function myHide(){
+                $("#l1").hide();
+                }
+                myHide();
+            function Effect() {
+               
+                $("#pseudoCode").click(function () {
+                    $("#l1").slideDown(2000);
+                });
+            }*/
+
+
+
+
+
+
+
+
+
+
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -26,35 +179,94 @@
                     ?>
                 </div>
                 <div class="col-md-8">
-                    <div id="accordion">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4>Exercice 5.10</h4>
-                                <p>Lire la suite des prix (en euros entiers et terminée par zéro) des achats d’un client. Calculer la somme qu’il doit, lire la
-                                    somme qu’il paye, et simuler la remise de la monnaie en affichant les textes "10 Euros", "5 Euros" et "1 Euro" autant
-                                    de fois qu’il y a de coupures de chaque sorte à rendre.
-                                    
-                                </p>
-                            </div>
-                            <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
+                    <div id="enonce" class="card-body">
+                        <h4>Exercice 5.10</h4>
+                        <p id="p1">
+                            Lire la suite des prix (en euros entiers et terminée par zéro) des achats d’un
+                            client. Calculer la somme qu’il doit, lire la
+                            somme qu’il paye, et simuler la remise de la monnaie en affichant les textes "10
+                            Euros", "5 Euros" et "1 Euro" autant
+                            de fois qu’il y a de coupures de chaque sorte à rendre.
+                        </p>
+                    </div>
+                    <div class="pseudoCode">
+                        <button id="pseudoCode" onclick="Effect()">Pseudocode:</h4>
+                            <p id="l1">
+                                Variabes price;montant_verse;bill10E;bill5E;Reste en Numerique<br />
+                                Ecrire "vous nous devez :,price"<br />
+                                Ecrire "SVP Payer la somme dûe :"<br />
+                                Lire Montant_verse<br />
+                                reste = price- montant_verse<br />
+                                Tantque reste est superieur ou egal à 50 alors<br />
+                                bil50E = bil50E + 1 et reste = reste - 50<br />
+                                Fin Tantque<br />
+                                Tantque reste est superieur ou egal à 10 alors<br />
+                                bil10E = bil10E + 1 et reste = reste - 10<br />
+                                Fin Tantque<br />
+                                Tantque reste est superieur ou egal à 5 alors<br />
+                                bil5E += 1 <br />
+                                reste = reste - 5<br />
+                                Fin Tantque<br />
+                                Ecrire "Retour de la monnaie :"<br />
+                                bil10E + " Billet(s) de 10"<br />
+                                bil5E + " Billet(s) de 5"<br />
+                                reste + " Piece(s) de 1€"<br />
+                                Fin<br />
+                            </p>
+                    </div>
+                    <div id="txt_javascript">
+
+                        <form action="exo_10.php" method="POST">
+                            <div>
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <h3>Tester l'algorithme : </h3>
+
+                                <div class="myResult" id="div_resultat_php">
+                                    <p><?php echo $sMessage; ?></p>
+                                    <p><?php echo $sMessage2; ?></p>
+                                    <p><?php echo $sMessage3; ?></p>
+                                    <p><?php echo $sMessage4; ?></p>
+                                    <p><?php echo $sMessage5; ?></p>
                                 </div>
-                            <div class="card-header" id="headingOne">
-                                <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        JAVASCRIPT
-                                    </button>
-                                </div>
+
+                                <div class="myResult" id="info_resultat"></div>
+                                <div class="myResult" id="resteBil50"></div>
+                                <div class="myResult" id="resteBil10"></div>
+                                <div class="myResult" id="resteBil5"></div>
+                                <div class="myResult" id="restePi1"></div>
+                                <label for="montant_verse">"Payer seulement un accompte sur la somme de 1000 €
+                                    <br />et récupérer la monnaie:"
+                                </label>
+                                <input type="text" name="montant_verse" id="montant_verse">
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
-                                data-parent="#accordion">
-                               
-                                <hr size="1px" color="olivedrab" />
-                                <div class="myCode">
-                                    <pre>
+
+                            <div class="language">
+                                <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                            </div>
+                        </form>
+                        <div class="language">
+                            <button class="btn_green" id="btn_js" onClick="Exo_5_10()">JS WITH PROMPT</button>
+
+                            <button class="btn_green" onClick="Exo_5_10_innerHTML()"> JS WITH INNERHTML</button>
+
+                            <button class="btn_green" onClick="Exo_5_10_jquery()">JQUERY !</button>
+                        </div>
+                    </div>
+                    <div class="card-header" id="headingOne">
+                        <hr width="75%" size="1px" color="olivedrab" />
+                        <p>Voir les Codes</p>
+                        <div class="language">
+                            <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                JAVASCRIPT
+                            </button>
+                        </div>
+                    </div>
+                    <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordion">
+
+                        <hr size="1px" color="olivedrab" />
+                        <div class="myCode">
+                            <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
                                     var a = 5;
@@ -66,25 +278,23 @@
                                     console.log("new a", a, "new b", b);
                                     </code>
                                  </pre>
-                                </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <div class="language">
+                                <button class="btn btn-secondary collapsed" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    JQUERY
+                                </button>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <div class="language">
-                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
-                                        JQUERY
-                                    </button>
-                                </div>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                data-parent="#accordion">
-                        
-                                <hr size="1px" color="olivedrab" />
-                                <div class="myCode">
-                                    <pre>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+
+                            <hr size="1px" color="olivedrab" />
+                            <div class="myCode">
+                                <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
                                     a = 5;
@@ -99,24 +309,23 @@
 
                                     </code>
                                  </pre>
-                                </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <div class="language">
-                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        PHP
-                                    </button>
-                                </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <div class="language">
+                                <button class="btn btn-secondary collapsed" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    PHP
+                                </button>
                             </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                data-parent="#accordion">
-                                <hr size="1px" color="olivedrab" />
-                                <div class="myCode">
-                                    <pre>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordion">
+                            <hr size="1px" color="olivedrab" />
+                            <div class="myCode">
+                                <pre>
                                         PHP
                                     <code data-language="php"> 
                                    
@@ -125,14 +334,14 @@
                 
                                     </code>
                                  </pre>
-                                </div>
                             </div>
                         </div>
                     </div>
 
+
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

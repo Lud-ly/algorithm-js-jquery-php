@@ -8,15 +8,106 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_5_11() {
+                //Variables nbChevauxPart, nbChevauxJoue, i, ordre, desordre en Numérique
+                var nbChevauxPart;
+                var nbChevauxJoue;
+                var i;
+                var ordre;
+                var desordre;
+                // Debut
+                //  Ecrire "Entrez le nombre de chevaux partants : "
+                //Lire nbChevauxPart
+                nbChevauxPart = (parseInt(prompt("Entrez le nombre de chevaux partants : ")));
+
+                //Ecrire "Entrez le nombre de chevaux joués : "
+                // Lire nbChevauxJoue
+                nbChevauxJoue = (parseInt(prompt("Entrez le nombre de chevaux joués :")));
+                ordre = 1
+                desordre = 1
+                //Pour i ← 1 à nbChevauxJoue
+                for (i = 1; i <= nbChevauxJoue; i++) {
+                    ordre = ordre * (i + nbChevauxPart - nbChevauxJoue)
+                    desordre = desordre * i
+                }
+                alert("Prompt dans l’ordre, une chance sur " + ordre);
+                alert("Dans le désordre, une chance sur " + ordre / desordre);
+                // i Suivant
+                //Ecrire "Dans l’ordre, une chance sur ", ordre
+                //Ecrire "Dans le désordre, une chance sur ", ordre / desordre
+                //Fin"""
+            }
+            function Exo_5_11_innerHTML() {
+                //Variables nbChevauxPart, nbChevauxJoue, i, ordre, desordre en Numérique
+                var nbChevauxPart;
+                var nbChevauxJoue;
+                var i;
+                var ordre;
+                var desordre;
+                // Debut
+                //  Ecrire "Entrez le nombre de chevaux partants : "
+                //Lire nbChevauxPart
+                parseInt(nbChevauxPart = document.getElementById("nbChevauxPart").value);
+
+
+                //Ecrire "Entrez le nombre de chevaux joués : "
+                // Lire nbChevauxJoue
+                parseInt(nbChevauxJoue = document.getElementById("nbChevauxJoue").value);
+
+                ordre = 1
+                desordre = 1
+                //Pour i ← 1 à nbChevauxJoue
+                for (i = 1; i <= nbChevauxJoue; i++) {
+                    ordre = ordre * (i + nbChevauxPart - nbChevauxJoue)
+                    desordre = desordre * i;
+                }
+                //Ecrire "Dans l’ordre, une chance sur ", ordre
+                //Ecrire "Dans le désordre, une chance sur ", ordre / desordre
+                document.getElementById("div_resultat_ordre").innerHTML = ("innerHtml Dans l’ordre, une chance sur " + ordre);
+                document.getElementById("div_resultat_desordre").innerHTML = ("Dans le désordre, une chance sur " + ordre / desordre);
+            } //Fin
+
+            function Exo_5_11_jquery() {
+                //Variables nbChevauxPart, nbChevauxJoue, i, ordre, desordre en Numérique
+                var nbChevauxPart;
+                var nbChevauxJoue;
+                var i;
+                var ordre;
+                var desordre;
+                // Debut
+                //  Ecrire "Entrez le nombre de chevaux partants : "
+                //Lire nbChevauxPart
+                parseInt(nbChevauxPart = $("#nbChevauxPart").val());
+
+
+                //Ecrire "Entrez le nombre de chevaux joués : "
+                // Lire nbChevauxJoue
+                parseInt(nbChevauxJoue = $("#nbChevauxJoue").val());
+
+                ordre = 1
+                desordre = 1
+                //Pour i ← 1 à nbChevauxJoue
+                for (i = 1; i <= nbChevauxJoue; i++) {
+                    ordre = ordre * (i + nbChevauxPart - nbChevauxJoue);
+                    desordre = desordre * i;
+                }
+                //Ecrire "Dans l’ordre, une chance sur ", ordre
+                //Ecrire "Dans le désordre, une chance sur ", ordre / desordre
+                $("#div_resultat_ordre").html("jquery Dans l’ordre, une chance sur " + ordre);
+                $("#div_resultat_desordre").html("Dans le désordre, une chance sur " + ordre / desordre);
+            } //Fin
+
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -30,49 +121,128 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 5.11</h4>
-                                <p>Écrire un algorithme qui permette de connaître ses chances de gagner au tiercé, quarté, quinté et autres impôts
+                                <p>Écrire un algorithme qui permette de connaître ses chances de gagner au tiercé,
+                                    quarté, quinté et autres impôts
                                     volontaires.
-                                    On demande à l’utilisateur le nombre de chevaux partants, et le nombre de chevaux joués. Les deux messages
+                                    On demande à l’utilisateur le nombre de chevaux partants, et le nombre de chevaux
+                                    joués. Les deux messages
                                     affichés devront être :
                                     Dans l’ordre : une chance sur X de gagner
                                     Dans le désordre : une chance sur Y de gagner
-                                    X et Y nous sont donnés par la formule suivante, si n est le nombre de chevaux partants et p le nombre de chevaux
-                                    joués (on rappelle que le signe ! signifie "factorielle", comme dans l'exercice 5.7 ci-dessus) :
+                                    X et Y nous sont donnés par la formule suivante, si n est le nombre de chevaux
+                                    partants et p le nombre de chevaux
+                                    joués (on rappelle que le signe ! signifie "factorielle", comme dans l'exercice 5.7
+                                    ci-dessus) :
                                     X = n ! / (n - p) !
                                     Y = n ! / (p ! * (n – p) !)
-                                    NB : cet algorithme peut être écrit d’une manière simple, mais relativement peu performante. Ses performances
-                                    peuvent être singulièrement augmentées par une petite astuce. Vous commencerez par écrire la manière la plus
-                                    simple, puis vous identifierez le problème, et écrirez une deuxième version permettant de le résoudre.
+                                    NB : cet algorithme peut être écrit d’une manière simple, mais relativement peu
+                                    performante. Ses performances
+                                    peuvent être singulièrement augmentées par une petite astuce. Vous commencerez par
+                                    écrire la manière la plus
+                                    simple, puis vous identifierez le problème, et écrirez une deuxième version
+                                    permettant de le résoudre.
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
-                                </div>
-                            <div class="card-header" id="headingOne">
+                                <h4>Pseudocode:</h4>
+                                <p>
+                                    Variables nbChevauxPart, nbChevauxJoue, i, ordre, desordre en Numérique<br />
+                                    Debut<br />
+                                    Ecrire "Entrez le nombre de chevaux partants : "<br />
+                                    Lire nbChevauxPart<br />
+                                    Ecrire "Entrez le nombre de chevaux joués :<br />
+                                    Lire nbChevauxJoue<br />
+                                    ordre = 1<br />
+                                    desordre = 1<br />
+                                    Pour i ← 1 à nbChevauxJoue<br />
+                                    ordre = ordre * (i + nbChevauxPart - nbChevauxJoue)<br />
+                                    desordre = desordre * i;<br />
+                                    Ecrire "Dans l’ordre, une chance sur ", ordre<br />
+                                    Ecrire "Dans le désordre, une chance sur ", ordre / desordre<br />
+                                    Fin<br />
+                            </div>
+                            <div id="txt_javascript">
+
+                                <form action="exo_11.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+
+                                        <div class="myResult" id="div_resultat_php">
+                                            <p><?php echo $sMessage; ?></p>
+                                            <p><?php echo $sMessage2; ?></p>
+                                        </div>
+
+                                        <div class="myResult" id="div_resultat_ordre"></div>
+                                        <div class="myResult" id="div_resultat_desordre"></div>
+
+                                        <label for="nbChevauxPart">"Entrez le nombre de chevaux partants :"
+                                        </label>
+                                        <input type="text" name="nbChevauxPart" id="nbChevauxPart"><br />
+                                        <label for="nbChevauxJoue">"Entrez le nombre de chevaux joués :"
+                                        </label>
+                                        <input type="text" name="nbChevauxJoue" id="nbChevauxJoue">
+                                    </div>
+
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                </form>
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_5_11()">JS WITH PROMPT</button>
+
+                                    <button class="btn_green" onClick="Exo_5_11_innerHTML()"> JS WITH INNERHTML</button>
+
+                                    <button class="btn_green" onClick="Exo_5_11_jquery()">JQUERY !</button>
+                                </div>
+                            </div>
+                            <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Sous le capot</p>
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+    function Exo_5_11_innerHTML() {
+        //Variables nbChevauxPart, nbChevauxJoue, i, ordre, desordre en Numérique
+        var nbChevauxPart;
+        var nbChevauxJoue;
+        var i;
+        var ordre;
+        var desordre;
+        // Debut
+        //  Ecrire "Entrez le nombre de chevaux partants : "
+        //Lire nbChevauxPart
+        parseInt(nbChevauxPart = document.getElementById("nbChevauxPart").value);
+
+
+        //Ecrire "Entrez le nombre de chevaux joués : "
+        // Lire nbChevauxJoue
+        parseInt(nbChevauxJoue = document.getElementById("nbChevauxJoue").value);
+
+        ordre = 1
+        desordre = 1
+        //Pour i ← 1 à nbChevauxJoue
+        for (i = 1; i <= nbChevauxJoue; i++) {
+            ordre = ordre * (i + nbChevauxPart - nbChevauxJoue)
+            desordre = desordre * i;
+        }
+        //Ecrire "Dans l’ordre, une chance sur ", ordre
+        //Ecrire "Dans le désordre, une chance sur ", ordre / desordre
+        document.getElementById("div_resultat_ordre").innerHTML = ("innerHtml Dans l’ordre, une chance sur " + ordre);
+        document.getElementById("div_resultat_desordre").innerHTML = ("Dans le désordre, une chance sur " + ordre / desordre);
+    } //Fin
                                     </code>
                                  </pre>
                                 </div>
@@ -82,29 +252,48 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
+    $(function Exo_5_11_jquery() {
+        //Variables nbChevauxPart, nbChevauxJoue, i, ordre, desordre en Numérique
+        var nbChevauxPart;
+        var nbChevauxJoue;
+        var i;
+        var ordre;
+        var desordre;
+        // Debut
+        //  Ecrire "Entrez le nombre de chevaux partants : "
+        //Lire nbChevauxPart
+        parseInt(nbChevauxPart = $("#nbChevauxPart").val());
 
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+        //Ecrire "Entrez le nombre de chevaux joués : "
+        // Lire nbChevauxJoue
+        parseInt(nbChevauxJoue = $("#nbChevauxJoue").val());
+
+        ordre = 1
+        desordre = 1
+        //Pour i ← 1 à nbChevauxJoue
+        for (i = 1; i <= nbChevauxJoue; i++) {
+            ordre = ordre * (i + nbChevauxPart - nbChevauxJoue);
+            desordre = desordre * i;
+        }
+        //Ecrire "Dans l’ordre, une chance sur ", ordre
+        //Ecrire "Dans le désordre, une chance sur ", ordre / desordre
+        $("#div_resultat_ordre").html("jquery Dans l’ordre, une chance sur " + ordre);
+        $("#div_resultat_desordre").html("Dans le désordre, une chance sur " + ordre / desordre);
+    }) //Fin
+                            
 
                                     </code>
                                  </pre>
@@ -129,8 +318,37 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+    $sMessage= "";
+    $sMessage2= "";
+        //Variables nbChevauxPart, nbChevauxJoue, i, ordre, desordre en Numérique
+        // SI $_POST["iRepUtilisateur"] EXISTE ET QUE $_POST["iRepUtilisateur"] N EST PAS VIDE ALORS
+        if ((isset($_POST["nbChevauxPart"])) && (!(empty($_POST["nbChevauxPart"]))))
+        {
+
+        $ordre=1;
+        $desOrdre=1;
+        // Debut
+        //  Ecrire "Entrez le nombre de chevaux partants : "
+        //Lire nbChevauxPart
+        $nbChevauxPart = $_POST["nbChevauxPart"];
+    
+    
+        //Ecrire "Entrez le nombre de chevaux joués : "
+        // Lire nbChevauxJoue
+        $nbChevauxJoue = $_POST["nbChevauxJoue"];
+    
+        //Pour i ← 1 à nbChevauxJoue
+        for ($i = 1; $i <= $nbChevauxJoue; $i++) {
+            $ordre = $ordre * ($i + $nbChevauxPart - $nbChevauxJoue);
+            $desOrdre = $desOrdre * $i;
+        }
+        $sMessage = "PHP Dans l’ordre, une chance sur " . $ordre;
+        $sMessage2 = "Dans le désordre, une chance sur " . $ordre / $desOrdre;
+        // i Suivant
+        //Ecrire "Dans l’ordre, une chance sur ", ordre
+        //Ecrire "Dans le désordre, une chance sur ", ordre / desordre
+        //Fin"""
+    } 
                 
                                     </code>
                                  </pre>
@@ -141,7 +359,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

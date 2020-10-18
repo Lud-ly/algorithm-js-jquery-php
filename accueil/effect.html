@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Afficher / cacher un div</title>
+</head>
+
+<body>
+    <h1>Comment afficher ou masquer un élément HTML</h1>
+    <div id="enonce" class="card-body">
+        <h4>Exercice 5.10</h4>
+        <p id="p1" class="hide">
+            Lire la suite des prix (en euros entiers et terminée par zéro) des achats d’un
+            client. Calculer la somme qu’il doit, lire la
+            somme qu’il paye, et simuler la remise de la monnaie en affichant les textes "10
+            Euros", "5 Euros" et "1 Euro" autant
+            de fois qu’il y a de coupures de chaque sorte à rendre.
+        </p>
+    </div>
+    <div id="pseudoCode" class="pseudoCode">
+        <h4>Pseudocode:</h4>
+        <p id="l1" class="hide">
+            Variabes price;montant_verse;bill10E;bill5E;Reste en Numerique<br/>
+            Ecrire "vous nous devez :,price"<br/>
+            Ecrire "SVP Payer la somme dûe :"<br/>
+            Lire Montant_verse<br/>
+            reste = price- montant_verse<br/>
+            Tantque reste est superieur ou egal à 50 alors<br/>
+            bil50E = bil50E + 1 et reste = reste - 50<br/>
+            Fin Tantque<br/>
+            Tantque reste est superieur ou egal à 10 alors<br/>
+            bil10E = bil10E + 1 et reste = reste - 10<br/>
+            Fin Tantque<br/>
+            Tantque reste est superieur ou egal à 5 alors<br/>
+            bil5E += 1 <br/>
+            reste = reste - 5<br/>
+             Fin Tantque<br/>
+            Ecrire "Retour de la monnaie :"<br/>
+            bil10E + " Billet(s) de 10"<br/>
+            bil5E + " Billet(s) de 5"<br/>
+            reste + " Piece(s) de 1€"<br/>
+            Fin<br/>
+        </p>
+    </div>
+
+    <script>
+        let enonce = document.getElementById("enonce");
+        let pseudoCode = document.getElementById("pseudoCode");
+        let p1 = document.getElementById("p1");
+        let l1 = document.getElementById("l1");
+
+        enonce.addEventListener("mouseover", () => { p1.style.display = "block"; });
+        enonce.addEventListener("mouseout", () => { p1.style.display = "none"; });
+
+        pseudoCode.onmouseover = aff;
+        function aff() {
+            l1.style.display = "block";
+        }
+        pseudoCode.onmouseout = cac;
+        function cac() {
+            l1.style.display = "none";
+        }
+    </script>
+    <style>
+        #enonce {
+            background-color: #EECC4499;
+        }
+
+        #pseudoCode {
+            background-color: #44EEAA99;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</body>
+
+</html>

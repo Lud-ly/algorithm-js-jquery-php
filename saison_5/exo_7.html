@@ -17,7 +17,7 @@
             <?php include('../commun/header.php');?>
         </header>
         <script>
-             function Exo_5_7() {
+            function Exo_5_7() {
                 //Variables iNombre, i, Somme en Entier
                 var iNombre;
                 var i;
@@ -34,7 +34,7 @@
                     iFacto = iFacto * i;
                 }//fin pour
                 //  Ecrire "La factorielle est : ", Facto
-                alert("Prompt La factorielle est : "+ iFacto);
+                alert("Prompt La factorielle de " + iNombre + " est : " + iFacto);
             }//fin
 
             function Exo_5_7_innerHTML() {
@@ -54,7 +54,7 @@
                     iFacto = iFacto * i;
                 }//fin pour
                 //  Ecrire "La factorielle est : ", Facto
-                document.getElementById("div_resultat_js").innerHTML = ("innerHTML La factorielle est : "+ iFacto);
+                document.getElementById("div_resultat_js").innerHTML = ("innerHTML La factorielle de " + iNombre + " est : " + iFacto);
             }//fin
 
             function Exo_5_7_jquery() {
@@ -74,7 +74,7 @@
                     iFacto = iFacto * i;
                 }//fin pour
                 //  Ecrire "La factorielle est : ", Facto
-               $("#div_resultat_js").html("Bravo Jquery La factorielle est : "+ iFacto);
+                $("#div_resultat_js").html("Bravo Jquery La factorielle de " + iNombre + " est : " + iFacto);
             }//fin
         </script>
         <div class="container-fluid ">
@@ -100,25 +100,24 @@
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
                                 <p>
-                                    Variables iNombre, i, Facto en Entier
-                                    Debut
-                                    Ecrire "Entrez un nombre : "
-                                    Lire iNombre
-                                    Facto ← 1
-                                    Pour i ← 2 à iNombre
-                                    Facto ← Facto * i
-                                    i Suivant
-                                    Ecrire "La factorielle est : ", Facto
-                                    Fin
+                                    Variables iNombre, i, Facto en Entier<br/>
+                                    Debut<br/>
+                                    Ecrire "Entrez un nombre : <br/>
+                                    Lire iNombre<br/>
+                                    Facto ← 1<br/>
+                                    Pour i ← 2 à iNombre<br/>
+                                    Facto ← Facto * i<br/>
+                                    i Suivant<br/>
+                                    Ecrire "La factorielle est : ", Facto<br/>
+                                    Fin<br/>
                                 </p>
                             </div>
                             <div id="txt_javascript">
-                                <div id="div_resultat_js">
-                                </div>
                                 <div>
-                                    <div id="div_resultat_php">
-                                        <h3><?php echo $sMessage; ?></h3>
-                                    </div>
+                                    <h3><div class="myResult" id="div_resultat"></h3></div> 
+                                    <h3><div class="myResult" id="div_resultat_js"></div></h3> 
+                                    <h3><div class="myResult" id="div_resultat_p"></div></h3> 
+                                    <div class="myResult"  id="div_resultat_php"><h3><?php echo $sMessage; ?></h3></div>
                                 </div>
                                 <form action="exo_7.php" method="POST">
                                     <div>

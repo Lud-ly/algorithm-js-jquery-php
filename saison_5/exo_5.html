@@ -24,7 +24,7 @@
                 var iNombre;
                 var i;
                 var chain = "";
-                var sHTML= "La table de multiplication de ce nombre est : "
+                var sHTML = "La table de multiplication de ce nombre est : "
                 //Debut
                 //Ecrire "Entrez un nombre : "
                 // Lire iNombre
@@ -32,7 +32,7 @@
                 //Pour i ← 1 à 10
                 for (i = 0; i <= 10; i++) {
                     // chain = chain + iNombre + " x ", i, " = ", iNombre * i
-                    chain = chain + iNombre + " x " + i + " = " + iNombre * i + " | " + " ";
+                    chain = chain + iNombre + " x " + i + " = " + iNombre * i + "<br/> ";
                 }
                 //Ecrire afficher sHTML + chain
                 alert("prompt " + sHTML + chain);
@@ -45,7 +45,7 @@
                 var iNombre;
                 var i;
                 var chain = "";
-                var sHTML= "La table de multiplication de ce nombre est : "
+                var sHTML = "La table de multiplication de ce nombre est : "
                 //Debut
                 //Ecrire "Entrez un nombre : "
                 // Lire iNombre
@@ -53,7 +53,7 @@
                 //Pour i ← 1 à 10
                 for (i = 0; i <= 10; i++) {
                     // chain = chain + iNombre + " x ", i, " = ", iNombre * i
-                    chain = chain + iNombre + " x " + i + " = " + iNombre * i + " | " + " ";
+                    chain = chain + iNombre + " x " + i + " = " + iNombre * i + "<br/> ";
                 }
                 //Ecrire afficher sHTML + chain
                 document.getElementById("div_resultat_js").innerHTML = ("innerHTML " + sHTML + chain);
@@ -66,7 +66,7 @@
                 var iNombre;
                 var i;
                 var chain = "";
-                var sHTML= "La table de multiplication de ce nombre est : "
+                var sHTML = "La table de multiplication de ce nombre est : "
                 //Debut
                 //Ecrire "Entrez un nombre : "
                 // Lire iNombre
@@ -74,13 +74,13 @@
                 //Pour i ← 1 à 10
                 for (i = 0; i <= 10; i++) {
                     // chain = chain + iNombre + " x ", i, " = ", iNombre * i
-                    chain = chain + iNombre + " x " + i + " = " + iNombre * i + " | " + " ";
+                    chain = chain + iNombre + " x " + i + " = " + iNombre * i + "<br/> ";
                 }
                 //Ecrire afficher sHTML + chain
                 $("#div_resultat_js").html("jquery " + sHTML + chain);
                 //Fin
             }
-            
+
         </script>
         <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
@@ -99,32 +99,36 @@
                                 <p>Ecrire un algorithme qui demande un nombre de départ, et qui ensuite écrit la table
                                     de multiplication de ce nombre,
                                     présentée comme suit (cas où l'utilisateur entre le nombre 7) :
-                                    Table de 7 :
-                                    7 x 1 = 7
-                                    7 x 2 = 14
-                                    7 x 3 = 21
-                                    …
-                                    7 x 10 = 70
+                                    Table de 7 :<br />
+                                    7 x 1 = 7<br />
+                                    7 x 2 = 14<br />
+                                    7 x 3 = 21<br />
+                                    …<br />
+                                    7 x 10 = 70<br />
                                 </p>
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
                                 <p>
-                                    Variables iNombre, i en Entier<br/>
-                                    Variables chain en caractère<br/>
-                                    Variables sHTML="La table de multiplication de ce nombre est :<br/>
-                                    Debut<br/>
-                                    Ecrire "Entrez un nombre : <br/>
-                                    Lire iNombre<br/>
-                                    Ecrire "La table de multiplication de ce nombre est :<br/>
-                                    Pour i ← 1 à 10<br/>
-                                    chain = chain + iNombre + " x ", i, " = ", n * i<br/>
-                                    Ecrire sHTML + chain<br/>
-                                    Fin<br/>
+                                    Variables iNombre, i en Entier<br />
+                                    Variables chain en caractère<br />
+                                    Variables sHTML="La table de multiplication de ce nombre est :<br />
+                                    Debut<br />
+                                    Ecrire "Entrez un nombre : <br />
+                                    Lire iNombre<br />
+                                    Ecrire "La table de multiplication de ce nombre est :<br />
+                                    Pour i ← 1 à 10<br />
+                                    chain = chain + iNombre + " x ", i, " = ", n * i<br />
+                                    Ecrire sHTML + chain<br />
+                                    Fin<br />
                                 </p>
                             </div>
                             <div id="txt_javascript">
-                                <div id="div_resultat_js">
+                                 <div>
+                                    <h3><div class="myResult" id="div_resultat"></h3></div> 
+                                    <h3><div class="myResult" id="div_resultat_js"></div></h3> 
+                                    <h3><div class="myResult" id="div_resultat_p"></div></h3> 
+                                    <div class="myResult"  id="div_resultat_php"><h3><?php echo $sMessage; ?></h3></div>
                                 </div>
                                 <form action="exo_5.php" method="POST">
                                     <div>
@@ -135,11 +139,7 @@
                                                 :</label>
                                             <input type="text" name="iNombreUtilisateur" id="iNombreUtilisateur">
                                         </div>
-                                        <div>
-                                            <div id="div_resultat_php">
-                                                <h3><?php echo $sMessage; ?></h3>
-                                            </div>
-                                        </div>
+
                                     </div>
                                     <div class="language">
                                         <button class="btn_green" type="submit">ALLEZ PHP !</button>
@@ -152,7 +152,6 @@
 
                                     <button class="btn_green" onClick="Exo_5_5_jquery()">JQUERY !</button>
                                 </div>
-                            </div>
                             <div class="card-header" id="headingOne">
                                 <hr width="75%" size="1px" color="olivedrab" />
                                 <p>Voir les Codes</p>
@@ -163,7 +162,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
                                 <hr size="1px" color="olivedrab" />
@@ -171,27 +170,27 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-        function Exo_5_5_innerHTML() {
-            //Variables iNombre, i en Entier
-            //Variables chain en caractère
-            //Variables sHTML="La table de multiplication de ce nombre est :
-            var iNombre;
-            var i;
-            var chain = "";
-            var sHTML= "La table de multiplication de ce nombre est : "
-            //Debut
-            //Ecrire "Entrez un nombre : "
-            // Lire iNombre
-            iNombre = parseInt(document.getElementById("iNombreUtilisateur").value);
-            //Pour i ← 1 à 10
-            for (i = 0; i <= 10; i++) {
-                // chain = chain + iNombre + " x ", i, " = ", iNombre * i
-                chain = chain + iNombre + " x " + i + " = " + iNombre * i + " | " + " ";
-            }
-            //Ecrire afficher sHTML + chain
-            document.getElementById("div_resultat_js").innerHTML = ("innerHTML " + sHTML + chain);
-            //Fin
-        }
+    function Exo_5_5_innerHTML() {
+    //Variables iNombre, i en Entier
+    //Variables chain en caractère
+    //Variables sHTML="La table de multiplication de ce nombre est :
+    var iNombre;
+    var i;
+    var chain = "";
+    var sHTML= "La table de multiplication de ce nombre est : "
+    //Debut
+    //Ecrire "Entrez un nombre : "
+    // Lire iNombre
+    iNombre = parseInt(document.getElementById("iNombreUtilisateur").value);
+    //Pour i ← 1 à 10
+    for (i = 0; i <= 10; i++) {
+        // chain = chain + iNombre + " x ", i, " = ", iNombre * i
+        chain = chain + iNombre + " x " + i + " = " + iNombre * i + " | " + " ";
+    }
+    //Ecrire afficher sHTML + chain
+    document.getElementById("div_resultat_js").innerHTML = ("innerHTML " + sHTML + chain);
+    //Fin
+    }
                                     </code>
                                  </pre>
                                 </div>
@@ -214,27 +213,27 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-    function Exo_5_5_jquery() {
-        //Variables iNombre, i en Entier
-        //Variables chain en caractère
-        //Variables sHTML="La table de multiplication de ce nombre est :
-        var iNombre;
-        var i;
-        var chain = "";
-        var sHTML= "La table de multiplication de ce nombre est : "
-        //Debut
-        //Ecrire "Entrez un nombre : "
-        // Lire iNombre
-        iNombre = parseInt($("#iNombreUtilisateur").val());
-        //Pour i ← 1 à 10
-        for (i = 0; i <= 10; i++) {
-            // chain = chain + iNombre + " x ", i, " = ", iNombre * i
-            chain = chain + iNombre + " x " + i + " = " + iNombre * i + " | " + " ";
-        }
-        //Ecrire afficher sHTML + chain
-        $("#div_resultat_js").html("jquery " + sHTML + chain);
-        //Fin
+function Exo_5_5_jquery() {
+    //Variables iNombre, i en Entier
+    //Variables chain en caractère
+    //Variables sHTML="La table de multiplication de ce nombre est :
+    var iNombre;
+    var i;
+    var chain = "";
+    var sHTML= "La table de multiplication de ce nombre est : "
+    //Debut
+    //Ecrire "Entrez un nombre : "
+    // Lire iNombre
+    iNombre = parseInt($("#iNombreUtilisateur").val());
+    //Pour i ← 1 à 10
+    for (i = 0; i <= 10; i++) {
+        // chain = chain + iNombre + " x ", i, " = ", iNombre * i
+        chain = chain + iNombre + " x " + i + " = " + iNombre * i + " | " + " ";
     }
+    //Ecrire afficher sHTML + chain
+    $("#div_resultat_js").html("jquery " + sHTML + chain);
+    //Fin
+}
 
                                     </code>
                                  </pre>
@@ -264,23 +263,23 @@
     // SI $_POST["iRepUtilisateur"] EXISTE ET QUE $_POST["iRepUtilisateur"] N EST PAS VIDE ALORS
     if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
     {
-        $chain="";
-        $sHTML= "La table de multiplication de ce nombre est : ";
-        //Variables iNombre, i en Entier
-        //Variables chain en caractère
-        //Variables sHTML="La table de multiplication de ce nombre est :
-        //Debut
-        //Ecrire "Entrez un nombre : "
-        // Lire iNombre
-        $iNombre = $_POST["iNombreUtilisateur"];
-        //Pour i ← 1 à 10
-        for ($i = 0; $i <= 10; $i++) {
-            // chain = chain + iNombre + " x ", i, " = ", iNombre * i
-            $chain = $chain . $iNombre . " x " . $i . " = " . $iNombre * $i . " | " . " ";
-        }
-        //Ecrire afficher sHTML + chain
-        $sMessage = "PHP " . $sHTML . $chain;
-        //Fin
+    $chain="";
+    $sHTML= "La table de multiplication de ce nombre est : ";
+    //Variables iNombre, i en Entier
+    //Variables chain en caractère
+    //Variables sHTML="La table de multiplication de ce nombre est :
+    //Debut
+    //Ecrire "Entrez un nombre : "
+    // Lire iNombre
+    $iNombre = $_POST["iNombreUtilisateur"];
+    //Pour i ← 1 à 10
+    for ($i = 0; $i <= 10; $i++) {
+        // chain = chain + iNombre + " x ", i, " = ", iNombre * i
+        $chain = $chain . $iNombre . " x " . $i . " = " . $iNombre * $i . " | " . " ";
+    }
+    //Ecrire afficher sHTML + chain
+    $sMessage = "PHP " . $sHTML . $chain;
+    //Fin
     }
                 
                                     </code>

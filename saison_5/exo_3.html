@@ -107,7 +107,11 @@
                                     </p>
                             </div>
                             <div id="txt_javascript">
-                                <div id="div_resultat_js">
+                                <div>
+                                    <h3><div class="myResult" id="div_resultat"></h3></div> 
+                                    <h3><div class="myResult" id="div_resultat_js"></div></h3> 
+                                    <h3><div class="myResult" id="div_resultat_p"></div></h3> 
+                                    <div class="myResult"  id="div_resultat_php"><h3><?php echo $sMessage; ?></h3></div>
                                 </div>
                                 <form action="exo_3.php" method="POST">
                                     <div>
@@ -117,11 +121,6 @@
                                             <label for="iNombreUtilisateur">Veuillez saisir un nombre
                                                 :</label>
                                             <input type="text" name="iNombreUtilisateur" id="iNombreUtilisateur">
-                                        </div>
-                                        <div>
-                                            <div id="div_resultat_php">
-                                                <h3><?php echo $sMessage; ?></h3>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="language">

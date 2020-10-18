@@ -8,15 +8,179 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_5_9() {
+                //Variables iNombre, i, iNombrePGrand, position en Numerique 
+                var iNombre;
+                var i = 0;
+                var iNombrePGrand = 0;
+                var position = 0;
+
+                //Debut
+                //position ← 0 
+                position = 0;
+                // Pour i ← 1 à 20 
+                iNombreN = (parseInt(prompt("Entrez un de nombres a evaluer:")));
+                for (i = 1; i <= iNombreN; i++) {
+                    //  Ecrire "Entrez un nombre :
+                    // Lire iNombre 
+                    iNombre = parseInt(prompt("Entrez le nombre " + i));
+                    //Si i = 1 ou iNombre > iNombrePGrand Alors 
+
+                    if (iNombre > iNombrePGrand) {
+                        //iNombrePGrand=iNombre
+                        iNombrePGrand = iNombre
+                        //  position ← i 
+                        position = i;
+                    }// FinSi 
+                    //Si inombre=0
+                    //ecrire arret programme
+                    if (iNombre == 0) {
+                        alert("arret programme");
+                        break;
+
+                    }// Fin
+                }//Fin pour
+                //  Ecrire "Le nombre le plus grand était : ", iNombrePGrand
+                alert("PROMPT Le nombre le plus grand était : " + iNombrePGrand);
+                // Ecrire "Il a été saisi en position numéro ", position 
+                alert("Il a été saisi en position numéro " + position);
+            }
+            /*function Crea() {
+                               var i = 0;
+                               for (i = 1; i <= 5; i++) {
+                                   var input = document.createElement("input");
+                                   var number = document.createElement("div");
+                                  // ligne.setAttribute("name", "iNombreUtilisateur");
+                                   input.setAttribute("id", "iNombreUtilisateur");
+                                  // document.getElementById("iNombreUtilisateur").appendChild(input);
+                                   number.innerHTML += "<h3>" + "Entrez le nombre" + i + "</h3>";
+                                   document.querySelector("div#noResult").appendChild(number);
+                                   document.querySelector("div#noResult").appendChild(input);
+                               }
+                           }*/
+
+
+            /*----------------------------------------------------------------*/
+            function Exo_5_9_innerHTML() {
+                //VARIABLES N1 N2 N3 =1
+                //VARIABLES i NbMax position  =0
+                var N1 = 1;
+                var N2 = 1;
+                var N3 = 1;
+                var i = 0;
+                var NbMax = 0;
+                var Position = 0;
+                //Si N1 != 0 || N2 != 0 || N3 != 0
+                if (N1 != 0 || N2 != 0 || N3 != 0) {
+                    //  Ecrire entrer un nombre 1
+                    //Lire N1
+                    N1 = parseInt(document.getElementById("iNombreUtilisateur1").value);
+                    //Si N1>NbMax
+                    if (N1 > NbMax) {
+                        //NbMax = N1 ; i++; Position = i
+                        NbMax = N1;
+                        i++;
+                        Position = i;
+                    }
+                    //  Ecrire entrer un nombre 2
+                    //lire N2
+                    N2 = parseInt(document.getElementById("iNombreUtilisateur2").value);
+                    //Si N2>NbMax
+                    if (N2 > NbMax) {
+                        //NbMax = N2 ; i++; Position = i
+                        NbMax = N2;
+                        i++;
+                        Position = i;
+                    }
+                    //  Ecrire entrer un nombre 3
+                    //Lire N3
+                    N3 = parseInt(document.getElementById("iNombreUtilisateur3").value);
+                    //Si N3>NbMax
+                    if (N3 > NbMax) {
+                        //NbMax = N3 ; i++; Position = i
+                        NbMax = N3;
+                        i++;
+                        Position = i;
+                    }
+                    //Ecrire Le nombre le plus grand était : " + NbMax
+                    //Ecrire Il a été saisi en position numéro " + Position
+                    document.getElementById("div_resultat").innerHTML = ("innerHTML Le nombre le plus grand était : " + NbMax);
+                    document.getElementById("div_resultat_js").innerHTML = ("Il a été saisi en position numéro " + Position);
+                }//FinSi
+                //Si N1 ou N2 ou N3 = 0
+                if (N1 == 0 || N2 == 0 || N3 == 0) {
+                    //Ecrire Arrêt du Programme
+                    document.getElementById("div_resultat_p").innerHTML = ("Arrêt du Programme !!");
+                } //FinSi
+            }//Fin
+
+
+            /*------------------------------------------------------------------------------*/
+            function Exo_5_9_jquery() {
+                //VARIABLES N1 N2 N3 =1
+                //VARIABLES i NbMax position  =0
+                var N1 = 1;
+                var N2 = 1;
+                var N3 = 1;
+                var i = 0;
+                var NbMax = 0;
+                var Position = 0;
+                //Si N1 != 0 || N2 != 0 || N3 != 0
+                if (N1 != 0 || N2 != 0 || N3 != 0) {
+                    //  Ecrire entrer un nombre 1
+                    //Lire N1
+                    N1 = parseInt($("#iNombreUtilisateur1").val());
+                    //Si N1>NbMax
+                    if (N1 > NbMax) {
+                        //NbMax = N1 ; i++; Position = i
+                        NbMax = N1;
+                        i++;
+                        Position = i;
+                    }
+                    //  Ecrire entrer un nombre 2
+                    //lire N2
+                    N2 = parseInt($("#iNombreUtilisateur2").val());
+                    //Si N2>NbMax
+                    if (N2 > NbMax) {
+                        //NbMax = N2 ; i++; Position = i
+                        NbMax = N2;
+                        i++;
+                        Position = i;
+                    }
+                    //  Ecrire entrer un nombre 3
+                    //Lire N3
+                    N3 = parseInt($("#iNombreUtilisateur3").val());
+                    //Si N3>NbMax
+                    if (N3 > NbMax) {
+                        //NbMax = N3 ; i++; Position = i
+                        NbMax = N3;
+                        i++;
+                        Position = i;
+                    }
+                    //Ecrire Le nombre le plus grand était : " + NbMax
+                    //Ecrire Il a été saisi en position numéro " + Position
+                    $("#div_resultat").html("JQUERY Le nombre le plus grand était : " + NbMax);
+                    $("#div_resultat_js").html("Il a été saisi en position numéro " + Position);
+                }//FinSi
+                //Si N1 ou N2 ou N3 = 0
+                if (N1 == 0 || N2 == 0 || N3 == 0) {
+                    //Ecrire Arrêt du Programme
+                    $("#div_resultat_p").html("Arrêt du Programme JQUERY !!");
+                } //FinSi
+            }//Fin
+        </script>
+
+
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -30,39 +194,146 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 5.9</h4>
-                                <p>Réécrire l’algorithme précédent, mais cette fois-ci on ne connaît pas d’avance combien l’utilisateur souhaite saisir de
+                                <p>Réécrire l’algorithme précédent, mais cette fois-ci on ne connaît pas d’avance
+                                    combien l’utilisateur souhaite saisir de
                                     nombres. La saisie des nombres s’arrête lorsque l’utilisateur entre un zéro.
-                                    
+
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
+                                <h4>Pseudocode:</h4>
+                                <p>
+                                VARIABLES N1, N2 ,N3 =1<br/>
+                                VARIABLES i ,NbMax, position  =0<br/>
+                                Si N1 != 0 || N2 != 0 || N3 != 0<br/>
+                                    Ecrire entrer un nombre 1<br/>
+                                    Lire N1<br/>
+                                    Si N1>NbMax<br/>
+                                        NbMax = N1 ; i++; Position = i<br/>
+                                        Ecrire entrer un nombre 2<br/>
+                                        lire N2<br/>
+                                    Si N2>NbMax<br/>
+                                        NbMax = N2 ; i++; Position = i<br/>
+                                    Ecrire entrer un nombre 3<br/>
+                                    Lire N3<br/>
+                                    Si N3>NbMax<br/>
+                                        NbMax = N3 ; i++; Position = i<br/>
+                                    Ecrire Le nombre le plus grand était : " + NbMax<br/>
+                                    Ecrire Il a été saisi en position numéro " + Position<br/>
+                                    FinSi<br/>
+                                Si N1 ou N2 ou N3 = 0<br/>
+                                    Ecrire Arrêt du Programme<br/>
+                                FinSi<br/>
+                                Fin<br/>
+                                </p>
+                            </div>
+
+
+                            <div id="txt_javascript">
+                                <div>
+                                    <h3><div class="myResult" id="div_resultat"></h3></div> 
+                                    <h3><div class="myResult" id="div_resultat_js"></div></h3> 
+                                    <h3><div class="myResult" id="div_resultat_p"></div></h3> 
+                                    <div class="myResult"  id="div_resultat_php"><h3><?php echo $sMessage; ?></h3></div>
                                 </div>
-                            <div class="card-header" id="headingOne">
+                                <form action="exo_9.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <div>
+                                            <label for="iNombreUtilisateur1">Veuillez saisir un nombre
+                                                :</label>
+                                            <input type="text" name="iNombreUtilisateur1" id="iNombreUtilisateur1">
+                                            <label for="iNombreUtilisateur2">Veuillez saisir un nombre
+                                                :</label>
+                                            <input type="text" name="iNombreUtilisateur2" id="iNombreUtilisateur2">
+                                            <label for="iNombreUtilisateur3">Veuillez saisir un nombre
+                                                :</label>
+                                            <input type="text" name="iNombreUtilisateur3" id="iNombreUtilisateur3">
+                                        </div>
+                                    </div>
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                </form>
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_5_9()">JS WITH PROMPT</button>
+
+                                    <button class="btn_green" onClick="Exo_5_9_innerHTML()"> JS WITH INNERHTML</button>
+
+                                    <button class="btn_green" onClick="Exo_5_9_jquery()">JQUERY !</button>
+                                </div>
+                            </div>
+                            <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Voir les Codes</p>
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+    function Exo_5_9_innerHTML() {
+        //VARIABLES N1 N2 N3 =1
+        //VARIABLES i NbMax position  =0
+        var N1 = 1;
+        var N2 = 1;
+        var N3 = 1;
+        var i = 0;
+        var NbMax = 0;
+        var Position = 0;
+        //Si N1 != 0 || N2 != 0 || N3 != 0
+        if (N1 != 0 || N2 != 0 || N3 != 0) {
+            //  Ecrire entrer un nombre 1
+            //Lire N1
+            N1 = parseInt(document.getElementById("iNombreUtilisateur1").value);
+            //Si N1>NbMax
+            if (N1 > NbMax) {
+                //NbMax = N1 ; i++; Position = i
+                NbMax = N1;
+                i++;
+                Position = i;
+            }
+            //  Ecrire entrer un nombre 2
+            //lire N2
+            N2 = parseInt(document.getElementById("iNombreUtilisateur2").value);
+            //Si N2>NbMax
+            if (N2 > NbMax) {
+                //NbMax = N2 ; i++; Position = i
+                NbMax = N2;
+                i++;
+                Position = i;
+            }
+            //  Ecrire entrer un nombre 3
+            //Lire N3
+            N3 = parseInt(document.getElementById("iNombreUtilisateur3").value);
+            //Si N3>NbMax
+            if (N3 > NbMax) {
+                //NbMax = N3 ; i++; Position = i
+                NbMax = N3;
+                i++;
+                Position = i;
+            }
+            //Ecrire Le nombre le plus grand était : " + NbMax
+            //Ecrire Il a été saisi en position numéro " + Position
+            document.getElementById("div_resultat").innerHTML = ("innerHTML Le nombre le plus grand était : " + NbMax);
+            document.getElementById("div_resultat_js").innerHTML = ("Il a été saisi en position numéro " + Position);
+        }//FinSi
+        //Si N1 ou N2 ou N3 = 0
+        if (N1 == 0 || N2 == 0 || N3 == 0) {
+            //Ecrire Arrêt du Programme
+            document.getElementById("div_resultat_p").innerHTML = ("Arrêt du Programme !!");
+        } //FinSi
+    }//Fin
                                     </code>
                                  </pre>
                                 </div>
@@ -72,29 +343,71 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
-
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+function Exo_5_9_jquery() {
+    //VARIABLES N1 N2 N3 =1
+    //VARIABLES i NbMax position  =0
+    var N1 = 1;
+    var N2 = 1;
+    var N3 = 1;
+    var i = 0;
+    var NbMax = 0;
+    var Position = 0;
+    //Si N1 != 0 || N2 != 0 || N3 != 0
+    if (N1 != 0 || N2 != 0 || N3 != 0) {
+        //  Ecrire entrer un nombre 1
+        //Lire N1
+        N1 = parseInt($("#iNombreUtilisateur1").val());
+        //Si N1>NbMax
+        if (N1 > NbMax) {
+            //NbMax = N1 ; i++; Position = i
+            NbMax = N1;
+            i++;
+            Position = i;
+        }
+        //  Ecrire entrer un nombre 2
+        //lire N2
+        N2 = parseInt($("#iNombreUtilisateur2").val());
+        //Si N2>NbMax
+        if (N2 > NbMax) {
+            //NbMax = N2 ; i++; Position = i
+            NbMax = N2;
+            i++;
+            Position = i;
+        }
+        //  Ecrire entrer un nombre 3
+        //Lire N3
+        N3 = parseInt($("#iNombreUtilisateur3").val());
+        //Si N3>NbMax
+        if (N3 > NbMax) {
+            //NbMax = N3 ; i++; Position = i
+            NbMax = N3;
+            i++;
+            Position = i;
+        }
+        //Ecrire Le nombre le plus grand était : " + NbMax
+        //Ecrire Il a été saisi en position numéro " + Position
+        $("#div_resultat").html("JQUERY Le nombre le plus grand était : " + NbMax);
+        $("#div_resultat_js").html("Il a été saisi en position numéro " + Position);
+    }//FinSi
+    //Si N1 ou N2 ou N3 = 0
+    if (N1 == 0 || N2 == 0 || N3 == 0) {
+        //Ecrire Arrêt du Programme
+        $("#div_resultat_p").html("Arrêt du Programme JQUERY !!");
+    } //FinSi
+}//Fin
 
                                     </code>
                                  </pre>
@@ -119,8 +432,63 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+    $sMessage= "";
+    $sMessage2= "";
+    $sMessage3= "";
+        // SI $_POST["iRepUtilisateur"] EXISTE ET QUE $_POST["iRepUtilisateur"] N EST PAS VIDE ALORS
+    if ((isset($_POST["iNombreUtilisateur1"])) && (!(empty($_POST["iNombreUtilisateur1"]))))
+    {
+        //VARIABLES N1 N2 N3 =1
+        //VARIABLES i NbMax position  =0
+        $N1 = 1;
+        $N2 = 1;
+        $N3 = 1;
+        $i = 0;
+        $NbMax = 0;
+        $Position = 0;
+        //Si N1 != 0 || N2 != 0 || N3 != 0
+        if ($N1 != 0 || $N2 != 0 || $N3 != 0) {
+            //  Ecrire entrer un nombre 1
+            //Lire N1
+            $N1 = $_POST["iNombreUtilisateur1"];
+            //Si N1>NbMax
+            if ($N1 > $NbMax) {
+                //NbMax = N1 ; i++; Position = i
+                $NbMax = $N1;
+                $i=$i+1;
+                $Position = $i;
+            }
+            //  Ecrire entrer un nombre 2
+            //lire N2
+            $N2 = $_POST["iNombreUtilisateur2"];
+            //Si N2>NbMax
+            if ($N2 > $NbMax) {
+                //NbMax = N2 ; i++; Position = i
+                $NbMax = $N2;
+                $i=$i+1;
+                $Position = $i;
+            }
+            //  Ecrire entrer un nombre 3
+            //Lire N3
+            $N3 =$_POST["iNombreUtilisateur3"];
+            //Si N3>NbMax
+            if ($N3 > $NbMax) {
+                //NbMax = N3 ; i++; Position = i
+                $NbMax = $N3;
+                $i=$i+1;
+                $Position = $i;
+            }
+            //Ecrire Le nombre le plus grand était : " + NbMax
+            //Ecrire Il a été saisi en position numéro " + Position
+            $sMessage = "PHP Le nombre le plus grand était : " . $NbMax;
+            $sMessage2 = "Il a été saisi en position numéro " . $Position;
+        }//FinSi
+        //Si N1 ou N2 ou N3 = 0
+        else if($N1 == 0 || $N2 == 0 || $N3 == 0) {
+            //Ecrire Arrêt du Programme
+            $sMessage3 = ("Arrêt du Programme !!");
+        } //FinSi
+    }//Fin
                 
                                     </code>
                                  </pre>
@@ -128,12 +496,6 @@
                             </div>
                         </div>
                     </div>
-
-                </div>
-                <div class="col-md-2 contentRight">
-                <?php
-                    require ('../commun/contentRight.php');
-                    ?>
                 </div>
             </div>
         </div>

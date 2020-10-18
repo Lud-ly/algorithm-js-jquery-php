@@ -6,7 +6,7 @@ $sMessage= "";
 if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
 {
 	$chain="";
-	$sHTML= "La table de multiplication de ce nombre est : ";
+	$sHTML= "La table de multiplication de ";
 	//Variables iNombre, i en Entier
 	//Variables chain en caractère
 	//Variables sHTML="La table de multiplication de ce nombre est :
@@ -17,10 +17,10 @@ if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur
 	//Pour i ← 1 à 10
 	for ($i = 0; $i <= 10; $i++) {
 		// chain = chain + iNombre + " x ", i, " = ", iNombre * i
-		$chain = $chain . $iNombre . " x " . $i . " = " . $iNombre * $i . " | " . " ";
+		$chain = $chain . $iNombre . " x " . $i . " = " . $iNombre * $i .  "<br/> ";
 	}
 	//Ecrire afficher sHTML + chain
-	$sMessage = "PHP " . $sHTML . $chain;
+	$sMessage = "PHP " . $sHTML . $iNombre . " est : " . $chain;
 	//Fin
 }
 	
