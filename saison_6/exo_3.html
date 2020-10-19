@@ -8,15 +8,74 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_6_3() {
+                //Variables Tableau Notes(8) ,Notes=[] en Numérique
+                // i en Numérique
+                // var iTabNotes = [0]
+                //var Notes=[];
+                var iTabNotes = [0];
+                var Notes = [];
+
+                //Pour i ← 0 à 8
+                for (var i = 0; i <= 8; i++) {
+                    //Ecrire "Entrez la note numéro ", i + 1
+                    //Lire Notes(i)
+                    iTabNotes[i] = parseInt(prompt("Entrez la note numéro ", i + 1));
+                    //Notes = Notes +  "[ " + iTabNotes[i] + " ]"
+                    parseInt(Notes = Notes + "[ " + iTabNotes[i] + " ]");
+                }
+                //Ecrire Notes
+                alert("Prompt" + Notes);
+            } // Fin
+            //Variables global tableau notes,i
+            var i = 2;
+            var notes = [];
+
+            function Exo_6_3_innerHTML() {
+                //Ecrire Entrer la notes n°"+i suivant
+                //Lire input
+                var input = document.getElementById("nombreP");
+                document.getElementById("div_resultat").innerHTML = ("Entrer la notes n°"+[i++]);
+                //Ajouter value à notes
+                notes.push(parseInt(document.getElementById("nombreP").value));
+                //Si les notes =8
+                if (notes.length == 8) {
+                    //Ecrire Notes
+                    document.getElementById("div_resultat_js").innerHTML = notes.join(" , ");
+                    document.getElementById("div_resultat").innerHTML = ("innerHTML Voici les Notes");
+                }//FinSi
+
+
+            } // Fin
+            function Exo_6_3_jquery() {
+                //Ecrire Entrer la notes n°"+i suivant
+                //Lire input
+                var input = $("#nombreP");
+               $("#div_resultat").html("Entrer la notes n°"+[i++]);
+                //Ajouter value à notes
+                notes.push(parseInt($("#nombreP").value));
+                //Si les notes =8
+                if (notes.length == 8) {
+                    //Ecrire Notes
+                  $("#div_resultat_js").html(notes.join(" , "));
+                   $("#div_resultat").html("Jquery Voici les Notes");
+                }
+
+
+            } // Fin
+        </script>
+
+
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -27,27 +86,69 @@
                 </div>
                 <div class="col-md-8">
                     <div id="accordion">
-                        <div class="card"id="exos">
+                        <div class="card" id="exos">
                             <div class="card-body">
+
                                 <h4>Exercice 6.3</h4>
-                                <p>Ecrire un algorithme qui déclare un tableau de 9 notes, dont on fait ensuite saisir les valeurs par l’utilisateur.</p>
+                                <p>Ecrire un algorithme qui déclare un tableau de 9 notes, dont on fait ensuite saisir
+                                    les valeurs par l’utilisateur.</p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
-                                </div>
-                            <div class="card-header" id="headingOne">
+                                <h4>Pseudocode:</h4>
+                                <p>
+                                    Tableau Notes(8) en Numérique
+                                    Variable i en Numérique
+                                    Pour i ← 0 à 8
+                                    Ecrire "Entrez la note numéro ", i + 1
+                                    Lire Notes(i)
+                                    i Suivant
+                                    Fin
+                                </p>
+                            </div>
+                            <div id=" txt_javascript">
+
+                                <form action="exo_3.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+
+                                        <div class="myResult" id="div_resultat_php">
+                                            <p><?php echo $sMessage; ?></p>
+                                            <p><?php echo $sMessage2; ?></p>
+                                        </div>
+
+                                        <div class="myResult" id="div_resultat"></div>
+                                        <div class="myResult" id="div_resultat_js"></div>
+                                        <input type="number" name="nombrePlat" id="nombreP">
+                                        <input type="button" value="Envoyer" id="ok" onclick="Exo_6_3_innerHTML()">
+                                    </div>
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                </form>
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_6_3()">JS WITH
+                                        PROMPT</button>
+
+                                    <button class="btn_green" onClick="Exo_6_3_innerHTML()"> JS WITH
+                                        INNERHTML</button>
+
+                                    <button class="btn_green" onClick="Exo_6_3_jquery()">JQUERY !</button>
+                                </div>
+                            </div>
+                            <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Sous le capot</p>
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -69,15 +170,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -128,7 +228,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

@@ -12,17 +12,6 @@ $sMessage="";
 	} 
 	$sMessage= "PHP" . $stuff;
 //Fin
-
-$sMessage2="";
-$sAphbLatin = ("A". "E" ."i". "O" . "U" . "Y");
-
-	for ($i = 0; $i <= 5; $i++) {
-		//stuff(i) ← 0
-		$voyelles = $voyelles . "[ " . 	$sAphbLatin[$i] . " ]";
-		
-	} 
-	$sMessage2= " PHP " . $voyelles;
-//Fin
 	
 
 	

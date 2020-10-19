@@ -109,6 +109,8 @@
                                 </div>
                             </div>
                             <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Sous le capot</p>
                                 <div class="language">
                                     <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
                                         aria-expanded="true" aria-controls="collapseOne">
@@ -116,7 +118,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
                                 <hr size="1px" color="olivedrab" />
@@ -124,13 +126,19 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+    function Exo_6_1_innerHTML() {
+        //Tableau stuff[6] en Numérique
+        var stuff = [,,,,,,,];
+        var i;
+        //Variable i en Numérique
+        //Debut
+        //Pour i ← 0 à 6
+        for (i = 0; i < stuff.length; i++) {
+            //stuff(i) ← 0
+            stuff[i] = "[ " + 0 + " ]";
+        } 
+        document.getElementById("div_resultat_js").innerHTML = ("innerHTML"+stuff);
+    }//Fin
                                     </code>
                                  </pre>
                                 </div>
@@ -153,15 +161,19 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
-
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+    function Exo_6_1_jquery() {
+        //Tableau stuff[6] en Numérique
+        var stuff = [,,,,,,,];
+        var i;
+        //Variable i en Numérique
+        //Debut
+        //Pour i ← 0 à 6
+        for (i = 0; i < stuff.length; i++) {
+            //stuff(i) ← 0
+            stuff[i] = "[ " + 0 + " ]";
+        } 
+        $("#div_resultat_js").html("jquery"+stuff);
+    }//Fin
 
                                     </code>
                                  </pre>
@@ -186,9 +198,18 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
-                
+    $sMessage="";
+    //Tableau stuff[6] en Numérique
+    //Variable i en Numérique
+    //Debut
+    //Pour i ← 0 à 6
+    for ($i = 0; $i <= 7; $i++) {
+        //stuff(i) ← 0
+        $stuff = $stuff . "[ " . 0 . " ]";
+        
+    } 
+    $sMessage= "PHP" . $stuff;
+//Fin
                                     </code>
                                  </pre>
                                 </div>
