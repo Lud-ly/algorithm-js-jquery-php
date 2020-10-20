@@ -44,7 +44,7 @@
                 //Ecrire Entrer la notes n°"+i suivant
                 //Lire input
                 var input = document.getElementById("nombreP");
-                document.getElementById("div_resultat").innerHTML = ("Entrer la notes n°"+[i++]);
+                document.getElementById("div_resultat").innerHTML = ("Entrer la notes n°" + [i++]);
                 //Ajouter value à notes
                 notes.push(parseInt(document.getElementById("nombreP").value));
                 //Si les notes =8
@@ -56,18 +56,23 @@
 
 
             } // Fin
+            var i = 2;
+            var jQnotes = [];
+         
             function Exo_6_3_jquery() {
                 //Ecrire Entrer la notes n°"+i suivant
                 //Lire input
-                var input = $("#nombreP");
-               $("#div_resultat").html("Entrer la notes n°"+[i++]);
+               
+                var input = $("#nombreJ");
+                $("#div_resultat").html("Entrer la notes n°" + [i++]);
                 //Ajouter value à notes
-                notes.push(parseInt($("#nombreP").value));
+                parseInt(jQnotes.push($("#nombreJ").val()));
                 //Si les notes =8
-                if (notes.length == 8) {
+                if (jQnotes.length == 8) {
+                    console.log(typeof jQnotes);
                     //Ecrire Notes
-                  $("#div_resultat_js").html(notes.join(" , "));
-                   $("#div_resultat").html("Jquery Voici les Notes");
+                   $("#div_resultat_js").html(jQnotes.join(" , "));
+                    $("#div_resultat").html("Jquery Voici les Notes");
                 }
 
 
@@ -112,28 +117,36 @@
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
 
+                                        <div class="myResult" id="div_resultat"></div>
+                                        <div class="myResult" id="div_resultat_js"></div>
+                                        <div class="language">
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_6_3_innerHTML()">innerHTML</button>
+                                            <input type="number" name="nombrePlat" id="nombreP">
+                                        </div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <div class="language">
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_6_3_jquery()">JQUERY</button>
+                                            <input type="number" name="nombrePlat" id="nombreJ">
+                                        </div>
+                                    </div>
+                                    <hr width="75%" size="1px" color="olivedrab" />
+                                    <div class="language">
+                                        <label for="myPhp">"PHP Entrer les notes"
+                                        </label>
+                                        <input type="text" name="myPhp" id="myPhp">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                         <div class="myResult" id="div_resultat_php">
                                             <p><?php echo $sMessage; ?></p>
                                             <p><?php echo $sMessage2; ?></p>
                                         </div>
-
-                                        <div class="myResult" id="div_resultat"></div>
-                                        <div class="myResult" id="div_resultat_js"></div>
-                                        <input type="number" name="nombrePlat" id="nombreP">
-                                        <input type="button" value="Envoyer" id="ok" onclick="Exo_6_3_innerHTML()">
-                                    </div>
-                                    <div class="language">
-                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                     </div>
                                 </form>
+                                <hr width="75%" size="1px" color="olivedrab" />
                                 <div class="language">
                                     <button class="btn_green" id="btn_js" onClick="Exo_6_3()">JS WITH
                                         PROMPT</button>
-
-                                    <button class="btn_green" onClick="Exo_6_3_innerHTML()"> JS WITH
-                                        INNERHTML</button>
-
-                                    <button class="btn_green" onClick="Exo_6_3_jquery()">JQUERY !</button>
                                 </div>
                             </div>
                             <div class="card-header" id="headingOne">
@@ -146,7 +159,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
                                 <hr size="1px" color="olivedrab" />

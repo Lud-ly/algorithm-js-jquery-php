@@ -8,15 +8,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_6_4() {
+                // Tableau Nb(5) en Entier
+                //Variable i en Entier
+                var nb = [];
+                var i=0;
+                // Début
+                // Pour i ← 0 à 5
+                for (i = 0; i <= 5; i++) {
+                    //Nb(i) ← i * i
+                    nb[i] = i * i;
+                    alert(nb);
+                    // i suivant
+                    // Pour i ← 0 à 5
+                }
+            }
+            function Exo_6_4_innerHTML() {
+                // Tableau Nb(5) en Entier
+                //Variable i en Entier
+                var nb = [];
+                var i=0;
+                // Début
+                // Pour i ← 0 à 5
+                for (i = 0; i <= 5; i++) {
+                    //Nb(i) ← i * i
+                    nb[i] = i * i;
+                  document.getElementById("div_resultat_js").innerHTML = ("innerHTML "+nb);
+                    // i suivant
+                    // Pour i ← 0 à 5
+                }
+            }
+            function Exo_6_4_jquery() {
+                // Tableau Nb(5) en Entier
+                //Variable i en Entier
+                var nb = [];
+                var i=0;
+                // Début
+                // Pour i ← 0 à 5
+                for (i = 0; i <= 5; i++) {
+                    //Nb(i) ← i * i
+                    nb[i] = i * i;
+                 $("#div_resultat_js").html("jquery "+nb);
+                    // i suivant
+                    // Pour i ← 0 à 5
+                }
+            }
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -41,25 +88,53 @@
                                     Ecrire Nb(i)
                                     i suivant
                                     Fin
-                                    Peut-on simplifier cet algorithme avec le même résultat ? 
+                                    Peut-on simplifier cet algorithme avec le même résultat ?
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a remplir
-                                    </p>
-                                </div>
-                            <div class="card-header" id="headingOne">
+                                <h4>Pseudocode:</h4>
+                                <p>a remplir
+                                </p>
+                            </div>
+                            <div id="txt_javascript">
+
+                                <form action="exo_4.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+
+                                        <div class="myResult" id="div_resultat_php">
+                                            <p><?php echo $sMessage; ?></p>
+                                        </div>
+
+                                        <div class="myResult" id="div_resultat_js"></div>
+
+                                    </div>
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                </form>
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_6_4()">JS WITH PROMPT</button>
+
+                                    <button class="btn_green" onClick="Exo_6_4_innerHTML()"> JS WITH INNERHTML</button>
+
+                                    <button class="btn_green" onClick="Exo_6_4_jquery()">JQUERY !</button>
+                                </div>
+                            </div>
+                            <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Sous le capot</p>
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -81,15 +156,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -140,7 +214,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

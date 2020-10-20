@@ -201,6 +201,12 @@ h3,h4,h5,p{
         background: #c5e4c5;
         color: #000;
       }
+      .language input{
+       
+        margin-top: 30px;
+        height: 25px;
+        width: normal;
+      }
 
 .myResult{
   width: auto;

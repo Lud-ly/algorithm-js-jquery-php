@@ -8,15 +8,77 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_6_6() {
+                // Tableau Suite(7) en Entier
+                //Variable i en Entier
+                // Début
+                var suite = [];
+                var i = 2;
+                // Suite(0) ← 1
+                // Suite(1) ← 1
+                alert(suite[0] = 1);
+                alert(suite[1] = 1);
+                //Pour i ← 2 à 7
+                for (i = 2; i <= 7; i++) {
+                    //Suite(i) ← Suite(i-1) + Suite(i-2)
+                    suite[i] = suite[i - 1] + suite[i - 2];
+                    alert(suite[i]);
+                }
+                alert(suite);
+
+            } //Fin   
+            function Exo_6_6_innerHTML() {
+                // Tableau Suite(7) en Entier
+                //Variable i en Entier
+                // Début
+                var suite = [];
+                var i = 2;
+                // Suite(0) ← 1
+                // Suite(1) ← 1
+                document.getElementById("div_resultat_js").innerHTML = (suite[0] = 1);
+                document.getElementById("div_resultat_js").innerHTML = (suite[1] = 1);
+                //Pour i ← 2 à 7
+                for (i = 2; i <= 7; i++) {
+                    //Suite(i) ← Suite(i-1) + Suite(i-2)
+                    suite[i] = suite[i - 1] + suite[i - 2];
+                    document.getElementById("div_resultat_js").innerHTML = (suite[i]);
+                }
+                document.getElementById("div_resultat_js").innerHTML = ("innerHTML " + suite);
+
+            } //Fin  
+
+            function Exo_6_6_jquery() {
+                // Tableau Suite(7) en Entier
+                //Variable i en Entier
+                // Début
+                var suite = [];
+                var i = 2;
+                // Suite(0) ← 1
+                // Suite(1) ← 1
+                $("#div_resultat_js").html(suite[0] = 1);
+                $("#div_resultat_js").html(suite[1] = 1);
+                //Pour i ← 2 à 7
+                for (i = 2; i <= 7; i++) {
+                    //Suite(i) ← Suite(i-1) + Suite(i-2)
+                    suite[i] = suite[i - 1] + suite[i - 2];
+                    $("#div_resultat_js").html(suite[i]);
+                }
+                $("#div_resultat_js").html("jquery " + suite);
+
+            } //Fin                         
+
+
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -46,21 +108,59 @@
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a remplir
-                                    </p>
-                                </div>
-                            <div class="card-header" id="headingOne">
+                                <h4>Pseudocode:</h4>
+                                <p>a remplir
+                                </p>
+                            </div>
+                                <div class="card-header" id="headingOne">
+                                    <div id="txt_javascript">
+
+                                        <form action="exo_6.php" method="POST">
+                                            <div>
+                                                <hr width="75%" size="1px" color="olivedrab" />
+                                                <h3>Tester l'algorithme : </h3>
+
+                                                <div class="myResult" id="div_resultat_php">
+                                                    <p><?php echo $sMessage; ?></p>
+                                                    <p><?php echo $sMessage2; ?></p>
+                                                    <p><?php echo $sMessage3; ?></p>
+                                                    <p><?php echo $sMessage4; ?></p>
+                                                   
+                                                </div>
+
+                                                <div class="myResult" id="div_resultat_js"></div>
+
+                                            </div>
+                                            <div class="language">
+                                                <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                            </div>
+                                        </form>
+                                        <div class="language">
+                                            <button class="btn_green" id="btn_js" onClick="Exo_6_6()">JS WITH
+                                                PROMPT</button>
+
+                                            <button class="btn_green" onClick="Exo_6_6_innerHTML()"> JS WITH
+                                                INNERHTML</button>
+
+                                            <button class="btn_green" onClick="Exo_6_6_jquery()">JQUERY !</button>
+                                        </div>
+                                    </div>
+                                    <div class="language">
+                                        <button class="btn btn-secondary" data-toggle="collapse"
+                                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            JAVASCRIPT
+                                        </button>
+                                    </div>
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -82,15 +182,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -141,7 +240,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>
