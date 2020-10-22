@@ -17,51 +17,51 @@
             <?php include('../commun/header.php');?>
         </header>
         <script>
-            function Exo_6_4() {
-                // Tableau Nb(5) en Entier
-                //Variable i en Entier
-                var nb = [];
-                var i=0;
-                // Début
-                // Pour i ← 0 à 5
-                for (i = 0; i <= 5; i++) {
-                    //Nb(i) ← i * i
-                    nb[i] = i * i;
-                    alert(nb);
-                    // i suivant
-                    // Pour i ← 0 à 5
+            function Exo_6_1() {
+                //Tableau iStuff[6] en Numérique
+                var iStuff = [];
+                var i;
+                //Variable i en Numérique
+                //Debut
+                //Pour i ← 0 à 6
+                for (i = 0; i <= 6; i++) {
+                    //iStuff(i) ← 0
+                    iStuff[i] = " " + 0 + " ";
                 }
-            }
-            function Exo_6_4_innerHTML() {
-                // Tableau Nb(5) en Entier
-                //Variable i en Entier
-                var nb = [];
-                var i=0;
-                // Début
-                // Pour i ← 0 à 5
-                for (i = 0; i <= 5; i++) {
-                    //Nb(i) ← i * i
-                    nb[i] = i * i;
-                  document.getElementById("div_resultat_js").innerHTML = ("innerHTML "+nb);
-                    // i suivant
-                    // Pour i ← 0 à 5
+                //Ecrire iStuff
+                alert(iStuff);
+                 }  //Fin
+
+            function Exo_6_1_innerHTML() {
+                //Tableau iStuff[6] en Numérique
+                var iStuff = [];
+                var i;
+                //Variable i en Numérique
+                //Debut
+                //Pour i ← 0 à 6
+                for (i = 0; i <= 6; i++) {
+                    //iStuff(i) ← 0
+                    iStuff[i] = " " + 0 + " ";
                 }
-            }
-            function Exo_6_4_jquery() {
-                // Tableau Nb(5) en Entier
-                //Variable i en Entier
-                var nb = [];
-                var i=0;
-                // Début
-                // Pour i ← 0 à 5
-                for (i = 0; i <= 5; i++) {
-                    //Nb(i) ← i * i
-                    nb[i] = i * i;
-                 $("#div_resultat_js").html("jquery "+nb);
-                    // i suivant
-                    // Pour i ← 0 à 5
+                  //Ecrire iStuff
+                document.getElementById("div_resultat_js").innerHTML = ("innerHTML : " + iStuff);
+            }//Fin
+
+            function Exo_6_1_jquery() {
+                //Tableau iStuff[6] en Numérique
+                var iStuff = [];
+                var i;
+                //Variable i en Numérique
+                //Debut
+                //Pour i ← 0 à 6
+                for (i = 0; i <= 6; i++) {
+                    //iStuff(i) ← 0
+                    iStuff[i] = " " + 0 + " ";
                 }
-            }
+                  //Ecrire iStuff
+                $("#div_resultat_js").html("jquery : " + iStuff);
+            }//Fin
+
         </script>
         <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
@@ -76,29 +76,25 @@
                     <div id="accordion">
                         <div class="card">
                             <div class="card-body">
-                                <h4>Exercice 6.4</h4>
-                                <p>Que produit l’algorithme suivant ?
-                                    Tableau Nb(5) en Entier
-                                    Variable i en Entier
-                                    Début
-                                    Pour i ← 0 à 5
-                                    Nb(i) ← i * i
-                                    i suivant
-                                    Pour i ← 0 à 5
-                                    Ecrire Nb(i)
-                                    i suivant
-                                    Fin
-                                    Peut-on simplifier cet algorithme avec le même résultat ?
-                                </p>
+                                <h4>Exercice 6.1</h4>
+                                <p>Ecrire un algorithme qui déclare et remplisse un tableau de 7 valeurs numériques en
+                                    les mettant toutes à zéro.</p>
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>a remplir
+                                <p>
+                                    Tableau iStuff[6] en Numérique<br/>
+                                    Variable i en Numérique<br/>
+                                    Debut<br/>
+                                    Pour i ← 0 à 6<br/>
+                                    iStuff(i) ← 0<br/>
+                                    Ecrire iStuff<br/>
+                                    Fin<br/>
                                 </p>
                             </div>
                             <div id="txt_javascript">
 
-                                <form action="exo_4.php" method="POST">
+                                <form action="exo_6_1.php" method="POST">
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
@@ -108,18 +104,17 @@
                                         </div>
 
                                         <div class="myResult" id="div_resultat_js"></div>
-
                                     </div>
                                     <div class="language">
                                         <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                     </div>
                                 </form>
                                 <div class="language">
-                                    <button class="btn_green" id="btn_js" onClick="Exo_6_4()">JS WITH PROMPT</button>
+                                    <button class="btn_green" id="btn_js" onClick="Exo_6_1()">JS WITH PROMPT</button>
 
-                                    <button class="btn_green" onClick="Exo_6_4_innerHTML()"> JS WITH INNERHTML</button>
+                                    <button class="btn_green" onClick="Exo_6_1_innerHTML()"> JS WITH INNERHTML</button>
 
-                                    <button class="btn_green" onClick="Exo_6_4_jquery()">JQUERY !</button>
+                                    <button class="btn_green" onClick="Exo_6_1_jquery()">JQUERY !</button>
                                 </div>
                             </div>
                             <div class="card-header" id="headingOne">
@@ -132,7 +127,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
                                 <hr size="1px" color="olivedrab" />
@@ -140,13 +135,20 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+    function Exo_6_1_innerHTML() {
+        //Tableau iStuff[6] en Numérique
+        var iStuff = [];
+        var i;
+        //Variable i en Numérique
+        //Debut
+        //Pour i ← 0 à 6
+        for (i = 0; i <= 6; i++) {
+            //iStuff(i) ← 0
+            iStuff[i] = " " + 0 + " ";
+        }
+            //Ecrire iStuff
+        document.getElementById("div_resultat_js").innerHTML = ("innerHTML : " + iStuff);
+    }//Fin
                                     </code>
                                  </pre>
                                 </div>
@@ -169,15 +171,20 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
-
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+    function Exo_6_1_jquery() {
+        //Tableau iStuff[6] en Numérique
+        var iStuff = [];
+        var i;
+        //Variable i en Numérique
+        //Debut
+        //Pour i ← 0 à 6
+        for (i = 0; i <= 6; i++) {
+            //iStuff(i) ← 0
+            iStuff[i] = " " + 0 + " ";
+        }
+            //Ecrire iStuff
+        $("#div_resultat_js").html("jquery : " + iStuff);
+    }//Fin
 
                                     </code>
                                  </pre>
@@ -202,9 +209,23 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
-                
+    $sMessage="";
+
+        //SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
+        if ((isset($_POST["whyNot"])) && (!(empty($_POST["whyNot"]))))
+        {
+        //Tableau iStuff[6] en Numérique
+        //Variable i en Numérique
+        //Debut
+        //Pour i ← 0 à 6
+        for ($i = 0; $i <= 7; $i++) {
+            //iStuff(i) ← 0
+            $iStuff = $iStuff . "[ " . 0 . " ]";
+            } 
+            //Ecrire iStuff
+        $sMessage= "PHP" . $iStuff;
+    //}
+    //Fin
                                     </code>
                                  </pre>
                                 </div>

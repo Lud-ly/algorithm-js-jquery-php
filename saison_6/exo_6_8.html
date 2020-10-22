@@ -17,69 +17,90 @@
             <?php include('../commun/header.php');?>
         </header>
         <script>
-            function Exo_6_3() {
-                //Variables Tableau Notes(8) ,Notes=[] en Numérique
-                // i en Numérique
-                // var iTabNotes = [0]
-                //var Notes=[];
-                var iTabNotes = [0];
-                var Notes = [];
 
-                //Pour i ← 0 à 8
-                for (var i = 0; i <= 8; i++) {
-                    //Ecrire "Entrez la note numéro ", i + 1
-                    //Lire Notes(i)
-                    iTabNotes[i] = parseInt(prompt("Entrez la note numéro ", i + 1));
-                    //Notes = Notes +  "[ " + iTabNotes[i] + " ]"
-                    parseInt(Notes = Notes + "[ " + iTabNotes[i] + " ]");
+            function Exo_6_8() {
+                // Variables Nb, Nbpos, Nbneg en Numérique
+                //Tableau T() en Numérique
+                var Nbpos = 0;
+                var Nbneg = 0;
+                var Nb = 0;
+                var T = [];
+                //Debut
+                // Ecrire "Entrez le nombre de valeurs :"
+                //  Lire Nb
+                Nb = parseInt(prompt("Entrez le nombre de valeurs :"));
+                // T(Nb-1)
+                T = [Nb - 1];
+                //Pour i ← 0 à Nb - 1  
+                for (i = 0; i <= Nb - 1; i++) {
+                    //  Ecrire "Entrez le nombre n° ", i + 1 
+                    // Lire T(i)
+                    T[i] = parseInt(prompt("Entrez le nombre n° ", i + 1));
+                    //Si T(i) > 0 alors
+                    if (T[i] > 0) {
+                        // Nbpos = Nbpos + 1
+                        Nbpos = Nbpos + 1;
+                    }
+                    //SinonSi
+                    else if (T[i] < 0) {
+                        // Nbneg = Nbneg + 1
+                        Nbneg = Nbneg + 1;
+                    }
+                    //Finsi
                 }
-                //Ecrire Notes
-                alert("Prompt" + Notes);
-            } // Fin
-            //Variables global tableau notes,i
-            var i = 2;
-            var notes = [];
+                // Ecrire "Nombre de valeurs positives : ", Nbpos                           
+                //Ecrire "Nombre de valeurs négatives : ", Nbneg 
+                alert("Nombre de valeurs positives : " + Nbpos)
+                alert("Nombre de valeurs négatives : " + Nbneg)
+            }// Fin          
 
-            function Exo_6_3_innerHTML() {
-                //Ecrire Entrer la notes n°"+i suivant
-                //Lire input
-                var input = document.getElementById("nombreP");
-                document.getElementById("div_resultat").innerHTML = ("Entrer la notes n°" + [i++]);
-                //Ajouter value à notes
-                notes.push(parseInt(document.getElementById("nombreP").value));
-                //Si les notes =8
-                if (notes.length == 8) {
-                    //Ecrire Notes
-                    document.getElementById("div_resultat_js").innerHTML = notes.join(" , ");
-                    document.getElementById("div_resultat").innerHTML = ("innerHTML Voici les Notes");
-                }//FinSi
+            function Exo_6_8_innerHTML() {
+                // Variables Nb, Nbpos, Nbneg en Numérique
+                //Tableau T() en Numérique
+                var Nbpos = 0;
+                var Nbneg = 0;
+                var Nb = 0;
+                var T = [];
+                //Debut
+                // Ecrire "Entrez le nombre de valeurs :"
+                //  Lire Nb
+                Nb = parseFloat(document.getElementById("nombreP").value);
+                // T(Nb-1)
+                T = [Nb - 1];
+                //Pour i ← 0 à Nb - 1  
+               // T = parseFloat(document.getElementById("nombrePlat").value);
 
-
-            } // Fin
-            var i = 2;
-            var jQnotes = [];
-         
-            function Exo_6_3_jquery() {
-                //Ecrire Entrer la notes n°"+i suivant
-                //Lire input
                
-                var input = $("#nombreJ");
-                $("#div_resultat").html("Entrer la notes n°" + [i++]);
-                //Ajouter value à notes
-                parseInt(jQnotes.push($("#nombreJ").val()));
-                //Si les notes =8
-                if (jQnotes.length == 8) {
-                    console.log(typeof jQnotes);
-                    //Ecrire Notes
-                   $("#div_resultat_js").html(jQnotes.join(" , "));
-                    $("#div_resultat").html("Jquery Voici les Notes");
+                for (i = 0; i <= Nb-1; i++) {
+                    //  Ecrire "Entrez le nombre n° ", i + 1 
+                    // Lire T(i)
+                    T.push(parseInt(document.getElementById("nombrePlat").value));
+                    //Si T(i) > 0 alors
+                    document.getElementById("div_resultat_js").innerHTML = ("Entrez le nombre n° " + i);
+                    console.log("T"+T);
+                    console.log("i"+i);
+                    if (T[i] > 0) {
+                        // Nbpos = Nbpos + 1
+                        Nbpos = Nbpos + 1;
+                    }
+                    //SinonSi
+                    else if (T[i] < 0) {
+                        // Nbneg = Nbneg + 1
+                        Nbneg = Nbneg + 1;
+                    }
+                    //Finsi
                 }
+                // Ecrire "Nombre de valeurs positives : ", Nbpos                           
+                //Ecrire "Nombre de valeurs négatives : ", Nbneg 
+                document.getElementById("div_result").innerHTML = ("Nombre de valeurs positives : " + Nbpos + "Nombre de valeurs négatives : " + Nbneg)
+
+            }// Fin          
 
 
-            } // Fin
+
+
+
         </script>
-
-
         <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
@@ -91,49 +112,73 @@
                 </div>
                 <div class="col-md-8">
                     <div id="accordion">
-                        <div class="card" id="exos">
+                        <div class="card">
                             <div class="card-body">
-
-                                <h4>Exercice 6.3</h4>
-                                <p>Ecrire un algorithme qui déclare un tableau de 9 notes, dont on fait ensuite saisir
-                                    les valeurs par l’utilisateur.</p>
+                                <h4>Exercice 6.8</h4>
+                                <p>Ecrivez un algorithme permettant à l’utilisateur de saisir un nombre quelconque de
+                                    valeurs, qui devront être
+                                    stockées dans un tableau. L’utilisateur doit donc commencer par entrer le nombre de
+                                    valeurs qu’il compte saisir. Il
+                                    effectuera ensuite cette saisie. Enfin, une fois la saisie terminée, le programme
+                                    affichera le nombre de valeurs
+                                    négatives et le nombre de valeurs positives.</p>
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
                                 <p>
-                                    Tableau Notes(8) en Numérique
-                                    Variable i en Numérique
-                                    Pour i ← 0 à 8
-                                    Ecrire "Entrez la note numéro ", i + 1
-                                    Lire Notes(i)
-                                    i Suivant
-                                    Fin
+                                    Variables Nb, Nbpos, Nbneg en Numérique<br />
+                                    Tableau T() en Numérique<br />
+                                    Debut<br />
+                                    Ecrire "Entrez le nombre de valeurs :"<br />
+                                    Lire Nb<br />
+                                    Redim T(Nb-1)<br />
+                                    Nbpos ← 0<br />
+                                    Nbneg ← 0<br />
+                                    Pour i ← 0 à Nb - 1<br />
+                                    Ecrire "Entrez le nombre n° ", i + 1<br />
+                                    Lire T(i)<br />
+                                    Si T(i) > 0 alors<br />
+                                    Nbpos ← Nbpos + 1<br />
+                                    Sinon<br />
+                                    Nbneg ← Nbneg + 1<br />
+                                    Finsi<br />
+                                    i Suivant<br />
+                                    Ecrire "Nombre de valeurs positives : ", Nbpos<br />
+                                    Ecrire "Nombre de valeurs négatives : ", Nbneg<br />
+                                    Fin<br />
                                 </p>
                             </div>
                             <div id=" txt_javascript">
 
-                                <form action="exo_3.php" method="POST">
+                                <form action="exo_6_8.php" method="POST">
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
-
                                         <div class="myResult" id="div_resultat"></div>
                                         <div class="myResult" id="div_resultat_js"></div>
+                                        <div class="myResult" id="div_result"></div>
                                         <div class="language">
+                                            <button type="button" value="Envoyer" id="ok" onclick="Exo_6_8_innerHTML()">
+                                                valeurs</button>
+                                            <label for="nombreP">Entrez le nombre de à évaluer :
+                                            </label>
+                                            <input type="number" name="nombreP" id="nombreP">
                                             <button type="button" value="Envoyer" id="ok"
-                                                onclick="Exo_6_3_innerHTML()">innerHTML</button>
-                                            <input type="number" name="nombrePlat" id="nombreP">
+                                                onclick="Exo_6_8_innerHTML()">go</button>
+                                            <label for="nombrePlat">Entrez les valeurs :
+                                            </label>
+                                            <input type="number" name="nombrePlat" id="nombrePlat">
                                         </div>
-                                        <hr width="75%" size="1px" color="olivedrab" />
+
                                         <div class="language">
                                             <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_6_3_jquery()">JQUERY</button>
-                                            <input type="number" name="nombrePlat" id="nombreJ">
+                                            <input type="number" name="nombrePlat" id="nombrePlat">
                                         </div>
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />
                                     <div class="language">
-                                        <label for="myPhp">"PHP Entrer les notes"
+                                        <label for="myPhp">PHP Veuillez entrer 8 notes :
                                         </label>
                                         <input type="text" name="myPhp" id="myPhp">
                                         <button class="btn_green" type="submit">ALLEZ PHP !</button>
@@ -145,7 +190,7 @@
                                 </form>
                                 <hr width="75%" size="1px" color="olivedrab" />
                                 <div class="language">
-                                    <button class="btn_green" id="btn_js" onClick="Exo_6_3()">JS WITH
+                                    <button class="btn_green" id="btn_js" onClick="Exo_6_8()">JS WITH
                                         PROMPT</button>
                                 </div>
                             </div>
