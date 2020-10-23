@@ -8,15 +8,72 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+           <!-- <?php include('../commun/header.php');?>-->
+        </header>
+        <script>
+            function Exo_6_10() {
+                //Variables i, N en Numérique
+                //Tableaux T1(N), T2(N), T3() en Numérique
+                var tab1 = [4, 8, 7, 9, 1, 5, 4, 6];
+                var tab2 = [7, 6, 5, 2, 1, 3, 7, 4];
+                var tab3 = [];
+                //Debut
+                //Pour i ← 0 à N - 1
+                for (i = 0; i < tab1.length && i < tab2.length; i++) {
+                    // T3(i) ← T1(i) + T2(i)
+                    tab3[i] = tab1[i] + tab2[i]
+                    // i Suivant
+                }// Fin
+                alert("tab1 : " + tab1)
+                alert("tab2 : " + tab2)
+                alert("tab3 :  " + tab3);
+            }
+
+            function Exo_6_10_innerHTML() {
+                //Variables i, N en Numérique
+                //Tableaux T1(N), T2(N), T3() en Numérique
+                var tab1 = [4, 8, 7, 9, 1, 5, 4, 6];
+                var tab2 = [7, 6, 5, 2, 1, 3, 7, 4];
+                var tab3 = [];
+                //Debut
+                //Pour i ← 0 à N - 1
+                for (i = 0; i < tab1.length && i < tab2.length; i++) {
+                    // T3(i) ← T1(i) + T2(i)
+                    tab3[i] = tab1[i] + tab2[i]
+                    // i Suivant
+                }// Fin
+                document.getElementById("div_resultat_js").innerHTML = ("innerHTML tab1 : " + tab1)
+                document.getElementById("div_resultat").innerHTML = ("tab2 : " + tab2)
+                document.getElementById("div_result").innerHTML = ("tab3 :  " + tab3);
+            }
+
+            function Exo_6_10_jquery() {
+                //Variables i, N en Numérique
+                //Tableaux T1(N), T2(N), T3() en Numérique
+                var tab1 = [4, 8, 7, 9, 1, 5, 4, 6];
+                var tab2 = [7, 6, 5, 2, 1, 3, 7, 4];
+                var tab3 = [];
+                //Debut
+                //Pour i ← 0 à N - 1
+                for (i = 0; i < tab1.length && i < tab2.length; i++) {
+                    // T3(i) ← T1(i) + T2(i)
+                    tab3[i] = tab1[i] + tab2[i]
+                    // i Suivant
+                }// Fin
+               $("#div_resultat_js").html("jquery tab1 : " + tab1)
+               $("#div_resultat").html("tab2 : " + tab2)
+               $("#div_result").html("tab3 :  " + tab3);
+            }
+
+
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -30,32 +87,71 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 6.10</h4>
-                                <p>Ecrivez un algorithme constituant un tableau, à partir de deux tableaux de même longueur préalablement saisis. Le
-                                    nouveau tableau sera la somme des éléments des deux tableaux de départ.
+                                <p>Ecrivez un algorithme constituant un tableau, à partir de deux tableaux de même
+                                    longueur préalablement saisis. Le
+                                    nouveau tableau sera la somme des éléments des deux tableaux de départ.</br>
                                     Tableau 1 :
-                                    4 8 7 9 1 5 4 6
+                                    4 8 7 9 1 5 4 6</br>
                                     Tableau 2 :
-                                    7 6 5 2 1 3 7 4
+                                    7 6 5 2 1 3 7 4</br>
                                     Tableau à constituer :
-                                    11 14 12 11 2 8 11 10
+                                    11 14 12 11 2 8 11 10</br>
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>
-                                    </p>
-                                </div>
+                                <h4>Pseudocode:</h4>
+                                <p>
+                                    Variables i, N en Numérique</br>
+                                    Tableaux T1(N), T2(N), T3() en Numérique</br>
+                                    Debut</br>
+                                    Pour i ← 0 à N - 1</br>
+                                    T3(i) ← T1(i) + T2(i)</br>
+                                    i Suivant</br>
+                                    Fin</br>
+                                </p>
+                            </div>
+                            <div id=" txt_javascript">
+
+                                <form action="exo_6_10.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <p>La somme des éléments d'un tableau :</p>
+                                        <div class="myResult" id="div_resultat_js"></div>
+                                        <div class="myResult" id="div_resultat"></div>
+                                        <div class="myResult" id="div_result"></div>
+                                        <div class="language">
+                                            <button class="btn_green" id="btn_js" onClick="Exo_6_10()">JS WITH
+                                                PROMPT</button>
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_6_10_innerHTML()">JS WITH innerHTML</button>
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_6_10_jquery()">JQUERY</button>
+                                        </div>
+                                    </div>
+                                    <hr width="75%" size="1px" color="olivedrab" />
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                        <div class="myResult" id="div_resultat_php">
+                                            <p><?php echo $sMessage; ?></p>
+                                            <p><?php echo $sMessage2; ?></p>
+                                            <p><?php echo $sMessage3; ?></p>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -77,15 +173,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -136,7 +231,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

@@ -16,6 +16,42 @@
     <header>
     <?php include('../commun/header.php');?>
     </header>
+    <script>
+       function Exo_6_13(){
+        var nb = 0;
+        var max = 0;
+        var y = 0;
+        var pos = 0;
+       alert("entrer 5 nombres ->");
+        for(var i =1;i<6;i++){
+          nb = (parseInt(prompt(" entrer un nombre :"+i)));
+            if (nb >max){
+                max = nb;
+                pos = y;
+            }
+            y = y+1;
+        }
+      alert("le nombre le plus grand est : "+max);
+    alert("la position du nombre est : "+pos);
+    }
+    function Exo_6_13_innerHTML(){
+        var nb = 0;
+        var max = 0;
+        var y = 0;
+        var pos = 0;
+       alert("entrer 5 nombres ->");
+        if(i<5){
+          nb = (parseInt(prompt(" entrer un nombre :")));
+            if (nb >max){
+                max = nb;
+                pos = y;
+            }
+            y = y+1;
+        }
+      alert("le nombre le plus grand est : "+max);
+    alert("la position du nombre est : "+pos);
+    }
+    </script>
     <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
@@ -40,6 +76,36 @@
                                     <h4>Pseudocode:</h4>
                                     <p>a faire
                                     </p>
+                                </div>
+                                <div id=" txt_javascript">
+
+                                    <form action="exo_13.php" method="POST">
+                                        <div>
+                                            <hr width="75%" size="1px" color="olivedrab" />
+                                            <h3>Tester l'algorithme : </h3>
+                                            <p>La somme des éléments d'un tableau :</p>
+                                            <div class="myResult" id="div_resultat"></div>
+                                            <div class="myResult" id="div_resultat_js"></div>
+                                            <div class="myResult" id="div_result"></div>
+                                            <div class="language">
+                                                <button class="btn_green" id="btn_js" onClick="Exo_6_13()">JS WITH
+                                                    PROMPT</button>
+                                                <button type="button" value="Envoyer" id="ok"
+                                                    onclick="Exo_6_9_innerHTML()">JS WITH innerHTML</button>
+                                                <button type="button" value="Envoyer" id="ok"
+                                                    onclick="Exo_6_9_jquery()">JQUERY</button>
+                                            </div>
+                                        </div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <div class="language">
+                                            <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                            <div class="myResult" id="div_resultat_php">
+                                                <p><?php echo $sMessage; ?></p>
+                                                <p><?php echo $sMessage2; ?></p>
+                                            </div>
+                                        </div>
+                                    </form>
+    
                                 </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">

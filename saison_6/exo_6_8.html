@@ -61,25 +61,27 @@
                 var Nbneg = 0;
                 var Nb = 0;
                 var T = [];
+                var valeur = 0;
                 //Debut
                 // Ecrire "Entrez le nombre de valeurs :"
                 //  Lire Nb
-                Nb = parseFloat(document.getElementById("nombreP").value);
+                Nb = parseInt(document.getElementById("nombreP").value);
                 // T(Nb-1)
                 T = [Nb - 1];
                 //Pour i ← 0 à Nb - 1  
                // T = parseFloat(document.getElementById("nombrePlat").value);
-
+               valeur = (parseInt(document.getElementById("nombrePlat").value));
                
                 for (i = 0; i <= Nb-1; i++) {
                     //  Ecrire "Entrez le nombre n° ", i + 1 
                     // Lire T(i)
-                    T.push(parseInt(document.getElementById("nombrePlat").value));
+                  
+                   T.push(valeur);
                     //Si T(i) > 0 alors
                     document.getElementById("div_resultat_js").innerHTML = ("Entrez le nombre n° " + i);
                     console.log("T"+T);
-                    console.log("i"+i);
-                    if (T[i] > 0) {
+                }
+                if (T[i] > 0) {
                         // Nbpos = Nbpos + 1
                         Nbpos = Nbpos + 1;
                     }
@@ -89,10 +91,52 @@
                         Nbneg = Nbneg + 1;
                     }
                     //Finsi
-                }
                 // Ecrire "Nombre de valeurs positives : ", Nbpos                           
                 //Ecrire "Nombre de valeurs négatives : ", Nbneg 
-                document.getElementById("div_result").innerHTML = ("Nombre de valeurs positives : " + Nbpos + "Nombre de valeurs négatives : " + Nbneg)
+                document.getElementById("div_result").innerHTML = ("Nombre de valeurs positives : " + Nbpos + "Nombre de valeurs négatives : " + Nbneg);
+
+            }// Fin          
+
+            function Exo_6_8_jquery() {
+                // Variables Nb, Nbpos, Nbneg en Numérique
+                //Tableau T() en Numérique
+                var Nbpos = 0;
+                var Nbneg = 0;
+                var Nb = 0;
+                var T = [];
+                var valeur = 0;
+                //Debut
+                // Ecrire "Entrez le nombre de valeurs :"
+                //  Lire Nb
+                Nb = parseInt($("#nombreP").val());
+                // T(Nb-1)
+                T = [Nb - 1];
+                //Pour i ← 0 à Nb - 1  
+               // T = parseFloat(document.getElementById("nombrePlat").value);
+               valeur = (parseInt($("#nombrePlat").val()));
+               
+                for (i = 0; i <= Nb-1; i++) {
+                    //  Ecrire "Entrez le nombre n° ", i + 1 
+                    // Lire T(i)
+                  
+                   T.push(valeur);
+                    //Si T(i) > 0 alors
+                   $("#div_resultat_js").html("jquery Entrez le nombre n° " + i);
+                    console.log("T"+T);
+                }
+                if (T[i] > 0) {
+                        // Nbpos = Nbpos + 1
+                        Nbpos = Nbpos + 1;
+                    }
+                    //SinonSi
+                    else if (T[i] < 0) {
+                        // Nbneg = Nbneg + 1
+                        Nbneg = Nbneg + 1;
+                    }
+                    //Finsi
+                // Ecrire "Nombre de valeurs positives : ", Nbpos                           
+                //Ecrire "Nombre de valeurs négatives : ", Nbneg 
+                $("#div_result").html(" jquery Nombre de valeurs positives : " + Nbpos + "Nombre de valeurs négatives : " + Nbneg);
 
             }// Fin          
 
@@ -158,22 +202,19 @@
                                         <div class="myResult" id="div_resultat_js"></div>
                                         <div class="myResult" id="div_result"></div>
                                         <div class="language">
-                                            <button type="button" value="Envoyer" id="ok" onclick="Exo_6_8_innerHTML()">
-                                                valeurs</button>
-                                            <label for="nombreP">Entrez le nombre de à évaluer :
+                                            <label for="nombreP">Entrez le nombre de valeur à évaluer :
                                             </label>
                                             <input type="number" name="nombreP" id="nombreP">
-                                            <button type="button" value="Envoyer" id="ok"
-                                                onclick="Exo_6_8_innerHTML()">go</button>
                                             <label for="nombrePlat">Entrez les valeurs :
                                             </label>
                                             <input type="number" name="nombrePlat" id="nombrePlat">
+                                            <button type="button" value="Envoyer" id="ok"
+                                            onclick="Exo_6_8_innerHTML()">go innerHTML</button>
                                         </div>
 
                                         <div class="language">
                                             <button type="button" value="Envoyer" id="ok"
-                                                onclick="Exo_6_3_jquery()">JQUERY</button>
-                                            <input type="number" name="nombrePlat" id="nombrePlat">
+                                                onclick="Exo_6_8_jquery()">JQUERY</button>
                                         </div>
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />
