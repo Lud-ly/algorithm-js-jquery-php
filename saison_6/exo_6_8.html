@@ -30,9 +30,9 @@
                 //  Lire Nb
                 Nb = parseInt(prompt("Entrez le nombre de valeurs :"));
                 // T(Nb-1)
-                T = [Nb - 1];
+                // T[Nb - 1];
                 //Pour i ← 0 à Nb - 1  
-                for (i = 0; i <= Nb - 1; i++) {
+                for (i = 0; i <= Nb; i++) {
                     //  Ecrire "Entrez le nombre n° ", i + 1 
                     // Lire T(i)
                     T[i] = parseInt(prompt("Entrez le nombre n° ", i + 1));
@@ -62,35 +62,36 @@
                 var Nb = 0;
                 var T = [];
                 var valeur = 0;
+                var i = 1;
                 //Debut
                 // Ecrire "Entrez le nombre de valeurs :"
                 //  Lire Nb
                 Nb = parseInt(document.getElementById("nombreP").value);
-                // T(Nb-1)
+                //T(Nb-1);
                 T = [Nb - 1];
                 //Pour i ← 0 à Nb - 1  
-               // T = parseFloat(document.getElementById("nombrePlat").value);
-               valeur = (parseInt(document.getElementById("nombrePlat").value));
-               
-                for (i = 0; i <= Nb-1; i++) {
+                // T = parseFloat(document.getElementById("nombrePlat").value);
+
+
+                for (i = 1; i <= Nb-1; i++) {
                     //  Ecrire "Entrez le nombre n° ", i + 1 
                     // Lire T(i)
-                  
-                   T.push(valeur);
+                    T[i] = (parseInt(document.getElementById("nombrePlat").value));
+                    T = T + T[i];
                     //Si T(i) > 0 alors
                     document.getElementById("div_resultat_js").innerHTML = ("Entrez le nombre n° " + i);
-                    console.log("T"+T);
+                    console.log(T);
                 }
                 if (T[i] > 0) {
-                        // Nbpos = Nbpos + 1
-                        Nbpos = Nbpos + 1;
-                    }
-                    //SinonSi
-                    else if (T[i] < 0) {
-                        // Nbneg = Nbneg + 1
-                        Nbneg = Nbneg + 1;
-                    }
-                    //Finsi
+                    // Nbpos = Nbpos + 1
+                    Nbpos = Nbpos + 1;
+                }
+                //SinonSi
+                if (T[i] < 0) {
+                    // Nbneg = Nbneg + 1
+                    Nbneg = Nbneg + 1;
+                }
+                //Finsi
                 // Ecrire "Nombre de valeurs positives : ", Nbpos                           
                 //Ecrire "Nombre de valeurs négatives : ", Nbneg 
                 document.getElementById("div_result").innerHTML = ("Nombre de valeurs positives : " + Nbpos + "Nombre de valeurs négatives : " + Nbneg);
@@ -110,30 +111,30 @@
                 //  Lire Nb
                 Nb = parseInt($("#nombreP").val());
                 // T(Nb-1)
-                T = [Nb - 1];
+                //T = [Nb - 1];
                 //Pour i ← 0 à Nb - 1  
-               // T = parseFloat(document.getElementById("nombrePlat").value);
-               valeur = (parseInt($("#nombrePlat").val()));
-               
-                for (i = 0; i <= Nb-1; i++) {
+                // T = parseFloat(document.getElementById("nombrePlat").value);
+                valeur = (parseInt($("#nombrePlat").val()));
+
+                for (i = 0; i <= Nb; i++) {
                     //  Ecrire "Entrez le nombre n° ", i + 1 
                     // Lire T(i)
-                  
-                   T.push(valeur);
+
+                    T.push(valeur);
                     //Si T(i) > 0 alors
-                   $("#div_resultat_js").html("jquery Entrez le nombre n° " + i);
-                    console.log("T"+T);
+                    $("#div_resultat_js").html("jquery Entrez le nombre n° " + i);
+                    console.log("T" + T);
                 }
                 if (T[i] > 0) {
-                        // Nbpos = Nbpos + 1
-                        Nbpos = Nbpos + 1;
-                    }
-                    //SinonSi
-                    else if (T[i] < 0) {
-                        // Nbneg = Nbneg + 1
-                        Nbneg = Nbneg + 1;
-                    }
-                    //Finsi
+                    // Nbpos = Nbpos + 1
+                    Nbpos = Nbpos + 1;
+                }
+                //SinonSi
+                else if (T[i] < 0) {
+                    // Nbneg = Nbneg + 1
+                    Nbneg = Nbneg + 1;
+                }
+                //Finsi
                 // Ecrire "Nombre de valeurs positives : ", Nbpos                           
                 //Ecrire "Nombre de valeurs négatives : ", Nbneg 
                 $("#div_result").html(" jquery Nombre de valeurs positives : " + Nbpos + "Nombre de valeurs négatives : " + Nbneg);
@@ -209,7 +210,7 @@
                                             </label>
                                             <input type="number" name="nombrePlat" id="nombrePlat">
                                             <button type="button" value="Envoyer" id="ok"
-                                            onclick="Exo_6_8_innerHTML()">go innerHTML</button>
+                                                onclick="Exo_6_8_innerHTML()">go innerHTML</button>
                                         </div>
 
                                         <div class="language">

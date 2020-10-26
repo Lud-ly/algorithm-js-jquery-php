@@ -64,7 +64,7 @@
                                 <li><a href="../saison_6/exo_6_8.php">Exercice 6.8</a></li>
                                 <li><a href="../saison_6/exo_6_9.php">Exercice 6.9</a></li>
                                 <li><a href="../saison_6/exo_6_10.php">Exercice 6.10</a></li>
-                                <li><a href="../saison_6/exo_11.php">Exercice 6.11</a></li>
+                                <li><a href="../saison_6/exo_6_11.php">Exercice 6.11</a></li>
                                 <li><a href="../saison_6/exo_12.php">Exercice 6.12</a></li>
                                 <li><a href="../saison_6/exo_13.php">Exercice 6.13</a></li>
                                 <li><a href="../saison_6/exo_14.php">Exercice 6.14</a></li>

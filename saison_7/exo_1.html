@@ -16,6 +16,55 @@
     <header>
     <?php include('../commun/header.php');?>
     </header>
+    <script>
+         function Exo_7_1() {
+                //Variables Nb, i en Entier
+                //Variable Flag en Booleen
+                var flag = false;
+                var nb = 0;
+                var i;
+                //Tableau T() en Entier
+
+                //Debut
+                //Ecrire "Entrez le nombre de valeurs :"
+                //Lire Nb
+                nb = parseInt(prompt("Entrez le nombre de valeurs :"))
+                var T = [nb - 1];
+                //Redim T(Nb-1)
+                //Pour i ← 0 à Nb - 1
+                for (i = 0; i < nb - 1; i++) {
+                    T[i] = parseInt(prompt("Entrez le nombre n°" + i));
+                    //Ecrire "Entrez le nombre n° ", i + 1
+                    //Lire T(i)
+                    //T += T[i];
+                    //i Suivant
+                }
+                console.log(T);
+                //Flag ← Vrai
+                flag = true;
+                //Pour i ← 1 à Nb - 1
+                for (i = 1; i < nb - 1; i++) {
+                    // Si T(i) <> T(i – 1) + 1 Alors
+                    if (T[i] < T[i - 1] + 1) {
+                        // Flag ← Faux
+                        Flag = false;
+                        // FinSi
+                        //i Suivant
+                    }
+                }
+                // Si Flag Alors
+                if (flag) {
+                    //Ecrire "Les nombres sont consécutifs"
+                    alert(T + " Les nombres sont consécutifs")
+                    // Sinon
+                } else {
+                    //Ecrire "Les nombres ne sont pas consécutifs"
+                    alert(T + " Les nombres ne sont pas consécutifs");
+                }
+                //FinSi
+                //Fin
+            }
+    </script>
     <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
@@ -44,6 +93,40 @@
                                     <h4>Pseudocode:</h4>
                                     <p>a faire
                                     </p>
+                                </div>
+                                <div id=" txt_javascript">
+
+                                    <form action="exo_14.php" method="POST">
+                                        <div>
+                                            <hr width="75%" size="1px" color="olivedrab" />
+                                            <h3>Tester l'algorithme : </h3>
+                                            <label for="myPhp">"PHP Entrer les notes"
+                                            </label>
+                                            <input type="text" name="myPhp" id="myPhp">
+                                            <div class="myResult" id="div_resultat_php">
+                                                <p><?php echo $sMessage; ?></p>
+                                                <p><?php echo $sMessage2; ?></p>
+                                                <p><?php echo $sMessage3; ?></p>
+                                            </div>
+    
+                                            <div class="myResult" id="div_resultat"></div>
+                                            <div class="myResult" id="div_resultat_js"></div>
+                                            <input type="number" name="nombrePlat" id="nombreP">
+                                            <input type="button" value="Envoyer" id="ok" onclick="Exo_7_1_innerHTML()">
+                                        </div>
+                                        <div class="language">
+                                            <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                        </div>
+                                    </form>
+                                    <div class="language">
+                                        <button class="btn_green" id="btn_js" onClick="Exo_7_1()">JS WITH
+                                            PROMPT</button>
+    
+                                        <button class="btn_green" onClick="Exo_6_3_innerHTML()"> JS WITH
+                                            INNERHTML</button>
+    
+                                        <button class="btn_green" onClick="Exo_6_3_jquery()">JQUERY !</button>
+                                    </div>
                                 </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">

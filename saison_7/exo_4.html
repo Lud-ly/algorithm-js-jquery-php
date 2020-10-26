@@ -16,6 +16,30 @@
     <header>
     <?php include('../commun/header.php');?>
     </header>
+    <script>
+          function Exo_7_4(){
+       
+       var numArray = [6, 8, 10, 34, 12, 2];
+       alert("tableau initial "+numArray);
+       var element = parseInt(prompt("Enter Element to be deleted: "));
+     
+        for(var i = 0; i < numArray.length; i++){
+            if(numArray[i] == element){
+                // shift elements to the left
+                for(var j = i; j < numArray.length - 1; j++){
+                    numArray[j] = numArray[j+1];
+                }
+               // break;
+            }
+        }
+
+       alert("Array elements after deletion-- " );
+        for(var i = 0; i < numArray.length; i++){
+           alert(" " + numArray[i]);
+        }
+        alert(numArray);
+       }
+    </script>
     <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
@@ -42,6 +66,40 @@
                                     <h4>Pseudocode:</h4>
                                     <p>a faire
                                     </p>
+                                </div>
+                                <div id=" txt_javascript">
+
+                                    <form action="exo_14.php" method="POST">
+                                        <div>
+                                            <hr width="75%" size="1px" color="olivedrab" />
+                                            <h3>Tester l'algorithme : </h3>
+                                            <label for="myPhp">"PHP Entrer les notes"
+                                            </label>
+                                            <input type="text" name="myPhp" id="myPhp">
+                                            <div class="myResult" id="div_resultat_php">
+                                                <p><?php echo $sMessage; ?></p>
+                                                <p><?php echo $sMessage2; ?></p>
+                                                <p><?php echo $sMessage3; ?></p>
+                                            </div>
+    
+                                            <div class="myResult" id="div_resultat"></div>
+                                            <div class="myResult" id="div_resultat_js"></div>
+                                            <input type="number" name="nombrePlat" id="nombreP">
+                                            <input type="button" value="Envoyer" id="ok" onclick="Exo_7_1_innerHTML()">
+                                        </div>
+                                        <div class="language">
+                                            <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                        </div>
+                                    </form>
+                                    <div class="language">
+                                        <button class="btn_green" id="btn_js" onClick="Exo_7_4()">JS WITH
+                                            PROMPT</button>
+    
+                                        <button class="btn_green" onClick="Exo_6_3_innerHTML()"> JS WITH
+                                            INNERHTML</button>
+    
+                                        <button class="btn_green" onClick="Exo_6_3_jquery()">JQUERY !</button>
+                                    </div>
                                 </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">

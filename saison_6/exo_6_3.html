@@ -48,7 +48,7 @@
                 document.getElementById("div_resultat").innerHTML = ("Entrer la notes n°" + [i++]);
                 //Ajouter value à notes
                 notes.push(parseInt(document.getElementById("nombreP").value));
-                //Si les notes =8
+                //Si array notes =8
                 if (notes.length == 8) {
                     //Ecrire Notes
                     document.getElementById("div_resultat_js").innerHTML = notes.join(" , ");
@@ -67,7 +67,7 @@
                 $("#div_resultat").html("Entrer la notes n°" + [i++]);
                 //Ajouter value à notes
                 parseInt(jQnotes.push($("#nombreJ").val()));
-                //Si les notes =8
+                //Si array notes =8
                 if (jQnotes.length == 8) {
                     console.log(typeof jQnotes);
                     //Ecrire Notes
@@ -103,7 +103,7 @@
                                     Ecrire Entrer la notes n°"+i suivant</br>
                                     Lire input</br>
                                     Ajouter value à notes</br>
-                                    Si les notes =8</br>
+                                    Si array notes = 8</br>
                                     Ecrire Notes</br>
                                     FinSi</br>
                                     Fin</br>
