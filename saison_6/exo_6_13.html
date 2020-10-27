@@ -17,44 +17,40 @@
     <?php include('../commun/header.php');?>
     </header>
     <script>
-         function Exo_6_14() {
-                // Variables Nb, i, Som, Moy, Nbsup en Numérique
-                var nb, i, som, moy, nbSup = 0;
-                var T = [];
-                //Tableau T() en Numérique
-                //Debut
-                nb = parseInt(prompt("Entrez le nombre de notes à saisir : "));
-                //Ecrire "Entrez le nombre de notes à saisir : "
-                //Lire Nb
-                //Redim T(Nb-1)
-                T[nb-1];
-                //Pour i ← 0 à Nb - 1
-                for (i = 0; i < nb - 1; i++) { }
-                //Ecrire "Entrez le nombre n° ", i + 1
-                T[i] = parseInt(prompt("Entrez le nombre n° ", i + 1));
-                // Lire T(i)
-                //i Suivant
-                //Som ← 0
-                //Pour i ← 0 à Nb - 1
-                for (i = 0; i < nb - 1; i++) {
-                    //Som ← Som + T(i)
-                    som = som + T[i];
-                }
-                //i Suivant
-                moy = som / nb;
-                nbSup = 0;
-                //Pour i ← 0 à Nb - 1
-                for (i = 0; i < nb - 1; i++) {
-                    if (T[i] > moy) {
-                        // Si T(i) > Moy Alors
-                        nbSup = nbSup + 1;
-                    }// FinSi
-                }
-                //i Suivant
-                //Ecrire NbSup, " élèves dépassent la moyenne de la classe"
-                alert(nbSup + " élèves dépassent la moyenne de la classe");
-                //Fin
+       function Exo_6_13(){
+        var nb = 0;
+        var max = 0;
+        var y = 0;
+        var pos = 0;
+       alert("entrer 5 nombres ->");
+        for(var i =1;i<6;i++){
+          nb = (parseInt(prompt(" entrer un nombre :"+i)));
+            if (nb >max){
+                max = nb;
+                pos = y;
             }
+            y = y+1;
+        }
+      alert("le nombre le plus grand est : "+max);
+    alert("la position du nombre est : "+pos);
+    }
+    function Exo_6_13_innerHTML(){
+        var nb = 0;
+        var max = 0;
+        var y = 0;
+        var pos = 0;
+       alert("entrer 5 nombres ->");
+        if(i<5){
+          nb = (parseInt(prompt(" entrer un nombre :")));
+            if (nb >max){
+                max = nb;
+                pos = y;
+            }
+            y = y+1;
+        }
+      alert("le nombre le plus grand est : "+max);
+    alert("la position du nombre est : "+pos);
+    }
     </script>
     <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
@@ -69,10 +65,11 @@
                     <div id="accordion">
                         <div class="card">
                             <div class="card-body">
-                                <h4>Exercice 6.14</h4>
-                                <p>Toujours et encore sur le même principe, écrivez un algorithme permettant, à l’utilisateur de saisir les notes d'une
-                                    classe. Le programme, une fois la saisie terminée, renvoie le nombre de ces notes supérieures à la moyenne de la
-                                    classe. 
+                                <h4>Exercice 6.13 </h4>
+                                <p>Ecrivez un algorithme permettant, toujours sur le même principe, à l’utilisateur de saisir un nombre déterminé de
+                                    valeurs. Le programme, une fois la saisie terminée, renvoie la plus grande valeur en précisant quelle position elle
+                                    occupe dans le tableau. On prendra soin d’effectuer la saisie dans un premier temps, et la recherche de la plus
+                                    grande valeur du tableau dans un second temps. 
                                 </p>
                             </div>
                             <div class="pseudoCode">
@@ -82,37 +79,33 @@
                                 </div>
                                 <div id=" txt_javascript">
 
-                                    <form action="exo_14.php" method="POST">
+                                    <form action="exo_6_13.php" method="POST">
                                         <div>
                                             <hr width="75%" size="1px" color="olivedrab" />
                                             <h3>Tester l'algorithme : </h3>
-                                            <label for="myPhp">"PHP Entrer les notes"
-                                            </label>
-                                            <input type="text" name="myPhp" id="myPhp">
+                                            <p>La somme des éléments d'un tableau :</p>
+                                            <div class="myResult" id="div_resultat"></div>
+                                            <div class="myResult" id="div_resultat_js"></div>
+                                            <div class="myResult" id="div_result"></div>
+                                            <div class="language">
+                                                <button class="btn_green" id="btn_js" onClick="Exo_6_13()">JS WITH
+                                                    PROMPT</button>
+                                                <button type="button" value="Envoyer" id="ok"
+                                                    onclick="Exo_6_9_innerHTML()">JS WITH innerHTML</button>
+                                                <button type="button" value="Envoyer" id="ok"
+                                                    onclick="Exo_6_9_jquery()">JQUERY</button>
+                                            </div>
+                                        </div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <div class="language">
+                                            <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                             <div class="myResult" id="div_resultat_php">
                                                 <p><?php echo $sMessage; ?></p>
                                                 <p><?php echo $sMessage2; ?></p>
-                                                <p><?php echo $sMessage3; ?></p>
                                             </div>
-    
-                                            <div class="myResult" id="div_resultat"></div>
-                                            <div class="myResult" id="div_resultat_js"></div>
-                                            <input type="number" name="nombrePlat" id="nombreP">
-                                            <input type="button" value="Envoyer" id="ok" onclick="Exo_7_1_innerHTML()">
-                                        </div>
-                                        <div class="language">
-                                            <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                         </div>
                                     </form>
-                                    <div class="language">
-                                        <button class="btn_green" id="btn_js" onClick="Exo_6_14()">JS WITH
-                                            PROMPT</button>
     
-                                        <button class="btn_green" onClick="Exo_6_3_innerHTML()"> JS WITH
-                                            INNERHTML</button>
-    
-                                        <button class="btn_green" onClick="Exo_6_3_jquery()">JQUERY !</button>
-                                    </div>
                                 </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">

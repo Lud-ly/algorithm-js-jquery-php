@@ -65,12 +65,12 @@
                                 <li><a href="../saison_6/exo_6_9.php">Exercice 6.9</a></li>
                                 <li><a href="../saison_6/exo_6_10.php">Exercice 6.10</a></li>
                                 <li><a href="../saison_6/exo_6_11.php">Exercice 6.11</a></li>
-                                <li><a href="../saison_6/exo_12.php">Exercice 6.12</a></li>
-                                <li><a href="../saison_6/exo_13.php">Exercice 6.13</a></li>
-                                <li><a href="../saison_6/exo_14.php">Exercice 6.14</a></li>
-                                <li><a href="../saison_6/exo_15.php">Exercice 6.15</a></li>
-                                <li><a href="../saison_6/exo_16.php">Exercice 6.16</a></li>
-                                <li><a href="../saison_6/exo_17.php">Exercice 6.17</a></li>
+                                <li><a href="../saison_6/exo_6_12.php">Exercice 6.12</a></li>
+                                <li><a href="../saison_6/exo_6_13.php">Exercice 6.13</a></li>
+                                <li><a href="../saison_6/exo_6_14.php">Exercice 6.14</a></li>
+                                <li><a href="../saison_6/exo_6_15.php">Exercice 6.15</a></li>
+                                <li><a href="../saison_6/exo_6_16.php">Exercice 6.16</a></li>
+                                <li><a href="../saison_6/exo_6_17.php">Exercice 6.17</a></li>
                             </ul>
                             <li><a href="#">Saison 7</a>
                             <ul>

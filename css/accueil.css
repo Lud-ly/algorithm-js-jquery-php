@@ -94,7 +94,8 @@ h3,h4,h5,p{
     padding: 15px;
   }
 .language input{
-  width: 60px;
+  width: 50px;
+  margin-right: 20px;
 }
 .hide {
     display: none;
@@ -204,8 +205,7 @@ h3,h4,h5,p{
         color: #000;
       }
       .language input{
-       
-        margin-top: 30px;
+       margin-top: 30px;
         height: 25px;
         width: normal;
       }
