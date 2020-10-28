@@ -8,51 +8,109 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <script>
-       function Exo_6_13(){
-        var nb = 0;
-        var max = 0;
-        var y = 0;
-        var pos = 0;
-       alert("entrer 5 nombres ->");
-        for(var i =1;i<6;i++){
-          nb = (parseInt(prompt(" entrer un nombre :"+i)));
-            if (nb >max){
-                max = nb;
-                pos = y;
+    <div class="home">
+        <header>
+            <!-- <?php include('../commun/header.php');?> -->
+        </header>
+        <script>
+            function Exo_6_13() {
+                var nb = 0;
+                var max = 0;
+                var y = 0;
+                var pos = 0;
+                alert("entrer 5 nombres ->");
+                for (var i = 1; i < 6; i++) {
+                    nb = (parseInt(prompt(" entrer un nombre :" + i)));
+                    if (nb > max) {
+                        max = nb;
+                        pos = y;
+                    }
+                    y = y + 1;
+                }
+                alert("le nombre le plus grand est : " + max);
+                alert("la position du nombre est : " + pos);
             }
-            y = y+1;
-        }
-      alert("le nombre le plus grand est : "+max);
-    alert("la position du nombre est : "+pos);
-    }
-    function Exo_6_13_innerHTML(){
-        var nb = 0;
-        var max = 0;
-        var y = 0;
-        var pos = 0;
-       alert("entrer 5 nombres ->");
-        if(i<5){
-          nb = (parseInt(prompt(" entrer un nombre :")));
-            if (nb >max){
-                max = nb;
-                pos = y;
-            }
-            y = y+1;
-        }
-      alert("le nombre le plus grand est : "+max);
-    alert("la position du nombre est : "+pos);
-    }
-    </script>
-    <div class="container-fluid ">
+
+            var i = 2;
+            var T = [];
+            var nb = 0;
+            function Exo_6_13_innerHTML() {
+                // Variables Nb, Nbpos, Nbneg en Numérique
+                //Variables global Tableau T() ,i en Numérique
+                var max = 0;
+                var y = 0;
+                var pos = 0;
+                //  Ecrire "Entrez le nombre n° ", i + 1 
+                // Lire T(value)
+                document.getElementById("div_resultat").innerHTML = ("Entrer la notes n°" + [i++]);
+
+                T.push(parseInt(document.getElementById("MyInput").value));
+                //pour i dans longueur tableau
+                //T[i]+=1
+
+                //Si nb = longueur de T alors
+                if (T.length == 5) {
+                    //Ecrire Notes
+                    document.getElementById("div_resultat").innerHTML = T.join(" , ");
+                    document.getElementById("div_resultat_js").innerHTML = ("innerHTML Voici le nouveau tableau : "+T);
+                }//FinSi
+                console.log(T);
+                //pacourir valeur de T
+                T.forEach(function (val) {
+                    if (val > max) {
+                        max = val;
+                        pos = y;
+                    }
+                    y = y + 1;
+
+                });
+                document.getElementById("div_result").innerHTML = ("innerHTML le nombre le plus grand est : " + max);
+                document.getElementById("div_resultat_js").innerHTML = ("la position du nombre est : " + pos);
+            }// Fin         
+            
+            var i = 2;
+            var T = [];
+            var nb = 0;
+            function Exo_6_13_jquery() {
+                // Variables Nb, Nbpos, Nbneg en Numérique
+                //Variables global Tableau T() ,i en Numérique
+                var max = 0;
+                var y = 0;
+                var pos = 0;
+                //  Ecrire "Entrez le nombre n° ", i + 1 
+                // Lire T(value)
+                $("#div_resultat").html("Entrer la notes n°" + [i++]);
+
+                T.push(parseInt($("#MyInput").val()));
+                //pour i dans longueur tableau
+                //T[i]+=1
+
+                //Si nb = longueur de T alors
+                if (T.length == 5) {
+                    //Ecrire Notes
+                   $("#div_resultat").html(T.join(" , "));
+                   $("#div_resultat_js").html("innerHTML Voici le nouveau tableau : "+T);
+                }//FinSi
+                // console.log(T);
+                //pacourir valeur de T
+                T.forEach(function (val) {
+                    if (val > max) {
+                        max = val;
+                        pos = y;
+                    }
+                    y = y + 1;
+
+                });
+              $("#div_result").html("innerHTML le nombre le plus grand est : " + max);
+              $("#div_resultat_js").html("la position du nombre est : " + pos);
+            }// Fin         
+
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -66,58 +124,64 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 6.13 </h4>
-                                <p>Ecrivez un algorithme permettant, toujours sur le même principe, à l’utilisateur de saisir un nombre déterminé de
-                                    valeurs. Le programme, une fois la saisie terminée, renvoie la plus grande valeur en précisant quelle position elle
-                                    occupe dans le tableau. On prendra soin d’effectuer la saisie dans un premier temps, et la recherche de la plus
-                                    grande valeur du tableau dans un second temps. 
+                                <p>Ecrivez un algorithme permettant, toujours sur le même principe, à l’utilisateur de
+                                    saisir un nombre déterminé de
+                                    valeurs. Le programme, une fois la saisie terminée, renvoie la plus grande valeur en
+                                    précisant quelle position elle
+                                    occupe dans le tableau. On prendra soin d’effectuer la saisie dans un premier temps,
+                                    et la recherche de la plus
+                                    grande valeur du tableau dans un second temps.
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
-                                </div>
-                                <div id=" txt_javascript">
+                                <h4>Pseudocode:</h4>
+                                <p>a faire
+                                </p>
+                            </div>
+                            <div id=" txt_javascript">
 
-                                    <form action="exo_6_13.php" method="POST">
-                                        <div>
-                                            <hr width="75%" size="1px" color="olivedrab" />
-                                            <h3>Tester l'algorithme : </h3>
-                                            <p>La somme des éléments d'un tableau :</p>
-                                            <div class="myResult" id="div_resultat"></div>
-                                            <div class="myResult" id="div_resultat_js"></div>
-                                            <div class="myResult" id="div_result"></div>
-                                            <div class="language">
-                                                <button class="btn_green" id="btn_js" onClick="Exo_6_13()">JS WITH
-                                                    PROMPT</button>
-                                                <button type="button" value="Envoyer" id="ok"
-                                                    onclick="Exo_6_9_innerHTML()">JS WITH innerHTML</button>
-                                                <button type="button" value="Envoyer" id="ok"
-                                                    onclick="Exo_6_9_jquery()">JQUERY</button>
-                                            </div>
-                                        </div>
+                                <form action="exo_6_13.php" method="POST">
+                                    <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <div class="myResult" id="div_resultat"></div>
+                                        <div class="myResult" id="div_resultat_js"></div>
+                                        <div class="myResult" id="div_result"></div>
+                                        <input type="text" name="MyInput" id="MyInput">
                                         <div class="language">
-                                            <button class="btn_green" type="submit">ALLEZ PHP !</button>
-                                            <div class="myResult" id="div_resultat_php">
-                                                <p><?php echo $sMessage; ?></p>
-                                                <p><?php echo $sMessage2; ?></p>
-                                            </div>
+                                            <button class="btn_green" id="btn_js" onClick="Exo_6_13()">JS WITH
+                                                PROMPT</button>
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_6_13_innerHTML()">JS WITH innerHTML</button>
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_6_13_jquery()">JQUERY</button>
                                         </div>
-                                    </form>
-    
-                                </div>
+                                    </div>
+                                    <hr width="75%" size="1px" color="olivedrab" />
+                                    <div class="language">
+                                        <input type="text" name="myPhp" id="myPhp">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                        <div class="myResult" id="div_resultat_php">
+                                            <p><?php echo $sMessage; ?></p>
+                                            <p><?php echo $sMessage2; ?></p>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
                             <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Sous le capot</p>
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -139,15 +203,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -198,7 +261,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

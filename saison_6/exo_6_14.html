@@ -8,55 +8,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <script>
-         function Exo_6_14() {
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            var T = [];
+            var nb = 0;
+            var i;
+            var som = 0;
+            var moy = 0;
+            var nbSup = 0;
+            function Exo_6_14() {
                 // Variables Nb, i, Som, Moy, Nbsup en Numérique
-                var nb, i, som, moy, nbSup = 0;
-                var T = [];
                 //Tableau T() en Numérique
                 //Debut
                 nb = parseInt(prompt("Entrez le nombre de notes à saisir : "));
                 //Ecrire "Entrez le nombre de notes à saisir : "
                 //Lire Nb
-                //Redim T(Nb-1)
-                T[nb-1];
-                //Pour i ← 0 à Nb - 1
-                for (i = 0; i < nb - 1; i++) { }
-                //Ecrire "Entrez le nombre n° ", i + 1
-                T[i] = parseInt(prompt("Entrez le nombre n° ", i + 1));
-                // Lire T(i)
+                //Pour i ← 0 à Nb i suivant
+                for (i = 0; i < nb; i++) {
+                    //Ecrire "Entrez le nombre n° ", i + 1
+                     // Lire T(i)
                 //i Suivant
-                //Som ← 0
+                    T[i] = parseInt(prompt("Entrez le nombre n° ", i + 1));
+                }
                 //Pour i ← 0 à Nb - 1
-                for (i = 0; i < nb - 1; i++) {
+                for (i = 0; i < nb; i++) {
                     //Som ← Som + T(i)
                     som = som + T[i];
                 }
                 //i Suivant
-                moy = som / nb;
-                nbSup = 0;
-                //Pour i ← 0 à Nb - 1
-                for (i = 0; i < nb - 1; i++) {
+                //moy = som/i
+                moy = som / i;
+
+                //Pour i ← 0 à Nb
+                for (i = 0; i < nb; i++) {
+                    //si T[i]>moy
                     if (T[i] > moy) {
-                        // Si T(i) > Moy Alors
-                        nbSup = nbSup + 1;
+                       // nbSup = nbSup + 1;
+                        nbSup++;
                     }// FinSi
-                }
-                //i Suivant
+                } //i Suivant
+                //fin pour
+               //Ecrire les notes et la moyenne
+                alert("voici les notes : " + T);
+                alert("la moyenne est de : " + moy);
                 //Ecrire NbSup, " élèves dépassent la moyenne de la classe"
                 alert(nbSup + " élèves dépassent la moyenne de la classe");
                 //Fin
             }
-    </script>
-    <div class="container-fluid ">
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -70,61 +77,63 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 6.14</h4>
-                                <p>Toujours et encore sur le même principe, écrivez un algorithme permettant, à l’utilisateur de saisir les notes d'une
-                                    classe. Le programme, une fois la saisie terminée, renvoie le nombre de ces notes supérieures à la moyenne de la
-                                    classe. 
+                                <p>Toujours et encore sur le même principe, écrivez un algorithme permettant, à
+                                    l’utilisateur de saisir les notes d'une
+                                    classe. Le programme, une fois la saisie terminée, renvoie le nombre de ces notes
+                                    supérieures à la moyenne de la
+                                    classe.
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
-                                </div>
-                                <div id=" txt_javascript">
+                                <h4>Pseudocode:</h4>
+                                <p>a faire
+                                </p>
+                            </div>
+                            <div id=" txt_javascript">
 
-                                    <form action="exo_6_14.php" method="POST">
-                                        <div>
-                                            <hr width="75%" size="1px" color="olivedrab" />
-                                            <h3>Tester l'algorithme : </h3>
-                                            <label for="myPhp">"PHP Entrer les notes"
-                                            </label>
-                                            <input type="text" name="myPhp" id="myPhp">
-                                            <div class="myResult" id="div_resultat_php">
-                                                <p><?php echo $sMessage; ?></p>
-                                                <p><?php echo $sMessage2; ?></p>
-                                                <p><?php echo $sMessage3; ?></p>
-                                            </div>
-    
-                                            <div class="myResult" id="div_resultat"></div>
-                                            <div class="myResult" id="div_resultat_js"></div>
-                                            <input type="number" name="nombrePlat" id="nombreP">
-                                            <input type="button" value="Envoyer" id="ok" onclick="Exo_7_1_innerHTML()">
+                                <form action="exo_6_14.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <label for="myPhp">"PHP Entrer les notes"
+                                        </label>
+                                        <input type="text" name="myPhp" id="myPhp">
+                                        <div class="myResult" id="div_resultat_php">
+                                            <p><?php echo $sMessage; ?></p>
+                                            <p><?php echo $sMessage2; ?></p>
+                                            <p><?php echo $sMessage3; ?></p>
                                         </div>
-                                        <div class="language">
-                                            <button class="btn_green" type="submit">ALLEZ PHP !</button>
-                                        </div>
-                                    </form>
-                                    <div class="language">
-                                        <button class="btn_green" id="btn_js" onClick="Exo_6_14()">JS WITH
-                                            PROMPT</button>
-    
-                                        <button class="btn_green" onClick="Exo_6_3_innerHTML()"> JS WITH
-                                            INNERHTML</button>
-    
-                                        <button class="btn_green" onClick="Exo_6_3_jquery()">JQUERY !</button>
+
+                                        <div class="myResult" id="div_resultat"></div>
+                                        <div class="myResult" id="div_resultat_js"></div>
+                                        <input type="number" name="nombrePlat" id="nombreP">
+                                        <input type="button" value="Envoyer" id="ok" onclick="Exo_7_1_innerHTML()">
                                     </div>
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                </form>
+                                <div class="language">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_6_14()">JS WITH
+                                        PROMPT</button>
+
+                                    <button class="btn_green" onClick="Exo_6_3_innerHTML()"> JS WITH
+                                        INNERHTML</button>
+
+                                    <button class="btn_green" onClick="Exo_6_3_jquery()">JQUERY !</button>
                                 </div>
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -146,15 +155,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -205,7 +213,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>
