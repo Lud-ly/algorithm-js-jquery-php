@@ -104,10 +104,16 @@ h3,h4,h5,p{
     text-transform: uppercase;
     text-align: center;
   }
+  .txt_javascript{
+    background-color:  #d8e4d8;
+  }
   form{
     padding: 30px;
-    background-color:  #d8e4d8;
     border-radius: 6px;
+    background-color:  #d8e4d8;
+  }
+  .myResult{
+    background-color:  #d8e4d8;
   }
   form h3{
     margin-bottom: 50px;

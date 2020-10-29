@@ -14,7 +14,7 @@
 <body>
     <div class="home">
         <header>
-            <!-- <?php include('../commun/header.php');?> -->
+            <?php include('../commun/header.php');?>
         </header>
         <script>
             function Exo_6_12() {
@@ -35,7 +35,7 @@
                     //  Ecrire "Entrez le nombre n° ", i + 1 
                     // Lire T(i)
                     T[i] = parseInt(prompt("Entrez le nombre n° ", i + 1));
-                    T[i]+=1;
+                    T[i] += 1;
                     //Si T(i) > 0 alors
                     if (T[i] > 0) {
                         // Nbpos = Nbpos + 1
@@ -50,7 +50,7 @@
                 }
                 // Ecrire "Nombre de valeurs positives : ", Nbpos                           
                 //Ecrire "Nombre de valeurs négatives : ", Nbneg 
-                alert("Nouveau Tableau : " + T+" ");
+                alert("Nouveau Tableau : " + T + " ");
                 alert("Nombre de valeurs positives : " + Nbpos);
                 alert("Nombre de valeurs négatives : " + Nbneg);
             }// Fin  
@@ -70,13 +70,13 @@
                 T.push(parseInt(document.getElementById("nombreP").value));
                 //pour i dans longueur tableau
                 //T[i]+=1
-               for(i=0;i<T.length;i++){
-                   T[i]+=1;
-               }
+                for (i = 0; i < T.length; i++) {
+                    T[i] += 1;
+                }
                 // Ecrire "Entrez le nombre de valeurs :"
                 //  Lire Nb
                 nb = (parseInt(document.getElementById("nombrePlat").value));
-              
+
                 //Si nb = longueur de T alors
                 if (nb == T.length) {
                     //Ecrire Notes
@@ -98,7 +98,7 @@
                 //Finsi
                 // Ecrire "Nombre de valeurs positives : ", Nbpos                           
                 //Ecrire "Nombre de valeurs négatives : ", Nbneg 
-                document.getElementById("div_result").innerHTML = ("Nombre de valeurs positives : " + Nbpos + "<br/>"+" Nombre de valeurs négatives : " + Nbneg);
+                document.getElementById("div_result").innerHTML = ("Nombre de valeurs positives : " + Nbpos + "<br/>" + " Nombre de valeurs négatives : " + Nbneg);
             }// Fin          
 
             var i = 2;
@@ -111,25 +111,25 @@
                 var nb;
                 //  Ecrire "Entrez le nombre n° ", i + 1 
                 // Lire T(value)
-              $("#div_resultat").html("Entrer la notes n°" + [i++]);
+                $("#div_resultat").html("Entrer la notes n°" + [i++]);
 
                 T.push(parseInt($("#nombreP").val()));
                 //pour i dans longueur tableau
                 //T[i]+=1
-               for(i=0;i<T.length;i++){
-                   T[i]+=1;
-               }
+                for (i = 0; i < T.length; i++) {
+                    T[i] += 1;
+                }
                 // Ecrire "Entrez le nombre de valeurs :"
                 //  Lire Nb
                 nb = (parseInt($("#nombrePlat").val()));
-              
+
                 //Si nb = longueur de T alors
                 if (nb == T.length) {
                     //Ecrire Notes
-                   $("#div_resultat_js").html(T.join(" , "));
-                   $("#div_resultat").html("Jquery Voici le nouveau tableau : ");
+                    $("#div_resultat_js").html(T.join(" , "));
+                    $("#div_resultat").html("Jquery Voici le nouveau tableau : ");
                 }//FinSi
-               // console.log(T);
+                // console.log(T);
                 //pacourir valeur de T
                 T.forEach(function (val) {
                     //Si val<0 alors
@@ -144,7 +144,7 @@
                 //Finsi
                 // Ecrire "Nombre de valeurs positives : ", Nbpos                           
                 //Ecrire "Nombre de valeurs négatives : ", Nbneg 
-               $("#div_result").html("Nombre de valeurs positives : " + Nbpos + "<br/>"+" Nombre de valeurs négatives : " + Nbneg);
+                $("#div_result").html("Nombre de valeurs positives : " + Nbpos + "<br/>" + " Nombre de valeurs négatives : " + Nbneg);
             }// Fin          
         </script>
         <div class="container-fluid ">
@@ -169,6 +169,26 @@
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
                                 <p>
+                                    Variables Nb, Nbpos, Nbneg en Numérique<br/>
+                                    Variables global Tableau T() ,i en Numérique<br/>
+                                    Ecrire "Entrez le nombre n° ", i + 1<br/>
+                                    Lire T(value)<br/>
+                                    pour i dans longueur tableau<br/>
+                                    T[i]+=1<br/>
+                                    Ecrire "Entrez le nombre de valeurs :"<br/>
+                                    Lire Nb<br/>
+                                    Si nb = longueur de T alors<br/>
+                                    Ecrire Notes<br/>
+                                    FinSi<br/>
+                                    pacourir valeur de T<br/>
+                                    Si val inferieur 0 alors<br/>
+                                    Nbneg = Nbneg + 1<br/>
+                                    Nbpos = Nbpos + 1<br/>
+                                    Finsi<br/>
+                                    Ecrire Nombre de valeurs positives : , Nbpos<br/>
+                                    Ecrire Nombre de valeurs négatives : , Nbneg<br/>
+                                    Fin<br/>
+
                                 </p>
                             </div>
                             <div id=" txt_javascript">
@@ -208,6 +228,9 @@
                                         <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                         <div class="myResult" id="div_resultat_php">
                                             <p><?php echo $sMessage; ?></p>
+                                            <p><?php echo $sMessage2; ?></p>
+                                            <p><?php echo $sMessage3; ?></p>
+                                            <p><?php echo $sMessage4; ?></p>
                                         </div>
                                     </div>
                                 </form>
@@ -222,7 +245,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
                                 <hr size="1px" color="olivedrab" />
@@ -230,13 +253,51 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+        var i = 2;
+        var T = [];
+        function Exo_6_12_innerHTML() {
+            // Variables Nb, Nbpos, Nbneg en Numérique
+            //Variables global Tableau T() ,i en Numérique
+            var Nbpos = 0;
+            var Nbneg = 0;
+            var nb;
+            //  Ecrire "Entrez le nombre n° ", i + 1 
+            // Lire T(value)
+            document.getElementById("div_resultat").innerHTML = ("Entrer la notes n°" + [i++]);
+
+            T.push(parseInt(document.getElementById("nombreP").value));
+            //pour i dans longueur tableau
+            //T[i]+=1
+            for (i = 0; i < T.length; i++) {
+                T[i] += 1;
+            }
+            // Ecrire "Entrez le nombre de valeurs :"
+            //  Lire Nb
+            nb = (parseInt(document.getElementById("nombrePlat").value));
+
+            //Si nb = longueur de T alors
+            if (nb == T.length) {
+                //Ecrire Notes
+                document.getElementById("div_resultat_js").innerHTML = T.join(" , ");
+                document.getElementById("div_resultat").innerHTML = ("innerHTML Voici le nouveau tableau : ");
+            }//FinSi
+            console.log(T);
+            //pacourir valeur de T
+            T.forEach(function (val) {
+                //Si val inferieur 0 alors
+                if (val < 0) {
+                    // Nbneg = Nbneg + 1
+                    Nbneg++;
+                } else {
+                    // Nbpos = Nbpos + 1
+                    Nbpos++;
+                }
+            });
+            //Finsi
+            // Ecrire "Nombre de valeurs positives : ", Nbpos                           
+            //Ecrire "Nombre de valeurs négatives : ", Nbneg 
+            document.getElementById("div_result").innerHTML = ("Nombre de valeurs positives : " + Nbpos + "<br/>" + " Nombre de valeurs négatives : " + Nbneg);
+        }// Fin          
                                     </code>
                                  </pre>
                                 </div>
@@ -259,15 +320,49 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
+    function Exo_6_12_jquery() {
+        // Variables Nb, Nbpos, Nbneg en Numérique
+        //Variables global Tableau T() ,i en Numérique
+        var Nbpos = 0;
+        var Nbneg = 0;
+        var nb;
+        //  Ecrire "Entrez le nombre n° ", i + 1 
+        // Lire T(value)
+        $("#div_resultat").html("Entrer la notes n°" + [i++]);
 
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+        T.push(parseInt($("#nombreP").val()));
+        //pour i dans longueur tableau
+        //T[i]+=1
+        for (i = 0; i < T.length; i++) {
+            T[i] += 1;
+        }
+        // Ecrire "Entrez le nombre de valeurs :"
+        //  Lire Nb
+        nb = (parseInt($("#nombrePlat").val()));
+
+        //Si nb = longueur de T alors
+        if (nb == T.length) {
+            //Ecrire Notes
+            $("#div_resultat_js").html(T.join(" , "));
+            $("#div_resultat").html("Jquery Voici le nouveau tableau : ");
+        }//FinSi
+        // console.log(T);
+        //pacourir valeur de T
+        T.forEach(function (val) {
+            //Si val inferieur 0 alors
+            if (val < 0) {
+                // Nbneg = Nbneg + 1
+                Nbneg++;
+            } else {
+                // Nbpos = Nbpos + 1
+                Nbpos++;
+            }
+        });
+        //Finsi
+        // Ecrire "Nombre de valeurs positives : ", Nbpos                           
+        //Ecrire "Nombre de valeurs négatives : ", Nbneg 
+        $("#div_result").html("Nombre de valeurs positives : " + Nbpos + "<br/>" + " Nombre de valeurs négatives : " + Nbneg);
+    }// Fin          
 
                                     </code>
                                  </pre>
@@ -292,9 +387,56 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
-                
+session_start();
+$sMessage = "";
+$sMessage2 = "";
+$sMessage3 = "";
+$sMessage4 = "";
+
+$i = 1;
+$T = [];
+// SI $_POST["div_resultat_js"] EXISTE ET QUE $_POST["div_resultat_js"] N EST PAS VIDE ALORS
+    if ((isset($_POST["myPhp"])) && ((!empty($_POST["myPhp"]))))
+    {
+
+    // Variables Nb, Nbpos, Nbneg en Numérique
+    //Variables global Tableau T() ,i en Numérique
+    $Nbpos = 0;
+    $Nbneg = 0;
+    //  Ecrire "Entrez le nombre n° ", i + 1 
+    // Lire T(value)
+    $sMessage = ("Entrer la notes n°" . $i++);
+    $nb = (int)$_POST["myPhp"];
+    //T.push(parseInt(document.getElementById("nombreP").value));
+    // Ecrire "Entrez le nombre de valeurs :"
+    //  Lire Nb
+    $valeur =$_POST["myValuePhp"];
+    $_SESSION["myT"][]=$valeur;
+    // var_dump( $_SESSION["myT"]);
+    //Si nb = longueur de T alors
+    if (count( $_SESSION["myT"]) == $nb) {
+        //Ecrire Notes
+
+        // $sMessage2 = $T.join(" , ");
+        $sMessage3 = ("PHP Voici les Valeurs : " .  $_SESSION["myT"]);
+    }//FinSi
+    //pacourir valeur de T
+    foreach( $_SESSION["myT"] as $valeur) {
+        //Si val inferieur 0 alors
+        if ($valeur < 0) {
+            // Nbneg = Nbneg + 1
+            $Nbneg++;
+        } else {
+            // Nbpos = Nbpos + 1
+            $Nbpos++;
+        }
+    }
+    //Finsi
+    // Ecrire "Nombre de valeurs positives : ", Nbpos                           
+    //Ecrire "Nombre de valeurs négatives : ", Nbneg 
+    $sMessage4 = ("Nombre de valeurs positives : " . $Nbpos . " Nombre de valeurs négatives : " . $Nbneg);
+    }// Fin 
+
                                     </code>
                                  </pre>
                                 </div>

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $sMessage = "";
 $sMessage2 = "";
 $sMessage3 = "";
@@ -18,22 +18,22 @@ $T = [];
     //  Ecrire "Entrez le nombre n° ", i + 1 
     // Lire T(value)
    $sMessage = ("Entrer la notes n°" . $i++);
-    $nb = $_POST["myPhp"];
+    $nb = (int)$_POST["myPhp"];
     //T.push(parseInt(document.getElementById("nombreP").value));
     // Ecrire "Entrez le nombre de valeurs :"
     //  Lire Nb
     $valeur =$_POST["myValuePhp"];
-    $T[$i]=$valeur+1;
-    var_dump($T);
+    $_SESSION["myT"][]=$valeur;
+   // var_dump( $_SESSION["myT"]);
     //Si nb = longueur de T alors
-    if (count($T) == $nb) {
+    if (count( $_SESSION["myT"]) == $nb) {
         //Ecrire Notes
 
       // $sMessage2 = $T.join(" , ");
-       $sMessage3 = ("PHP Voici les Valeurs : " . $T);
+       $sMessage3 = ("PHP Voici les Valeurs : " .  $_SESSION["myT"]);
     }//FinSi
     //pacourir valeur de T
-  foreach($T as $valeur) {
+  foreach( $_SESSION["myT"] as $valeur) {
         //Si val<0 alors
         if ($valeur < 0) {
             // Nbneg = Nbneg + 1

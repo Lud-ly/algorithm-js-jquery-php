@@ -14,27 +14,36 @@
 <body>
     <div class="home">
         <header>
-            <!-- <?php include('../commun/header.php');?> -->
+            <?php include('../commun/header.php');?>
         </header>
         <script>
             function Exo_6_13() {
+                 // Variables Nb, Nbpos, Nbneg en Numérique
+                //Variables global Tableau T() ,i en Numérique
                 var nb = 0;
                 var max = 0;
                 var y = 0;
                 var pos = 0;
                 alert("entrer 5 nombres ->");
-                for (var i = 1; i < 6; i++) {
+                 //Debut
+                 //pour i à 6
+               for (var i = 1; i < 6; i++) {
+                     //  Ecrire "Entrez le nombre n° ", i + 1 
                     nb = (parseInt(prompt(" entrer un nombre :" + i)));
+                     //Si nb superieur nombre max
+                    //  nb = val;
+                    //pos = y;
                     if (nb > max) {
                         max = nb;
                         pos = y;
                     }
                     y = y + 1;
                 }
+                  //Ecrire le plus grand est : " + max, la position du nombre est : " + pos
                 alert("le nombre le plus grand est : " + max);
                 alert("la position du nombre est : " + pos);
             }
-
+            
             var i = 2;
             var T = [];
             var nb = 0;
@@ -44,23 +53,23 @@
                 var max = 0;
                 var y = 0;
                 var pos = 0;
+                //Debut
                 //  Ecrire "Entrez le nombre n° ", i + 1 
-                // Lire T(value)
                 document.getElementById("div_resultat").innerHTML = ("Entrer la notes n°" + [i++]);
-
+                // Lire T(value)
+                //Push value dans T
                 T.push(parseInt(document.getElementById("MyInput").value));
-                //pour i dans longueur tableau
-                //T[i]+=1
-
-                //Si nb = longueur de T alors
+                //Si longueur de T =5 alors
                 if (T.length == 5) {
-                    //Ecrire Notes
+                    //Ecrire tableau de Notes T
                     document.getElementById("div_resultat").innerHTML = T.join(" , ");
-                    document.getElementById("div_resultat_js").innerHTML = ("innerHTML Voici le nouveau tableau : "+T);
+                    document.getElementById("div_resultat_js").innerHTML = ("innerHTML Voici le nouveau tableau : " + T);
                 }//FinSi
-                console.log(T);
                 //pacourir valeur de T
                 T.forEach(function (val) {
+                    //Si val superieur nombre max
+                    //  max = val;
+                    //pos = y;
                     if (val > max) {
                         max = val;
                         pos = y;
@@ -68,10 +77,11 @@
                     y = y + 1;
 
                 });
+                //Ecrire le plus grand est : " + max, la position du nombre est : " + pos
                 document.getElementById("div_result").innerHTML = ("innerHTML le nombre le plus grand est : " + max);
                 document.getElementById("div_resultat_js").innerHTML = ("la position du nombre est : " + pos);
             }// Fin         
-            
+
             var i = 2;
             var T = [];
             var nb = 0;
@@ -84,20 +94,20 @@
                 //  Ecrire "Entrez le nombre n° ", i + 1 
                 // Lire T(value)
                 $("#div_resultat").html("Entrer la notes n°" + [i++]);
-
+                // Lire T(value)
+                //Push value dans T
                 T.push(parseInt($("#MyInput").val()));
-                //pour i dans longueur tableau
-                //T[i]+=1
-
-                //Si nb = longueur de T alors
+                //Si longueur de T =5 alors
                 if (T.length == 5) {
-                    //Ecrire Notes
-                   $("#div_resultat").html(T.join(" , "));
-                   $("#div_resultat_js").html("innerHTML Voici le nouveau tableau : "+T);
+                    //Ecrire tableau de Notes T
+                    $("#div_resultat").html(T.join(" , "));
+                    $("#div_resultat_js").html("jquery Voici le nouveau tableau : " + T);
                 }//FinSi
-                // console.log(T);
                 //pacourir valeur de T
                 T.forEach(function (val) {
+                    //Si val superieur nombre max
+                    //  max = val;
+                    //pos = y;
                     if (val > max) {
                         max = val;
                         pos = y;
@@ -105,8 +115,9 @@
                     y = y + 1;
 
                 });
-              $("#div_result").html("innerHTML le nombre le plus grand est : " + max);
-              $("#div_resultat_js").html("la position du nombre est : " + pos);
+                //Ecrire le plus grand est : " + max, la position du nombre est : " + pos
+                $("#div_result").html("innerHTML le nombre le plus grand est : " + max);
+                $("#div_resultat_js").html("la position du nombre est : " + pos);
             }// Fin         
 
         </script>
@@ -135,7 +146,22 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>a faire
+                                <p>
+                                    Variables Nb, Nbpos, Nbneg en Numérique<br/>
+                                    Variables global Tableau T() ,i en Numérique<br/>
+                                    Debut<br/>
+                                    Ecrire "Entrez le nombre n° ", i + 1<br/>
+                                    Lire T(value)<br/>
+                                    Push value dans T<br/>
+                                    Si longueur de T =5 alors<br/>
+                                    Ecrire tableau de Notes T<br/>
+                                    FinSi<br/>
+                                    pacourir valeur de T<br/>
+                                    Si val superieur nombre max<br/>
+                                    max = val;<br/>
+                                    pos = y;<br/>
+                                    Ecrire le plus grand est : " + max, la position du nombre est : " + pos<br/>
+                                    Fin<br/>
                                 </p>
                             </div>
                             <div id=" txt_javascript">
@@ -144,17 +170,18 @@
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
+                                        <p>Entrer des notes</p>
                                         <div class="myResult" id="div_resultat"></div>
                                         <div class="myResult" id="div_resultat_js"></div>
                                         <div class="myResult" id="div_result"></div>
                                         <input type="text" name="MyInput" id="MyInput">
                                         <div class="language">
-                                            <button class="btn_green" id="btn_js" onClick="Exo_6_13()">JS WITH
-                                                PROMPT</button>
                                             <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_6_13_innerHTML()">JS WITH innerHTML</button>
                                             <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_6_13_jquery()">JQUERY</button>
+                                            <button class="btn_green" id="btn_js" onClick="Exo_6_13()">JS WITH
+                                                PROMPT</button>
                                         </div>
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />
@@ -164,6 +191,8 @@
                                         <div class="myResult" id="div_resultat_php">
                                             <p><?php echo $sMessage; ?></p>
                                             <p><?php echo $sMessage2; ?></p>
+                                            <p><?php echo $sMessage3; ?></p>
+                                            <p><?php echo $sMessage4; ?></p>
                                         </div>
                                     </div>
                                 </form>
@@ -179,7 +208,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
                                 <hr size="1px" color="olivedrab" />
@@ -187,13 +216,43 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+    var i = 2;
+    var T = [];
+    var nb = 0;
+    function Exo_6_13_innerHTML() {
+        // Variables Nb, Nbpos, Nbneg en Numérique
+        //Variables global Tableau T() ,i en Numérique
+        var max = 0;
+        var y = 0;
+        var pos = 0;
+        //Debut
+        //  Ecrire "Entrez le nombre n° ", i + 1 
+        document.getElementById("div_resultat").innerHTML = ("Entrer la notes n°" + [i++]);
+        // Lire T(value)
+        //Push value dans T
+        T.push(parseInt(document.getElementById("MyInput").value));
+        //Si longueur de T =5 alors
+        if (T.length == 5) {
+            //Ecrire tableau de Notes T
+            document.getElementById("div_resultat").innerHTML = T.join(" , ");
+            document.getElementById("div_resultat_js").innerHTML = ("innerHTML Voici le nouveau tableau : " + T);
+        }//FinSi
+        //pacourir valeur de T
+        T.forEach(function (val) {
+            //Si val superieur nombre max
+            //  max = val;
+            //pos = y;
+            if (val > max) {
+                max = val;
+                pos = y;
+            }
+            y = y + 1;
+
+        });
+        //Ecrire le plus grand est : " + max, la position du nombre est : " + pos
+        document.getElementById("div_result").innerHTML = ("innerHTML le nombre le plus grand est : " + max);
+        document.getElementById("div_resultat_js").innerHTML = ("la position du nombre est : " + pos);
+    }// Fin     
                                     </code>
                                  </pre>
                                 </div>
@@ -216,16 +275,43 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
+    var i = 2;
+    var T = [];
+    var nb = 0;
+    function Exo_6_13_jquery() {
+        // Variables Nb, Nbpos, Nbneg en Numérique
+        //Variables global Tableau T() ,i en Numérique
+        var max = 0;
+        var y = 0;
+        var pos = 0;
+        //  Ecrire "Entrez le nombre n° ", i + 1 
+        // Lire T(value)
+        $("#div_resultat").html("Entrer la notes n°" + [i++]);
+        // Lire T(value)
+        //Push value dans T
+        T.push(parseInt($("#MyInput").val()));
+        //Si longueur de T =5 alors
+        if (T.length == 5) {
+            //Ecrire tableau de Notes T
+            $("#div_resultat").html(T.join(" , "));
+            $("#div_resultat_js").html("jquery Voici le nouveau tableau : " + T);
+        }//FinSi
+        //pacourir valeur de T
+        T.forEach(function (val) {
+            //Si val superieur nombre max
+            //  max = val;
+            //pos = y;
+            if (val > max) {
+                max = val;
+                pos = y;
+            }
+            y = y + 1;
 
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
-
+        });
+        //Ecrire le plus grand est : " + max, la position du nombre est : " + pos
+        $("#div_result").html("innerHTML le nombre le plus grand est : " + max);
+        $("#div_resultat_js").html("la position du nombre est : " + pos);
+    }// Fin         
                                     </code>
                                  </pre>
                                 </div>
@@ -249,8 +335,48 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+    session_start();
+    $sMessage= "";
+    $sMessage2= "";
+    $sMessage3= "";
+    $sMessage4= "";
+    
+    $i = 2;
+    $T = [];
+    $nb = 0;
+    // SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
+    if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
+        {
+        // Variables Nb, Nbpos, Nbneg en Numérique
+        //Variables global Tableau T() ,i en Numérique
+        $max = 0;
+        $y = 0;
+        $pos = 0;
+        //  Ecrire "Entrez le nombre n° ", i + 1 
+        // Lire T(value)
+            $sMessage = ("Entrer la notes n°" . $i++);
+            $valeur =  (int)$_POST["myPhp"];
+            $_SESSION["myTab"][]=$valeur;
+            
+        //var_dump($_SESSION["myTab"]);
+        //Si nb = longueur de T alors
+        if (count($_SESSION["myTab"]) == 2) {
+            //Ecrire Notes
+            $sMessage2 = ("php Voici le nouveau tableau : " . $_SESSION["myTab"]);
+        }//FinSi
+        //pacourir valeur de T
+            foreach($_SESSION["myTab"] as $valeur){
+            if ($valeur > $max) {
+                $max = $valeur;
+                $pos = $y;
+            }
+            $y = $y + 1;
+    
+        };
+        $sMessage3 = ("php le nombre le plus grand est : " . $max);
+        $sMessage4 = ("la position du nombre est : " . $pos);
+    }// Fin         
+                                            
                 
                                     </code>
                                  </pre>

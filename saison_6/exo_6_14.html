@@ -33,8 +33,8 @@
                 //Pour i ← 0 à Nb i suivant
                 for (i = 0; i < nb; i++) {
                     //Ecrire "Entrez le nombre n° ", i + 1
-                     // Lire T(i)
-                //i Suivant
+                    // Lire T(i)
+                    //i Suivant
                     T[i] = parseInt(prompt("Entrez le nombre n° ", i + 1));
                 }
                 //Pour i ← 0 à Nb - 1
@@ -50,18 +50,95 @@
                 for (i = 0; i < nb; i++) {
                     //si T[i]>moy
                     if (T[i] > moy) {
-                       // nbSup = nbSup + 1;
+                        // nbSup = nbSup + 1;
                         nbSup++;
                     }// FinSi
                 } //i Suivant
                 //fin pour
-               //Ecrire les notes et la moyenne
+                //Ecrire les notes et la moyenne
                 alert("voici les notes : " + T);
                 alert("la moyenne est de : " + moy);
                 //Ecrire NbSup, " élèves dépassent la moyenne de la classe"
                 alert(nbSup + " élèves dépassent la moyenne de la classe");
                 //Fin
             }
+
+            var T = [];
+            var i = 2;
+            var nb;
+            var moy = 0;
+            var som = 0;
+            var myVal = 0;
+
+            function Exo_6_14_innerHTML() {
+                // Variables Nb, i, Som, Moy, Nbsup en Numérique
+                //Tableau T() en Numérique
+                //Debut
+                //Ecrire "Entrez le nombre n° ", i + 1
+                document.getElementById("resultat_js").innerHTML = ("Entrez le nombre n° " + i++);
+                //Ecrire "Entrer les notes"
+                //Lire value Nb
+                nb = parseInt(document.getElementById("nombreP").value);
+                //Ecrire "Entrez le nombre de notes à saisir : "
+                // Lire value myVal
+                myVal = (parseInt(document.getElementById("nombrePlat").value));
+                //pusher myVal dans array T
+                T.push(myVal);
+                //calc somme T et moyenne moy
+                som += myVal;
+                moy = som / T.length;
+                //Pour chaque val dans T
+                T.forEach(function (val) {
+                    //Si val > moy
+                    if (val > moy) {
+                        // nbSup = nbSup + 1;
+                        nbSup++;
+                    }// FinSi
+                });
+                if (nb == T.length) {
+                    //Ecrire "Les notes ,T"
+                    document.getElementById("div_result").innerHTML = ("innerHTML voici les notes : " + T);
+                    //Ecrire "la moyenne est de : " , moy
+                    document.getElementById("div_resultat").innerHTML = ("la moyenne est de : " + moy.toFixed(2));
+                    //Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir
+                    document.getElementById("div_resultat_js").innerHTML = (nbSup + " élèves dépassent la moyenne de la classe");
+                }
+            } //Fin
+
+            function Exo_6_14_jquery() {
+                // Variables Nb, i, Som, Moy, Nbsup en Numérique
+                //Tableau T() en Numérique
+                //Debut
+                //Ecrire "Entrez le nombre n° ", i + 1
+                $("#resultat_js").html("Entrez le nombre n° " + i++);
+                //Ecrire "Entrer les notes"
+                //Lire value Nb
+                nb = (parseInt($("#nombreP").val()));
+                //Ecrire "Entrez le nombre de notes à saisir : "
+                // Lire value myVal
+                myVal = (parseInt($("#nombrePlat").val()));
+                //pusher myVal dans array T
+                T.push(myVal);
+                //calc somme T et moyenne moy
+                som += myVal;
+                moy = som / T.length;
+                //Pour chaque val dans T
+                T.forEach(function (val) {
+                    //Si val > moy
+                    if (val > moy) {
+                        // nbSup = nbSup + 1;
+                        nbSup++;
+                    }// FinSi
+                });
+                if (nb == T.length) {
+                    //Ecrire "Les notes ,T"
+                    $("#div_result").html("jquery voici les notes : " + T);
+                    //Ecrire "la moyenne est de : " , moy
+                    $("#div_resultat").html("la moyenne est de : " + moy.toFixed(2));
+                    //Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir
+                    $("#div_resultat_js").html(nbSup + " élèves dépassent la moyenne de la classe");
+                }
+            } //Fin
         </script>
         <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
@@ -86,44 +163,71 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>a faire
+                                <p>
+                                    Variables Nb, i, Som, Moy, Nbsup en Numérique<br/>
+                                    Tableau T() en Numérique<br/>
+                                    Debut<br/>
+                                    Ecrire "Entrez le nombre n° ", i + 1<br/>
+                                    Ecrire "Entrer les notes"<br/>
+                                    Lire value Nb<br/>
+                                    Ecrire "Entrez le nombre de notes à saisir : "<br/>
+                                    Lire value myVal<br/>
+                                    pusher myVal dans array T<br/>
+                                    calc somme T et moyenne moy<br/>
+                                    Pour chaque val dans T<br/>
+                                    Si val > moy<br/>
+                                    nbSup = nbSup + 1;<br/>
+                                    FinSi<br/>
+                                    Ecrire "Les notes ,T"<br/>
+                                    Ecrire "la moyenne est de : " , moy<br/>
+                                    Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir<br/>
+                                    Fin<br/>
                                 </p>
                             </div>
                             <div id=" txt_javascript">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <h3>Tester l'algorithme : </h3>
+                                <div class="myResult" id="div_result"></div>
+                                <div class="myResult" id="div_resultat"></div>
+                                <div class="myResult" id="div_resultat_js"></div>
+                                <div class="myResult" id="resultat_js"></div>
+                                <div class="language">
+                                    <label for="nombreP">"Entrez le nombre de notes à saisir : "
+                                    </label>
+                                    <input type="number" name="nombreP" id="nombreP">
+                                    <label for="nombrePlat">"Entrez les notes : "
+                                    </label>
+                                    <input type="number" name="nombrePlat" id="nombrePlat">
 
+                                    <button class="btn_green" onClick="Exo_6_14_innerHTML()"> JS WITH
+                                        INNERHTML</button>
+
+                                    <button class="btn_green" onClick="Exo_6_14_jquery()">JQUERY !</button>
+                                    <button class="btn_green" id="btn_js" onClick="Exo_6_14()">JS WITH
+                                        PROMPT</button>
+                                </div>
                                 <form action="exo_6_14.php" method="POST">
                                     <div>
-                                        <hr width="75%" size="1px" color="olivedrab" />
-                                        <h3>Tester l'algorithme : </h3>
-                                        <label for="myPhp">"PHP Entrer les notes"
+                                        <label for="nbNotes">"Nombre de notes"
                                         </label>
-                                        <input type="text" name="myPhp" id="myPhp">
+                                        <input type="text" name="nbNotes" id="nbNotes">
+                                        <label for="notes">"PHP Entrer les notes"
+                                        </label>
+                                        <input type="text" name="notes" id="notes">
                                         <div class="myResult" id="div_resultat_php">
                                             <p><?php echo $sMessage; ?></p>
                                             <p><?php echo $sMessage2; ?></p>
                                             <p><?php echo $sMessage3; ?></p>
                                         </div>
-
-                                        <div class="myResult" id="div_resultat"></div>
-                                        <div class="myResult" id="div_resultat_js"></div>
-                                        <input type="number" name="nombrePlat" id="nombreP">
-                                        <input type="button" value="Envoyer" id="ok" onclick="Exo_7_1_innerHTML()">
-                                    </div>
-                                    <div class="language">
-                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                        <div class="language">
+                                            <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                        </div>
                                     </div>
                                 </form>
-                                <div class="language">
-                                    <button class="btn_green" id="btn_js" onClick="Exo_6_14()">JS WITH
-                                        PROMPT</button>
-
-                                    <button class="btn_green" onClick="Exo_6_3_innerHTML()"> JS WITH
-                                        INNERHTML</button>
-
-                                    <button class="btn_green" onClick="Exo_6_3_jquery()">JQUERY !</button>
-                                </div>
                             </div>
                             <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Sous le capot</p>
                                 <div class="language">
                                     <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
                                         aria-expanded="true" aria-controls="collapseOne">
@@ -131,7 +235,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
                                 <hr size="1px" color="olivedrab" />
@@ -139,13 +243,47 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+                var T = [];
+                var i = 2;
+                var nb;
+                var moy = 0;
+                var som = 0;
+                var myVal = 0;
+    
+                function Exo_6_14_innerHTML() {
+                    // Variables Nb, i, Som, Moy, Nbsup en Numérique
+                    //Tableau T() en Numérique
+                    //Debut
+                    //Ecrire "Entrez le nombre n° ", i + 1
+                    document.getElementById("resultat_js").innerHTML = ("Entrez le nombre n° " + i++);
+                    //Ecrire "Entrer les notes"
+                    //Lire value Nb
+                    nb = parseInt(document.getElementById("nombreP").value);
+                    //Ecrire "Entrez le nombre de notes à saisir : "
+                    // Lire value myVal
+                    myVal = (parseInt(document.getElementById("nombrePlat").value));
+                    //pusher myVal dans array T
+                    T.push(myVal);
+                    //calc somme T et moyenne moy
+                    som += myVal;
+                    moy = som / T.length;
+                    //Pour chaque val dans T
+                    T.forEach(function (val) {
+                        //Si val > moy
+                        if (val > moy) {
+                            // nbSup = nbSup + 1;
+                            nbSup++;
+                        }// FinSi
+                    });
+                    if (nb == T.length) {
+                        //Ecrire "Les notes ,T"
+                        document.getElementById("div_result").innerHTML = ("innerHTML voici les notes : " + T);
+                        //Ecrire "la moyenne est de : " , moy
+                        document.getElementById("div_resultat").innerHTML = ("la moyenne est de : " + moy.toFixed(2));
+                        //Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir
+                        document.getElementById("div_resultat_js").innerHTML = (nbSup + " élèves dépassent la moyenne de la classe");
+                    }
+                } //Fin
                                     </code>
                                  </pre>
                                 </div>
@@ -168,15 +306,40 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
-
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+    function Exo_6_14_jquery() {
+        // Variables Nb, i, Som, Moy, Nbsup en Numérique
+        //Tableau T() en Numérique
+        //Debut
+        //Ecrire "Entrez le nombre n° ", i + 1
+        $("#resultat_js").html("Entrez le nombre n° " + i++);
+        //Ecrire "Entrer les notes"
+        //Lire value Nb
+        nb = (parseInt($("#nombreP").val()));
+        //Ecrire "Entrez le nombre de notes à saisir : "
+        // Lire value myVal
+        myVal = (parseInt($("#nombrePlat").val()));
+        //pusher myVal dans array T
+        T.push(myVal);
+        //calc somme T et moyenne moy
+        som += myVal;
+        moy = som / T.length;
+        //Pour chaque val dans T
+        T.forEach(function (val) {
+            //Si val > moy
+            if (val > moy) {
+                // nbSup = nbSup + 1;
+                nbSup++;
+            }// FinSi
+        });
+        if (nb == T.length) {
+            //Ecrire "Les notes ,T"
+            $("#div_result").html("jquery voici les notes : " + T);
+            //Ecrire "la moyenne est de : " , moy
+            $("#div_resultat").html("la moyenne est de : " + moy.toFixed(2));
+            //Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir
+            $("#div_resultat_js").html(nbSup + " élèves dépassent la moyenne de la classe");
+        }
+    } //Fin
 
                                     </code>
                                  </pre>
