@@ -8,15 +8,87 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_6_15() {
+                //Variables compte=1000,taux=2.75,interet,année,dateAnnif en numérique
+                //Array tabCompt en numérique
+                var compte = 1000;
+                var taux = 2.75;
+                var interet = 0;
+                var tabCompt = [];
+                var année = 0;
+                var dateAnnif = 0;
+                //Début
+                //Ecrire Solde de depart : " + compte
+                alert("Solde de depart : " + compte + " €");
+                //calcul des intéret
+                interet = (compte * taux) / 100;
+                //Ecrire Consulter le solde d'une année  1 à 20
+                //Lire soldYear
+                var soldYear = parseInt(prompt("Consulter le solde d'une année  1 à 20"));
+                //Pour année de 0 à 20
+                for (année = 1; année <= 20; année++) {
+                    //Ajout des intérets sur le compte
+                    compte += interet;
+                    //Pusher valeurs dans le tableau
+                    tabCompt.push( année +"EME année" + " solde " + compte + " € " + "  ");
+                    dateAnnif = année;
+                    //Si soldYear = dateAnnif
+                    if (soldYear == dateAnnif) {
+                        //Ecrire l'année et le solde
+                        alert("Anniversaire " + année + " solde " + compte + " € ");
+                    }//FinSi
+                }//année suivant
+                //Ecrire Tableau tabCompt
+                alert(tabCompt);
+            }//Fin
+
+            function Exo_6_15_innerHTML() {
+                //Variables compte=1000,taux=2.75,interet,année,dateAnnif en numérique
+                //Array tabCompt en numérique
+                var compte = 1000;
+                var taux = 2.75;
+                var interet = 0;
+                var tabCompt = [];
+                var année = 1;
+                var dateAnnif = 0;
+                var soldYear=0;
+                //Début
+              
+                //calcul des intéret
+                interet = (compte * taux) / 100;
+                //Ecrire Consulter le solde d'une année  1 à 20
+                //Lire soldYear
+                soldYear = parseInt(document.getElementById("year").value);
+                //Pour année de 0 à 20
+               while (année <= 20) {
+                    //Ajout des intérets sur le compte
+                    compte += interet;
+                    //Pusher valeurs dans le tableau
+                    tabCompt.push( année +"EME année" + " solde " + compte + " € " + " <br/>  ");
+                    année++;
+                    dateAnnif = année;
+                    //Si soldYear = dateAnnif
+                    if (soldYear == dateAnnif) {
+                        //Ecrire l'année et le solde
+                        document.getElementById("div_resultat").innerHTML = ("Anniversaire " + année + " solde " + compte + " € ");
+                    }//FinSi
+                }//année suivant
+                  //Ecrire Solde de depart : " + compte
+               //   document.getElementById("div_resultat_js").innerHTML = ("Solde de depart : " + compte + " €");
+                //Ecrire Tableau tabCompt
+                document.getElementById("div_result").innerHTML = (tabCompt);
+            }//Fin
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -30,30 +102,71 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 6.15</h4>
-                                <p>Pour sa naissance, la grand-mère de TITI place une somme de 1000 Euros sur son compte épargne rémunéré
-                                    au taux de 2.75% (chaque année le compte est augmenté de 2.75%). Développer un algorithme permettant
-                                    de stocker dans un tableau sur 20 ans associant à chaque anniversaire de TITI la somme acquise sur son compte.
-                                    Puis, la grand-mère de TITI aura la possibilité de saisir un âge (compris entre 1 et 20 ans) et l'algorithme affichera la
+                                <p>Pour sa naissance, la grand-mère de TITI place une somme de 1000 Euros sur son compte
+                                    épargne rémunéré
+                                    au taux de 2.75% (chaque année le compte est augmenté de 2.75%). Développer un
+                                    algorithme permettant
+                                    de stocker dans un tableau sur 20 ans associant à chaque anniversaire de TITI la
+                                    somme acquise sur son compte.
+                                    Puis, la grand-mère de TITI aura la possibilité de saisir un âge (compris entre 1 et
+                                    20 ans) et l'algorithme affichera la
                                     somme correspondante qu'il y'aura alors sur le compte.
-                                    
+
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a fiare
-                                    </p>
-                                </div>
+                                <h4>Pseudocode:</h4>
+                                <p>a fiare
+                                </p>
+                            </div>
+                            <div id=" txt_javascript">
+
+                                <form action="exo_6_15.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <h4>
+                                            <div class="myResult" id="div_result_js"></div>
+                                            <div class="myResult" id="div_result"></div>
+                                              <div class="myResult" id="div_resultat"></div>
+                                        </h4>
+                                        <div class="language">
+                                            <label for="year">Entrer une année de 1 à 20 et Consulter le solde :
+                                            </label>
+                                            <input type="number" name="year" id="year">
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_6_15_innerHTML()">JS WITH innerHTML</button>
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_6_12_jquery()">JQUERY</button>
+                                            <button class="btn_green" id="btn_js" onClick="Exo_6_15()">JS WITH
+                                                PROMPT</button>
+                                        </div>
+                                    </div>
+                                    <hr width="75%" size="1px" color="olivedrab" />
+                                    <div class="language">
+                                        <label for="myPhp">PHP Entrez le nombre de valeur à évaluer :
+                                        </label>
+                                        <input type="text" name="myPhp" id="myPhp">
+                                
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                        <div class="myResult" id="div_resultat_php">
+                                            <p><?php echo $sMessage; ?></p>
+                                           
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -75,15 +188,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -134,7 +246,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>
