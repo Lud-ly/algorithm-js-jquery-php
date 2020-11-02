@@ -1,6 +1,6 @@
 <?php
 session_start();
-session_reset();
+session_unset();
 $sMessage= "";
 $sMessage2= "";
 $sMessage3= "";

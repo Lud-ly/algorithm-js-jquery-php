@@ -14,7 +14,7 @@
 <body>
     <div class="home">
         <header>
-            <?php include('../commun/header.php');?>
+          <?php include('../commun/header.php');?>
         </header>
         <script>
             function Exo_6_15() {
@@ -39,7 +39,7 @@
                     //Ajout des intérets sur le compte
                     compte += interet;
                     //Pusher valeurs dans le tableau
-                    tabCompt.push( année +"EME année" + " solde " + compte + " € " + "  ");
+                    tabCompt.push(année + "EME année" + " solde " + compte + " € " + "  ");
                     dateAnnif = année;
                     //Si soldYear = dateAnnif
                     if (soldYear == dateAnnif) {
@@ -60,33 +60,70 @@
                 var tabCompt = [];
                 var année = 1;
                 var dateAnnif = 0;
-                var soldYear=0;
+                var soldYear = 0;
                 //Début
-              
-                //calcul des intéret
+
+                //Calcul des intéret
                 interet = (compte * taux) / 100;
                 //Ecrire Consulter le solde d'une année  1 à 20
                 //Lire soldYear
                 soldYear = parseInt(document.getElementById("year").value);
-                //Pour année de 0 à 20
-               while (année <= 20) {
+                //Pour année de 0 inferieur 20
+                while (année <= 20) {
                     //Ajout des intérets sur le compte
                     compte += interet;
-                    //Pusher valeurs dans le tableau
-                    tabCompt.push( année +"EME année" + " solde " + compte + " € " + " <br/>  ");
-                    année++;
+                    //Ajouter valeurs dans le tableau
+                    tabCompt.push(année + "EME année" + " solde " + compte + " € " + " <br/>  ");
                     dateAnnif = année;
+                    année++;
                     //Si soldYear = dateAnnif
                     if (soldYear == dateAnnif) {
                         //Ecrire l'année et le solde
-                        document.getElementById("div_resultat").innerHTML = ("Anniversaire " + année + " solde " + compte + " € ");
+                        document.getElementById("div_resultat").innerHTML = ((année - 1) + " ème Anniversaire " + "innerHTML Solde de Titi : " + compte + " € ");
                     }//FinSi
                 }//année suivant
-                  //Ecrire Solde de depart : " + compte
-               //   document.getElementById("div_resultat_js").innerHTML = ("Solde de depart : " + compte + " €");
+
+                //Ecrire Solde de depart : " + compte
+                //   document.getElementById("div_resultat_js").innerHTML = ("Solde de depart : " + compte + " €");
                 //Ecrire Tableau tabCompt
                 document.getElementById("div_result").innerHTML = (tabCompt);
             }//Fin
+
+            function Exo_6_15_jquery() {
+                //Variables compte=1000,taux=2.75,interet,année,dateAnnif en numérique
+                //Array tabCompt en numérique
+                var compte = 1000;
+                var taux = 2.75;
+                var interet = 0;
+                var tabCompt = [];
+                var année = 1;
+                var dateAnnif = 0;
+                var soldYear = 0;
+                //Début
+
+                //Calcul des intéret
+                interet = (compte * taux) / 100;
+                //Ecrire Consulter le solde d'une année  1 à 20
+                //Lire soldYear
+                soldYear = parseInt($("#Jyear").val());
+                //Pour année de 0 inferieur 20
+                while (année <= 20) {
+                    //Ajout des intérets sur le compte
+                    compte += interet;
+                    //Ajouter valeurs dans le tableau
+                    tabCompt.push(année + "EME année" + " solde " + compte + " € " + " <br/>  ");
+                    dateAnnif = année;
+                    année++;
+                    //Si soldYear = dateAnnif
+                    if (soldYear == dateAnnif) {
+                        //Ecrire l'année et le solde
+                        $("#result").html((année - 1) + " ème Anniversaire " + "jquery Solde de Titi : " + compte + " € ");
+                    }//FinSi
+                }//année suivant
+                //Ecrire Tableau tabCompt
+                $("#div_result").html(tabCompt);
+            }//Fin
+
         </script>
         <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
@@ -103,20 +140,33 @@
                             <div class="card-body">
                                 <h4>Exercice 6.15</h4>
                                 <p>Pour sa naissance, la grand-mère de TITI place une somme de 1000 Euros sur son compte
-                                    épargne rémunéré
-                                    au taux de 2.75% (chaque année le compte est augmenté de 2.75%). Développer un
-                                    algorithme permettant
-                                    de stocker dans un tableau sur 20 ans associant à chaque anniversaire de TITI la
-                                    somme acquise sur son compte.
+                                    épargne rémunéré au taux de 2.75% (chaque année le compte est augmenté de 2.75%).
+                                    Développer un algorithme permettant de stocker dans un tableau sur 20 ans associant
+                                    à chaque anniversaire de TITI la somme acquise sur son compte.
                                     Puis, la grand-mère de TITI aura la possibilité de saisir un âge (compris entre 1 et
-                                    20 ans) et l'algorithme affichera la
-                                    somme correspondante qu'il y'aura alors sur le compte.
-
+                                    20 ans) et l'algorithme affichera la somme correspondante qu'il y'aura alors sur le
+                                    compte.
                                 </p>
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>a fiare
+                                <p>
+                                    Variables compte=1000,taux=2.75,interet,année,dateAnnif en numérique<br />
+                                    Array tabCompt en numérique<br />
+                                    Début<br />
+                                    Calcul des intérets<br />
+                                    Ecrire Consulter le solde d'une année 1 à 20<br />
+                                    Lire soldYear<br />
+                                    Pour année de 0 inferieur 20<br />
+                                    Ajout des intérets sur le compte<br />
+                                    Ajouter valeurs dans le tableau<br />
+                                    Si soldYear = dateAnnif<br />
+                                    Ecrire l'année et le solde<br />
+                                    FinSi<br />
+                                    année suivant<br />
+                                    Ecrire Solde de depart : " + compte<br />
+                                    Ecrire Tableau tabCompt<br />
+                                    Fin<br />
                                 </p>
                             </div>
                             <div id=" txt_javascript">
@@ -125,38 +175,45 @@
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
+                                        <h4>Entrer une année de 1 à 20 et Consulter le solde :</h4>
                                         <h4>
                                             <div class="myResult" id="div_result_js"></div>
                                             <div class="myResult" id="div_result"></div>
-                                              <div class="myResult" id="div_resultat"></div>
+                                            <div class="myResult" id="div_resultat"></div>
+                                            <div class="myResult" id="result"></div>
                                         </h4>
                                         <div class="language">
-                                            <label for="year">Entrer une année de 1 à 20 et Consulter le solde :
+                                            <label for="year">
                                             </label>
                                             <input type="number" name="year" id="year">
                                             <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_6_15_innerHTML()">JS WITH innerHTML</button>
+                                            <label for="Jyear">
+                                            </label>
+                                            <input type="number" name="Jyear" id="Jyear">
                                             <button type="button" value="Envoyer" id="ok"
-                                                onclick="Exo_6_12_jquery()">JQUERY</button>
+                                                onclick="Exo_6_15_jquery()">JQUERY</button>
                                             <button class="btn_green" id="btn_js" onClick="Exo_6_15()">JS WITH
                                                 PROMPT</button>
                                         </div>
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />
                                     <div class="language">
-                                        <label for="myPhp">PHP Entrez le nombre de valeur à évaluer :
+                                        <label for="soldPhp">PHP Entrer une année de 1 à 20 et Consulter le solde :
                                         </label>
-                                        <input type="text" name="myPhp" id="myPhp">
-                                
+                                        <input type="text" name="soldPhp" id="soldPhp">
+
                                         <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                         <div class="myResult" id="div_resultat_php">
                                             <p><?php echo $sMessage; ?></p>
-                                           
+                                            <p><?php echo $sMessage2; ?></p>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                             <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Sous le capot</p>
                                 <div class="language">
                                     <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
                                         aria-expanded="true" aria-controls="collapseOne">
@@ -164,7 +221,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
                                 <hr size="1px" color="olivedrab" />
@@ -172,13 +229,44 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+    function Exo_6_15_innerHTML() {
+        //Variables compte=1000,taux=2.75,interet,année,dateAnnif en numérique
+        //Array tabCompt en numérique
+        var compte = 1000;
+        var taux = 2.75;
+        var interet = 0;
+        var tabCompt = [];
+        var année = 1;
+        var dateAnnif = 0;
+        var soldYear = 0;
+        //Début
+
+        //Calcul des intéret
+        interet = (compte * taux) / 100;
+        //Ecrire Consulter le solde d'une année  1 à 20
+        //Lire soldYear
+        soldYear = parseInt(document.getElementById("year").value);
+        //Pour année de 0 inferieur 20
+        while (année <= 20) {
+            //Ajout des intérets sur le compte
+            compte += interet;
+            //Ajouter valeurs dans le tableau
+            tabCompt.push(année + "EME année" + " solde " + compte + " € " + " <br/>  ");
+            dateAnnif = année;
+            année++;
+            //Si soldYear = dateAnnif
+            if (soldYear == dateAnnif) {
+                //Ecrire l'année et le solde
+                document.getElementById("div_resultat").innerHTML = ((année - 1) + " ème Anniversaire " + "innerHTML Solde de Titi : " + compte + " € ");
+            }//FinSi
+        }//année suivant
+
+        //Ecrire Solde de depart : " + compte
+        //   document.getElementById("div_resultat_js").innerHTML = ("Solde de depart : " + compte + " €");
+        //Ecrire Tableau tabCompt
+        document.getElementById("div_result").innerHTML = (tabCompt);
+    }//Fin
+                            
                                     </code>
                                  </pre>
                                 </div>
@@ -201,15 +289,41 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
+    function Exo_6_15_jquery() {
+        //Variables compte=1000,taux=2.75,interet,année,dateAnnif en numérique
+        //Array tabCompt en numérique
+        var compte = 1000;
+        var taux = 2.75;
+        var interet = 0;
+        var tabCompt = [];
+        var année = 1;
+        var dateAnnif = 0;
+        var soldYear = 0;
+        //Début
 
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+        //Calcul des intéret
+        interet = (compte * taux) / 100;
+        //Ecrire Consulter le solde d'une année  1 à 20
+        //Lire soldYear
+        soldYear = parseInt($("#Jyear").val());
+        //Pour année de 0 inferieur 20
+        while (année <= 20) {
+            //Ajout des intérets sur le compte
+            compte += interet;
+            //Ajouter valeurs dans le tableau
+            tabCompt.push(année + "EME année" + " solde " + compte + " € " + " <br/>  ");
+            dateAnnif = année;
+            année++;
+            //Si soldYear = dateAnnif
+            if (soldYear == dateAnnif) {
+                //Ecrire l'année et le solde
+                $("#result").html((année - 1) + " ème Anniversaire " + "jquery Solde de Titi : " + compte + " € ");
+            }//FinSi
+        }//année suivant
+        //Ecrire Tableau tabCompt
+        $("#div_result").html(tabCompt);
+    }//Fin
+                            
 
                                     </code>
                                  </pre>
@@ -234,8 +348,46 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+    session_start();
+    //session_unset();
+    $sMessage= "";
+    $sMessage2= "";
+        //Variables compte=1000,taux=2.75,interet,année,dateAnnif en numérique
+        //Array tabCompt en numérique
+        $compte = 1000;
+        $taux = 2.75;
+        $interet = 0;
+        $tabCompt = [];
+        $année = 1;
+        $dateAnnif = 0;
+        $soldYear = 0;
+        //Début
+        // SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
+        if ((isset($_POST["soldPhp"])) && (!(empty($_POST["soldPhp"]))))
+        {
+        //Calcul des intéret
+        $interet = ($compte * $taux) / 100;
+        //Ecrire Consulter le solde d'une année  1 à 20
+        //Lire soldYear
+        $soldYear =  $_POST["soldPhp"];
+        //Pour année de 0 inferieur 20
+        while ($année <= 20) {
+            //Ajout des intérets sur le compte
+            $compte = $compte + $interet;
+            //Ajouter valeurs dans le tableau
+            (float)$_SESSION["tabCompt"][]= $compte ;
+            $sMessage2 = ($année . "EME année" . " solde " . $compte . " € " . " <br/>  ");
+            $dateAnnif = $année;
+            $année++;
+            //Si soldYear = dateAnnif
+            if ($soldYear == $dateAnnif) {
+                //Ecrire l'année et le solde
+                $sMessage = (($année - 1) . " ème Anniversaire " . "PHP Solde de Titi : " . $compte . " € ");
+            }//FinSi
+        
+        }//année suivant
+    }//Fin
+                                            
                 
                                     </code>
                                  </pre>
