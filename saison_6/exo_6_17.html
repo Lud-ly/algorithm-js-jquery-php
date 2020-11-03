@@ -14,7 +14,7 @@
 <body>
     <div class="home">
         <header>
-            <?php include('../commun/header.php');?>
+            <!-- <?php include('../commun/header.php');?> -->
         </header>
         <script>
             var tab = [];
@@ -49,6 +49,8 @@
                     tab[j] = valeur;
                 }
             }
+
+            
             var i = 1;
             var j = 1;
             var myTab = [];
@@ -84,26 +86,27 @@
                     myTab[j] = valeur;
                 }
             }
+
+
             var i = 1;
             var j = 1;
             var myTabJq = [];
             function Exo_6_17_jquery() {
                 var tab_length = 10;
                 if (i <= tab_length) {
-                    myTabJq[i] = parseInt($("myValueJq").val());
-                   $("#div_result").html("tab non-trié " + myTabJq);
+                    myTabJq[i] = parseInt($("#myValueJq").val());
+                    $("#div_result").html("tab non-trié " + myTabJq);
                     i++;
                 }
-
                 tri_insertion(myTabJq);
                 if (j <= tab_length) {
                     //document.getElementById("div_resultat").innerHTML = (myTab[j] + ", ");
                     j++;
                 }
-              $("#div_resultat_js").html("Jquery tab trié par insertion " + myTabJq);
+                $("#div_resultat_js").html("Jquery tab trié par insertion " + myTabJq);
             }
             function tri_insertion(myTabJq) {
-                var valeur =0;
+                var valeur;
                 var j;
 
                 for (var i = 0; i < myTabJq.length; i++) {
@@ -157,28 +160,29 @@
                                             <div class="myResult" id="div_resultat_js"></div>
                                         </h4>
                                         <div class="language">
-                                            <label for="myValue"> "Entrer des valeurs : "
+                                            <label for="myValue"> Entrer des valeurs :
                                             </label>
                                             <input type="text" name="myValue" id="myValue">
                                             <button type="button" value="Envoyer" id="ok"
-                                                onclick="Exo_6_17_innerHTML()">JS WITH innerHTML</button>
-                                                <hr width="75%" size="1px" color="olivedrab" />
-                                                <label for="myValueJq"> "Entrer des valeurs : "
-                                                </label>
-                                                <input type="text" name="myValueJq" id="myValueJq">
+                                                onclick="Exo_6_17_innerHTML()">TRI_INSERTION innerHTML</button>
+                                            <label for="myValueJq"> Entrer des valeurs :
+                                            </label>
+                                            <input type="text" name="myValueJq" id="myValueJq">
                                             <button type="button" value="Envoyer" id="ok"
-                                                onclick="Exo_6_17_jquery()">JQUERY</button>
-                                            <button class="btn_green" id="btn_js" onClick="Exo_6_17()">JS WITH
-                                                PROMPT</button>
+                                                onclick="Exo_6_17_jquery()">TRI_INSERTION_JQUERY</button>
                                         </div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                    </div>
+                                    <div class="language">
+                                        <button class="btn_green" id="btn_js" onClick="Exo_6_17()">TRI_INSERTION_PROMPT
+                                          </button>
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />
                                     <div class="language">
-                                        <label for="soldPhp">Entrer un nombre
+                                        <label for="valPhp"> Entrer des valeurs :
                                         </label>
-                                        <input type="text" name="soldPhp" id="soldPhp">
-
-                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                        <input type="text" name="valPhp" id="valPhp">
+                                        <button class="btn_green" type="submit">TRI_INSERTION_PHP</button>
                                         <div class="myResult" id="div_resultat_php">
                                             <p><?php echo $sMessage; ?></p>
                                             <p><?php echo $sMessage2; ?></p>

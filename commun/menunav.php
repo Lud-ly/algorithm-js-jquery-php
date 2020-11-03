@@ -74,8 +74,8 @@
                             </ul>
                             <li><a href="#">Techniques rusées</a>
                             <ul>
-                                <li><a href="../saison_7/exo_1.php">Exercice 7.1</a></li>
-                                <li><a href="../saison_7/exo_2.php">Exercice 7.2</a></li>
+                                <li><a href="../saison_7/exo_7_1.php">Exercice 7.1</a></li>
+                                <li><a href="../saison_7/exo_7_2.php">Exercice 7.2</a></li>
                                 <li><a href="../saison_7/exo_3.php">Exercice 7.3</a></li>
                                 <li><a href="../saison_7/exo_4.php">Exercice 7.4</a></li>
                                 <li><a href="../saison_7/exo_5.php">Exercice 7.5</a></li>

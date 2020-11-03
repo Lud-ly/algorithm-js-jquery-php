@@ -25,12 +25,12 @@
                 while (Yapermute) {
                     Yapermute = false;
                     // Pour i = 0 à 6
-                    for (i = 0; i < 7; i++) {
+                    for (i = 0; i <= 7; i++) {
                         // Si aTableau[i] > aTableau[i+1] alors
-                        if (aTableau[i] > aTableau[i + 1]) {
+                        if (aTableau[i] > aTableau[i - 1]) {
                             temp = aTableau[i];
-                            aTableau[i] = aTableau[i + 1];
-                            aTableau[i + 1] = temp;
+                            aTableau[i] = aTableau[i - 1];
+                            aTableau[i - 1] = temp;
                             Yapermute = true;
                             // Finsi
                         }
@@ -44,8 +44,40 @@
                 for (i = 0; i <= 7; i++) {
                     alert(aTableau[i] + " ");
                 }
-                alert(aTableau[i]);
+                alert(aTableau);
             }
+
+            function Exo_7_2_innerHTML() {
+                //  var aTableau = [];
+                var aTableau = [7, 84, 1, 69, 21, 18, 9, 98];
+                document.getElementById("div_resultat_js").innerHTML = (aTableau);
+                var Yapermute = true;
+                // TantQue Yapermute
+                while (Yapermute) {
+                    Yapermute = false;
+                    // Pour i = 0 à 6
+                    for (i = 0; i <= aTableau.length; i++) {
+                        // Si aTableau[i] > aTableau[i+1] alors
+                        if (aTableau[i] > aTableau[i - 1]) {
+                            temp = aTableau[i];
+                            aTableau[i] = aTableau[i - 1];
+                            aTableau[i - 1] = temp;
+                            Yapermute = true;
+                            // Finsi
+                        }
+                        // i suivant
+                    }
+                    // FinTantQue
+                    // FIN
+                }
+
+                document.getElementById("div_resultat").innerHTML = ("Mon tableau trié : ");
+                document.getElementById("div_result").innerHTML = (aTableau);
+            }
+          
+          
+
+
         </script>
         <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
@@ -73,7 +105,7 @@
                             </div>
                             <div id=" txt_javascript">
 
-                                <form action="exo_14.php" method="POST">
+                                <form action="exo_7_2.php" method="POST">
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
@@ -86,8 +118,9 @@
                                             <p><?php echo $sMessage3; ?></p>
                                         </div>
 
-                                        <div class="myResult" id="div_resultat"></div>
                                         <div class="myResult" id="div_resultat_js"></div>
+                                        <div class="myResult" id="div_resultat"></div>
+                                        <div class="myResult" id="div_result"></div>
                                         <input type="number" name="nombrePlat" id="nombreP">
                                         <input type="button" value="Envoyer" id="ok" onclick="Exo_7_1_innerHTML()">
                                     </div>
@@ -99,10 +132,10 @@
                                     <button class="btn_green" id="btn_js" onClick="Exo_7_2()">JS WITH
                                         PROMPT</button>
 
-                                    <button class="btn_green" onClick="Exo_6_3_innerHTML()"> JS WITH
+                                    <button class="btn_green" onClick="Exo_7_2_innerHTML()"> JS WITH
                                         INNERHTML</button>
 
-                                    <button class="btn_green" onClick="Exo_6_3_jquery()">JQUERY !</button>
+                                    <button class="btn_green" onClick="Exo_7_2_jquery()">JQUERY !</button>
                                 </div>
                             </div>
                             <div class="card-header" id="headingOne">

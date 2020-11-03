@@ -8,21 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <script>
-         function Exo_7_1() {
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_7_1() {
                 //Variables Nb, i en Entier
                 //Variable Flag en Booleen
                 var flag = false;
                 var nb = 0;
-                var i;
+                var i = 1;
                 //Tableau T() en Entier
 
                 //Debut
@@ -64,8 +64,76 @@
                 //FinSi
                 //Fin
             }
-    </script>
-    <div class="container-fluid ">
+            function Exo_7_1_innerHTML() {
+                // TABLEAU : aTableau[] (en entier)
+                // 	VARIABLES : iNbValeurs, iValeur, i, j, k (en entier), sResult (en alphanumérique)
+                var aTableau = [];
+                var sResult = "";
+                var iNbValeurs = 0;
+                var iValeur = 0;
+                var i = 0;
+                var j = 0;
+                var k = 0;
+                // DEBUT
+                // 	sResult= "Faux (les éléments du tableau ne sont pas tous consécutifs)"
+                sResult = "Faux (les éléments du tableau ne sont pas tous consécutifs)";
+                // On demande le nombre de valeurs à saisir
+                iNbValeurs = parseInt(document.getElementById("ivaleur").value);
+                // 	ECRIRE "Rentrez le nombre de valeurs à saisir (supérieur à 1)"
+                // 	Lire iNbValeurs
+
+                // 	// On dimensionne notre tableau
+                // 	Redim aTableau[iNbValeurs]
+                aTableau= new Array(iNbValeurs);
+                // 	// On boucle pour saisir les données
+                // 	POUR i allant de 0 à iNbValeurs, pas de 1
+                if (i < iNbValeurs) {
+                    iValeur = parseInt(document.getElementById("iVal").value);
+                    aTableau.push(iValeur);
+                    // 		ECRIRE "Saisir la valeur n°" + (i+1) + "/" + iNbValeurs
+                    document.getElementById("div_resultat_js").innerHTML = (" Saisir la valeur n°" + (i + 1) + "/" + iNbValeurs);
+                    // 		LIRE iValeur
+                    document.getElementById("div_resultat").innerHTML = (aTableau);
+                    // 		// On parcours le tableau depuis la fin en remontant au début
+                    // 		// On place donc notre borne de départ au maximum, soit le tour (i) en cours
+                    // 		// Et on enlève 1 par tour
+                    // 		j= i
+                    j = i;
+                    // 		TANT QUE ((iValeur < aTableau[j-1]) ET (j > 0))
+                    if ((iValeur < aTableau[j - 1]) && (j > 0)) {
+                        aTableau[j] = aTableau[j - 1];
+                        // 			aTableau[j]= aTableau[j-1]
+                        j--;
+                        // 			j--
+                        // 		FIN TANT QUE
+                    }
+                    aTableau[j] = iValeur;
+                    // 		aTableau[j]= iValeur
+                    // 	i SUIVANT
+                }
+                // 	// On teste Si le snombres sont consécutifs
+                // 	k= 1
+                k = 1;
+                // 	TANT QUE (k < iNbValeurs) ET (aTableau[k]-1 == aTableau[k-1]
+                if ((k < iNbValeurs) && (aTableau[k] - 1 == aTableau[k - 1])) {
+                    k++;
+                    // 		k++
+                }
+                // 	FIN TANT QUE
+
+                // 	SI k == iNbValeurs ALORS
+                if (k == iNbValeurs) {
+                    // 		sResult= "Les éléments du tableau sont tous consécutifs"
+                    sResult = "Les éléments du tableau sont tous consécutifs";
+                }
+                // 	FIN SI
+
+                // 	ECRIRE aTableau + sResult
+                document.getElementById("div_resultat").innerHTML = (aTableau + sResult);
+                // FIN
+            }
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -79,66 +147,75 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 7.1</h4>
-                                <p>Ecrivez un algorithme qui permette de saisir un nombre quelconque de valeurs, et qui les range au fur et à mesure
-                                    dans un tableau. Le programme, une fois la saisie terminée, doit dire si les éléments du tableau sont tous consécutifs
+                                <p>Ecrivez un algorithme qui permette de saisir un nombre quelconque de valeurs, et qui
+                                    les range au fur et à mesure
+                                    dans un tableau. Le programme, une fois la saisie terminée, doit dire si les
+                                    éléments du tableau sont tous consécutifs
                                     ou non.
                                     Par exemple, si le tableau est :
                                     12 13 14 15 16 17 18
                                     ses éléments sont tous consécutifs. En revanche, si le tableau est :
                                     9 10 11 15 16 17 18
-                                    ses éléments ne sont pas tous consécutifs. 
+                                    ses éléments ne sont pas tous consécutifs.
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
-                                </div>
-                                <div id=" txt_javascript">
+                                <h4>Pseudocode:</h4>
+                                <p>a faire
+                                </p>
+                            </div>
+                            <div id=" txt_javascript">
 
-                                    <form action="exo_14.php" method="POST">
-                                        <div>
-                                            <hr width="75%" size="1px" color="olivedrab" />
-                                            <h3>Tester l'algorithme : </h3>
-                                            <label for="myPhp">"PHP Entrer les notes"
-                                            </label>
-                                            <input type="text" name="myPhp" id="myPhp">
-                                            <div class="myResult" id="div_resultat_php">
-                                                <p><?php echo $sMessage; ?></p>
-                                                <p><?php echo $sMessage2; ?></p>
-                                                <p><?php echo $sMessage3; ?></p>
-                                            </div>
-    
-                                            <div class="myResult" id="div_resultat"></div>
+                                <form action="exo_7_1.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <h4>
                                             <div class="myResult" id="div_resultat_js"></div>
-                                            <input type="number" name="nombrePlat" id="nombreP">
-                                            <input type="button" value="Envoyer" id="ok" onclick="Exo_7_1_innerHTML()">
-                                        </div>
+                                            <div class="myResult" id="div_resultat"></div>
+                                        </h4>
                                         <div class="language">
-                                            <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                            <label for="ivaleur">"Rentrez le nombre de valeurs à saisir (supérieur à 1)
+                                                : "
+                                            </label>
+                                            <input type="number" name="ivaleur" id="ivaleur">
+                                            <label for="iVal">"Rentrez les valeurs : "
+                                            </label>
+                                            <input type="number" name="iVal" id="iVal">
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_7_1_innerHTML()">JS WITH innerHTML</button>
+                                            <label for="Jyear">
+                                            </label>
+                                            <input type="number" name="Jyear" id="Jyear">
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_6_15_jquery()">JQUERY</button>
+                                            <button class="btn_green" id="btn_js" onClick="Exo_6_15()">JS WITH
+                                                PROMPT</button>
                                         </div>
-                                    </form>
-                                    <div class="language">
-                                        <button class="btn_green" id="btn_js" onClick="Exo_7_1()">JS WITH
-                                            PROMPT</button>
-    
-                                        <button class="btn_green" onClick="Exo_6_3_innerHTML()"> JS WITH
-                                            INNERHTML</button>
-    
-                                        <button class="btn_green" onClick="Exo_6_3_jquery()">JQUERY !</button>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <label for="myPhp">"PHP Entrer les notes"
+                                        </label>
+                                        <input type="text" name="myPhp" id="myPhp">
+                                        <div class="myResult" id="div_resultat_php">
+                                            <p><?php echo $sMessage; ?></p>
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                </form>
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -160,15 +237,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -219,7 +295,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>
