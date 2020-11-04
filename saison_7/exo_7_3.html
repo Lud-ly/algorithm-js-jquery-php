@@ -8,15 +8,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_7_3() {
+                var reverseTab = [12,4,66,23,24,145,2,1];
+                var iNbr = 0;
+               // var i = 1;
+               
+               
+                for (var i = 0; i < 7; i++) {
+                    console.log(reverseTab);
+                   
+                }
+
+            }
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -27,29 +41,71 @@
                 </div>
                 <div class="col-md-8">
                     <div id="accordion">
-                        <div class="card"id="exos">
+                        <div class="card" id="exos">
                             <div class="card-body">
                                 <h4>Exercice 7.3</h4>
-                                <p>Ecrivez un algorithme qui inverse l’ordre des éléments d’un tableau dont on suppose qu'il a été préalablement saisi
-                                    (« les premiers seront les derniers… ») 
+                                <p>Ecrivez un algorithme qui inverse l’ordre des éléments d’un tableau dont on suppose
+                                    qu'il a été préalablement saisi
+                                    (« les premiers seront les derniers… »)
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
-                                </div>
+                                <h4>Pseudocode:</h4>
+                                <p>a faire
+                                </p>
+                            </div>
+                            <div id=" txt_javascript">
+
+                                <form action="exo_7_3.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <h4>
+                                            <div class="myResult" id="div_resultat_js"></div>
+                                            <div class="myResult" id="div_resultat"></div>
+                                        </h4>
+                                        <div class="language">
+                                            <label for="ivaleur">"Rentrez le nombre de valeurs à saisir (supérieur à 1)
+                                                : "
+                                            </label>
+                                            <input type="number" name="ivaleur" id="ivaleur">
+                                            <label for="iVal">"Rentrez les valeurs : "
+                                            </label>
+                                            <input type="number" name="iVal" id="iVal">
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_7_1_innerHTML()">JS WITH innerHTML</button>
+                                            <label for="Jyear">
+                                            </label>
+                                            <input type="number" name="Jyear" id="Jyear">
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_6_15_jquery()">JQUERY</button>
+                                            <button class="btn_green" id="btn_js" onClick="Exo_7_3()">JS WITH
+                                                PROMPT</button>
+                                        </div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <label for="myPhp">"PHP Entrer les notes"
+                                        </label>
+                                        <input type="text" name="myPhp" id="myPhp">
+                                        <div class="myResult" id="div_resultat_php">
+                                            <p><?php echo $sMessage; ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                </form>
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -71,15 +127,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -130,7 +185,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

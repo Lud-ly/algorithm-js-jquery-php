@@ -20,7 +20,7 @@
             function Exo_7_1() {
                 //Variables Nb, i en Entier
                 //Variable Flag en Booleen
-                var flag = false;
+                var success = false;
                 var nb = 0;
                 var i = 1;
                 //Tableau T() en Entier
@@ -41,19 +41,19 @@
                 }
                 console.log(T);
                 //Flag ← Vrai
-                flag = true;
+                success = true;
                 //Pour i ← 1 à Nb - 1
                 for (i = 1; i < nb - 1; i++) {
                     // Si T(i) <> T(i – 1) + 1 Alors
                     if (T[i] < T[i - 1] + 1) {
                         // Flag ← Faux
-                        Flag = false;
+                        success = false;
                         // FinSi
                         //i Suivant
                     }
                 }
                 // Si Flag Alors
-                if (flag) {
+                if (success) {
                     //Ecrire "Les nombres sont consécutifs"
                     alert(T + " Les nombres sont consécutifs")
                     // Sinon
@@ -64,6 +64,7 @@
                 //FinSi
                 //Fin
             }
+            
             var aTableau = [];
             var i = 1;
                 var j = 0;
