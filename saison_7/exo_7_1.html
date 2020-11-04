@@ -64,34 +64,41 @@
                 //FinSi
                 //Fin
             }
+            var aTableau = [];
+            var i = 1;
+                var j = 0;
+                var k = 0;
+                var iNbValeurs = 0;
+                var iValeur = 0;
+                var sResult = "";
+              
             function Exo_7_1_innerHTML() {
                 // TABLEAU : aTableau[] (en entier)
                 // 	VARIABLES : iNbValeurs, iValeur, i, j, k (en entier), sResult (en alphanumérique)
-                var aTableau = [];
-                var sResult = "";
-                var iNbValeurs = 0;
-                var iValeur = 0;
-                var i = 0;
-                var j = 0;
-                var k = 0;
+
+             
+              
                 // DEBUT
                 // 	sResult= "Faux (les éléments du tableau ne sont pas tous consécutifs)"
                 sResult = "Faux (les éléments du tableau ne sont pas tous consécutifs)";
                 // On demande le nombre de valeurs à saisir
-                iNbValeurs = parseInt(document.getElementById("ivaleur").value);
+               iNbValeurs = parseInt(document.getElementById("ivaleur").value);
                 // 	ECRIRE "Rentrez le nombre de valeurs à saisir (supérieur à 1)"
                 // 	Lire iNbValeurs
-
+                //iNbValeurs = aTableau.length;
                 // 	// On dimensionne notre tableau
                 // 	Redim aTableau[iNbValeurs]
-                aTableau= new Array(iNbValeurs);
+          
                 // 	// On boucle pour saisir les données
                 // 	POUR i allant de 0 à iNbValeurs, pas de 1
-                if (i < iNbValeurs) {
+             
+           if(i <iNbValeurs) {
+                // 		ECRIRE "Saisir la valeur n°" + (i+1) + "/" + iNbValeurs
+                document.getElementById("div_resultat_js").innerHTML = (" Saisir la valeur n°" + (i+1) + "/" + iNbValeurs);
                     iValeur = parseInt(document.getElementById("iVal").value);
                     aTableau.push(iValeur);
-                    // 		ECRIRE "Saisir la valeur n°" + (i+1) + "/" + iNbValeurs
-                    document.getElementById("div_resultat_js").innerHTML = (" Saisir la valeur n°" + (i + 1) + "/" + iNbValeurs);
+                     console.log(aTableau);
+                   
                     // 		LIRE iValeur
                     document.getElementById("div_resultat").innerHTML = (aTableau);
                     // 		// On parcours le tableau depuis la fin en remontant au début
@@ -100,7 +107,7 @@
                     // 		j= i
                     j = i;
                     // 		TANT QUE ((iValeur < aTableau[j-1]) ET (j > 0))
-                    if ((iValeur < aTableau[j - 1]) && (j > 0)) {
+                    while ((iValeur < aTableau[j - 1]) && (j > 0)) {
                         aTableau[j] = aTableau[j - 1];
                         // 			aTableau[j]= aTableau[j-1]
                         j--;
@@ -109,13 +116,14 @@
                     }
                     aTableau[j] = iValeur;
                     // 		aTableau[j]= iValeur
-                    // 	i SUIVANT
+                    // 	i SUIVANT*/
                 }
                 // 	// On teste Si le snombres sont consécutifs
                 // 	k= 1
+                
                 k = 1;
                 // 	TANT QUE (k < iNbValeurs) ET (aTableau[k]-1 == aTableau[k-1]
-                if ((k < iNbValeurs) && (aTableau[k] - 1 == aTableau[k - 1])) {
+                while ((k < iNbValeurs) && (aTableau[k] - 1 == aTableau[k - 1])) {
                     k++;
                     // 		k++
                 }
