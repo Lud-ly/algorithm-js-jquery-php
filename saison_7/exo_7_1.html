@@ -24,26 +24,26 @@
                 var nb = 0;
                 var i = 1;
                 //Tableau T() en Entier
-
+                var T = [];
                 //Debut
                 //Ecrire "Entrez le nombre de valeurs :"
                 //Lire Nb
                 nb = parseInt(prompt("Entrez le nombre de valeurs :"))
-                var T = [nb - 1];
+                T.length = nb;
                 //Redim T(Nb-1)
                 //Pour i ← 0 à Nb - 1
-                for (i = 0; i < nb - 1; i++) {
-                    T[i] = parseInt(prompt("Entrez le nombre n°" + i));
+                for (i = 0; i < T.length; i++) {
+                    T[i] = parseInt(prompt("Entrez le nombre n°" + (i + 1) + "/" + T.length));
                     //Ecrire "Entrez le nombre n° ", i + 1
                     //Lire T(i)
-                    //T += T[i];
+                    // T += T[i];
                     //i Suivant
                 }
                 console.log(T);
                 //Flag ← Vrai
                 success = true;
                 //Pour i ← 1 à Nb - 1
-                for (i = 1; i < nb - 1; i++) {
+                for (i = 1; i < T.length; i++) {
                     // Si T(i) <> T(i – 1) + 1 Alors
                     if (T[i] < T[i - 1] + 1) {
                         // Flag ← Faux
@@ -64,82 +64,51 @@
                 //FinSi
                 //Fin
             }
-            
-            var aTableau = [];
-            var i = 1;
-                var j = 0;
-                var k = 0;
-                var iNbValeurs = 0;
-                var iValeur = 0;
-                var sResult = "";
-              
+            var i = 2;
+            var T = [];
+            var nb = 0;
+            var success = false;
             function Exo_7_1_innerHTML() {
-                // TABLEAU : aTableau[] (en entier)
-                // 	VARIABLES : iNbValeurs, iValeur, i, j, k (en entier), sResult (en alphanumérique)
-
-             
-              
-                // DEBUT
-                // 	sResult= "Faux (les éléments du tableau ne sont pas tous consécutifs)"
-                sResult = "Faux (les éléments du tableau ne sont pas tous consécutifs)";
-                // On demande le nombre de valeurs à saisir
-               iNbValeurs = parseInt(document.getElementById("ivaleur").value);
-                // 	ECRIRE "Rentrez le nombre de valeurs à saisir (supérieur à 1)"
-                // 	Lire iNbValeurs
-                //iNbValeurs = aTableau.length;
-                // 	// On dimensionne notre tableau
-                // 	Redim aTableau[iNbValeurs]
-          
-                // 	// On boucle pour saisir les données
-                // 	POUR i allant de 0 à iNbValeurs, pas de 1
-             
-           if(i <iNbValeurs) {
-                // 		ECRIRE "Saisir la valeur n°" + (i+1) + "/" + iNbValeurs
-                document.getElementById("div_resultat_js").innerHTML = (" Saisir la valeur n°" + (i+1) + "/" + iNbValeurs);
-                    iValeur = parseInt(document.getElementById("iVal").value);
-                    aTableau.push(iValeur);
-                     console.log(aTableau);
-                   
-                    // 		LIRE iValeur
-                    document.getElementById("div_resultat").innerHTML = (aTableau);
-                    // 		// On parcours le tableau depuis la fin en remontant au début
-                    // 		// On place donc notre borne de départ au maximum, soit le tour (i) en cours
-                    // 		// Et on enlève 1 par tour
-                    // 		j= i
-                    j = i;
-                    // 		TANT QUE ((iValeur < aTableau[j-1]) ET (j > 0))
-                    while ((iValeur < aTableau[j - 1]) && (j > 0)) {
-                        aTableau[j] = aTableau[j - 1];
-                        // 			aTableau[j]= aTableau[j-1]
-                        j--;
-                        // 			j--
-                        // 		FIN TANT QUE
+               //Ecrire Entrer la notes n°"+i suivant
+                //Lire input
+               
+                var input = document.getElementById("nombreP");
+                document.getElementById("div_resultat_js").innerHTML = ("Entrer la notes n°" + [i++]);
+                //Ajouter value à notes
+                T.push(parseInt(document.getElementById("iVal").value));
+                //Si array notes =8
+                if (T.length >=1 && T.length<=5) {
+                    //Ecrire Notes
+                    document.getElementById("div_resultat").innerHTML = T.join(" , ");
+                  //  document.getElementById("div_resultat").innerHTML = ("innerHTML Voici les Valeur");
+                }//FinSi
+                console.log(T);
+                //Flag ← Vrai
+                success = true;
+                //Pour i ← 1 à Nb - 1
+                for (i = 1; i < T.length; i++) {
+                    // Si T(i) <> T(i – 1) + 1 Alors
+                    if (T[i] < T[i - 1] + 1) {
+                        // Flag ← Faux
+                        success = false;
+                        // FinSi
+                        //i Suivant
                     }
-                    aTableau[j] = iValeur;
-                    // 		aTableau[j]= iValeur
-                    // 	i SUIVANT*/
+                    if (success) {
+                    //Ecrire "Les nombres sont consécutifs"
+                    document.getElementById("div_result").innerHTML = (T + " Les nombres sont consécutifs");
+                    // Sinon
+                } else {
+                    //Ecrire "Les nombres ne sont pas consécutifs"
+                    document.getElementById("div_result").innerHTML = (T + " Les nombres ne sont pas consécutifs");
                 }
-                // 	// On teste Si le snombres sont consécutifs
-                // 	k= 1
                 
-                k = 1;
-                // 	TANT QUE (k < iNbValeurs) ET (aTableau[k]-1 == aTableau[k-1]
-                while ((k < iNbValeurs) && (aTableau[k] - 1 == aTableau[k - 1])) {
-                    k++;
-                    // 		k++
+                
+                // Si Flag Alors
+               
                 }
-                // 	FIN TANT QUE
-
-                // 	SI k == iNbValeurs ALORS
-                if (k == iNbValeurs) {
-                    // 		sResult= "Les éléments du tableau sont tous consécutifs"
-                    sResult = "Les éléments du tableau sont tous consécutifs";
-                }
-                // 	FIN SI
-
-                // 	ECRIRE aTableau + sResult
-                document.getElementById("div_resultat").innerHTML = (aTableau + sResult);
-                // FIN
+                //FinSi
+                //Fin
             }
         </script>
         <div class="container-fluid ">
@@ -182,12 +151,9 @@
                                         <h4>
                                             <div class="myResult" id="div_resultat_js"></div>
                                             <div class="myResult" id="div_resultat"></div>
+                                            <div class="myResult" id="div_result"></div>
                                         </h4>
                                         <div class="language">
-                                            <label for="ivaleur">"Rentrez le nombre de valeurs à saisir (supérieur à 1)
-                                                : "
-                                            </label>
-                                            <input type="number" name="ivaleur" id="ivaleur">
                                             <label for="iVal">"Rentrez les valeurs : "
                                             </label>
                                             <input type="number" name="iVal" id="iVal">
@@ -198,7 +164,7 @@
                                             <input type="number" name="Jyear" id="Jyear">
                                             <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_6_15_jquery()">JQUERY</button>
-                                            <button class="btn_green" id="btn_js" onClick="Exo_6_15()">JS WITH
+                                            <button class="btn_green" id="btn_js" onClick="Exo_7_1()">JS WITH
                                                 PROMPT</button>
                                         </div>
                                         <hr width="75%" size="1px" color="olivedrab" />

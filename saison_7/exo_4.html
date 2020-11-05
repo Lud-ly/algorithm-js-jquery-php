@@ -21,23 +21,13 @@
        
        var numArray = [6, 8, 10, 34, 12, 2];
        alert("tableau initial "+numArray);
-       var element = parseInt(prompt("Enter Element to be deleted: "));
+       var e = parseInt(prompt("Enter Element to be deleted: "));
      
-        for(var i = 0; i < numArray.length; i++){
-            if(numArray[i] == element){
-                // shift elements to the left
-                for(var j = i; j < numArray.length - 1; j++){
-                    numArray[j] = numArray[j+1];
-                }
-               // break;
-            }
-        }
+       numArray.forEach(element => {
+           element.pop(e);
+       })
 
-       alert("Array elements after deletion-- " );
-        for(var i = 0; i < numArray.length; i++){
-           alert(" " + numArray[i]);
-        }
-        alert(numArray);
+       alert("Array elements after deletion-- " + numArray);
        }
     </script>
     <div class="container-fluid ">

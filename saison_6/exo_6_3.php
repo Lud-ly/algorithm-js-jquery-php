@@ -1,11 +1,11 @@
 <?php
-	
+	session_start();
 $sMessage= "";
 $sMessage2= "";
  //Variables global tableau notes,i=2
  
 $iTabNotes = [];
-
+$i=0;
 if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
 	{
 		//$i=1;
@@ -13,11 +13,11 @@ if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
 	//Ajouter value à notes
 	$iNotes =  $_POST["myPhp"];
 	
- //Si les notes =8
-	if($i <= 8) {
-		//iTab=iNotes
+ //Si iTabNotes =8
+	if($i <= 9) {
+		//iTabNotes=iNotes
 		$i++;
-		$iTabNotes=$iNotes;
+		$_SESSION["iTabNotes"][]=$iNotes;
 		$sMessage = "Entrez la note numéro ". $i;
 		 //Ecrire Entrer la notes n°"+i suivant
 		
@@ -25,7 +25,7 @@ if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
 	}
 	//Ecrire Notes
 
-		$sMessage2 = "PHP " . $iTabNotes;
+		$sMessage2 = "PHP " . 	(int)$_SESSION["iTabNotes"];
 	} // Fin
 		
 

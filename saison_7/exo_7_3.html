@@ -18,16 +18,37 @@
         </header>
         <script>
             function Exo_7_3() {
-                var reverseTab = [12,4,66,23,24,145,2,1];
-                var iNbr = 0;
-               // var i = 1;
-               
-               
-                for (var i = 0; i < 7; i++) {
-                    console.log(reverseTab);
-                   
+                var x = 1;
+                var t = [];
+                while (x < 10) {
+                    iNbr = parseFloat(prompt("enter 10 valeurs : " + x + "/10"));
+                    t.push(iNbr);
+                    x++;
                 }
-
+                alert(t);
+                // boucle principale: le point de départ se décale à chaque tour
+                // Pour i ← 0 à 10
+                for (var i = 0; i < 10; i++) {
+                    // on examine tous les éléments suivants
+                    // Pour j ← i + 1 à 11
+                    for (j = i; j < 11; j++) {
+                        // Si t(j) < t(i) Alors
+                        if (t[j] < t[i]) {
+                            // on fait l'échange !
+                            // tempo ← t(i)
+                            var tempo = t[i];
+                            t[i] = t[j];
+                            t[j] = tempo;
+                            // t(i) ← t(j)
+                            // t(j) ← tempo
+                            // Finsi
+                        }
+                        // j suivant
+                    }
+                    // On a placé correctement l'élément numéro i, on passe à présent au suivant.
+                    // i suivant
+                }
+                alert(t);
             }
         </script>
         <div class="container-fluid ">
