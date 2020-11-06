@@ -19,7 +19,7 @@ $sMessage3 ="";
 	var_dump($tab3);
 	//$sMessage = "PHP tab1 : " . $tab1 ;
 	//$sMessage2 = "tab2 : " . $tab2;
-	$sMessage3 =  $tab3;
+	$sMessage3 =  (int)$tab3;
 //}
 	
 	require "exo_6_10.html";

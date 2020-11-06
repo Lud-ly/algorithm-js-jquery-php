@@ -15,7 +15,7 @@ if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur
 	// Lire iNombre
 	$iNombre = $_POST["iNombreUtilisateur"];
 	//Pour i ← 1 à 10
-	for ($i = 0; $i <= 10; $i++) {
+	for ($i = 1; $i <= 10; $i++) {
 		// chain = chain + iNombre + " x ", i, " = ", iNombre * i
 		$chain = $chain . $iNombre . " x " . $i . " = " . $iNombre * $i .  "<br/> ";
 	}

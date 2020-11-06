@@ -3,8 +3,8 @@
 $sMessage="";
 
 // SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
-	//if ((isset($_POST["whyNot"])) && (!(empty($_POST["whyNot"]))))
-	//{
+	if ((isset($_POST["whyNot"])) && (!(empty($_POST["whyNot"]))))
+	{
 	//Tableau iStuff[6] en Numérique
 	//Variable i en Numérique
 	//Debut
@@ -15,7 +15,7 @@ $sMessage="";
 	 } 
      //Ecrire iStuff
     $sMessage= "PHP" . $iStuff;
-//}
+}
 //Fin
 	
 

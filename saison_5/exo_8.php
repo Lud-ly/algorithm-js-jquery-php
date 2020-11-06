@@ -2,6 +2,7 @@
 	
 	$sMessage= "";
 	$sMessage2= "";
+	$sMessage3= "";
 
 		// SI $_POST["iRepUtilisateur"] EXISTE ET QUE $_POST["iRepUtilisateur"] N EST PAS VIDE ALORS
 if ((isset($_POST["iNombreUtilisateur1"])) && (!(empty($_POST["iNombreUtilisateur1"]))))
@@ -14,7 +15,7 @@ if ((isset($_POST["iNombreUtilisateur1"])) && (!(empty($_POST["iNombreUtilisateu
 		$position = 0;
 		//Debut
 		//position ← 0 
-		$chain = [];
+		$chain = "";
 		// Pour i ← 1 à 20 
 		$iNombre1 =  $_POST["iNombreUtilisateur1"];
 		$iNombre2 =$_POST["iNombreUtilisateur2"];
@@ -41,6 +42,7 @@ if ((isset($_POST["iNombreUtilisateur1"])) && (!(empty($_POST["iNombreUtilisateu
 		// Ecrire "Il a été saisi en position numéro ", position 
 		$sMessage= "Le nombre le plus grand était : " . $iNombrePGrand;
 		$sMessage2= "Il a été saisi en position numéro " . $position;
+		$sMessage3= "chaine" . $chain;
 	
 		
 		
