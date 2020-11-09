@@ -1,7 +1,4 @@
 <?php
-  if(isset($_SESSION['T'])){
-  unset($_SESSION['T']);
-  } 
 session_start();
 $sMessage = "";
 $sMessage2 = "";
@@ -17,25 +14,26 @@ if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
     //Variables global Tableau T() ,i en Numérique
     $Nbpos = 0;
     $Nbneg = 0;
+    $chain ="";
     //  Ecrire "Entrez le nombre n° ", i + 1 
     // Lire T(value)
    
     $nb = (int)$_POST["myPhp"];
-    //T.push(parseInt(document.getElementById("nombreP").value));
     // Ecrire "Entrez le nombre de valeurs :"
     //  Lire Nb
     $valeur =(int)$_POST["myValuePhp"];
     $_SESSION["T"][]=$valeur;
       
    $sMessage = ("Entrer la notes n°" . $i++);
+   
     //$T[$i] += $valeur;
     var_dump($_SESSION["T"]);
     //Si nb = longueur de T alors
     if ($nb <= count($_SESSION["T"])) {
         //Ecrire Notes
-
+$chain = $chain . (int)$_SESSION["T"];
       // $sMessage2 = $T.join(" , ");
-       $sMessage3 = ("PHP Voici les Valeurs : " . $T);
+       $sMessage3 = ("PHP Voici les Valeurs : " . $chain );
     }//FinSi
     //pacourir valeur de T
   foreach($_SESSION["T"] as $valeur) {

@@ -61,16 +61,16 @@
                 //Variable i en Entier
                 // Début
                 var suite = [];
-                var i = 2;
+                var i;
                 // Suite(0) ← 1
                 // Suite(1) ← 1
-                $("#div_resultat_js").html(suite[0] = 1);
-                $("#div_resultat_js").html(suite[1] = 1);
+               suite[0] = 1;
+                suite[1] = 1;
                 //Pour i ← 2 à 7
                 for (i = 2; i <= 7; i++) {
                     //Suite(i) ← Suite(i-1) + Suite(i-2)
                     suite[i] = suite[i - 1] + suite[i - 2];
-                    $("#div_resultat_js").html(suite[i]);
+                   
                 }
                 $("#div_resultat_js").html("jquery " + suite);
 
@@ -117,11 +117,7 @@
                                         <h3>Tester l'algorithme : </h3>
 
                                         <div class="myResult" id="div_resultat_php">
-                                            <p><?php echo $sMessage; ?></p>
-                                            <p><?php echo $sMessage2; ?></p>
-                                            <p><?php echo $sMessage3; ?></p>
-                                            <p><?php echo $sMessage4; ?></p>
-
+                                            <h3><?php echo $sMessage; ?></h3>
                                         </div>
 
                                         <div class="myResult" id="div_resultat_js"></div>

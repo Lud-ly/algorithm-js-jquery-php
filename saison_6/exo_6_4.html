@@ -14,7 +14,7 @@
 <body>
     <div class="home">
         <header>
-            <?php include('../commun/header.php');?>
+            <!-- <?php include('../commun/header.php');?> -->
         </header>
         <script>
             function Exo_6_4() {
@@ -42,7 +42,7 @@
                 for (i = 0; i <= 5; i++) {
                     //Nb(i) ← i * i
                     nb[i] = i * i;
-                    document.getElementById("div_resultat_js").innerHTML = ("innerHTML resultat" + nb);
+                    document.getElementById("div_resultat_js").innerHTML = ("innerHTML resultat " + nb);
                     // i suivant
                     // Pour i ← 0 à 5
                 }
@@ -112,7 +112,7 @@
                                         <h3>Tester l'algorithme : </h3>
 
                                         <div class="myResult" id="div_resultat_php">
-                                            <p><?php echo $sMessage; ?></p>
+                                            <h3><?php echo $sMessage; ?></h3>
                                         </div>
 
                                         <div class="myResult" id="div_resultat_js"></div>
@@ -140,7 +140,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
                                 <hr size="1px" color="olivedrab" />
