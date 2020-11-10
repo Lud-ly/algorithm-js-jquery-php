@@ -176,7 +176,7 @@
                                         <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                         <div class="myResult" id="div_resultat_php">
                                             <p><?php echo $sMessage; ?></p>
-                                            <p><?php echo $sMessage1; ?></p>
+                                            <p><?php echo $sMessage2; ?></p>
                                         </div>
                                     </div>
                                 </form>
@@ -225,7 +225,6 @@
         console.log("note" + note);
         notes.push(note);
         total = total + note;
-        console.log("total hors if" + total);
         //Si les notes =8
         if (notes.length == 2) {
             //Ecrire Notes
@@ -314,8 +313,32 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+    $sMessage= "";
+    $sMessage2= "";
+    //Variables Tableau Notes(8) ,Notes=[] en Numérique
+    //Variables i,total,Moy en Numérique
+    $iTabNotes =array(8);
+    $iNotes = 0;
+    $moy=0;
+    
+    // SI $_POST["myPhp"] EXISTE ET QUE $_POST["myPhp"] N EST PAS VIDE ALORS
+    if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
+        {
+        
+        //Ecrire Entrer les notes 
+        //Lire iTabNotes
+        $iTabNotes = explode(" ",$_POST["myPhp"]);
+            //Ecrire Voici les Notes
+        $sMessage .= "Voici les notes  : " . implode("," ,$iTabNotes);
+        //Calculer somme des élements du Tableau
+            $iSom =  array_sum($iTabNotes);
+        //Moy = somme des notes / le nombre de notes dans itabNotes
+        $moy = $iSom / count($iTabNotes);
+        //var_dump($moy);
+        //Ecrire Notes + moyenne
+        $sMessage2 = " La moyenne est de : " . $moy ;
+    
+    } // Fin
                 
                                     </code>
                                  </pre>

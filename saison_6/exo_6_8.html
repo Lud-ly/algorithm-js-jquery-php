@@ -14,7 +14,7 @@
 <body>
     <div class="home">
         <header>
-            <!-- <?php include('../commun/header.php');?> -->
+            <?php include('../commun/header.php');?>
         </header>
         <script>
 
@@ -169,16 +169,16 @@
                                     Debut<br />
                                     Ecrire "Entrez le nombre de valeurs :"<br />
                                     Lire Nb<br />
-                                    Redim T(Nb-1)<br />
+                                    Nb devient la longueur du Tableau T<br />
                                     Nbpos ← 0<br />
                                     Nbneg ← 0<br />
                                     Pour i ← 0 à Nb - 1<br />
-                                    Ecrire "Entrez le nombre n° ", i + 1<br />
-                                    Lire T(i)<br />
+                                     Ecrire "Entrez le nombre n° ", i + 1<br />
+                                     Lire T(i)<br />
                                     Si T(i) > 0 alors<br />
-                                    Nbpos ← Nbpos + 1<br />
+                                      Nbpos ← Nbpos + 1<br />
                                     Sinon<br />
-                                    Nbneg ← Nbneg + 1<br />
+                                      Nbneg ← Nbneg + 1<br />
                                     Finsi<br />
                                     i Suivant<br />
                                     Ecrire "Nombre de valeurs positives : ", Nbpos<br />
@@ -197,13 +197,13 @@
                                             <div class="myResult" id="div_resultat_js"></div>
                                             <div class="myResult" id="div_result"></div>
                                         </h4>
+                                        <label for="nombrePlat">Entrez le nombre de valeur à évaluer :
+                                        </label>
+                                        <input type="number" name="nombrePlat" id="nombrePlat"><br/>
+                                        <label for="nombreP">Entrez les valeurs :
+                                        </label>
+                                        <input type="number" name="nombreP" id="nombreP">
                                         <div class="language">
-                                            <label for="nombrePlat">Entrez le nombre de valeur à évaluer :
-                                            </label>
-                                            <input type="number" name="nombrePlat" id="nombrePlat">
-                                            <label for="nombreP">Entrez les valeurs :
-                                            </label>
-                                            <input type="number" name="nombreP" id="nombreP">
                                             <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_6_8_innerHTML()">JS WITH innerHTML</button>
                                             <button type="button" value="Envoyer" id="ok"
@@ -213,19 +213,17 @@
                                         </div>
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />
+                                    <label for="myPhp">PHP Entrez toutes les valeurs avec des espaces :
+                                    </label>
+                                    <input type="text" name="myPhp" id="myPhp">
+                                    <label for="myValuePhp">Entrez les valeurs :
+                                    </label>
+                                    <input type="text" name="myValuePhp" id="myValuePhp">
                                     <div class="language">
-                                        <label for="myPhp">PHP Entrez le nombre de valeur à évaluer :
-                                        </label>
-                                        <input type="text" name="myPhp" id="myPhp">
-                                        <label for="myValuePhp">Entrez les valeurs :
-                                        </label>
-                                        <input type="text" name="myValuePhp" id="myValuePhp">
                                         <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                         <div class="myResult" id="div_resultat_php">
                                             <p><?php echo $sMessage; ?></p>
                                             <p><?php echo $sMessage2; ?></p>
-                                            <p><?php echo $sMessage3; ?></p>
-                                            <p><?php echo $sMessage4; ?></p>
                                         </div>
                                     </div>
                                 </form>
@@ -308,15 +306,45 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
+    var i = 2;
+    var Tab = [];
+    function Exo_6_8_jquery() {
+        // Variables Nb, Nbpos, Nbneg en Numérique
+        //Variables global Tableau T() ,i en Numérique
+        var Nbpos = 0;
+        var Nbneg = 0;
+        //  Ecrire "Entrez le nombre n° ", i + 1 
+        // Lire T(value)
+        $("#div_resultat").html("Entrer la notes n°" + [i++]);
 
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+        Tab.push(parseInt($("#nombreP").val()));
+        // Ecrire "Entrez le nombre de valeurs :"
+        //  Lire Nb
+        nb = (parseInt($("#nombrePlat").val()));
+        var nb;
+        //Si nb = longueur de T alors
+        if (nb == Tab.length) {
+            //Ecrire Notes
+            $("#div_resultat_js").html(Tab.join(" , "));
+            $("#div_resultat").html("jquery Voici les Valeurs : ");
+        }//FinSi
+        //pacourir valeur de T
+        Tab.forEach(function (val) {
+            //Si val inferieur 0 alors
+            if (val < 0) {
+                // Nbneg = Nbneg + 1
+                Nbneg++;
+            } else {
+                // Nbpos = Nbpos + 1
+                Nbpos++;
+            }
+        });
+        //Finsi
+        // Ecrire "Nombre de valeurs positives : ", Nbpos                           
+        //Ecrire "Nombre de valeurs négatives : ", Nbneg 
+        $("#div_result").html("jquery Nombre de valeurs positives : " + Nbpos + " Nombre de valeurs négatives : " + Nbneg);
+    }// Fin          
+
 
                                     </code>
                                  </pre>
@@ -341,9 +369,48 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
-                
+    $sMessage = "";
+    $sMessage2 = "";
+    
+    $i = 1;
+    $iT = [];
+    // SI $_POST["myPhp"] EXISTE ET QUE $_POST["myPhp"] N EST PAS VIDE ALORS
+    if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
+    {
+        //Variables Tableau iT() ,i en Numérique  
+        // Variables Nb, Nbpos, Nbneg en Numérique
+        $Nbpos = 0;
+        $Nbneg = 0;
+        // Lire T(value)
+        // Ecrire "Entrez le nombre de valeurs :"
+        //  Lire Nb
+        $iNb = (int)$_POST["myPhp"];
+        //nb = longueur de T 
+        $iNb = count($iT);
+        //Enter les notes dans le Tableau iT
+        $iT = explode(" " ,$_POST["myValuePhp"]);
+        // $sMessage2 = $T.join(" , ");
+        $sMessage .= ("PHP Voici les Valeurs : " . implode("," ,$iT));
+        
+        
+        //Pacourir toutes les valeurs de iT
+        foreach($iT as $val) {
+            //Si val inférieur 0 alors
+            if ($val < 0) {
+                // Nbneg = Nbneg + 1
+                $Nbneg++;
+            } //FinSi
+            else {
+                // Nbpos = Nbpos + 1
+                $Nbpos++;
+            }
+        }
+            
+        // Ecrire "Nombre de valeurs positives : ", Nbpos                           
+        //Ecrire "Nombre de valeurs négatives : ", Nbneg 
+        $sMessage2 = ("Nombre de valeurs positives : " . $Nbpos . " Nombre de valeurs négatives : " . $Nbneg);
+    
+    }// Fin  
                                     </code>
                                  </pre>
                                 </div>

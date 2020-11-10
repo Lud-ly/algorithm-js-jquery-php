@@ -26,7 +26,7 @@
                 var Notes = [];
 
                 //Pour i ← 0 à 8
-                for (var i = 0; i <= 9; i++) {
+                for (var i = 0; i <= 8; i++) {
                     //Ecrire "Entrez la note numéro ", i + 1
                     //Lire Notes(i)
                     iTabNotes[i] = parseInt(prompt("Entrez la note numéro ", i + 1));
@@ -37,7 +37,7 @@
                 alert("Prompt" + Notes);
             } // Fin
 
-            //Variables global tableau notes,i
+            //Variables tableau notes,i
             var i = 2;
             var notes = [];
 
@@ -119,19 +119,23 @@
                                     <div class="language">
                                         <button type="button" value="Envoyer" id="ok"
                                             onclick="Exo_6_3_innerHTML()">innerHTML</button>
-                                        <input type="number" name="nombrePlat" id="nombreP">
+                                            <label for="nombreP">Entrer chaques notes dans l'input puis les valider 1 par 1 : 
+                                            </label>
+                                        <input type="number" name="nombreP" id="nombreP">
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />
                                     <div class="language">
                                         <button type="button" value="Envoyer" id="ok"
                                             onclick="Exo_6_3_jquery()">JQUERY</button>
-                                        <input type="number" name="nombrePlat" id="nombreJ">
+                                            <label for="nombreP">Idem que innerHTML : 
+                                            </label>
+                                        <input type="number" name="nombreJ" id="nombreJ">
                                     </div>
                                 </div>
                                 <form action="exo_6_3.php" method="POST">
                                     <hr width="75%" size="1px" color="olivedrab" />
                                     <div class="language">
-                                        <label for="iNombreUtilisateur">"PHP Entrer les notes"
+                                        <label for="iNombreUtilisateur">Entrer les 9 notes avec des espaces dans l'input puis valider : 
                                         </label>
                                         <input type="text" name="iNombreUtilisateur" id="iNombreUtilisateur">
                                         <button class="btn_green" type="submit">ALLEZ PHP !</button>
@@ -249,29 +253,18 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-    $sMessage= "";
-    $sMessage2= "";
-        //Variables global tableau notes,i=2
-    $i = 2;
-    $iTabNotes = [];
-
-
-    if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
-        {
-        //Lire input
-        //Ajouter value à notes
-        $iNotes =  $_POST["myPhp"];
-        
-        //Si les notes =8
-        if($i <= 8) {
-            //iTab=iNotes
-            $iTabNotes = $iNotes ;
-                //Ecrire Entrer la notes n°"+i suivant
-            $sMessage = "Entrez la note numéro ". $i++;
-        }
-        //Ecrire Notes
-            $sMessage2 = "PHP " . $iTabNotes;
-        } // Fin
+    //Variables Tableau Notes(8),sMessage en caractère
+    $sMessage="";
+    $iTab=array(9);
+    // SI $_POST["div_resultat_js"] EXISTE ET QUE $_POST["div_resultat_js"] N EST PAS VIDE ALORS
+    if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
+    {
+        //Ecrire Entrer les notes 
+        //Lire iTab
+        $iTab = explode(" ",$_POST["iNombreUtilisateur"]);
+        //Ecrire Voici les Notes
+        $sMessage .= "Voici les notes  : " . implode("," ,$iTab);
+    }  
                 
                                     </code>
                                  </pre>

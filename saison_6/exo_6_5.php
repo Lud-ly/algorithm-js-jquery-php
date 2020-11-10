@@ -5,8 +5,9 @@ $sMessage2 = "";
 $sMessage3 = "";
 	// Tableau tab(6) en Numérique
 	//Variables i, k en Numérique
-	
-	(int)$tab=array(6);
+// 	if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
+// {
+	$tab=array(6);
 	//Début
 	//tab(0) ← 1
 	$tab[0] = 1;
@@ -29,7 +30,7 @@ $sMessage3 = "";
 	}
 
 	$sMessage3 = "PHP : " . $tab[0] . $chain ; 
-	
+// }
 	
 	require "exo_6_5.html";
 

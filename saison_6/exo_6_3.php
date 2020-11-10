@@ -1,30 +1,17 @@
 <?php
- session_unset();
-session_start();
+//Variables Tableau Notes(8),sMessage en caractère
 $sMessage="";
-//$T="";
-$i=0;
+$iTab=array(9);
 
+// SI $_POST["div_resultat_js"] EXISTE ET QUE $_POST["div_resultat_js"] N EST PAS VIDE ALORS
 if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
 {
-
-//DEBUT
-//Variable Tableau T en caractère
-// Variable iNote en numerique
-$iNote = (int)$_POST["iNombreUtilisateur"];
-
-// Ecrire "Les 10 notes sont : "
-$sHTML = "Les 10 notes sont : " ;
-//Si i <10 alors
-if($i <= 10) {
-	$_SESSION["T"] = $_SESSION["T"] . "  " . $iNote;
-	$i++;
-  } //Fin Pour
-  var_dump( $_SESSION["T"]);
-  $sMessage= "BRAVO PHP :  ". $sHTML . $_SESSION["T"];
- } //FIN
-		
-
+  //Ecrire Entrer les notes 
+  //Lire iTab
+  $iTab = explode(" ",$_POST["iNombreUtilisateur"]);
+  //Ecrire Voici les Notes
+  $sMessage .= "Voici les notes  : " . implode("," ,$iTab);
+}  
 	require "exo_6_3.html";
 
 ?>

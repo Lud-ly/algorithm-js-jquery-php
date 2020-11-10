@@ -30,7 +30,7 @@
                 }
                 //Ecrire iStuff
                 alert(iStuff);
-                 }  //Fin
+            }  //Fin
 
             function Exo_6_1_innerHTML() {
                 //Tableau iStuff[6] en Numérique
@@ -43,7 +43,7 @@
                     //iStuff(i) ← 0
                     iStuff[i] = " " + 0 + " ";
                 }
-                  //Ecrire iStuff
+                //Ecrire iStuff
                 document.getElementById("div_resultat_js").innerHTML = ("innerHTML : " + iStuff);
             }//Fin
 
@@ -58,7 +58,7 @@
                     //iStuff(i) ← 0
                     iStuff[i] = " " + 0 + " ";
                 }
-                  //Ecrire iStuff
+                //Ecrire iStuff
                 $("#div_resultat_js").html("jquery : " + iStuff);
             }//Fin
 
@@ -83,13 +83,13 @@
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
                                 <p>
-                                    Tableau iStuff[6] en Numérique<br/>
-                                    Variable i en Numérique<br/>
-                                    Debut<br/>
-                                    Pour i ← 0 à 6<br/>
-                                    iStuff(i) ← 0<br/>
-                                    Ecrire iStuff<br/>
-                                    Fin<br/>
+                                    Tableau iStuff[6] en Numérique<br />
+                                    Variable i en Numérique<br />
+                                    Debut<br />
+                                    Pour i ← 0 à 6<br />
+                                    iStuff(i) ← 0<br />
+                                    Ecrire iStuff<br />
+                                    Fin<br />
                                 </p>
                             </div>
                             <div id="txt_javascript">
@@ -98,7 +98,8 @@
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
-
+                                        <input type="text" name="myPhp" id="myPhp"
+                                            placeholder="Cliquez sur les boutons..">
                                         <div class="myResult" id="div_resultat_php">
                                             <p><?php echo $sMessage; ?></p>
                                         </div>
@@ -211,21 +212,20 @@
                                    
     $sMessage="";
 
-        //SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
-        if ((isset($_POST["whyNot"])) && (!(empty($_POST["whyNot"]))))
-        {
+    // SI $_POST["div_resultat_js"] EXISTE ET QUE $_POST["div_resultat_js"] N EST PAS VIDE ALORS
+    if ((isset($_POST["myPhp"])) && ((empty($_POST["myPhp"]))))
+    {
         //Tableau iStuff[6] en Numérique
         //Variable i en Numérique
         //Debut
         //Pour i ← 0 à 6
-        for ($i = 0; $i <= 7; $i++) {
+        for ($i = 0; $i <= 6; $i++) {
             //iStuff(i) ← 0
-            $iStuff = $iStuff . "[ " . 0 . " ]";
+            $iStuff = $iStuff . " [ " . 0 . " ] ";
             } 
             //Ecrire iStuff
-        $sMessage= "PHP" . $iStuff;
-    //}
-    //Fin
+        $sMessage .= "PHP : " . $iStuff;
+    }//Fin
                                     </code>
                                  </pre>
                                 </div>
