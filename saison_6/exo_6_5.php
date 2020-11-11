@@ -1,12 +1,11 @@
 <?php
 
 $sMessage = "";
-$sMessage2 = "";
-$sMessage3 = "";
 	// Tableau tab(6) en Numérique
 	//Variables i, k en Numérique
-// 	if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
-// {
+// SI $_POST["myPhp"] EXISTE ET QUE $_POST["myPhp"] N EST PAS VIDE ALORS
+if ((isset($_POST["myPhp"])) && ((empty($_POST["myPhp"]))))
+{
 	$tab=array(6);
 	//Début
 	//tab(0) ← 1
@@ -29,8 +28,8 @@ $sMessage3 = "";
 		//$sMessage2  = "PHP" . (int)$tab[$i];
 	}
 
-	$sMessage3 = "PHP : " . $tab[0] . $chain ; 
-// }
+	$sMessage = "PHP : " . $tab[0] . $chain ; 
+ }
 	
 	require "exo_6_5.html";
 

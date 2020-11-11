@@ -19,75 +19,67 @@
         <script>
             
             function Exo_6_11() {
-                //Variables i, j, N1, N2, schtroumpf en Numérique
+                //Variables i, j, N1, N2, Toon en Numérique
                 //Tableaux T1(), T2() en Numérique
                 var n1,n2,i,j;
-                var schtroumpf = 0;
+                var Toon = 0;
                 var t1 = [4, 8, 7, 12];
                 var t2 = [3, 6];
                 //Debut
-                //S ← 0
+                //Toon ← 0
                 //Pour i ← 0 à longueur de t1
                 for (i = 0; i < t1.length; i++) {
                     //Pour j ← 0 à longueur de t2
                     for (j = 0; j < t2.length; j++) {
-                        //schtroumpf ← schtroumpf + T1(i) * T2(j)
-                        schtroumpf += t1[i] * t2[j];
-                        //j Suivant
-                        // i Suivant
-
-                    }
-                }
-                // Ecrire "Le schtroumpf est : ", S
-                alert("Le schtroumpf est de : " + schtroumpf);
+                        //Toon ← Toon + T1(i) * T2(j)
+                        Toon += t1[i] * t2[j];
+                        
+                    }//j Suivant
+                } // i Suivant
+                // Ecrire "Le Toon est : ", S
+                alert("Le Toon est de : " + Toon);
             }//Fin
 
             function Exo_6_11_innerHTML() {
-                //Variables i, j, N1, N2, schtroumpf en Numérique
+                //Variables i, j, N1, N2, Toon en Numérique
                 //Tableaux T1(), T2() en Numérique
                 var n1,n2,i,j;
-                var schtroumpf = 0;
+                var Toon = 0;
                 var t1 = [4, 8, 7, 12];
                 var t2 = [3, 6];
                 //Debut
-                //S ← 0
+                //Toon ← 0
                 //Pour i ← 0 à longueur de t1
                 for (i = 0; i < t1.length; i++) {
                     //Pour j ← 0 à longueur de t2
                     for (j = 0; j < t2.length; j++) {
-                        //schtroumpf ← schtroumpf + T1(i) * T2(j)
-                        schtroumpf += t1[i] * t2[j];
-                        //j Suivant
-                        // i Suivant
-
-                    }
-                }
-                // Ecrire "Le schtroumpf est : ", S
-                document.getElementById("div_resultat_js").innerHTML = ("innerHTML Le schtroumpf est de : " + schtroumpf);
+                        //Toon ← Toon + T1(i) * T2(j)
+                        Toon += t1[i] * t2[j];
+                    } //j Suivant
+                }// i Suivant
+                // Ecrire "Le Toon est : ", S
+                document.getElementById("div_resultat_js").innerHTML = ("innerHTML Le Toon est de : " + Toon);
             }//Fin
 
             function Exo_6_11_jquery() {
-                //Variables i, j, N1, N2, schtroumpf en Numérique
+                //Variables i, j, N1, N2, Toon en Numérique
                 //Tableaux T1(), T2() en Numérique
                 var n1,n2,i,j;
-                var schtroumpf = 0;
+                var Toon = 0;
                 var t1 = [4, 8, 7, 12];
                 var t2 = [3, 6];
                 //Debut
-                //S ← 0
+                //Toon ← 0
                 //Pour i ← 0 à longueur de t1
                 for (i = 0; i < t1.length; i++) {
                     //Pour j ← 0 à longueur de t2
                     for (j = 0; j < t2.length; j++) {
-                        //schtroumpf ← schtroumpf + T1(i) * T2(j)
-                        schtroumpf +=t1[i] * t2[j];
-                        //j Suivant
-                        // i Suivant
-
-                    }
-                }
-                // Ecrire "Le schtroumpf est : ", S
-               $("#div_resultat_js").html("jquery Le schtroumpf est de : " + schtroumpf);
+                        //Toon ← Toon + T1(i) * T2(j)
+                        Toon +=t1[i] * t2[j];
+                    } //j Suivant
+                } // i Suivant
+                // Ecrire "Le Toon est : ", S
+               $("#div_resultat_js").html("jquery Le Toon est de : " + Toon);
             }//Fin
 
 
@@ -123,16 +115,16 @@
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
                                 <p>
-                                    Variables i, j, N1, N2, S en Numérique<br/>
+                                    Variables i, j, N1, N2, Toon en Numérique<br/>
                                     Tableaux T1(), T2() en Numérique<br/>
                                     Debut<br/>
-                                    S ← 0<br/>
+                                    Toon ← 0<br/>
                                     Pour i ← 0 à longueur de t1<br/>
-                                    Pour j ← 0 à longueur de t2<br/>
-                                    S ← S + T1(i) * T2(j)<br/>
-                                    j Suivant<br/>
+                                        Pour j ← 0 à longueur de t2<br/>
+                                            Toon ← Toon + T1(i) * T2(j)<br/>
+                                            j Suivant<br/>
                                     i Suivant<br/>
-                                    Ecrire "Le schtroumpf est : ", S<br/>
+                                    Ecrire "Le Toon est : ", Toon<br/>
                                     Fin<br/>
                                 </p>
                             </div>
@@ -142,6 +134,7 @@
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
+                                        <input type="text" name="myPhp" id="myPhp" placeholder="Cliquez sur les boutons..">
                                         <p>Calculer le « Toon » : </p>
                                         <div class="myResult" id="div_resultat_js"></div>
                                         <div class="language">
@@ -182,10 +175,10 @@
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
     function Exo_6_11_innerHTML() {
-        //Variables i, j, N1, N2, schtroumpf en Numérique
+        //Variables i, j, N1, N2, Toon en Numérique
         //Tableaux T1(), T2() en Numérique
         var n1,n2,i,j;
-        var schtroumpf = 0;
+        var Toon = 0;
         var t1 = [4, 8, 7, 12];
         var t2 = [3, 6];
         //Debut
@@ -194,14 +187,14 @@
         for (i = 0; i < t1.length; i++) {
             //Pour j ← 0 à longueur de t2
             for (j = 0; j < t2.length; j++) {
-                //schtroumpf ← schtroumpf + T1(i) * T2(j)
-                schtroumpf += t1[i] * t2[j];
+                //Toon ← Toon + T1(i) * T2(j)
+                Toon += t1[i] * t2[j];
                 //j Suivant
                 // i Suivant
+            }
         }
-        }
-        // Ecrire "Le schtroumpf est : ", S
-        document.getElementById("div_resultat_js").innerHTML = ("innerHTML Le schtroumpf est de : " + schtroumpf);
+        // Ecrire "Le Toon est : ", S
+        document.getElementById("div_resultat_js").innerHTML = ("innerHTML Le Toon est de : " + Toon);
     }//Fin
                                     </code>
                                  </pre>
@@ -226,10 +219,10 @@
                                     JQUERY
                                     <code data-language="javascript"> 
     function Exo_6_11_jquery() {
-        //Variables i, j, N1, N2, schtroumpf en Numérique
+        //Variables i, j, N1, N2, Toon en Numérique
         //Tableaux T1(), T2() en Numérique
         var n1,n2,i,j;
-        var schtroumpf = 0;
+        var Toon = 0;
         var t1 = [4, 8, 7, 12];
         var t2 = [3, 6];
         //Debut
@@ -238,15 +231,14 @@
         for (i = 0; i < t1.length; i++) {
             //Pour j ← 0 à longueur de t2
             for (j = 0; j < t2.length; j++) {
-                //schtroumpf ← schtroumpf + T1(i) * T2(j)
-                schtroumpf +=t1[i] * t2[j];
+                //Toon ← Toon + T1(i) * T2(j)
+                Toon +=t1[i] * t2[j];
                 //j Suivant
                 // i Suivant
-
             }
         }
-        // Ecrire "Le schtroumpf est : ", S
-        $("#div_resultat_js").html("jquery Le schtroumpf est de : " + schtroumpf);
+        // Ecrire "Le Toon est : ", S
+        $("#div_resultat_js").html("jquery Le Toon est de : " + Toon);
     }//Fin
 
                                     </code>
@@ -274,27 +266,25 @@
                                    
     $sMessage ="";
     // SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
-            if ((isset($_POST["div_resultat_js"])) && ((empty($_POST["div_resultat_js"]))))
-            {
-        //Variables i, j, N1, N2, schtroumpf en Numérique
-        //Tableaux T1(), T2() en Numérique
-        $schtroumpf = 0;
+    if ((isset($_POST["myPhp"])) && ((empty($_POST["myPhp"]))))
+    {
+        //Variables i, j, N1, N2, Toon en Numérique
+        //Tableaux T1[], T2[] en Numérique
         $t1 = [4, 8, 7, 12];
         $t2 = [3, 6];
-        //Debut
         //S ← 0
+        $Toon = 0;
+        //Debut
         //Pour i ← 0 à longueur de t1
         for ($i = 0; $i < count($t1); $i++) {
             //Pour j ← 0 à longueur de t2
             for ($j = 0; $j < count($t2); $j++) {
-                //schtroumpf ← schtroumpf + T1(i) * T2(j)
-                $schtroumpf += $t1[$i] * $t2[$j];
-                //j Suivant
-                // i Suivant
-        }
-        }
-        // Ecrire "Le schtroumpf est : ", S
-    $sMessage = "PHP Le schtroumpf est de : " .  $schtroumpf;
+                //Toon ← schtroumpf + T1(i) * T2(j)
+                $Toon += $t1[$i] * $t2[$j];
+            }//j Suivant
+        }// i Suivant
+        // Ecrire "Le Toon est : ", Toon
+        $sMessage = "PHP Le Toon est de : " .  $Toon;
     }//Fin
                                     </code>
                                  </pre>

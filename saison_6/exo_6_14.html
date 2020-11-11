@@ -81,11 +81,12 @@
                 nb = parseInt(document.getElementById("nombreP").value);
                 //Ecrire "Entrez le nombre de notes à saisir : "
                 // Lire value myVal
-                myVal = (parseInt(document.getElementById("nombrePlat").value));
+                T.push(parseInt(document.getElementById("nombrePlat").value));
                 //pusher myVal dans array T
-                T.push(myVal);
                 //calc somme T et moyenne moy
-                som += myVal;
+                for(var i=0;i<T.length;i++){
+                    som += T[i];
+                }  
                 moy = som / T.length;
                 //Pour chaque val dans T
                 T.forEach(function (val) {
@@ -130,7 +131,7 @@
                         nbSup++;
                     }// FinSi
                 });
-                if (nb == T.length) {
+                if (nb >= T.length) {
                     //Ecrire "Les notes ,T"
                     $("#div_result").html("jquery voici les notes : " + T);
                     //Ecrire "la moyenne est de : " , moy
@@ -164,51 +165,49 @@
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
                                 <p>
-                                    Variables Nb, i, Som, Moy, Nbsup en Numérique<br/>
-                                    Tableau T() en Numérique<br/>
-                                    Debut<br/>
-                                    Ecrire "Entrez le nombre n° ", i + 1<br/>
-                                    Ecrire "Entrer les notes"<br/>
-                                    Lire value Nb<br/>
-                                    Ecrire "Entrez le nombre de notes à saisir : "<br/>
-                                    Lire value myVal<br/>
-                                    pusher myVal dans array T<br/>
-                                    calc somme T et moyenne moy<br/>
-                                    Pour chaque val dans T<br/>
-                                    Si val > moy<br/>
-                                    nbSup = nbSup + 1;<br/>
-                                    FinSi<br/>
-                                    Ecrire "Les notes ,T"<br/>
-                                    Ecrire "la moyenne est de : " , moy<br/>
-                                    Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir<br/>
-                                    Fin<br/>
+                                    Variables Nb, i, Som, Moy, Nbsup en Numérique<br />
+                                    Tableau T() en Numérique<br />
+                                    Debut<br />
+                                    Ecrire "Entrez le nombre n° ", i + 1<br />
+                                    Ecrire "Entrer les notes"<br />
+                                    Lire value Nb<br />
+                                    Ecrire "Entrez le nombre de notes à saisir : "<br />
+                                    Lire value myVal<br />
+                                    pusher myVal dans array T<br />
+                                    calc somme T et moyenne moy<br />
+                                    Pour chaque val dans T<br />
+                                    Si val > moy<br />
+                                    nbSup = nbSup + 1;<br />
+                                    FinSi<br />
+                                    Ecrire "Les notes ,T"<br />
+                                    Ecrire "la moyenne est de : " , moy<br />
+                                    Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir<br />
+                                    Fin<br />
                                 </p>
                             </div>
                             <div id=" txt_javascript">
-                                <hr width="75%" size="1px" color="olivedrab" />
-                                <h3>Tester l'algorithme : </h3>
-                                <div class="myResult" id="div_result"></div>
-                                <div class="myResult" id="div_resultat"></div>
-                                <div class="myResult" id="div_resultat_js"></div>
-                                <div class="myResult" id="resultat_js"></div>
-                                <div class="language">
+                                 <div class="myResult" id="div_result"></div>
+                                    <div class="myResult" id="div_resultat"></div>
+                                    <div class="myResult" id="div_resultat_js"></div>
+                                    <div class="myResult" id="resultat_js"></div>
                                     <label for="nombreP">"Entrez le nombre de notes à saisir : "
                                     </label>
-                                    <input type="number" name="nombreP" id="nombreP">
+                                    <input type="number" name="nombreP" id="nombreP"><br/>
                                     <label for="nombrePlat">"Entrez les notes : "
                                     </label>
                                     <input type="number" name="nombrePlat" id="nombrePlat">
-
-                                    <button class="btn_green" onClick="Exo_6_14_innerHTML()"> JS WITH
-                                        INNERHTML</button>
-
-                                    <button class="btn_green" onClick="Exo_6_14_jquery()">JQUERY !</button>
-                                    <button class="btn_green" id="btn_js" onClick="Exo_6_14()">JS WITH
-                                        PROMPT</button>
-                                </div>
-                                <hr width="75%" size="1px" color="olivedrab" />
-                                <form action="exo_6_14.php" method="POST">
+                                    <div class="language">
+                                        <button class="btn_green" onClick="Exo_6_14_innerHTML()"> JS WITH
+                                            INNERHTML</button>
+                                        <button class="btn_green" onClick="Exo_6_14_jquery()">JQUERY !</button>
+                                        <button class="btn_green" id="btn_js" onClick="Exo_6_14()">JS WITH
+                                            PROMPT</button>
+                                    </div>
+                                    <hr width="75%" size="1px" color="olivedrab" />
                                     <div>
+                                <form action="exo_6_14.php" method="POST">
+                                    <hr width="75%" size="1px" color="olivedrab" />
+                                    <h3>Tester l'algorithme : </h3>
                                         <label for="myPhp">Entrez le nombre de notes à saisir :
                                         </label>
                                         <input type="text" name="myPhp" id="myPhp">

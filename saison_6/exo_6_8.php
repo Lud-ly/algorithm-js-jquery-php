@@ -38,7 +38,7 @@ if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
         
     // Ecrire "Nombre de valeurs positives : ", Nbpos                           
     //Ecrire "Nombre de valeurs négatives : ", Nbneg 
-    $sMessage2 = ("Nombre de valeurs positives : " . $Nbpos . " Nombre de valeurs négatives : " . $Nbneg);
+    $sMessage2 = ("Nombre de valeurs positives : " . $Nbpos . "<br/>" . " Nombre de valeurs négatives : " . $Nbneg);
 
 }// Fin          
 

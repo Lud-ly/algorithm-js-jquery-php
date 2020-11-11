@@ -3,8 +3,9 @@
 $sMessage = "";
 $sMessage2 = "";
 	
-//if ((isset($_POST["div_resultat_js"])) && (!(empty($_POST["div_resultat_js"]))))
-	//{
+// SI $_POST["myPhp"] EXISTE ET QUE $_POST["myPhp"] N EST PAS VIDE ALORS
+if ((isset($_POST["myPhp"])) && ((empty($_POST["myPhp"]))))
+{
 //Variables i,  Som ← 0, N en Numérique
 //Tableau T(N) en Numérique
 	$som = 0;
@@ -17,13 +18,12 @@ $sMessage2 = "";
 		$som = $som + $tableau[$i];
 		
 	}
-	  //  Ecrire "Les éléments du tableau sont : : ", Tableau
-      //Ecrire "La Somme des éléments est : ", Som
-	$sMessage = ("PHP Les éléments du tableau sont: " . $tableau);
-	$sMessage2 = ("Somme des éléments est de  : " . $som);
+	//  Ecrire "Les éléments du tableau sont : : ", Tableau
+	//Ecrire "La Somme des éléments est : ", Som
+	$sMessage = ("PHP Les éléments du tableau sont: " . implode("," ,$tableau));
+	$sMessage2 = ("La Somme des éléments est de  : " . $som);
 
-
-//}// Fin
+}// Fin
 	require "exo_6_9.html";
 
 ?>

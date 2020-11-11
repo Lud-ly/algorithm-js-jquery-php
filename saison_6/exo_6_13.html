@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
-
+ 
 <body>
     <div class="home">
         <header>
@@ -59,8 +59,8 @@
                 // Lire T(value)
                 //Push value dans T
                 T.push(parseInt(document.getElementById("MyInput").value));
-                //Si longueur de T =5 alors
-                if (T.length == 5) {
+                //Si longueur de T >=2 alors
+                if (T.length >= 2) {
                     //Ecrire tableau de Notes T
                     document.getElementById("div_resultat").innerHTML = T.join(" , ");
                     document.getElementById("div_resultat_js").innerHTML = ("innerHTML Voici le nouveau tableau : " + T);
@@ -97,11 +97,11 @@
                 // Lire T(value)
                 //Push value dans T
                 T.push(parseInt($("#MyInput").val()));
-                //Si longueur de T =5 alors
-                if (T.length == 5) {
+                //Si longueur de T >=2 alors
+                if (T.length >= 2) {
                     //Ecrire tableau de Notes T
                     $("#div_resultat").html(T.join(" , "));
-                    $("#div_resultat_js").html("jquery Voici le nouveau tableau : " + T);
+                    $("#div_resultat_js").html(" Voici le nouveau tableau : " + T);
                 }//FinSi
                 //pacourir valeur de T
                 T.forEach(function (val) {
@@ -116,7 +116,7 @@
 
                 });
                 //Ecrire le plus grand est : " + max, la position du nombre est : " + pos
-                $("#div_result").html("innerHTML le nombre le plus grand est : " + max);
+                $("#div_result").html("Jquery le nombre le plus grand est : " + max);
                 $("#div_resultat_js").html("la position du nombre est : " + pos);
             }// Fin         
 
@@ -147,19 +147,18 @@
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
                                 <p>
-                                    Variables Nb, Nbpos, Nbneg en Numérique<br/>
-                                    Variables global Tableau T() ,i en Numérique<br/>
-                                    Debut<br/>
+                                    Variables max, pos ,i ,y en Numérique<br/>
+                                    Variables Tableau iTab()  en Numérique<br/>
+                                    Début<br/>
                                     Ecrire "Entrez le nombre n° ", i + 1<br/>
                                     Lire T(value)<br/>
-                                    Push value dans T<br/>
-                                    Si longueur de T =5 alors<br/>
-                                    Ecrire tableau de Notes T<br/>
+                                    Si longueur de T >= 2 alors<br/>
+                                        Ecrire tableau de Notes T<br/>
                                     FinSi<br/>
-                                    pacourir valeur de T<br/>
-                                    Si val superieur nombre max<br/>
-                                    max = val;<br/>
-                                    pos = y;<br/>
+                                    Pacourir les valeurs de T<br/>
+                                        Si val superieur nombre max<br/>
+                                             max = val;<br/>
+                                             pos = y;<br/>
                                     Ecrire le plus grand est : " + max, la position du nombre est : " + pos<br/>
                                     Fin<br/>
                                 </p>
@@ -185,8 +184,10 @@
                                         </div>
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />
+                                    <label for="myPhp">Entrez toutes les valeurs avec des espaces :
+                                    </label>
+                                    <input type="text" name="myPhp" id="myPhp">
                                     <div class="language">
-                                        <input type="text" name="myPhp" id="myPhp">
                                         <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                         <div class="myResult" id="div_resultat_php">
                                             <p><?php echo $sMessage; ?></p>
@@ -231,8 +232,8 @@
         // Lire T(value)
         //Push value dans T
         T.push(parseInt(document.getElementById("MyInput").value));
-        //Si longueur de T =5 alors
-        if (T.length == 5) {
+        //Si longueur de T >=2 alors
+        if (T.length >=2) {
             //Ecrire tableau de Notes T
             document.getElementById("div_resultat").innerHTML = T.join(" , ");
             document.getElementById("div_resultat_js").innerHTML = ("innerHTML Voici le nouveau tableau : " + T);
@@ -290,8 +291,8 @@
         // Lire T(value)
         //Push value dans T
         T.push(parseInt($("#MyInput").val()));
-        //Si longueur de T =5 alors
-        if (T.length == 5) {
+        //Si longueur de T >=2 alors
+        if (T.length >=2) {
             //Ecrire tableau de Notes T
             $("#div_resultat").html(T.join(" , "));
             $("#div_resultat_js").html("jquery Voici le nouveau tableau : " + T);
@@ -335,47 +336,42 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-    session_start();
-    $sMessage= "";
-    $sMessage2= "";
-    $sMessage3= "";
-    $sMessage4= "";
+    $sMessage= ""; $sMessage2= ""; $sMessage3= ""; $sMessage4= "";
     
-    $i = 2;
-    $T = [];
-    $nb = 0;
-    // SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
+    $iTab = [];
+    // SI $_POST["myPhp"] EXISTE ET QUE $_POST["myPhp"] N EST PAS VIDE ALORS
     if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
         {
-        // Variables Nb, Nbpos, Nbneg en Numérique
-        //Variables global Tableau T() ,i en Numérique
+        // Variables max, pos,i,y en Numérique
+        //Variables Tableau iTab()  en Numérique
         $max = 0;
         $y = 0;
         $pos = 0;
-        //  Ecrire "Entrez le nombre n° ", i + 1 
-        // Lire T(value)
-            $sMessage = ("Entrer la notes n°" . $i++);
-            $valeur =  (int)$_POST["myPhp"];
-            $_SESSION["myTab"][]=$valeur;
+    
+        // Lire iTab(value)
+            $iTab = explode(" " ,$_POST["myPhp"]);
             
-        //var_dump($_SESSION["myTab"]);
-        //Si nb = longueur de T alors
-        if (count($_SESSION["myTab"]) == 2) {
             //Ecrire Notes
-            $sMessage2 = ("php Voici le nouveau tableau : " . $_SESSION["myTab"]);
-        }//FinSi
-        //pacourir valeur de T
-            foreach($_SESSION["myTab"] as $valeur){
-            if ($valeur > $max) {
-                $max = $valeur;
+            $sMessage2 = ("php Voici le tableau : " . implode("," ,$iTab));
+    
+        //Pacourir toutes les valeurs de iTab
+            foreach($iTab as $val){
+            //Si la valeur est superieure au nombre max alors
+            if ($val > $max) {
+                //max = valeur
+                $max = $val;
+                //Position = y
                 $pos = $y;
             }
-            $y = $y + 1;
+            //$y += 1
+            $y++;
     
         };
-        $sMessage3 = ("php le nombre le plus grand est : " . $max);
-        $sMessage4 = ("la position du nombre est : " . $pos);
-    }// Fin         
+        //Ecrire le nombre le plus grand est :,max
+        //La position du nombre est : ,pos
+        $sMessage3 = ("Le nombre le plus grand est : " . $max);
+        $sMessage4 = ("La position du nombre est : " . $pos);
+    }// Fin        
                                             
                 
                                     </code>

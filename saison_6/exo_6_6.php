@@ -1,6 +1,9 @@
 <?php
 
 $sMessage = "";
+// SI $_POST["myPhp"] EXISTE ET QUE $_POST["myPhp"] N EST PAS VIDE ALORS
+if ((isset($_POST["myPhp"])) && ((empty($_POST["myPhp"]))))
+{
 	// Tableau Suite(7) en Entier
 	//Variable i en Entier
 	// Début
@@ -17,7 +20,7 @@ $sMessage = "";
 	}
 	$sMessage  = "PHP " . implode("," ,$suite);
 
- //Fin  
+}//Fin  
 	
 	require "exo_6_6.html";
 

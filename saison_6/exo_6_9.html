@@ -115,7 +115,8 @@
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
-                                        <p>La somme des éléments d'un tableau :</p>
+                                        <input type="text" name="myPhp" id="myPhp" placeholder="Cliquez sur les boutons..">
+                                        <p>Calcul de la somme des éléments d'un tableau :</p>
                                         <div class="myResult" id="div_resultat"></div>
                                         <div class="myResult" id="div_resultat_js"></div>
                                         <div class="myResult" id="div_result"></div>
@@ -242,8 +243,9 @@
     $sMessage = "";
     $sMessage2 = "";
         
-    //if ((isset($_POST["div_resultat_js"])) && (!(empty($_POST["div_resultat_js"]))))
-        //{
+    // SI $_POST["myPhp"] EXISTE ET QUE $_POST["myPhp"]  EST VIDE ALORS
+    if ((isset($_POST["myPhp"])) && ((empty($_POST["myPhp"]))))
+    {
     //Variables i,  Som ← 0, N en Numérique
     //Tableau T(N) en Numérique
         $som = 0;
@@ -256,13 +258,12 @@
             $som = $som + $tableau[$i];
             
         }
-            //  Ecrire "Les éléments du tableau sont : : ", Tableau
-            //Ecrire "La Somme des éléments est : ", Som
-        $sMessage = ("PHP Les éléments du tableau sont: " . $tableau);
-        $sMessage2 = ("Somme des éléments est de  : " . $som);
+        //  Ecrire "Les éléments du tableau sont : : ", Tableau
+        //Ecrire "La Somme des éléments est : ", Som
+        $sMessage = ("PHP Les éléments du tableau sont: " . implode("," ,$tableau));
+        $sMessage2 = ("La Somme des éléments est de  : " . $som);
     
-    
-    //}// Fin
+    }// Fin
                 
                                     </code>
                                  </pre>

@@ -1,54 +1,51 @@
 <?php
-session_start();
 $sMessage = "";
 $sMessage2 = "";
 $sMessage3 = "";
-$sMessage4 = "";
 
 $i = 1;
-$T = [];
-// SI $_POST["div_resultat_js"] EXISTE ET QUE $_POST["div_resultat_js"] N EST PAS VIDE ALORS
-	if ((isset($_POST["myPhp"])) && ((!empty($_POST["myPhp"]))))
-	{
-
+$iT = [];
+// SI $_POST["myPhp"] EXISTE ET QUE $_POST["myPhp"] N EST PAS VIDE ALORS
+if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
+{
+    //Variables Tableau iT() ,i en Numérique  
     // Variables Nb, Nbpos, Nbneg en Numérique
-    //Variables global Tableau T() ,i en Numérique
     $Nbpos = 0;
     $Nbneg = 0;
-    //  Ecrire "Entrez le nombre n° ", i + 1 
     // Lire T(value)
-   $sMessage = ("Entrer la notes n°" . $i++);
-    $nb = (int)$_POST["myPhp"];
-    //T.push(parseInt(document.getElementById("nombreP").value));
     // Ecrire "Entrez le nombre de valeurs :"
     //  Lire Nb
-    $valeur =$_POST["myValuePhp"];
-    $_SESSION["myT"][]=$valeur;
-   // var_dump( $_SESSION["myT"]);
-    //Si nb = longueur de T alors
-    if (count( $_SESSION["myT"]) == $nb) {
-        //Ecrire Notes
-
-      // $sMessage2 = $T.join(" , ");
-       $sMessage3 = ("PHP Voici les Valeurs : " .  $_SESSION["myT"]);
-    }//FinSi
-    //pacourir valeur de T
-  foreach( $_SESSION["myT"] as $valeur) {
+    $iNb = (int)$_POST["myPhp"];
+    //nb = longueur de T 
+    $iNb = count($iT);
+    //Enter les notes dans le Tableau iT
+    $iT = explode(" " ,$_POST["myValuePhp"]);
+    // $sMessage2 = $T.join(" , ");
+    $sMessage .= ("PHP Voici les Valeurs : " . implode("," ,$iT));
+    //Pour i à longueur du Tableau iT
+    for($i=0;$i<count($iT);$i++){
+        //iT[i] = iT[i]+1
+       $iT[$i] = $iT[$i] + 1;
+    }
+    //Pacourir toutes les valeurs de iT
+    foreach($iT as $val) {
         //Si val<0 alors
-        if ($valeur < 0) {
+        if ($val < 0) {
             // Nbneg = Nbneg + 1
             $Nbneg++;
-        } else {
+        } //FinSi
+        else {
             // Nbpos = Nbpos + 1
             $Nbpos++;
         }
     }
-    //Finsi
+        
     // Ecrire "Nombre de valeurs positives : ", Nbpos                           
     //Ecrire "Nombre de valeurs négatives : ", Nbneg 
-   $sMessage4 = ("Nombre de valeurs positives : " . $Nbpos . " Nombre de valeurs négatives : " . $Nbneg);
- }// Fin 
-	
+    $sMessage2 = ("Nombre de valeurs positives : " . $Nbpos . "<br/>" . " Nombre de valeurs négatives : " . $Nbneg);
+    $sMessage3 .= ("PHP Voici les Nouvelles Valeurs : " . implode("," ,$iT));
+}// Fin          
+
 	require "exo_6_12.html";
 
 ?>

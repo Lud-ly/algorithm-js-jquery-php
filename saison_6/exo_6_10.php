@@ -2,9 +2,9 @@
 $sMessage ="";
 $sMessage2 ="";
 $sMessage3 ="";
-// SI $_POST["div_resultat_js"] EXISTE ET QUE $_POST["div_resultat_js"] N EST PAS VIDE ALORS
-//	if ((isset($_POST["div_resultat_js"])) && ((!empty($_POST["div_resultat_js"]))))
-//	{
+// SI $_POST["myPhp"] EXISTE ET QUE $_POST["myPhp"]  EST VIDE ALORS
+if ((isset($_POST["myPhp"])) && ((empty($_POST["myPhp"]))))
+{
 	//Variables i, N en Numérique
 	//Tableaux T1(N), T2(N), T3() en Numérique
 	$tab1 = [4, 8, 7, 9, 1, 5, 4, 6];
@@ -13,14 +13,13 @@ $sMessage3 ="";
 	//Pour i ← 0 à N - 1
 	for ($i = 0; count($tab3) <8; $i++) {
 		// T3(i) ← T1(i) + T2(i)
-		$tab3 = $tab1 + $tab2;
+		$tab3[$i] = $tab1[$i] + $tab2[$i];
 		// i Suivant
 	}// Fin
-	var_dump($tab3);
-	//$sMessage = "PHP tab1 : " . $tab1 ;
-	//$sMessage2 = "tab2 : " . $tab2;
-	$sMessage3 =  (int)$tab3;
-//}
+	$sMessage = "Tab1 : " . implode("," ,$tab1) ;
+	$sMessage2 = "Tab2 : " . implode("," ,$tab2);
+	$sMessage3 = "PHP Tab3 : " . implode("," ,$tab3);
+}
 	
 	require "exo_6_10.html";
 

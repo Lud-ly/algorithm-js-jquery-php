@@ -16,7 +16,7 @@ if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
 	//Lire iTabNotes
 	$iTabNotes = explode(" ",$_POST["myPhp"]);
 		//Ecrire Voici les Notes
-	$sMessage .= "Voici les notes  : " . implode("," ,$iTabNotes);
+	$sMessage .= "PHP Voici les notes  : " . implode("," ,$iTabNotes);
 	//Calculer somme des élements du Tableau
 		$iSom =  array_sum($iTabNotes);
 	//Moy = somme des notes / le nombre de notes dans itabNotes

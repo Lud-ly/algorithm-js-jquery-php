@@ -4,6 +4,12 @@ body{
   background-image:linear-gradient(olivedrab ,#fff);
   width: 100%;
 }
+h3,h4,h5,p{
+  display: block;
+  font-family: 'Piazzolla', serif;
+  letter-spacing: 1px;
+  color:#333A40;
+ }
 li{
   list-style: none;
 }
@@ -11,12 +17,6 @@ a{
   color:olivedrab;
   text-decoration: none;
 }
-h3,h4,h5,p{
-  display: block;
-  font-family: 'Piazzolla', serif;
-  letter-spacing: 1px;
-  color:#333A40;
- }
 .home{
   width:75%;
   margin: 0 auto;
@@ -26,13 +26,12 @@ h3,h4,h5,p{
 
 /*----------CONTAINER-----------*/
 .container-fluid{
-  margin-top:250px;
+  margin-top:200px;
   margin-bottom: 100px;
 }
   .container-fluid h4{
     margin-bottom: 10px;
-    padding: 50px;
-    text-align: center;
+    padding: 40px;
     font-weight: 500;
   }
   .container-fluid hr{
@@ -79,7 +78,6 @@ h3,h4,h5,p{
     text-align: center;
   }
   .pseudoCode{
-    width: 75%;
     margin:0 auto;
     margin-top: 10px;
     margin-bottom:50px;
@@ -88,11 +86,16 @@ h3,h4,h5,p{
     border-radius: 6px;
   }
   .pseudoCode h4{
+    margin-bottom: 10px;
+    padding: 10px;
     text-align: center;
+    text-decoration: underline;
+    font-weight: 500;
   }
   .pseudoCode p{
+   font-size: 18px;
    padding: 15px;
-   text-align: none;
+   
   }
 .language input{
   margin-right: 20px;
@@ -118,16 +121,12 @@ h3,h4,h5,p{
   form h3{
     margin-bottom: 50px;
   }
-  .card-body{
-  text-align: center;
-  padding: 50px;
-  }
     .card-body p{
-      margin: 50px;
-      background-color: #d8e4d8;
-      border:1px solid olivedrab;
+      margin:0;
+      width: 100%;
+      border:1px solid olivedrab; 
       border-radius: 6px;
-      padding:65px;
+      padding:30px;
       font-weight: 500;
       font-size: 18px;
     }
@@ -146,23 +145,23 @@ h3,h4,h5,p{
       text-align: center;
     }
     #menu-accordeon li {
-       background-color:#729EBF; 
-       background-image:-webkit-linear-gradient(top, olivedrab 0%,#c5e4c5 100%);
-       background-image: linear-gradient(to bottom, olivedrab 0%, #c5e4c5 100%);
-       border-radius: 6px;
-       margin-bottom:2px;
-       box-shadow: 2px 2px 2px #999;
-       border:solid 1px #333A40;
+      background-color:#729EBF; 
+      background-image:-webkit-linear-gradient(top, olivedrab 0%,#c5e4c5 100%);
+      background-image: linear-gradient(to bottom, olivedrab 0%, #c5e4c5 100%);
+      border-radius: 6px;
+      margin-bottom:2px;
+      box-shadow: 2px 2px 2px #999;
+      border:solid 1px #333A40;
     }
     #menu-accordeon li li {
-       max-height:0;
-       overflow: hidden;
-       transition: all .5s;
-       border-radius:0;
-       background: #fff;
-       box-shadow: none;
-       border:none;
-       margin:0
+      max-height:0;
+      overflow: hidden;
+      transition: all .5s;
+      border-radius:0;
+      background: #fff;
+      box-shadow: none;
+      border:none;
+      margin:0
     }
     #menu-accordeon a {
       display:block;
@@ -190,28 +189,28 @@ h3,h4,h5,p{
     }
     .language{
       display:flex;
-     justify-content: space-around;
-     text-decoration: none;
-     background-color:  #d8e4d8;
+      justify-content: space-around;
+      text-decoration: none;
+      background-color:  #d8e4d8;
     }
       .language button{
-          color: #000;
-          margin:20px;
-          height: 60px;
-          width: 120px;
-          background-color:olivedrab; 
-          background-image:-webkit-linear-gradient(top, olivedrab 0%, #c5e4c5 100%);
-          background-image: linear-gradient(to bottom, olivedrab 0%, #c5e4c5 100%);
-          border-radius: 6px;
-          box-shadow: 3px 3px 3px #999;
-          border:solid 1px #333A40
+        color: #000;
+        margin:20px;
+        height: 60px;
+        width: 120px;
+        background-color:olivedrab; 
+        background-image:-webkit-linear-gradient(top, olivedrab 0%, #c5e4c5 100%);
+        background-image: linear-gradient(to bottom, olivedrab 0%, #c5e4c5 100%);
+        border-radius: 6px;
+        box-shadow: 3px 3px 3px #999;
+        border:solid 1px #333A40
       }
       .language button:hover{
         background: #c5e4c5;
         color: #000;
       }
       .language input{
-       margin-top: 30px;
+        margin-top: 30px;
         height: 25px;
         width: normal;
       }
@@ -224,36 +223,36 @@ h3,h4,h5,p{
 }     
 /*-----------ASIDE RIGHT----------*/
 .contentRight{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0px 0px 3px 2px #999;
-    height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 0px 3px 2px #999;
+  height: 1000px;
 }
-    .myCodeRight{
-      margin: 0 auto!important;
-      text-align: center!important;
-    }
-    .contentRight img{
+  .myCodeRight{
+    margin: 0 auto!important;
+    text-align: center!important;
+  }
+  .contentRight img{
     width: 100px;
     margin: 10px;
     cursor: pointer;
-    }
-    .cours a{
-      color: #000;
-      margin:80px 50px;
-      text-align: center;
-      padding: 7px 20px!important;
-      height: 40px!important;
-      width: 80px!important;
-      text-decoration: none;
-      background-color:olivedrab; 
-      background-image:-webkit-linear-gradient(top, olivedrab 0%, #c5e4c5 100%);
-      background-image: linear-gradient(to bottom, olivedrab 0%, #c5e4c5 100%);
-      border-radius: 6px;
-      box-shadow: 3px 3px 3px #999;
-      border:solid 1px #333A40
-}
+  }
+  .cours a{
+    color: #000;
+    margin:80px 50px;
+    text-align: center;
+    padding: 7px 20px!important;
+    height: 40px!important;
+    width: 80px!important;
+    text-decoration: none;
+    background-color:olivedrab; 
+    background-image:-webkit-linear-gradient(top, olivedrab 0%, #c5e4c5 100%);
+    background-image: linear-gradient(to bottom, olivedrab 0%, #c5e4c5 100%);
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px #999;
+    border:solid 1px #333A40
+  }
     .cours button:hover,.cours a:hover{
       background: #c5e4c5;
       color: #000;
@@ -297,11 +296,11 @@ footer{
 @media only screen and (max-width: 1024px) {
 
   .cours a{
-  margin: 60px -3px;
-  text-align: center;
-  padding: 15px;
-  height: 60px;
-  width: 100px;
+    margin: 60px -3px;
+    text-align: center;
+    padding: 15px;
+    height: 60px;
+    width: 100px;
   }
   .contentRight img {
     margin: 0;

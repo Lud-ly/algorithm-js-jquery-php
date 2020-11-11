@@ -1,44 +1,43 @@
 <?php
-session_start();
+
 $sMessage= "";
 $sMessage2= "";
 $sMessage3= "";
 $sMessage4= "";
 
-$i = 2;
-$T = [];
-$nb = 0;
+$iTab = [];
 // SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
 if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
 	{
-	// Variables Nb, Nbpos, Nbneg en Numérique
-	//Variables global Tableau T() ,i en Numérique
+	// Variables max, pos,i,y en Numérique
+	//Variables Tableau iTab()  en Numérique
 	$max = 0;
 	$y = 0;
 	$pos = 0;
-	//  Ecrire "Entrez le nombre n° ", i + 1 
-	// Lire T(value)
-		$sMessage = ("Entrer la notes n°" . $i++);
-		$valeur =  (int)$_POST["myPhp"];
-		$_SESSION["myTab"][]=$valeur;
+
+	// Lire iTab(value)
+		$iTab = explode(" " ,$_POST["myPhp"]);
 		
-	//var_dump($_SESSION["myTab"]);
-	//Si nb = longueur de T alors
-	if (count($_SESSION["myTab"]) == 2) {
 		//Ecrire Notes
-		$sMessage2 = ("php Voici le nouveau tableau : " . $_SESSION["myTab"]);
-	}//FinSi
-	//pacourir valeur de T
-		foreach($_SESSION["myTab"] as $valeur){
-		if ($valeur > $max) {
-			$max = $valeur;
+		$sMessage2 = ("PHP Voici le tableau : " . implode("," ,$iTab));
+
+	//Pacourir toutes les valeurs de iTab
+		foreach($iTab as $val){
+		//Si la valeur est superieure au nombre max alors
+		if ($val > $max) {
+			//max = valeur
+			$max = $val;
+			//Position = y
 			$pos = $y;
 		}
-		$y = $y + 1;
+		//$y += 1
+		$y++;
 
 	};
-	$sMessage3 = ("php le nombre le plus grand est : " . $max);
-	$sMessage4 = ("la position du nombre est : " . $pos);
+	//Ecrire le nombre le plus grand est :,max
+	//La position du nombre est : ,pos
+	$sMessage3 = ("Le nombre le plus grand est : " . $max);
+	$sMessage4 = ("La position du nombre est : " . $pos);
 }// Fin         
 	
 	require "exo_6_13.html";
