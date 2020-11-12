@@ -93,16 +93,17 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>
-                                    Tableau Nb(5) en Entier</br>
-                                    Variable i en Entier</br>
-                                    Début</br>
-                                    Pour i ← 0 à 5</br>
-                                    Nb(i) ← i * i</br>
-                                    nb[i] = i * i;</br>
-                                    i suivant</br>
-                                    Pour i ← 0 à 5</br>
-                                </p>
+                                <pre>
+                                    <code>
+    Tableau Nb(5) en Entier</br>
+    Variable i en Entier</br>
+    Début</br>
+    Pour i ← 0 à 5</br>
+        Nb(i) ← i * i</br>
+        nb[i] = i * i;</br>
+    i suivant</br>
+                                </code>
+                                </pre>
                             </div>
                             <div id="txt_javascript">
 
@@ -223,9 +224,25 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
-                
+    $sMessage = "";
+    // Tableau iTabNb(5) en Entier
+    $iTabNb=[];
+    //Variable iNb ,i en Entier
+    // SI $_POST["myPhp"] EXISTE ET QUE $_POST["myPhp"] N EST PAS VIDE ALORS
+    if ((isset($_POST["myPhp"])) && ((empty($_POST["myPhp"]))))
+    {
+    
+        // Début
+        // Pour i ← 0 à 5
+        for($i = 0; $i <= 5; $i++) {
+            //iTabNb(i) ← i * i
+            $iTabNb[$i] = $i * $i ;
+        }
+        //Ecrire le Tableau
+        $sMessage .= "php : " . implode("," ,$iTabNb);
+        
+    }
+
                                     </code>
                                  </pre>
                                 </div>

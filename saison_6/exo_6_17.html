@@ -14,116 +14,110 @@
 <body>
     <div class="home">
         <header>
-            <!-- <?php include('../commun/header.php');?> -->
+            <?php include('../commun/header.php');?>
         </header>
         <script>
+
+            /*-------- Function tri par insertion---------*/
+
+            function tri_insertion(tab) {
+                //Variables iValeur,j,i en Numérique
+                var iValeur, j, i;
+                //Pour i←0 à longueur de tab
+                for (i = 0; i < tab.length; i++) {
+                    //on prends la valeur à l'index i
+                    iValeur = tab[i];
+                    // index de départ 0
+                    //j←i
+                    j = i;
+                    //Tant que j est supérieur à 0 et tab[j]est supérieur à iValeur alors
+                    while (j > 0 && tab[j - 1] > iValeur) {
+                        //On décale j à j-1
+                        tab[j] = tab[j - 1];
+                        //j←j-1
+                        j = j - 1;
+                    }//Fin de tant que
+                    //tab[j]←iValeur
+                    tab[j] = iValeur;
+                } //i Suivant
+            }//Fin
+
+            /*------------ function js prompt---------*/
+
             var tab = [];
             function Exo_6_17() {
+                //Variables Tableau tab en Numérique
+                //Variables tab_length←100,j,i en Numérique
                 var tab_length = 5;
+
+                //Pour i←0 à la longueur de tab
                 for (var i = 0; i < tab_length; i++) {
                     tab[i] = parseInt(prompt("Entrer des valeurs : "));
-                    alert("tab non-trié " + tab);
-                }
+                }//i Suivant
 
+                //Ecrire tab non- trié,tab
+                alert("tab non-trié " + tab);
+
+                //tab passe dans la function tri_insertion
                 tri_insertion(tab);
-                alert("tri par insertion");
-                for (var j = 0; j < tab_length; j++) {
-                    alert(tab[j] + ", ");
-                }
+
+                //Ecrire le tableau,tab
                 alert("tab trié par insertion " + tab);
             }
-            function tri_insertion(tab) {
-                var valeur, j;
 
-                for (var i = 0; i < tab.length; i++) {
-                    //on prends la valeur à l'index i
-                    valeur = tab[i];
-                    // index de départ
-                    j = i;
-                    while (j > 0 && tab[j - 1] > valeur) {
-                        tab[j] = tab[j - 1];
-                        j = j - 1;
-                        //System.out.println(valeur + " > "+tab[j-1]);
-                    }
-                    //System.out.println(valeur);
-                    tab[j] = valeur;
-                }
-            }
+            /*------------ function js innerHTML---------*/
 
-            
+            //Variables Tableau myTab en Numérique
+            //Variables tab_length←100,j,i en Numérique
             var i = 1;
             var j = 1;
             var myTab = [];
+            var tab_length = 10;
+
             function Exo_6_17_innerHTML() {
-                var tab_length = 10;
+                //Si i est inférieur à tab_length
                 if (i <= tab_length) {
+                    //Lire myTab de i
                     myTab[i] = document.getElementById("myValue").value;
-                    document.getElementById("div_result").innerHTML = ("tab non-trié " + myTab);
+                    //Ecrire myTab
+                    document.getElementById("div_result").innerHTML = ("innerHTML tab non-trié " + myTab);
+                    //i←i+1
                     i++;
                 }
-
+                //Passer myTab dans la function tri_insertion
                 tri_insertion(myTab);
-                if (j <= tab_length) {
-                    //document.getElementById("div_resultat").innerHTML = (myTab[j] + ", ");
-                    j++;
-                }
-                document.getElementById("div_resultat_js").innerHTML = ("tab trié par insertion " + myTab);
-            }
-            function tri_insertion(myTab) {
-                var valeur, j;
-
-                for (var i = 0; i < myTab.length; i++) {
-                    //on prends la valeur à l'index i
-                    valeur = myTab[i];
-                    // index de départ
-                    j = i;
-                    while (j > 0 && myTab[j - 1] > valeur) {
-                        myTab[j] = myTab[j - 1];
-                        j = j - 1;
-                        //System.out.println(valeur + " > "+tab[j-1]);
-                    }
-                    //System.out.println(valeur);
-                    myTab[j] = valeur;
-                }
+                //Ecrire "myTab trié par insertion",myTab
+                document.getElementById("div_resultat_js").innerHTML = ("myTab trié par insertion " + myTab);
             }
 
+            /*------------ function js jQUERY---------*/
 
+            //Variables Tableau myTabJq en Numérique
+            //Variables j←1,i←1,tab_length en Numérique
             var i = 1;
             var j = 1;
             var myTabJq = [];
+            var tab_length;
+
             function Exo_6_17_jquery() {
-                var tab_length = 10;
-                if (i <= tab_length) {
+
+                tab_length = 10;
+                //Si i est inférieur à tab_length
+                if (i < tab_length) {
+                    //Lire myTabJq[i] et Ecrire myTabJq
                     myTabJq[i] = parseInt($("#myValueJq").val());
                     $("#div_result").html("tab non-trié " + myTabJq);
+                    //i←i+1
                     i++;
                 }
+                //Passer myTab dans la function tri_insertion
                 tri_insertion(myTabJq);
-                if (j <= tab_length) {
-                    //document.getElementById("div_resultat").innerHTML = (myTab[j] + ", ");
-                    j++;
-                }
+                //Ecrire myTabJq
                 $("#div_resultat_js").html("Jquery tab trié par insertion " + myTabJq);
             }
-            function tri_insertion(myTabJq) {
-                var valeur;
-                var j;
 
-                for (var i = 0; i < myTabJq.length; i++) {
-                    //on prends la valeur à l'index i
-                    valeur = myTabJq[i];
-                    // index de départ
-                    j = i;
-                    while (j > 0 && myTabJq[j - 1] > valeur) {
-                        myTabJq[j] = myTabJq[j - 1];
-                        j = j - 1;
-                        //System.out.println(valeur + " > "+tab[j-1]);
-                    }
-                    //System.out.println(valeur);
-                    myTabJq[j] = valeur;
-                }
-            }
         </script>
+
         <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
@@ -145,8 +139,36 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>a faire
-                                </p>
+                                <textarea rows="16" cols="88">
+                                 FUNCTION TRI_INSERTION
+
+                                    Variables iValeur,j,i en Numérique
+                                    Début
+                                    Pour i←0 à longueur de tab
+                                        on prends la valeur à l'index i
+                                        index de départ 0
+                                        j←i
+                                        Tant que j est supérieur à 0 et tab[j]est supérieur à iValeur alors
+                                            On décale j à j-1
+                                            j←j-1
+                                        Fin de tant que
+                                    i Suivant
+                                    tab[j] ← iValeur
+                                    Fin
+                        -----------------------------------------
+                                    Variables Tableau myTab en Numérique
+                                    Variables tab_length←100,j,i en Numérique
+                                   
+                                    Début
+                                    Si i est inférieur à tab_length
+                                        Lire myTab de i
+                                        Ecrire myTab
+                                        i←i+1
+                                    FinSi    
+                                    Passer myTab dans la function tri_insertion
+                                    Ecrire "myTab trié par insertion",myTab   
+                                    Fin
+                                </textarea>
                             </div>
                             <div id=" txt_javascript">
 
@@ -154,28 +176,31 @@
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
-                                        <h4>
+                                        <h3>
                                             <div class="myResult" id="div_result"></div>
                                             <div class="myResult" id="div_resultat"></div>
                                             <div class="myResult" id="div_resultat_js"></div>
-                                        </h4>
+                                        </h3>
+
                                         <div class="language">
-                                            <label for="myValue"> Entrer des valeurs :
-                                            </label>
-                                            <input type="text" name="myValue" id="myValue">
                                             <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_6_17_innerHTML()">TRI_INSERTION innerHTML</button>
-                                            <label for="myValueJq"> Entrer des valeurs :
+                                            <label for="myValue"> Entrer des valeurs inner:
                                             </label>
-                                            <input type="text" name="myValueJq" id="myValueJq">
+                                            <input type="text" name="myValue" id="myValue"><br />
+                                        </div>
+                                        <div class="language">
                                             <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_6_17_jquery()">TRI_INSERTION_JQUERY</button>
+                                            <label for="myValueJq"> Entrer des valeurs JQ:
+                                            </label>
+                                            <input type="text" name="myValueJq" id="myValueJq">
                                         </div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                     </div>
                                     <div class="language">
                                         <button class="btn_green" id="btn_js" onClick="Exo_6_17()">TRI_INSERTION_PROMPT
-                                          </button>
+                                        </button>
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />
                                     <div class="language">
@@ -201,21 +226,61 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
                                     JAVASCRIPT
-                                    <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+                                    <code data-language="javascript">
+    function tri_insertion(tab) {
+        //Variables iValeur,j,i en Numérique
+        var iValeur, j, i;
+        //Pour i←0 à longueur de tab
+        for (i = 0; i < tab.length; i++) {
+            //on prends la valeur à l'index i
+            iValeur = tab[i];
+            // index de départ 0
+            //j←i
+            j = i;
+            //Tant que j est supérieur à 0 et tab[j]est supérieur à iValeur alors
+            while (j > 0 && tab[j - 1] > iValeur) {
+                //On décale j à j-1
+                tab[j] = tab[j - 1];
+                //j←j-1
+                j = j - 1;
+            }//Fin de tant que
+            //i Suivant
+
+            //tab[j]iValeur
+            tab[j] = iValeur;
+        }
+    }
+    --------------------------------------------------------                                     
+                                        
+    //Variables Tableau myTab en Numérique
+    //Variables tab_length←100,j,i en Numérique
+    var i = 1;
+    var j = 1;
+    var myTab = [];
+    var tab_length = 10;
+
+    function Exo_6_17_innerHTML() {
+        //Si i est inférieur à tab_length
+        if (i <= tab_length) {
+            //Lire myTab de i
+            myTab[i] = document.getElementById("myValue").value;
+            //Ecrire myTab
+            document.getElementById("div_result").innerHTML = ("innerHTML tab non-trié " + myTab);
+            //i←i+1
+            i++;
+        }
+        //Passer myTab dans la function tri_insertion
+        tri_insertion(myTab);
+        //Ecrire "myTab trié par insertion",myTab
+        document.getElementById("div_resultat_js").innerHTML = ("myTab trié par insertion " + myTab);
+    }
                                     </code>
                                  </pre>
                                 </div>
@@ -238,16 +303,29 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
+    //Variables Tableau myTabJq en Numérique
+    //Variables j←1,i←1,tab_length en Numérique
+    var i = 1;
+    var j = 1;
+    var myTabJq = [];
+    var tab_length;
 
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+    function Exo_6_17_jquery() {
 
+        tab_length = 10;
+        //Si i est inférieur à tab_length
+        if (i < tab_length) {
+            //Lire myTabJq[i] et Ecrire myTabJq
+            myTabJq[i] = parseInt($("#myValueJq").val());
+            $("#div_result").html("tab non-trié " + myTabJq);
+            //i←i+1
+            i++;
+        }
+        //Passer myTab dans la function tri_insertion
+        tri_insertion(myTabJq);
+        //Ecrire myTabJq
+        $("#div_resultat_js").html("Jquery tab trié par insertion " + myTabJq);
+    }
                                     </code>
                                  </pre>
                                 </div>
@@ -271,9 +349,45 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+    $sMessage= "";
+    $sMessage2= "";
+    $sMessage3= "";
+    //Variables myTab result en Numérique
+        
+    
+    $myTab = [];
+    //Début
+    // SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
+    if ((isset($_POST["valPhp"])) && (!(empty($_POST["valPhp"]))))
+    {
+        //Lire toutes les valeurs dans le tableau
+        $myTab = explode(" " ,$_POST["valPhp"]);
+        //Ecrire "tab non-trié" ,myTab
+        $sMessage = ("Php myTab non-trié " . implode("," ,$myTab));
+        $valeur=0;
+        $j;
+        //Pour i←0 à longueur de tab
+        for ($i = 0; $i < count($myTab); $i++) {
+            //on prends la valeur à l'index i
+            $valeur = $myTab[$i];
+            // index de départ 0
+                //j←i
+            $j = $i;
+                //Tant que j est supérieur à 0 et tab[j]est supérieur à iValeur alors
+            while ($j > 0 && $myTab[$j - 1] > $valeur) {
+                //On décale j à j-1
+                $myTab[$j] = $myTab[$j - 1];
+                    //j←j-1
+                $j = $j - 1;
                 
+            }//Fin de tant que
+                //tab[j]←iValeur
+            $myTab[$j] = $valeur;
+        }//i Suivant
+        //Ecrire "tab trié par insertion ",myTab
+        $sMessage3 = ("Php myTab trié par insertion " . implode("," ,$myTab));
+    }//Fin
+                                        
                                     </code>
                                  </pre>
                                 </div>

@@ -14,7 +14,7 @@
 <body>
     <div class="home">
         <header>
-            <!-- <?php include('../commun/header.php');?> -->
+            <?php include('../commun/header.php');?>
         </header>
         <script>
             var T = [];
@@ -30,13 +30,12 @@
                 nb = parseInt(prompt("Entrez le nombre de notes à saisir : "));
                 //Ecrire "Entrez le nombre de notes à saisir : "
                 //Lire Nb
-                //Pour i ← 0 à Nb i suivant
+                //Pour i ← 0 à Nb 
                 for (i = 0; i < nb; i++) {
                     //Ecrire "Entrez le nombre n° ", i + 1
                     // Lire T(i)
-                    //i Suivant
                     T[i] = parseInt(prompt("Entrez le nombre n° ", i + 1));
-                }
+                }//i suivant
                 //Pour i ← 0 à Nb - 1
                 for (i = 0; i < nb; i++) {
                     //Som ← Som + T(i)
@@ -78,15 +77,14 @@
                 document.getElementById("resultat_js").innerHTML = ("Entrez le nombre n° " + i++);
                 //Ecrire "Entrer les notes"
                 //Lire value Nb
-                nb = parseInt(document.getElementById("nombreP").value);
+                nb = (parseInt(document.getElementById("nombreP").value));
                 //Ecrire "Entrez le nombre de notes à saisir : "
                 // Lire value myVal
-                T.push(parseInt(document.getElementById("nombrePlat").value));
+                myVal = (parseInt(document.getElementById("nombrePlat").value));
                 //pusher myVal dans array T
+                T.push(myVal);
                 //calc somme T et moyenne moy
-                for(var i=0;i<T.length;i++){
-                    som += T[i];
-                }  
+                som += myVal;
                 moy = som / T.length;
                 //Pour chaque val dans T
                 T.forEach(function (val) {
@@ -96,14 +94,12 @@
                         nbSup++;
                     }// FinSi
                 });
-                if (nb == T.length) {
-                    //Ecrire "Les notes ,T"
-                    document.getElementById("div_result").innerHTML = ("innerHTML voici les notes : " + T);
-                    //Ecrire "la moyenne est de : " , moy
-                    document.getElementById("div_resultat").innerHTML = ("la moyenne est de : " + moy.toFixed(2));
-                    //Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir
-                    document.getElementById("div_resultat_js").innerHTML = (nbSup + " élèves dépassent la moyenne de la classe");
-                }
+                //Ecrire "Les notes ,T"
+                document.getElementById("div_result").innerHTML = ("jquery voici les notes : " + T);
+                //Ecrire "la moyenne est de : " , moy
+                document.getElementById("div_resultat").innerHTML = ("la moyenne est de : " + moy.toFixed(2));
+                //Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir
+                document.getElementById("div_resultat_js").innerHTML = (nbSup + " élèves dépassent la moyenne de la classe");
             } //Fin
 
             function Exo_6_14_jquery() {
@@ -131,14 +127,13 @@
                         nbSup++;
                     }// FinSi
                 });
-                if (nb >= T.length) {
-                    //Ecrire "Les notes ,T"
-                    $("#div_result").html("jquery voici les notes : " + T);
-                    //Ecrire "la moyenne est de : " , moy
-                    $("#div_resultat").html("la moyenne est de : " + moy.toFixed(2));
-                    //Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir
-                    $("#div_resultat_js").html(nbSup + " élèves dépassent la moyenne de la classe");
-                }
+                //Ecrire "Les notes ,T"
+                $("#div_result").html("jquery voici les notes : " + T);
+                //Ecrire "la moyenne est de : " , moy
+                $("#div_resultat").html("la moyenne est de : " + moy.toFixed(2));
+                //Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir
+                $("#div_resultat_js").html(nbSup + " élèves dépassent la moyenne de la classe");
+            
             } //Fin
         </script>
         <div class="container-fluid ">
@@ -164,26 +159,31 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>
-                                    Variables Nb, i, Som, Moy, Nbsup en Numérique<br />
-                                    Tableau T() en Numérique<br />
-                                    Debut<br />
-                                    Ecrire "Entrez le nombre n° ", i + 1<br />
-                                    Ecrire "Entrer les notes"<br />
-                                    Lire value Nb<br />
-                                    Ecrire "Entrez le nombre de notes à saisir : "<br />
-                                    Lire value myVal<br />
-                                    pusher myVal dans array T<br />
-                                    calc somme T et moyenne moy<br />
-                                    Pour chaque val dans T<br />
-                                    Si val > moy<br />
-                                    nbSup = nbSup + 1;<br />
-                                    FinSi<br />
-                                    Ecrire "Les notes ,T"<br />
-                                    Ecrire "la moyenne est de : " , moy<br />
-                                    Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir<br />
-                                    Fin<br />
-                                </p>
+                                <textarea  rows="20" cols="88">
+                                    Variables Nb, i, Som, Moy, Nbsup en Numérique
+                                    Tableau T() en Numérique
+                                    Début
+                                    Ecrire "Entrez le nombre de notes à saisir : "
+                                    Lire Nb
+                                    Pour i ← 0 à Nb 
+                                        Ecrire "Entrez le nombre n° ", i + 1
+                                        Lire T(i)
+                                    i suivant
+                                    Pour i ← 0 à Nb - 1
+                                        Som ← Som + T(i)
+                                    i Suivant
+                                    moy = som/i
+                                    Pour i ← 0 à Nb
+                                        Si T[i]>moy
+                                            nbSup = nbSup + 1;
+                                            nbSup++;
+                                        FinSi
+                                     i Suivant
+                                    fin pour
+                                    Ecrire les notes et la moyenne
+                                    Ecrire NbSup, " élèves dépassent la moyenne de la classe"
+                                    Fin
+                                </textarea>
                             </div>
                             <div id=" txt_javascript">
                                  <div class="myResult" id="div_result"></div>
@@ -211,14 +211,13 @@
                                         <label for="myPhp">Entrez le nombre de notes à saisir :
                                         </label>
                                         <input type="text" name="myPhp" id="myPhp">
-                                        <label for="myVal">"PHP Entrer les notes"
+                                        <label for="myVal">"Entrer les notes avec espaces : "
                                         </label>
                                         <input type="text" name="myVal" id="myVal">
                                         <div class="myResult" id="div_resultat_php">
                                             <p><?php echo $sMessage; ?></p>
                                             <p><?php echo $sMessage2; ?></p>
                                             <p><?php echo $sMessage3; ?></p>
-                                            <p><?php echo $sMessage4; ?></p>
                                         </div>
                                         <div class="language">
                                             <button class="btn_green" type="submit">ALLEZ PHP !</button>
@@ -244,47 +243,45 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                var T = [];
-                var i = 2;
-                var nb;
-                var moy = 0;
-                var som = 0;
-                var myVal = 0;
-    
-                function Exo_6_14_innerHTML() {
-                    // Variables Nb, i, Som, Moy, Nbsup en Numérique
-                    //Tableau T() en Numérique
-                    //Debut
-                    //Ecrire "Entrez le nombre n° ", i + 1
-                    document.getElementById("resultat_js").innerHTML = ("Entrez le nombre n° " + i++);
-                    //Ecrire "Entrer les notes"
-                    //Lire value Nb
-                    nb = parseInt(document.getElementById("nombreP").value);
-                    //Ecrire "Entrez le nombre de notes à saisir : "
-                    // Lire value myVal
-                    myVal = (parseInt(document.getElementById("nombrePlat").value));
-                    //pusher myVal dans array T
-                    T.push(myVal);
-                    //calc somme T et moyenne moy
-                    som += myVal;
-                    moy = som / T.length;
-                    //Pour chaque val dans T
-                    T.forEach(function (val) {
-                        //Si val > moy
-                        if (val > moy) {
-                            // nbSup = nbSup + 1;
-                            nbSup++;
-                        }// FinSi
-                    });
-                    if (nb == T.length) {
-                        //Ecrire "Les notes ,T"
-                        document.getElementById("div_result").innerHTML = ("innerHTML voici les notes : " + T);
-                        //Ecrire "la moyenne est de : " , moy
-                        document.getElementById("div_resultat").innerHTML = ("la moyenne est de : " + moy.toFixed(2));
-                        //Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir
-                        document.getElementById("div_resultat_js").innerHTML = (nbSup + " élèves dépassent la moyenne de la classe");
-                    }
-                } //Fin
+    var T = [];
+    var i = 2;
+    var nb;
+    var moy = 0;
+    var som = 0;
+    var myVal = 0;
+
+    function Exo_6_14_innerHTML() {
+        // Variables Nb, i, Som, Moy, Nbsup en Numérique
+        //Tableau T() en Numérique
+        //Debut
+        //Ecrire "Entrez le nombre n° ", i + 1
+        document.getElementById("resultat_js").innerHTML = ("Entrez le nombre n° " + i++);
+        //Ecrire "Entrer les notes"
+        //Lire value Nb
+        nb = (parseInt(document.getElementById("nombreP").value));
+        //Ecrire "Entrez le nombre de notes à saisir : "
+        // Lire value myVal
+        myVal = (parseInt(document.getElementById("nombrePlat").value));
+        //pusher myVal dans array T
+        T.push(myVal);
+        //calc somme T et moyenne moy
+        som += myVal;
+        moy = som / T.length;
+        //Pour chaque val dans T
+        T.forEach(function (val) {
+            //Si val > moy
+            if (val > moy) {
+                // nbSup = nbSup + 1;
+                nbSup++;
+            }// FinSi
+        });
+        //Ecrire "Les notes ,T"
+        document.getElementById("div_result").innerHTML = ("jquery voici les notes : " + T);
+        //Ecrire "la moyenne est de : " , moy
+        document.getElementById("div_resultat").innerHTML = ("la moyenne est de : " + moy.toFixed(2));
+        //Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir
+        document.getElementById("div_resultat_js").innerHTML = (nbSup + " élèves dépassent la moyenne de la classe");
+    } //Fin
                                     </code>
                                  </pre>
                                 </div>
@@ -332,14 +329,13 @@
                 nbSup++;
             }// FinSi
         });
-        if (nb == T.length) {
-            //Ecrire "Les notes ,T"
-            $("#div_result").html("jquery voici les notes : " + T);
-            //Ecrire "la moyenne est de : " , moy
-            $("#div_resultat").html("la moyenne est de : " + moy.toFixed(2));
-            //Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir
-            $("#div_resultat_js").html(nbSup + " élèves dépassent la moyenne de la classe");
-        }
+        //Ecrire "Les notes ,T"
+        $("#div_result").html("jquery voici les notes : " + T);
+        //Ecrire "la moyenne est de : " , moy
+        $("#div_resultat").html("la moyenne est de : " + moy.toFixed(2));
+        //Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir
+        $("#div_resultat_js").html(nbSup + " élèves dépassent la moyenne de la classe");
+    
     } //Fin
 
                                     </code>
@@ -365,8 +361,54 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+    $sMessage= "";
+    $sMessage2= "";
+    $sMessage3= "";
+    
+    $iNoteTab = array();
+    $nb = 0;
+    $moy = 0;
+    $som = 0;
+    $myVal = 0;
+    $nbSup=0;
+    // SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
+    if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
+        {
+                // Variables Nb, i, Som, Moy, Nbsup en Numérique
+                    //Tableau T() en Numérique
+                    //Debut
+                    //Ecrire "Entrez le nombre n° ", i + 1
+                    //Ecrire "Entrez le nombre de notes à saisir :"
+                    //Lire value Nb
+                    $nb =  (int)$_POST["myPhp"];
+                    $nb = count($iNoteTab);
+                    //Ecrire "Entrez les notes  : "
+                    // Lire value myVal
+                    $iNoteTab = explode(" " ,$_POST["myVal"]);
+                    //Ecrire iNoteTab
+                    $sMessage = implode("," ,$iNoteTab);
+                    //calc somme T et moyenne moy
+                    //Pour y = 0 à longueur de iNoteTab
+                    for($y= 0; $y<=count($iNoteTab); $y++){
+                        $som = $som + $iNoteTab[$y];
+                        $moy = $som /count($iNoteTab);
+                    }
+                    
+                    //Pour chaque val dans T
+                    foreach($iNoteTab as $val) {
+                        //Si val > moy
+                        if ($val > $moy) {
+                            // nbSup = nbSup + 1;
+                            $nbSup++;
+                        }// FinSi
+                    }
+                        //Ecrire "Les notes ,iTabNotes"
+                        $sMessage = ("PHP voici les notes : " . implode("," ,$iNoteTab));
+                        //Ecrire "la moyenne est de : " , moy
+                        $sMessage2 = ("la moyenne est de : " . $moy);
+                        //Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir
+                        $sMessage3 = ($nbSup . " élèves dépassent la moyenne de la classe");
+                } //Fin
                 
                                     </code>
                                  </pre>

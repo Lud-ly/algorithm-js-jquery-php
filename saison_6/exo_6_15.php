@@ -16,26 +16,26 @@ $sMessage2= "";
 	// SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
  if ((isset($_POST["soldPhp"])) && (!(empty($_POST["soldPhp"]))))
  {
-	//Calcul des intéret
-	$interet = ($compte * $taux) / 100;
+	
 	//Ecrire Consulter le solde d'une année  1 à 20
 	//Lire soldYear
 	$soldYear =  $_POST["soldPhp"];
 	//Pour année de 0 inferieur 20
 	while ($année <= 20) {
+		//Calcul des intéret
+		$interet = (($compte + $interet) * $taux) / 100;
 		//Ajout des intérets sur le compte
 		$compte = $compte + $interet;
 		//Ajouter valeurs dans le tableau
 		(float)$_SESSION["tabCompt"][]= $compte ;
-		$sMessage2 = ($année . "EME année" . " solde " . $compte . " € " . " <br/>  ");
+		$sMessage2 = ($année . "EME année" . " solde " . round($compte,2) . " € " . " <br/>  ");
 		$dateAnnif = $année;
 		$année++;
 		//Si soldYear = dateAnnif
 		if ($soldYear == $dateAnnif) {
 			//Ecrire l'année et le solde
-			$sMessage = (($année - 1) . " ème Anniversaire " . "PHP Solde de Titi : " . $compte . " € ");
+			$sMessage = (($année - 1) . " ème Anniversaire " . "PHP Solde de Titi : " . round($compte,2) . " € ");
 		}//FinSi
-	
 	}//année suivant
 }//Fin
 	

@@ -37,7 +37,7 @@ if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
 	//Ecrire le nombre le plus grand est :,max
 	//La position du nombre est : ,pos
 	$sMessage3 = ("Le nombre le plus grand est : " . $max);
-	$sMessage4 = ("La position du nombre est : " . $pos);
+	$sMessage4 = ("La position du nombre est : " . ($pos+1));
 }// Fin         
 	
 	require "exo_6_13.html";

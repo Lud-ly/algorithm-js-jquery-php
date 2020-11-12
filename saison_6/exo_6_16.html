@@ -26,17 +26,18 @@
                     var nbrAlea = Math.floor(100 * Math.random());
                     results += nbrAlea + " ";
                 }
+                alert(results);
                 if (nbrAlea[i] == nbrAlea[i] + 1) {
-                    alert("consecutif");
+                    alert("Consecutif");
                 }
                 else {
-                    alert("pas consecutif");
+                    alert("Pas consecutif");
                 }
-                alert(results);
             }
 
             function Exo_6_16_innerHTML() {
-                //tab result en Numérique
+                //Variable tableau result en Numérique
+                //Variables nbrAlea,i en Numérique
                 var results = [];
                 //Pour i de 0 à 100
                 //Generer 100 nombres de 0 à 100
@@ -97,28 +98,28 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 6.16</h4>
-                                <p>Ecrire un algorithme permettant de résoudre le problème suivant :
-                                    – Données : un tableau tableau contenant 100 entiers
-                                    – Résultat : “vrai” si les entiers sont consécutifs et “faux” sinon
+                                <p>Ecrire un algorithme permettant de résoudre le problème suivant :<br/>
+                                    – Données : un tableau contenant 100 entiers<br/>
+                                    – Résultat : “vrai” si les entiers sont consécutifs et “faux” sinon.
                                 </p>
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>
-                                    Tableau result en Numérique<br/>
-                                    Debut<br/>
-                                    Pour i de 1 à 100<br/>
-                                        Générer 100 nombres de 1 à 100<br/>
-                                            Ajouter nbrAlea dans array result<br/>
-                                            results += nbrAlea + " , ";<br/>
-                                            Si result[i]>result[i+1]<br/>
-                                            Ecrire Consecutif<br/>
-                                            Sinon<br/>
-                                            Ecrire Pas Consecutif<br/>
-                                        Fin pour, i suivant    
-                                    Ecrire Tableau results<br/>
+                                <textarea rows="16" cols="88">
+                                    Variable tableau result en Numérique
+                                    Variables nbrAlea,i en Numérique
+                                    Debut
+                                    Pour i de 1 à 100
+                                        Générer 100 nombres aléatoire de 1 à 100
+                                            Ajouter nbrAlea dans array result
+                                            Si result[i]>result[i+1]
+                                            Ecrire Consecutif
+                                            Sinon
+                                            Ecrire Pas Consecutif
+                                    i suivant    
+                                    Ecrire Tableau result
                                     Fin<br/>
-                                </p>
+                                </textarea>
                             </div>
                             <div id=" txt_javascript">
 
@@ -142,10 +143,7 @@
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />
                                     <div class="language">
-                                        <label for="soldPhp">Entrer un nombre
-                                        </label>
-                                        <input type="text" name="soldPhp" id="soldPhp">
-
+                                        <input type="text" name="myPhp" id="myPhp" placeholder="Cliquez sur le bouton..">
                                         <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                         <div class="myResult" id="div_resultat_php">
                                             <p><?php echo $sMessage; ?></p>
@@ -267,29 +265,30 @@
     $sMessage3= "";
     //Début
         // SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
-        if ((isset($_POST["soldPhp"])) && (!(empty($_POST["soldPhp"]))))
+        if ((isset($_POST["myPhp"])) && ((empty($_POST["myPhp"]))))
             {
         //tab result en Numérique
     $results = [];
     //Pour i de 0 à 100
     //Generer 100 nombres de 0 à 100
-    for ( $i = 0; $i<=100; $i++ ) {
+    for ( $i = 0; $i<=10; $i++ ) {
         (int)$nbrAlea = rand(1,100);
         //Ajouter dans array
-        $results = $results . $nbrAlea . " , " ; 
+        $results[$i] = $nbrAlea; 
     }
-    //Si result[i]>result[i+1]
-    if($results[$i]>$results[$i+1]){
-        //Ecrire Consecutif
-        $sMessage = ("php consecutif");
+        //Si i inférieur à i+1
+        if($i<$i+1){
+            //Ecrire Consecutif
+        $sMessage = ("php Les nombres ne sont pas consecutif ");
         }
         //Sinon pas Consecutif
         else{
-        $sMessage2 =("php Pas consecutif");
+        $sMessage2 =("php les nombres sont consecutif ");
         }
         //Ecrire results
-        $sMessage3 =($results);  
-        }
+        $sMessage3 = implode("," ,$results);  
+        
+    }
                                     </code>
                                  </pre>
                                 </div>

@@ -1,13 +1,10 @@
 <?php
-session_start();
-session_unset();
+
 $sMessage= "";
 $sMessage2= "";
 $sMessage3= "";
-$sMessage4= "";
 
-$i = 2;
-$iNoteTab = [];
+$iNoteTab = array();
 $nb = 0;
 $moy = 0;
 $som = 0;
@@ -20,40 +17,35 @@ if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
                 //Tableau T() en Numérique
                 //Debut
 				//Ecrire "Entrez le nombre n° ", i + 1
-				$sMessage = ("Entrer la notes n°" . $i++);
                 //Ecrire "Entrez le nombre de notes à saisir :"
 				//Lire value Nb
 				$nb =  (int)$_POST["myPhp"];
-				$nb = count($_SESSION["iNoteTab"]);
                 //Ecrire "Entrez les notes  : "
 				// Lire value myVal
-				$myVal =  (int)$_POST["myVal"];
-               
-				//pusher myVal dans array T
-				$_SESSION["iNoteTab"][]=$myVal;
-				var_dump($_SESSION["iNoteTab"]);
+				$iNoteTab = explode(" " ,$_POST["myVal"]);
+				//Ecrire iNoteTab
+				$sMessage = implode("," ,$iNoteTab);
 				//calc somme T et moyenne moy
-				for($y=0;$y<$nb;$y++){
-					$som = $som + $myVal;
-					$moy = $som / $nb;
+				//Pour y = 0 à longueur de iNoteTab
+				for($y= 0; $y<count($iNoteTab); $y++){
+					$som = $iNoteTab[$y] + $som;
 				}
+				$moy = $som /count($iNoteTab);
+
 				//Pour chaque val dans T
-				var_dump("som" .$som);
-				foreach($_SESSION["iNoteTab"] as $myVal) {
+				foreach($iNoteTab as $val) {
                     //Si val > moy
-                    if ($myVal > $moy) {
+                    if ($val > $moy) {
                         // nbSup = nbSup + 1;
                         $nbSup++;
                     }// FinSi
                 }
-               // if ($nb == count($_SESSION["iNoteTab"])) {
-                    //Ecrire "Les notes ,T"
-                   $sMessage2 = ("PHP voici les notes : " . $iNoteTab);
+                    //Ecrire "Les notes ,iTabNotes"
+                   $sMessage = ("PHP voici les notes : " . implode("," ,$iNoteTab));
                     //Ecrire "la moyenne est de : " , moy
-                   $sMessage3 = ("la moyenne est de : " . $moy);
+                   $sMessage2 = ("la moyenne est de : " . $moy);
                     //Ecrire NbSup, " élèves dépassent la moyenne de la classe" arrondir
-                   $sMessage4 = ($nbSup . " élèves dépassent la moyenne de la classe");
-               // }
+                   $sMessage3 = ($nbSup . " élèves dépassent la moyenne de la classe");
             } //Fin
        
 	

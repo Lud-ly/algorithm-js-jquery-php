@@ -14,7 +14,7 @@
 <body>
     <div class="home">
         <header>
-          <?php include('../commun/header.php');?>
+            <?php include('../commun/header.php');?>
         </header>
         <script>
             function Exo_6_15() {
@@ -29,13 +29,13 @@
                 //Début
                 //Ecrire Solde de depart : " + compte
                 alert("Solde de depart : " + compte + " €");
-                //calcul des intéret
-                interet = (compte * taux) / 100;
                 //Ecrire Consulter le solde d'une année  1 à 20
                 //Lire soldYear
                 var soldYear = parseInt(prompt("Consulter le solde d'une année  1 à 20"));
                 //Pour année de 0 à 20
                 for (année = 1; année <= 20; année++) {
+                    //calcul des intéret
+                    interet = ((compte + interet) * taux) / 100;
                     //Ajout des intérets sur le compte
                     compte += interet;
                     //Pusher valeurs dans le tableau
@@ -63,23 +63,23 @@
                 var soldYear = 0;
                 //Début
 
-                //Calcul des intéret
-                interet = (compte * taux) / 100;
                 //Ecrire Consulter le solde d'une année  1 à 20
                 //Lire soldYear
                 soldYear = parseInt(document.getElementById("year").value);
                 //Pour année de 0 inferieur 20
                 while (année <= 20) {
+                    //Calcul des intéret
+                    interet = ((compte + interet) * taux) / 100;
                     //Ajout des intérets sur le compte
                     compte += interet;
                     //Ajouter valeurs dans le tableau
-                    tabCompt.push(année + "EME année" + " solde " + compte + " € " + " <br/>  ");
+                    tabCompt.push(année + "EME année" + " solde " + compte.toFixed(2) + " € " + " <br/>  ");
                     dateAnnif = année;
                     année++;
                     //Si soldYear = dateAnnif
                     if (soldYear == dateAnnif) {
                         //Ecrire l'année et le solde
-                        document.getElementById("div_resultat").innerHTML = ((année - 1) + " ème Anniversaire " + "innerHTML Solde de Titi : " + compte + " € ");
+                        document.getElementById("div_resultat").innerHTML = ((année - 1) + " ème Anniversaire " + "innerHTML Solde de Titi : " + compte.toFixed(2) + " € ");
                     }//FinSi
                 }//année suivant
 
@@ -101,23 +101,23 @@
                 var soldYear = 0;
                 //Début
 
-                //Calcul des intéret
-                interet = (compte * taux) / 100;
                 //Ecrire Consulter le solde d'une année  1 à 20
                 //Lire soldYear
                 soldYear = parseInt($("#Jyear").val());
                 //Pour année de 0 inferieur 20
                 while (année <= 20) {
+                    //Calcul des intéret
+                    interet = ((compte + interet) * taux) / 100;
                     //Ajout des intérets sur le compte
                     compte += interet;
                     //Ajouter valeurs dans le tableau
-                    tabCompt.push(année + "EME année" + " solde " + compte + " € " + " <br/>  ");
+                    tabCompt.push(année + "EME année" + " solde " + compte.toFixed(2) + " € " + " <br/>  ");
                     dateAnnif = année;
                     année++;
                     //Si soldYear = dateAnnif
                     if (soldYear == dateAnnif) {
                         //Ecrire l'année et le solde
-                        $("#result").html((année - 1) + " ème Anniversaire " + "jquery Solde de Titi : " + compte + " € ");
+                        $("#result").html((année - 1) + " ème Anniversaire " + "jquery Solde de Titi : " + compte.toFixed(2) + " € ");
                     }//FinSi
                 }//année suivant
                 //Ecrire Tableau tabCompt
@@ -150,24 +150,25 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>
-                                    Variables compte=1000,taux=2.75,interet,année,dateAnnif en numérique<br />
-                                    Array tabCompt en numérique<br />
-                                    Début<br />
-                                    Calcul des intérets<br />
-                                    Ecrire Consulter le solde d'une année 1 à 20<br />
-                                    Lire soldYear<br />
-                                    Pour année de 0 inferieur 20<br />
-                                    Ajout des intérets sur le compte<br />
-                                    Ajouter valeurs dans le tableau<br />
-                                    Si soldYear = dateAnnif<br />
-                                    Ecrire l'année et le solde<br />
-                                    FinSi<br />
-                                    année suivant<br />
-                                    Ecrire Solde de depart : " + compte<br />
-                                    Ecrire Tableau tabCompt<br />
-                                    Fin<br />
-                                </p>
+                                <textarea rows="20" cols="88">
+                                    Variables compte←1000,taux←2.75,interet,année,
+                                    dateAnnif en numérique
+                                    Array tabCompt en numérique
+                                    Début
+                                    Calcul des intérets
+                                    Ecrire Consulter le solde d'une année 1 à 20
+                                    Lire soldYear
+                                    Pour année de 0 inferieur 20
+                                        Ajout des intérets sur le compte
+                                        Ajouter valeurs dans le tableau
+                                        Si soldYear ← dateAnnif
+                                            Ecrire l'année et le solde
+                                        FinSi
+                                    Année suivant
+                                    Ecrire Solde de depart : " + compte
+                                    Ecrire Tableau tabCompt
+                                    Fin
+                                </textarea>
                             </div>
                             <div id=" txt_javascript">
 
@@ -183,19 +184,19 @@
                                             <div class="myResult" id="result"></div>
                                         </h4>
                                         <div class="language">
-                                            <label for="year">
-                                            </label>
                                             <input type="number" name="year" id="year">
                                             <button type="button" value="Envoyer" id="ok"
-                                                onclick="Exo_6_15_innerHTML()">JS WITH innerHTML</button>
-                                            <label for="Jyear">
-                                            </label>
+                                                onclick="Exo_6_15_innerHTML()">JS WITH innerHTML</button><br />
                                             <input type="number" name="Jyear" id="Jyear">
                                             <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_6_15_jquery()">JQUERY</button>
-                                            <button class="btn_green" id="btn_js" onClick="Exo_6_15()">JS WITH
-                                                PROMPT</button>
+
                                         </div>
+                                    </div>
+                                    <hr width="75%" size="1px" color="olivedrab" />
+                                    <div class="language">
+                                        <button class="btn_green language" id="btn_js" onClick="Exo_6_15()">JS WITH
+                                            PROMPT</button>
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />
                                     <div class="language">
@@ -384,7 +385,6 @@
                 //Ecrire l'année et le solde
                 $sMessage = (($année - 1) . " ème Anniversaire " . "PHP Solde de Titi : " . $compte . " € ");
             }//FinSi
-        
         }//année suivant
     }//Fin
                                             

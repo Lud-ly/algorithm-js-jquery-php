@@ -19,13 +19,23 @@
     <script>
           function Exo_7_4(){
        
-       var numArray = [6, 8, 10, 34, 12, 2];
-       alert("tableau initial "+numArray);
-       var e = parseInt(prompt("Enter Element to be deleted: "));
+       var iNumArray = [6, 8, 10, 34, 12, 2];
+// Ecrire "Rang de la valeur à supprimer ?"
+// Lire S
+var S = parseInt(prompt("Enter Rang de la valeur à supprimer ?"));
+
+// Pour i ← S à iNumArray-2
+for(i=S;i<iNumArray-2;i++){
+//   iNumArray(i) ← iNumArray(i+1)
+    iNumArray[i] = iNumArray[i+1];
+
+}// i suivant[
+iNumArray.length = [iNumArray-1];
+// Redim iNumArray(N–1)
+// Fin
+       alert("tableau initial "+ numArray);
      
-       numArray.forEach(element => {
-           element.pop(e);
-       })
+     
 
        alert("Array elements after deletion-- " + numArray);
        }
