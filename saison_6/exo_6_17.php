@@ -24,7 +24,7 @@ if ((isset($_POST["valPhp"])) && (!(empty($_POST["valPhp"]))))
 		// index de départ 0
 		 //j←i
 		$j = $i;
-		 //Tant que j est supérieur à 0 et tab[j]est supérieur à iValeur alors
+		 //Tant que j est supérieur à 0 ET tab[j]est supérieur à iValeur alors
 		while ($j > 0 && $myTab[$j - 1] > $valeur) {
 			//On décale j à j-1
 			$myTab[$j] = $myTab[$j - 1];

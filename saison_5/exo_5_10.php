@@ -51,6 +51,6 @@ $sMessage5= "";
 	$sMessage5= ($reste . " Piece(s) de 1$");
 }//Fin
 	
-	require "exo_10.html";
+	require "exo_5_10.html";
 
 ?>

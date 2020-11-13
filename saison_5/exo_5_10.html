@@ -147,27 +147,6 @@
                 $("#restePi1").html(reste + " Piece(s) de 1€");
             }//Fin
 
-            /*--------------EFFECT----------------
-            function myHide(){
-                $("#l1").hide();
-                }
-                myHide();
-            function Effect() {
-               
-                $("#pseudoCode").click(function () {
-                    $("#l1").slideDown(2000);
-                });
-            }*/
-
-
-
-
-
-
-
-
-
-
         </script>
         <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
@@ -193,32 +172,34 @@
                     </div>
                     <div class="pseudoCode">
                         <h4>Pseudocode:</h4>
-                            <p>
-                                Variabes price;montant_verse;bill10E;bill5E;Reste en Numerique<br />
-                                Ecrire "vous nous devez :,price"<br />
-                                Ecrire "SVP Payer la somme dûe :"<br />
-                                Lire Montant_verse<br />
-                                reste = price- montant_verse<br />
-                                Tantque reste est superieur ou egal à 50 alors<br />
-                                bil50E = bil50E + 1 et reste = reste - 50<br />
-                                Fin Tantque<br />
-                                Tantque reste est superieur ou egal à 10 alors<br />
-                                bil10E = bil10E + 1 et reste = reste - 10<br />
-                                Fin Tantque<br />
-                                Tantque reste est superieur ou egal à 5 alors<br />
-                                bil5E += 1 <br />
-                                reste = reste - 5<br />
-                                Fin Tantque<br />
-                                Ecrire "Retour de la monnaie :"<br />
-                                bil10E + " Billet(s) de 10"<br />
-                                bil5E + " Billet(s) de 5"<br />
-                                reste + " Piece(s) de 1€"<br />
-                                Fin<br />
-                            </p>
+                            <textarea rows="22" cols="88">
+                                Variables price,montant_verse
+                                bill10E,bill5E,Reste en Numerique
+                                Début
+                                    Ecrire "vous nous devez :,price"
+                                    Ecrire "SVP Payer la somme dûe :"
+                                    Lire Montant_verse
+                                    reste = price- montant_verse
+                                    Tantque reste est superieur ou egal à 50 alors
+                                        bil50E = bil50E + 1 et reste = reste - 50
+                                    Fin Tantque
+                                    Tantque reste est superieur ou egal à 10 alors
+                                        bil10E = bil10E + 1 et reste = reste - 10
+                                    Fin Tantque
+                                    Tantque reste est superieur ou egal à 5 alors
+                                        bil5E += 1 
+                                        reste = reste - 5
+                                    Fin Tantque
+                                    Ecrire "Retour de la monnaie :"
+                                    bil10E + " Billet(s) de 10"
+                                    bil5E + " Billet(s) de 5"
+                                reste + " Piece(s) de 1€"
+                                Fin
+                            </textarea>
                     </div>
                     <div id="txt_javascript">
 
-                        <form action="exo_10.php" method="POST">
+                        <form action="exo_5_10.php" method="POST">
                             <div>
                                 <hr width="75%" size="1px" color="olivedrab" />
                                 <h3>Tester l'algorithme : </h3>

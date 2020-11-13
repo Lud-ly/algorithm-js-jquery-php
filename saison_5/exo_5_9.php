@@ -58,6 +58,6 @@ if ((isset($_POST["iNombreUtilisateur1"])) && (!(empty($_POST["iNombreUtilisateu
 	} //FinSi
 }//Fin
 	
-	require "exo_9.html";
+	require "exo_5_9.html";
 
 ?>

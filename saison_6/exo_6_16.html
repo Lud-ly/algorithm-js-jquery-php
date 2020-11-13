@@ -17,70 +17,89 @@
             <?php include('../commun/header.php');?>
         </header>
         <script>
-
-
             function Exo_6_16() {
+                //Variable tableau results en Numérique
+                //Variables nb,i en Numérique
+                var i;
+                var nb = 0;
                 var results = [];
-                var consecutif = true;
-                for (var i = 0; i <= 100; i++) {
-                    var nbrAlea = Math.floor(100 * Math.random());
-                    results += nbrAlea + " ";
-                }
+
+                nb = (parseInt(prompt("Veuillez rentrer des valeurs")));
+
+                //Pour i de 0 à longueur de results
+                for (i = 0; i < nb; i++) {
+                    results[i] = parseInt(prompt("Entrez le nombre n° ", i + 1));
+                    if (i > 1) {
+                        //Si results[i]=results[i+1]-1
+                        if (results[i] == results[i - 1] + 1) {
+                            //Ecrire Consecutif
+                            alert("innerHTML Les nombres sont consecutif");
+                        }//FinSi
+                        //Sinon pas Consecutif
+                        else {
+                            alert("innerHTML Les nombres ne sont pas consecutif");
+                        }
+                    }//FinSi
+                }//i suivant
+                //Ecrire results
                 alert(results);
-                if (nbrAlea[i] == nbrAlea[i] + 1) {
-                    alert("Consecutif");
-                }
-                else {
-                    alert("Pas consecutif");
-                }
             }
 
+
+            var results = [];
+
             function Exo_6_16_innerHTML() {
-                //Variable tableau result en Numérique
+                //Variable tableau results en Numérique
                 //Variables nbrAlea,i en Numérique
-                var results = [];
-                //Pour i de 0 à 100
-                //Generer 100 nombres de 0 à 100
-                for (var i = 0; i <= 100; i++) {
-                    var nbrAlea = Math.floor(100 * Math.random());
-                    //Ajouter dans array
-                    results += nbrAlea + " , ";
-                }
-                //Si result[i]>result[i+1]
-                if (results[i] > results[i + 1]) {
-                    //Ecrire Consecutif
-                    document.getElementById("div_result_js").innerHTML = ("innerHTML consecutif");
-                }
-                //Sinon pas Consecutif
-                else {
-                    document.getElementById("div_resultat").innerHTML = ("innerHTML Pas consecutif");
-                }
+                //Si j<100 alors
+                var i;
+                results.push(parseInt(document.getElementById("myVal").value));
+                //Pour i de 0 à longueur de results
+                for (i = 0; i < results.length; i++) {
+
+                    if (i > 1) {
+                        //Si results[i]=results[i+1]-1
+                        if (results[i] == results[i - 1] + 1) {
+                            //Ecrire Consecutif
+                            document.getElementById("div_resultat").innerHTML = ("innerHTML Les nombres sont consecutif");
+                        }//FinSi
+                        //Sinon pas Consecutif
+                        else {
+                            document.getElementById("div_resultat").innerHTML = ("innerHTML Les nombres ne sont pas consecutif");
+                        }
+                    }//FinSi
+                }//i suivant
                 //Ecrire results
                 document.getElementById("div_result").innerHTML = (results);
             }
 
+            var results = [];
+
             function Exo_6_16_jquery() {
-                //tab result en Numérique
-                var results = [];
-                //Pour i de 0 à 100
-                //Generer 100 nombres de 0 à 100
-                for (var i = 0; i <= 100; i++) {
-                    var nbrAlea = Math.floor(100 * Math.random());
-                    //Ajouter dans array
-                    results += nbrAlea + " , ";
-                }
-                //Si result[i]>result[i+1]
-                if (results[i] > results[i + 1]) {
-                    //Ecrire Consecutif
-                    $("#div_result_js").html("jquery consecutif");
-                }
-                //Sinon pas Consecutif
-                else {
-                    $("#div_resultat").html("jquery Pas consecutif");
-                }
+                //Variable tableau results en Numérique
+                //Variables nbrAlea,i en Numérique
+                //Si j<100 alors
+                var i;
+                results.push(parseInt($("#myVal").val()));
+                //Pour i de 0 à longueur de results
+                for (i = 0; i < results.length; i++) {
+
+                    if (i > 1) {
+                        //Si results[i]=results[i+1]-1
+                        if (results[i] == results[i - 1] + 1) {
+                            //Ecrire Consecutif
+                            $("#div_resultat").html("Jquery Les nombres sont consecutif");
+                        }//FinSi
+                        //Sinon pas Consecutif
+                        else {
+                            $("#div_resultat").html("Jquery Les nombres ne sont pas consecutif");
+                        }
+                    }//FinSi
+                }//i suivant
                 //Ecrire results
-                $("#div_result").html("jquery " + results);
+                $("#div_result").html(results.join(","));
             }
+
 
 
         </script>
@@ -98,8 +117,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 6.16</h4>
-                                <p>Ecrire un algorithme permettant de résoudre le problème suivant :<br/>
-                                    – Données : un tableau contenant 100 entiers<br/>
+                                <p>Ecrire un algorithme permettant de résoudre le problème suivant :<br />
+                                    – Données : un tableau contenant 100 entiers<br />
                                     – Résultat : “vrai” si les entiers sont consécutifs et “faux” sinon.
                                 </p>
                             </div>
@@ -109,16 +128,16 @@
                                     Variable tableau result en Numérique
                                     Variables nbrAlea,i en Numérique
                                     Debut
-                                    Pour i de 1 à 100
-                                        Générer 100 nombres aléatoire de 1 à 100
-                                            Ajouter nbrAlea dans array result
-                                            Si result[i]>result[i+1]
-                                            Ecrire Consecutif
-                                            Sinon
-                                            Ecrire Pas Consecutif
-                                    i suivant    
-                                    Ecrire Tableau result
-                                    Fin<br/>
+                                        Pour i de 1 à 100
+                                            Générer 100 nombres aléatoire de 1 à 100
+                                                Ajouter nbrAlea dans array result
+                                                Si result[i]>result[i+1]
+                                                Ecrire Consecutif
+                                                Sinon
+                                                Ecrire Pas Consecutif
+                                        i suivant    
+                                        Ecrire Tableau result
+                                    Fin
                                 </textarea>
                             </div>
                             <div id=" txt_javascript">
@@ -127,23 +146,32 @@
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
-                                        <h4>
+                                        <p>
+                                            <div class="myResult" id="div_resultat_js"></div>
                                             <div class="myResult" id="div_result_js"></div>
                                             <div class="myResult" id="div_result"></div>
                                             <div class="myResult" id="div_resultat"></div>
-                                        </h4>
+                                        </p>
                                         <div class="language">
+                                            <label for="myValue"> Entrer des valeurs 100 valeurs(au moins 10:)
+                                            </label>
+                                            <input type="text" name="myVal" id="myVal">
                                             <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_6_16_innerHTML()">JS WITH innerHTML</button>
-                                            <button type="button" value="Envoyer" id="ok"
+                                            <button type="button" value="Envoyer" id="lqueryok"
                                                 onclick="Exo_6_16_jquery()">JQUERY</button>
+                                        </div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <div class="language">
                                             <button class="btn_green" id="btn_js" onClick="Exo_6_16()">JS WITH
                                                 PROMPT</button>
                                         </div>
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />
                                     <div class="language">
-                                        <input type="text" name="myPhp" id="myPhp" placeholder="Cliquez sur le bouton..">
+                                        <label for="myValue"> Entrer toutes les valeurs avec des espaces :
+                                        </label>
+                                        <input type="text" name="myPhp" id="myPhp">
                                         <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                         <div class="myResult" id="div_resultat_php">
                                             <p><?php echo $sMessage; ?></p>
@@ -171,28 +199,33 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
+var results = [];
+
     function Exo_6_16_innerHTML() {
-        //tab result en Numérique
-        var results = [];
-        //Pour i de 0 à 100
-        //Generer 100 nombres de 0 à 100
-        for (var i = 0; i <= 100; i++) {
-            var nbrAlea = Math.floor(100 * Math.random());
-            //Ajouter dans array
-            results += nbrAlea + " , ";
-        }
-        //Si result[i]>result[i+1]
-        if (results[i] > results[i + 1]) {
-            //Ecrire Consecutif
-            document.getElementById("div_result_js").innerHTML = ("innerHTML consecutif");
-        }
-        //Sinon pas Consecutif
-        else {
-            document.getElementById("div_resultat").innerHTML = ("innerHTML Pas consecutif");
-        }
+        //Variable tableau results en Numérique
+        //Variables nbrAlea,i en Numérique
+        //Si j inférieur 100 alors
+        var i;
+        results.push(parseInt(document.getElementById("myVal").value));
+        //Pour i de 0 à longueur de results
+        for (i = 0; i < results.length; i++) {
+
+            if (i > 1) {
+                //Si results[i]=results[i+1]-1
+                if (results[i] == results[i - 1] + 1) {
+                    //Ecrire Consecutif
+                    document.getElementById("div_resultat").innerHTML = ("innerHTML Les nombres sont consecutif");
+                }//FinSi
+                //Sinon pas Consecutif
+                else {
+                    document.getElementById("div_resultat").innerHTML = ("innerHTML Les nombres ne sont pas consecutif");
+                }
+            }//FinSi
+        }//i suivant
         //Ecrire results
         document.getElementById("div_result").innerHTML = (results);
     }
+
                                     </code>
                                  </pre>
                                 </div>
@@ -215,27 +248,31 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
+    var results = [];
+
     function Exo_6_16_jquery() {
-        //tab result en Numérique
-        var results = [];
-        //Pour i de 0 à 100
-        //Generer 100 nombres de 0 à 100
-        for (var i = 0; i <= 100; i++) {
-            var nbrAlea = Math.floor(100 * Math.random());
-            //Ajouter dans array
-            results += nbrAlea + " , ";
-        }
-        //Si result[i]>result[i+1]
-        if (results[i] > results[i + 1]) {
-            //Ecrire Consecutif
-            $("#div_result_js").html("jquery consecutif");
-        }
-        //Sinon pas Consecutif
-        else {
-            $("#div_resultat").html("jquery Pas consecutif");
-        }
+        //Variable tableau results en Numérique
+        //Variables nbrAlea,i en Numérique
+        //Si j inférieur 100 alors
+        var i;
+        results.push(parseInt($("#myVal").val()));
+        //Pour i de 0 à longueur de results
+        for (i = 0; i < results.length; i++) {
+
+            if (i > 1) {
+                //Si results[i]=results[i+1]-1
+                if (results[i] == results[i - 1] + 1) {
+                    //Ecrire Consecutif
+                    $("#div_resultat").html("Jquery Les nombres sont consecutif");
+                }//FinSi
+                //Sinon pas Consecutif
+                else {
+                    $("#div_resultat").html("Jquery Les nombres ne sont pas consecutif");
+                }
+            }//FinSi
+        }//i suivant
         //Ecrire results
-        $("#div_result").html("jquery " + results);
+        $("#div_result").html(results.join(","));
     }
                             
                                     </code>
@@ -264,31 +301,33 @@
     $sMessage2= "";
     $sMessage3= "";
     //Début
-        // SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
-        if ((isset($_POST["myPhp"])) && ((empty($_POST["myPhp"]))))
-            {
-        //tab result en Numérique
-    $results = [];
-    //Pour i de 0 à 100
-    //Generer 100 nombres de 0 à 100
-    for ( $i = 0; $i<=10; $i++ ) {
-        (int)$nbrAlea = rand(1,100);
-        //Ajouter dans array
-        $results[$i] = $nbrAlea; 
-    }
-        //Si i inférieur à i+1
-        if($i<$i+1){
-            //Ecrire Consecutif
-        $sMessage = ("php Les nombres ne sont pas consecutif ");
-        }
-        //Sinon pas Consecutif
-        else{
-        $sMessage2 =("php les nombres sont consecutif ");
-        }
-        //Ecrire results
-        $sMessage3 = implode("," ,$results);  
-        
-    }
+    // SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
+    if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
+    {
+        //Variable Tableau result en Numérique
+        //Variables i en Numérique
+        $results =  explode(" " ,$_POST["myPhp"]);
+    
+        //Pour i de 0 à longueur de result
+        for ( $i = 0; $i<=count($results); $i++ ) {
+            //Ajouter dans array
+            //$results[$i] = $nbrAlea; 
+            //Si i>=1 alors
+            if($i>1){
+                //Si result[i]>result[i+1]
+                if($results[$i]==($results[$i-1]+1)){
+                    //Ecrire Consecutif
+                    $sMessage = ("php Les nombres sont consecutif ");
+                }//Sinon
+                else{
+                    //Ecrire pas Consecutif
+                    $sMessage2 =("php les nombres ne sont pas tous consecutif ");
+                }
+            }//FinSi
+        }//i suivant
+        //Ecrire Tab result  
+        $sMessage3 = implode("," ,$results); 
+    }//fin	
                                     </code>
                                  </pre>
                                 </div>

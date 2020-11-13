@@ -24,6 +24,6 @@ if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur
 	//Fin
 }
 	
-	require "exo_5.html";
+	require "exo_5_5.html";
 
 ?>

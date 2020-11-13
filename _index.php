@@ -16,6 +16,21 @@
     <header>
     <?php require ('commun/header.php');?>
     </header>
+    <script>
+          /*function Crea() {
+                               var i = 0;
+                               for (i = 1; i <= 5; i++) {
+                                   var input = document.createElement("input");
+                                   var number = document.createElement("div");
+                                  // ligne.setAttribute("name", "iNombreUtilisateur");
+                                   input.setAttribute("id", "iNombreUtilisateur");
+                                  // document.getElementById("iNombreUtilisateur").appendChild(input);
+                                   number.innerHTML += "<h3>" + "Entrez le nombre" + i + "</h3>";
+                                   document.querySelector("div#noResult").appendChild(number);
+                                   document.querySelector("div#noResult").appendChild(input);
+                               }
+                           }*/
+    </script>
     <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />

@@ -17,13 +17,16 @@
             <?php include('../commun/header.php');?>
         </header>
         <script>
+
+            /*------------ function js prompt---------*/
+
             function Exo_7_1() {
+                //Variables Tableau en Numérique
                 //Variables Nb, i en Entier
                 //Variable Flag en Booleen
-                var success = false;
+                var Flag = false;
                 var nb = 0;
                 var i = 1;
-                //Tableau T() en Entier
                 var T = [];
                 //Debut
                 //Ecrire "Entrez le nombre de valeurs :"
@@ -33,83 +36,127 @@
                 //Redim T(Nb-1)
                 //Pour i ← 0 à Nb - 1
                 for (i = 0; i < T.length; i++) {
-                    T[i] = parseInt(prompt("Entrez le nombre n°" + (i + 1) + "/" + T.length));
                     //Ecrire "Entrez le nombre n° ", i + 1
                     //Lire T(i)
-                    // T += T[i];
-                    //i Suivant
+                    T[i] = parseInt(prompt("Entrez le nombre n°" + (i + 1) + "/" + T.length));
                 }
-                console.log(T);
                 //Flag ← Vrai
-                success = true;
+                Flag = true;
                 //Pour i ← 1 à Nb - 1
                 for (i = 1; i < T.length; i++) {
                     // Si T(i) <> T(i – 1) + 1 Alors
                     if (T[i] < T[i - 1] + 1) {
                         // Flag ← Faux
-                        success = false;
-                        // FinSi
-                        //i Suivant
-                    }
-                }
+                        Flag = false;
+                    } // FinSi
+                } //i Suivant
+
                 // Si Flag Alors
-                if (success) {
+                if (Flag) {
                     //Ecrire "Les nombres sont consécutifs"
                     alert(T + " Les nombres sont consécutifs")
                     // Sinon
                 } else {
                     //Ecrire "Les nombres ne sont pas consécutifs"
-                    alert(T + " Les nombres ne sont pas consécutifs");
+                    alert(T + " Les nombres ne sont pas tous consécutifs");
                 }
                 //FinSi
                 //Fin
             }
+
+            /*------------ function js innerHTML---------*/
+
+            //Variables Tableau en Numérique
+            //Variables Nb, i en Entier
+            //Variable Flag en Booleen
             var i = 2;
             var T = [];
             var nb = 0;
-            var success = false;
+            var Flag = false;
+
             function Exo_7_1_innerHTML() {
-               //Ecrire Entrer la notes n°"+i suivant
-                //Lire input
-               
-                var input = document.getElementById("nombreP");
+                //Début
+                //Ecrire Entrer la notes n°"+i suivant
                 document.getElementById("div_resultat_js").innerHTML = ("Entrer la notes n°" + [i++]);
                 //Ajouter value à notes
                 T.push(parseInt(document.getElementById("iVal").value));
-                //Si array notes =8
-                if (T.length >=1 && T.length<=5) {
-                    //Ecrire Notes
+                //Si longueur Tab >=1 ET <=5 alors
+                if (T.length >= 1 && T.length <= 5) {
+                    //Ecrire tab Notes
                     document.getElementById("div_resultat").innerHTML = T.join(" , ");
-                  //  document.getElementById("div_resultat").innerHTML = ("innerHTML Voici les Valeur");
                 }//FinSi
-                console.log(T);
                 //Flag ← Vrai
-                success = true;
-                //Pour i ← 1 à Nb - 1
+                Flag = true;
+                //Pour i ← 1 à longueur Tab
                 for (i = 1; i < T.length; i++) {
                     // Si T(i) <> T(i – 1) + 1 Alors
                     if (T[i] < T[i - 1] + 1) {
                         // Flag ← Faux
-                        success = false;
+                        Flag = false;
                         // FinSi
-                        //i Suivant
+
                     }
-                    if (success) {
-                    //Ecrire "Les nombres sont consécutifs"
-                    document.getElementById("div_result").innerHTML = (T + " Les nombres sont consécutifs");
+                    // Si Flag Alors
+                    if (Flag) {
+                        //Ecrire "Les nombres sont consécutifs"
+                        document.getElementById("div_result").innerHTML = (T + "innerHTML Les nombres sont consécutifs");
+
+                    }//FinSi
                     // Sinon
-                } else {
-                    //Ecrire "Les nombres ne sont pas consécutifs"
-                    document.getElementById("div_result").innerHTML = (T + " Les nombres ne sont pas consécutifs");
-                }
-                
-                
-                // Si Flag Alors
-               
-                }
-                //FinSi
-                //Fin
-            }
+                    else {
+                        //Ecrire "Les nombres ne sont pas consécutifs"
+                        document.getElementById("div_result").innerHTML = (T + " Les nombres ne sont pas tous consécutifs");
+                    }
+                }//i Suivant
+            }//Fin
+
+            /*------------ function js jQUERY---------*/
+
+            //Variables Tableau en Numérique
+            //Variables Nb, i en Entier
+            //Variable Flag en Booleen
+            var i = 2;
+            var T = [];
+            var nb = 0;
+            var Flag = false;
+
+            function Exo_7_1_jquery() {
+                //Début
+                //Ecrire Entrer la notes n°"+i suivant
+
+                $("#div_resultat_js").html("Entrer la notes n°" + [i++]);
+                //Ajouter value à notes
+                T.push(parseInt($("#Jyear").val()));
+                //Si longueur Tab >=1 ET <=5 alors
+                if (T.length >= 1 && T.length <= 5) {
+                    //Ecrire Notes
+                    $("#div_resultat").html(T.join(" , "));
+                }//FinSi
+                //Flag ← Vrai
+                Flag = true;
+                //Pour i ← 1 à longueur de T
+                for (i = 1; i < T.length; i++) {
+                    // Si T(i) <> T(i – 1) + 1 Alors
+                    if (T[i] < T[i - 1] + 1) {
+                        // Flag ← Faux
+                        Flag = false;
+                        // FinSi
+
+                    }
+                    // Si Flag Alors
+                    if (Flag) {
+                        //Ecrire "Les nombres sont consécutifs"
+                        $("#div_result").html(T + "Jquery Les nombres sont consécutifs");
+
+                    }//FinSi
+                    // Sinon
+                    else {
+                        //Ecrire "Les nombres ne sont pas consécutifs"
+                        $("#div_result").html(T + "Jquery Les nombres ne sont pas tous consécutifs");
+                    }
+                }//i Suivant
+            }//Fin
+
         </script>
         <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
@@ -139,8 +186,24 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>a faire
-                                </p>
+                                <textarea rows="16" cols="88">
+                                    Début
+                                    Ecrire Entrer la notes n°"+i suivant
+                                    Ajouter value à notes
+                                    Si longueur Tab >=1 ET <=5 alors
+                                        Ecrire tab Notes FinSi Flag ← Vrai 
+                                    Pour i ← 1 à longueur Tab
+                                        Si T(i) <> T(i – 1) + 1 Alors
+                                        Flag ← Faux
+                                        FinSi
+                                        Si Flag Alors
+                                        Ecrire "Les nombres sont consécutifs"
+                                        FinSi
+                                        Sinon
+                                        Ecrire "Les nombres ne sont pas consécutifs"
+                                    i Suivant
+                                    Fin
+                                </textarea>
                             </div>
                             <div id=" txt_javascript">
 
@@ -148,31 +211,37 @@
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
-                                        <h4>
+                                        <h3>
                                             <div class="myResult" id="div_resultat_js"></div>
                                             <div class="myResult" id="div_resultat"></div>
                                             <div class="myResult" id="div_result"></div>
-                                        </h4>
+                                        </h3>
                                         <div class="language">
-                                            <label for="iVal">"Rentrez les valeurs : "
-                                            </label>
-                                            <input type="number" name="iVal" id="iVal">
                                             <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_7_1_innerHTML()">JS WITH innerHTML</button>
-                                            <label for="Jyear">
+                                            <label for="iVal">"Rentrez les valeurs inner: "
+                                            </label>
+                                            <input type="number" name="iVal" id="iVal">
+                                        </div>
+                                        <div class="language">
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_7_1_jquery()">JQUERY</button>
+                                            <label for="Jyear">"Rentrez les valeurs jquery: "
                                             </label>
                                             <input type="number" name="Jyear" id="Jyear">
-                                            <button type="button" value="Envoyer" id="ok"
-                                                onclick="Exo_6_15_jquery()">JQUERY</button>
+                                        </div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <div class="language">
                                             <button class="btn_green" id="btn_js" onClick="Exo_7_1()">JS WITH
                                                 PROMPT</button>
                                         </div>
                                         <hr width="75%" size="1px" color="olivedrab" />
-                                        <label for="myPhp">"PHP Entrer les notes"
+                                        <label for="myPhp">"Entrer toutes les valeurs avec des espaces : "
                                         </label>
                                         <input type="text" name="myPhp" id="myPhp">
                                         <div class="myResult" id="div_resultat_php">
                                             <p><?php echo $sMessage; ?></p>
+                                            <p><?php echo $sMessage2; ?></p>
                                         </div>
                                     </div>
                                     <div class="language">
@@ -188,7 +257,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
                                 <hr size="1px" color="olivedrab" />
@@ -196,13 +265,50 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+    //Variables Tableau en Numérique
+    //Variables Nb, i en Entier
+    //Variable Flag en Booleen
+    var i = 2;
+    var T = [];
+    var nb = 0;
+    var Flag = false;
+
+    function Exo_7_1_innerHTML() {
+        //Début
+        //Ecrire Entrer la notes n°"+i suivant
+        document.getElementById("div_resultat_js").innerHTML = ("Entrer la notes n°" + [i++]);
+        //Ajouter value à notes
+        T.push(parseInt(document.getElementById("iVal").value));
+        //Si longueur Tab >=1 ET <=5 alors
+        if (T.length >= 1 && T.length <= 5) {
+            //Ecrire tab Notes
+            document.getElementById("div_resultat").innerHTML = T.join(" , ");
+        }//FinSi
+        //Flag ← Vrai
+        Flag = true;
+        //Pour i ← 1 à longueur Tab
+        for (i = 1; i < T.length; i++) {
+            // Si T(i) <> T(i – 1) + 1 Alors
+            if (T[i] < T[i - 1] + 1) {
+                // Flag ← Faux
+                Flag = false;
+                // FinSi
+
+            }
+            // Si Flag Alors
+            if (Flag) {
+                //Ecrire "Les nombres sont consécutifs"
+                document.getElementById("div_result").innerHTML = (T + "innerHTML Les nombres sont consécutifs");
+
+            }//FinSi
+            // Sinon
+            else {
+                //Ecrire "Les nombres ne sont pas consécutifs"
+                document.getElementById("div_result").innerHTML = (T + " Les nombres ne sont pas tous consécutifs");
+            }
+        }//i Suivant
+    }//Fin
+                            
                                     </code>
                                  </pre>
                                 </div>
@@ -225,15 +331,50 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
+    //Variables Tableau en Numérique
+    //Variables Nb, i en Entier
+    //Variable Flag en Booleen
+    var i = 2;
+    var T = [];
+    var nb = 0;
+    var Flag = false;
 
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+    function Exo_7_1_jquery() {
+        //Début
+        //Ecrire Entrer la notes n°"+i suivant
+
+        $("#div_resultat_js").html("Entrer la notes n°" + [i++]);
+        //Ajouter value à notes
+        T.push(parseInt($("#Jyear").val()));
+        //Si longueur Tab >=1 ET <=5 alors
+        if (T.length >= 1 && T.length <= 5) {
+            //Ecrire Notes
+            $("#div_resultat").html(T.join(" , "));
+        }//FinSi
+        //Flag ← Vrai
+        Flag = true;
+        //Pour i ← 1 à longueur de T
+        for (i = 1; i < T.length; i++) {
+            // Si T(i) <> T(i – 1) + 1 Alors
+            if (T[i] < T[i - 1] + 1) {
+                // Flag ← Faux
+                Flag = false;
+                // FinSi
+
+            }
+            // Si Flag Alors
+            if (Flag) {
+                //Ecrire "Les nombres sont consécutifs"
+                $("#div_result").html(T + "Jquery Les nombres sont consécutifs");
+
+            }//FinSi
+            // Sinon
+            else {
+                //Ecrire "Les nombres ne sont pas consécutifs"
+                $("#div_result").html(T + "Jquery Les nombres ne sont pas tous consécutifs");
+            }
+        }//i Suivant
+    }//Fin
 
                                     </code>
                                  </pre>
@@ -258,9 +399,53 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
-                
+    $sMessage= "";
+    $sMessage2= "";
+        //Variables Tableau en Numérique
+    //Variables Nb, en Entier
+    //Variable Flag en Booleen
+    
+    $T = [];
+    $nb = 0;
+    $Flag = false;
+    
+                //Début
+    // SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
+    if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
+    {
+        
+        //Ajouter value à notes
+        $T = explode(" " ,$_POST["myPhp"]);
+        //Si longueur Tab >=1 ET <=5 alors
+        if (count($T) >= 1 && count($T) <= 5) {
+            //Ecrire tab Notes
+            $sMessage = implode("," ,$T);
+        }//FinSi
+        //Flag ← Vrai
+        $Flag = true;
+        //Pour i ← 1 à longueur Tab
+        for ($i = 1; $i < count($T); $i++) {
+            // Si T(i) <> T(i – 1) + 1 Alors
+            if ($T[$i] < $T[$i - 1] + 1) {
+                // Flag ← Faux
+                $Flag = false;
+                // FinSi
+    
+            }
+            // Si Flag Alors
+            if ($Flag) {
+                //Ecrire "Les nombres sont consécutifs"
+                $sMessage2 = ("PHP Les nombres sont consécutifs");
+    
+            }//FinSi
+            // Sinon
+            else {
+                //Ecrire "Les nombres ne sont pas consécutifs"
+                $sMessage2 = (" Les nombres ne sont pas tous consécutifs");
+            }
+        }//i Suivant
+    }//Fin
+
                                     </code>
                                  </pre>
                                 </div>

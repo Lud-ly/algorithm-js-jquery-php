@@ -84,12 +84,11 @@
                 //Variables i,total,Moy en Numérique
                 var moy = 0;
                 var note = 0;
-                //Lire input
-                var input = $("#nombrePlat");
+            
                 //Ecrire Entrer la notes n°"+i suivant
                 $("#div_resultat").html("Entrer la notes n°" + [i++]);
                 //Ajouter value à notes
-                note = parseFloat($("#nombrePlat").val());
+                note = parseFloat($("#nombreP").val());
                 console.log("note" + note);
                 myNotes.push(note);
                 somme = somme + note;
@@ -126,24 +125,26 @@
                             <div class="card-body">
                                 <h4>Exercice 6.7</h4>
                                 <p>Ecrivez la fin de l’algorithme 6.3 afin que le calcul de la moyenne des notes soit
-                                    effectué et affiché à l’écran.</p>
+                                    effectué et affiché à l’écran.
+                                </p>
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>
-                                    Variables Tableau Notes(8) ,Notes=[] en Numérique</br>
-                                    Variables i,total,Moy en Numérique</br>
-                                    Pour i ← 0 à 8</br>
-                                    Ecrire "Entrez la note numéro ", i + 1</br>
-                                    Lire Notes(i)</br>
-                                    Notes = Notes + "[ " + iTabNotes[i] + " ]"</br>
-                                    total=iTabNotes de i</br>
-                                    total = total + iTabNotes[i];</br>
-                                    Moy = total/ la longueur de itabNotes</br>
-                                    Moy = total / iTabNotes.length;</br>
-                                    Ecrire Notes + moyenne</br>
-                                    Fin</br>
-                                </p>
+                                <textarea rows="16" cols="88">
+                                    Variables Tableau Notes(8) ,Notes=[] en Numérique
+                                    Variables i,total,Moy en Numérique
+                                    Début
+                                        Pour i ← 0 à 8
+                                            Ecrire "Entrez la note numéro ", i + 1
+                                            Lire Notes(i)
+                                            Notes = Notes + "[ " + iTabNotes[i] + " ]"
+                                            total=iTabNotes de i
+                                        i Suivant    
+                                        Moy = total/ la longueur de itabNotes
+                                        Moy = total / iTabNotes.length;
+                                        Ecrire Tableau Notes + moyenne moy
+                                    Fin
+                                </textarea>
                             </div>
 
                             <div id=" txt_javascript">
@@ -156,16 +157,13 @@
                                         <div class="myResult" id="div_resultat"></div>
                                         <div class="myResult" id="div_resultat_js"></div>
                                         <div class="myResult" id="div_result"></div>
-                                        <div class="language">
-                                            <button type="button" value="Envoyer" id="ok"
-                                                onclick="Exo_6_3_innerHTML()">JS WITH innerHTML</button>
-                                            <input type="number" name="nombreP" id="nombreP">
-                                        </div>
 
                                         <div class="language">
                                             <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_6_3_jquery()">JQUERY</button>
-                                            <input type="number" name="nombrePlat" id="nombrePlat">
+                                                <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_6_3_innerHTML()">JS WITH innerHTML</button>
+                                            <input type="number" name="nombreP" id="nombreP">
                                         </div>
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />

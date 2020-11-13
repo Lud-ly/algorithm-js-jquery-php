@@ -113,30 +113,30 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>
-                                    VARIABLE iNombreUtilisateur en NUMERIQUE<br/>
-                                    DEBUT<br/>
-                                    ECRIRE "Entre un nombre entre 1 et 3"<br/>
-                                    LIRE iNombreUtilisateur<br/>
-                                    TANTQUE ((iNombreUtilisateur < 1) || (iNombreUtilisateur> 3))<br/>
-                                        ECRIRE "Veuillez ressaisir un nombre entre 1 et 3 svp"<br/>
-                                        LIRE iNombreUtilisateur<br/>
-                                        FINTANTQUE<br/>
-
-                                        ECRIRE "Bravo, tu as réussi !"<br/>
-
-                                        FIN<br/>
-                                </p>
+                                <textarea rows="16" cols="88">
+                                    VARIABLE iNombreUtilisateur en NUMERIQUE
+                                    DEBUT
+                                        ECRIRE "Entre un nombre entre 1 et 3"
+                                        LIRE iNombreUtilisateur
+                                        TANTQUE ((iNombreUtilisateur < 1) || (iNombreUtilisateur> 3))
+                                            ECRIRE "Veuillez ressaisir un nombre entre 1 et 3 svp"
+                                            LIRE iNombreUtilisateur
+                                        FINTANTQUE
+                                        ECRIRE "Bravo, tu as réussi !"
+                                    FIN
+                                </textarea>
                             </div>
 
                             <div id="txt_javascript">
-                                <div>
-                                    <h3><div class="myResult" id="div_resultat"></h3></div> 
-                                    <h3><div class="myResult" id="div_resultat_js"></div></h3> 
-                                    <h3><div class="myResult" id="div_resultat_p"></div></h3> 
-                                    <div class="myResult"  id="div_resultat_php"><h3><?php echo $sMessage; ?></h3></div>
+
+                                <div class="myResult" id="div_resultat"></div>
+                                <div class="myResult" id="div_resultat_js"></div>
+                                <div class="myResult" id="div_resultat_p"></div>
+                                <div class="myResult" id="div_resultat_php">
+                                    <p><?php echo $sMessage; ?></p>
                                 </div>
-                                <form action="exo_1.php" method="POST">
+
+                                <form action="exo_5_1.php" method="POST">
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
@@ -222,7 +222,7 @@
 
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
-                                    <pre> 
+                                    <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
     function Exo_5_1_jquery()

@@ -22,6 +22,6 @@ if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur
 	$sMessage = "PHP La factorielle de ". $iNombre . " est : " .  $iFacto;
 }//fin
 	
-	require "exo_7.html";
+	require "exo_5_7.html";
 
 ?>

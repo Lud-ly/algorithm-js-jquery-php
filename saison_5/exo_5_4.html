@@ -119,38 +119,40 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p> Variables iNum, iNum_suivants en Entier<br />
-                                    Variable chain en caractère<br />
-                                    Variable sHTML = "Les 10 prochains nombres sont : <br />
-                                    Debut<br />
-                                    Ecrire "Entrez un nombre : <br />
-                                    Lire iNum<br />
-                                    Pour i ← 1 à 10<br />
-                                    Ecrire iNum + 1<br />
-                                    iNum = iNum + 1<br />
-                                    chain = chain + espace + iNum<br />
-                                    si inum
-                                    < iNum_suivants chain=chain + "," <br />
-                                    Finsi <br />
-                                    Fin pour<br />
-                                    Ecrire "BRAVO" + sHTML + chain<br />
-                                    Fin <br />
-                                </p>
+                                <textarea rows="16" cols="88">
+                                    Variables iNum, iNum_suivants en Entier
+                                    Variable chain en caractère
+                                    Variable sHTML = "Les 10 prochains nombres sont : 
+                                    Debut
+                                        Ecrire "Entrez un nombre :
+                                        Lire iNum
+                                        Pour i ← 1 à 10
+                                            Lire iNum + 1
+                                            chain = chain + espace + iNum
+                                            Si inum < iNum_suivants 
+                                                chain=chain + "," 
+                                            Finsi 
+                                        i Suivant
+                                        Ecrire "BRAVO" + sHTML + chain
+                                    Fin 
+                                </textarea>
                             </div>
                             <div id="txt_javascript">
-                                <div>
-                                    <h3><div class="myResult" id="div_resultat"></h3></div> 
-                                    <h3><div class="myResult" id="div_resultat_js"></div></h3> 
-                                    <h3><div class="myResult" id="div_resultat_p"></div></h3> 
-                                    <div class="myResult"  id="div_resultat_php"><h3><?php echo $sMessage; ?></h3></div>
+
+                                <div class="myResult" id="div_resultat"></div>
+                                <div class="myResult" id="div_resultat_js"></div>
+                                <div class="myResult" id="div_resultat_p"></div>
+                                <div class="myResult" id="div_resultat_php">
+                                    <p><?php echo $sMessage; ?></p>
                                 </div>
-                                <form action="exo_4.php" method="POST">
+
+                                <form action="exo_5_4.php" method="POST">
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
                                         <div>
                                             <label for="iNombreUtilisateur">Veuillez saisir un nombre
-                                                :</label>
+                                            </label>
                                             <input type="text" name="iNombreUtilisateur" id="iNombreUtilisateur">
                                         </div>
                                     </div>

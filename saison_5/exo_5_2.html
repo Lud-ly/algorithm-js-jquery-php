@@ -18,8 +18,8 @@
         </header>
 
         <script type="text/javascript">
-         // ALGORITHME Exo_5_2b_prompt
-         function Exo_5_2b() {
+            // ALGORITHME Exo_5_2b_prompt
+            function Exo_5_2b() {
                 // DEBUT
                 // VARIABLE iNombreHasard, iRepUtilisateur, iNombreCoup en NUMERIQUE
                 var iRepUtilisateur;
@@ -51,8 +51,8 @@
                 }
                 // FINTANTQUE
 
-                document.getElementById("iNombreCoup").value=iNombreCoup;
-                document.getElementById("iNombreHasard").value=iNombreHasard;
+                document.getElementById("iNombreCoup").value = iNombreCoup;
+                document.getElementById("iNombreHasard").value = iNombreHasard;
                 // FIN	
             }
 
@@ -160,49 +160,56 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>
-                                    VARIABLE iNombreHasard, iRepUtilisateur, iNombreCoup en NUMERIQUE</br>
-                                    DEBUT</br>
-                                    iNombreCoup= 1</br>
-                                    iNombreHasard= random[1..100]</br>
-                                    ECRIRE "Trouvez le nombre mystère, compris entre 1 et 100"</br>
-                                    LIRE iRepUtilisateur</br>
-                                    TANT QUE iRepUtilisateur != iNombreHasard</br>
-                                    iNombreCoup++</br>
-                                    SI (iRepUtilisateur inferieur  iNombreHasard) ALORS</br> 
-                                    ECRIRE "Plus grand, essayez à nouveau :"</br>
-                                    LIRE iRepUtilisateur SINON ECRIRE "Plus petit, essayez à nouveau :" LIRE</br>
-                                    iRepUtilisateur FINSI FINTANTQUE ECRIRE "Bravo, vous avez trouvé en " + iNombreCoup + " coup(s)."</br>
-                                     FIN </br>
-                                    </p>
+                                <textarea rows="18" cols="88">
+                                    VARIABLE iNombreHasard, iRepUtilisateur,
+                                    iNombreCoup en NUMERIQUE
+                                    DEBUT
+                                        iNombreCoup= 1
+                                        iNombreHasard= random[1..100]
+                                        ECRIRE "Trouvez le nombre mystère, compris entre 1 et 100"
+                                        LIRE iRepUtilisateur
+                                        TANT QUE iRepUtilisateur != iNombreHasard
+                                            iNombreCoup++
+                                            SI (iRepUtilisateur inferieur  iNombreHasard) ALORS
+                                                ECRIRE "Plus grand, essayez à nouveau :"
+                                                LIRE iRepUtilisateur 
+                                                SINON ECRIRE "Plus petit, essayez à nouveau :" 
+                                                LIRE iRepUtilisateur 
+                                            FINSI 
+                                        FINTANTQUE 
+                                        ECRIRE "Bravo, vous avez trouvé en " + iNombreCoup + " coup(s)."
+                                    FIN 
+                                </textarea>
                             </div>
                             <div id="txt_javascript">
-                                <div>
-                                    <h3><div class="myResult" id="div_resultat"></h3></div> 
-                                    <h3><div class="myResult" id="div_resultat_js"></div></h3> 
-                                    <h3><div class="myResult" id="div_resultat_p"></div></h3> 
-                                    <div class="myResult"  id="div_resultat_php"><h3><?php echo $sMessage; ?></h3></div>
+
+                                <div class="myResult" id="div_resultat"></div>
+                                <div class="myResult" id="div_resultat_js"></div>
+                                <div class="myResult" id="div_resultat_p"></div>
+                                <div class="myResult" id="div_resultat_php">
+                                    <p><?php echo $sMessage; ?></p>
                                 </div>
-                                <form action="exo_2.php" method="POST">
+
+                                <form action="exo_5_2.php" method="POST">
                                     <div>
-                                    <h3>Trouvez le nombre mystère :</h3>
-                                        <label for="iRepUtilisateur">Compris entre 1 et 100 
-                                            :</label>
-                                            <input type="text" name="iRepUtilisateur" id="iRepUtilisateur">
-                                        
-                                            <label for="iNombreCoup">Nombre de coup(s)
-                                                :</label>
-                                            <input type="text" name="iNombreCoup" id="iNombreCoup"
-                                                value="<?php echo $iNombreCoup ?>"></br>
-                                      
-                                                <label for="iNombreHasard">Nombre au Hasard
-                                                    :</label>
-                                            <input type="text" name="iNombreHasard" id="iNombreHasard"
-                                                value="<?php echo $iNombreHasard ?>">
-                                        
+                                        <h3>Trouvez le nombre mystère :</h3>
+                                        <label for="iRepUtilisateur">Saisir un nombre compris entre 1 et 100
+                                            </label>
+                                        <input type="text" name="iRepUtilisateur" id="iRepUtilisateur"><br/>
+
+                                        <label for="iNombreCoup">Nombre de coup(s)
+                                            </label>
+                                        <input type="text" name="iNombreCoup" id="iNombreCoup"
+                                            value="<?php echo $iNombreCoup ?>"></br>
+
+                                        <label for="iNombreHasard">Nombre au Hasard
+                                            </label>
+                                        <input type="text" name="iNombreHasard" id="iNombreHasard"
+                                            value="<?php echo $iNombreHasard ?>">
+
                                     </div>
                                     <div class="language">
-                                    <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                     </div>
                                 </form>
                                 <div class="language">

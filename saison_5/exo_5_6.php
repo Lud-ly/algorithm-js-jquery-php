@@ -20,8 +20,8 @@ if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur
 		}//fin pour
 		//Ecrire "La somme est : ", Somme
 		$sMessage  = ("PHP La somme est : " . $iSomme);
-	}//fin
+}//fin
 
-	require "exo_6.html";
+	require "exo_5_6.html";
 
 ?>

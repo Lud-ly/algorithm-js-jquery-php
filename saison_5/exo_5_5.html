@@ -109,28 +109,31 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>
-                                    Variables iNombre, i en Entier<br />
-                                    Variables chain en caractère<br />
-                                    Variables sHTML="La table de multiplication de ce nombre est :<br />
-                                    Debut<br />
-                                    Ecrire "Entrez un nombre : <br />
-                                    Lire iNombre<br />
-                                    Ecrire "La table de multiplication de ce nombre est :<br />
-                                    Pour i ← 1 à 10<br />
-                                    chain = chain + iNombre + " x ", i, " = ", n * i<br />
-                                    Ecrire sHTML + chain<br />
-                                    Fin<br />
-                                </p>
+                                <textarea rows="16" cols="88">
+                                    Variables iNombre, i en Entier
+                                    Variables chain en caractère
+                                    Variables sHTML="La table de multiplication de ce nombre est :
+                                    Debut
+                                        Ecrire "Entrez un nombre :
+                                        Lire iNombre
+                                        Ecrire "La table de multiplication de ce nombre est :
+                                        Pour i ← 1 à 10
+                                            chain = chain + iNombre + " x ", i, " = ", n * i
+                                        i Suivant
+                                        Ecrire sHTML + chain
+                                    Fin
+                                </textarea>
                             </div>
                             <div id="txt_javascript">
-                                 <div>
-                                    <h3><div class="myResult" id="div_resultat"></h3></div> 
-                                    <h3><div class="myResult" id="div_resultat_js"></div></h3> 
-                                    <h3><div class="myResult" id="div_resultat_p"></div></h3> 
-                                    <div class="myResult"  id="div_resultat_php"><h3><?php echo $sMessage; ?></h3></div>
+
+                                <div class="myResult" id="div_resultat"></div>
+                                <div class="myResult" id="div_resultat_js"></div>
+                                <div class="myResult" id="div_resultat_p"></div>
+                                <div class="myResult" id="div_resultat_php">
+                                    <p><?php echo $sMessage; ?></p>
                                 </div>
-                                <form action="exo_5.php" method="POST">
+
+                                <form action="exo_5_5.php" method="POST">
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
@@ -146,12 +149,15 @@
                                     </div>
                                 </form>
                                 <div class="language">
-                                    <button class="btn_green" id="btn_js" onClick="Exo_5_5()">JS WITH PROMPT</button>
+                                    <button class="btn_green" id="btn_js" onClick="Exo_5_5()">JS WITH
+                                        PROMPT</button>
 
-                                    <button class="btn_green" onClick="Exo_5_5_innerHTML()"> JS WITH INNERHTML</button>
+                                    <button class="btn_green" onClick="Exo_5_5_innerHTML()"> JS WITH
+                                        INNERHTML</button>
 
                                     <button class="btn_green" onClick="Exo_5_5_jquery()">JQUERY !</button>
                                 </div>
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <hr width="75%" size="1px" color="olivedrab" />
                                 <p>Voir les Codes</p>

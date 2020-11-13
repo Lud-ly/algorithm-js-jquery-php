@@ -105,7 +105,7 @@
                 //Si i est inférieur à tab_length
                 if (i < tab_length) {
                     //Lire myTabJq[i] et Ecrire myTabJq
-                    myTabJq[i] = parseInt($("#myValueJq").val());
+                    myTabJq[i] = parseInt($("#myValue").val());
                     $("#div_result").html("tab non-trié " + myTabJq);
                     //i←i+1
                     i++;
@@ -144,29 +144,29 @@
 
                                     Variables iValeur,j,i en Numérique
                                     Début
-                                    Pour i←0 à longueur de tab
-                                        on prends la valeur à l'index i
-                                        index de départ 0
-                                        j←i
-                                        Tant que j est supérieur à 0 et tab[j]est supérieur à iValeur alors
-                                            On décale j à j-1
-                                            j←j-1
-                                        Fin de tant que
-                                    i Suivant
-                                    tab[j] ← iValeur
+                                        Pour i←0 à longueur de tab
+                                            on prends la valeur à l'index i
+                                            index de départ 0
+                                            j←i
+                                            Tant que j est supérieur à 0 et tab[j]est supérieur à iValeur alors
+                                                On décale j à j-1
+                                                j←j-1
+                                            Fin de tant que
+                                        i Suivant
+                                        tab[j] ← iValeur
                                     Fin
                         -----------------------------------------
                                     Variables Tableau myTab en Numérique
                                     Variables tab_length←100,j,i en Numérique
                                    
                                     Début
-                                    Si i est inférieur à tab_length
-                                        Lire myTab de i
-                                        Ecrire myTab
-                                        i←i+1
-                                    FinSi    
-                                    Passer myTab dans la function tri_insertion
-                                    Ecrire "myTab trié par insertion",myTab   
+                                        Si i est inférieur à tab_length
+                                            Lire myTab de i
+                                            Ecrire myTab
+                                            i←i+1
+                                        FinSi    
+                                        Passer myTab dans la function tri_insertion
+                                        Ecrire "myTab trié par insertion",myTab   
                                     Fin
                                 </textarea>
                             </div>
@@ -176,25 +176,20 @@
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
-                                        <h3>
+                                        <p>
                                             <div class="myResult" id="div_result"></div>
                                             <div class="myResult" id="div_resultat"></div>
                                             <div class="myResult" id="div_resultat_js"></div>
-                                        </h3>
+                                        </p>
 
                                         <div class="language">
-                                            <button type="button" value="Envoyer" id="ok"
-                                                onclick="Exo_6_17_innerHTML()">TRI_INSERTION innerHTML</button>
                                             <label for="myValue"> Entrer des valeurs inner:
                                             </label>
                                             <input type="text" name="myValue" id="myValue"><br />
-                                        </div>
-                                        <div class="language">
                                             <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_6_17_innerHTML()">TRI_INSERTION innerHTML</button>
+                                                <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_6_17_jquery()">TRI_INSERTION_JQUERY</button>
-                                            <label for="myValueJq"> Entrer des valeurs JQ:
-                                            </label>
-                                            <input type="text" name="myValueJq" id="myValueJq">
                                         </div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                     </div>
@@ -204,7 +199,7 @@
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />
                                     <div class="language">
-                                        <label for="valPhp"> Entrer des valeurs :
+                                        <label for="valPhp"> Entrer toutes les valeurs avec des espaces :
                                         </label>
                                         <input type="text" name="valPhp" id="valPhp">
                                         <button class="btn_green" type="submit">TRI_INSERTION_PHP</button>

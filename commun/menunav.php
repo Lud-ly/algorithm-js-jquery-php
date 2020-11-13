@@ -40,17 +40,17 @@
                             </ul>
                             <li><a href="#">Les boucles</a>
                             <ul>
-                                <li><a href="../saison_5/exo_1.php">Exercice 5.1</a></li>
-                                <li><a href="../saison_5/exo_2.php">Exercice 5.2</a></li>
-                                <li><a href="../saison_5/exo_3.php">Exercice 5.3</a></li>
-                                <li><a href="../saison_5/exo_4.php">Exercice 5.4</a></li>
-                                <li><a href="../saison_5/exo_5.php">Exercice 5.5</a></li>
-                                <li><a href="../saison_5/exo_6.php">Exercice 5.6</a></li>
-                                <li><a href="../saison_5/exo_7.php">Exercice 5.7</a></li>
-                                <li><a href="../saison_5/exo_8.php">Exercice 5.8</a></li>
-                                <li><a href="../saison_5/exo_9.php">Exercice 5.9</a></li>
-                                <li><a href="../saison_5/exo_10.php">Exercice 5.10</a></li>
-                                <li><a href="../saison_5/exo_11.php">Exercice 5.11</a></li>
+                                <li><a href="../saison_5/exo_5_1.php">Exercice 5.1</a></li>
+                                <li><a href="../saison_5/exo_5_2.php">Exercice 5.2</a></li>
+                                <li><a href="../saison_5/exo_5_3.php">Exercice 5.3</a></li>
+                                <li><a href="../saison_5/exo_5_4.php">Exercice 5.4</a></li>
+                                <li><a href="../saison_5/exo_5_5.php">Exercice 5.5</a></li>
+                                <li><a href="../saison_5/exo_5_6.php">Exercice 5.6</a></li>
+                                <li><a href="../saison_5/exo_5_7.php">Exercice 5.7</a></li>
+                                <li><a href="../saison_5/exo_5_8.php">Exercice 5.8</a></li>
+                                <li><a href="../saison_5/exo_5_9.php">Exercice 5.9</a></li>
+                                <li><a href="../saison_5/exo_5_10.php">Exercice 5.10</a></li>
+                                <li><a href="../saison_5/exo_5_11.php">Exercice 5.11</a></li>
                             </ul>
                             <li><a href="#">Les tableaux</a>
                             <ul>
@@ -77,10 +77,10 @@
                                 <li><a href="../saison_7/exo_7_1.php">Exercice 7.1</a></li>
                                 <li><a href="../saison_7/exo_7_2.php">Exercice 7.2</a></li>
                                 <li><a href="../saison_7/exo_7_3.php">Exercice 7.3</a></li>
-                                <li><a href="../saison_7/exo_4.php">Exercice 7.4</a></li>
-                                <li><a href="../saison_7/exo_5.php">Exercice 7.5</a></li>
-                                <li><a href="../saison_7/exo_6.php">Exercice 7.6</a></li>
-                                <li><a href="../saison_7/exo_7.php">Exercice 7.7</a></li>
+                                <li><a href="../saison_7/exo_7_4.php">Exercice 7.4</a></li>
+                                <li><a href="../saison_7/exo_7_5.php">Exercice 7.5</a></li>
+                                <li><a href="../saison_7/exo_7_6.php">Exercice 7.6</a></li>
+                                <li><a href="../saison_7/exo_7_7.php">Exercice 7.7</a></li>
                             </ul>
                             <li><a href="#">Multi dimensionnels</a>
                             <ul>

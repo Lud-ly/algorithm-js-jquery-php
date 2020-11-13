@@ -17,65 +17,59 @@
             <?php include('../commun/header.php');?>
         </header>
         <script>
-            function Exo_5_7() {
-                //Variables iNombre, i, Somme en Entier
-                var iNombre;
-                var i;
-                var iFacto;
-                // Debut
-                //Ecrire "Entrez un nombre : "
-                //Lire iFacto
-                iNombre = parseInt(prompt("Entrez un nombre : "));
-                //Somme = 0
-                iFacto = 1;
-                //Pour i = 2 à iNombre
-                for (i = 2; i <= iNombre; i++) {
-                    // iSomme ← iSomme + i
-                    iFacto = iFacto * i;
-                }//fin pour
-                //  Ecrire "La factorielle est : ", Facto
-                alert("Prompt La factorielle de " + iNombre + " est : " + iFacto);
-            }//fin
+            function Exo_5_3() {
+                //DEBUT
+                //Variable iNum en numerique
+                var iNum = parseInt(prompt("ENTRER UN NOMBRE"));
+                // variable iNum_suivants en numerique
+                var iNum_suivants = iNum + 10;
+                // Ecrire "Les 10 nombres suivants sont : "
+                var sHTML = "Les 10 prochains nombres sont : ";
+                // Tant que iNum < iNum_suivants
+                while (iNum < iNum_suivants) {
+                    sHTML += " " + (iNum + 1) + " ";
+                    iNum = iNum + 1;
+                    //Fin Tant que
+                }
+                alert("Prompt " + sHTML);
+                //FIN
+            }
+            function Exo_5_3_innerHTML() {
+                //DEBUT
+                //Variable iNum en numerique
+                var iNum = parseInt(document.getElementById("iNombreUtilisateur").value);
+                // variable iNum_suivants en numerique
+                var iNum_suivants = iNum + 10;
+                // Ecrire "Les 10 nombres suivants sont : "
+                var sHTML = "Les 10 prochains nombres sont : ";
+                // Tant que iNum < iNum_suivants
+                while (iNum < iNum_suivants) {
+                    sHTML += " " + (iNum + 1) + " ";
+                    iNum = iNum + 1;
+                    //Fin Tant que
+                }
+                document.getElementById("div_resultat_js").innerHTML = "innerHTML " + sHTML;
+                //FIN
+            }
+            function Exo_5_3_jquery() {
+                //DEBUT
+                //Variable iNum en numerique
+                var iNum = parseInt($("#iNombreUtilisateur").val());
+                // variable iNum_suivants en numerique
+                var iNum_suivants = iNum + 10;
+                // Ecrire "Les 10 nombres suivants sont : "
+                var sHTML = "Les 10 prochains nombres sont : ";
+                // Tant que iNum < iNum_suivants
+                while (iNum < iNum_suivants) {
+                    sHTML += " " + (iNum + 1) + " ";
+                    iNum = iNum + 1;
+                    //Fin Tant que
+                }
+                $("#div_resultat_js").html("Jquery " + sHTML);
+                //FIN
+            }
 
-            function Exo_5_7_innerHTML() {
-                //Variables iNombre, i, Somme en Entier
-                var iNombre;
-                var i;
-                var iFacto;
-                // Debut
-                //Ecrire "Entrez un nombre : "
-                //Lire iFacto
-                iNombre = parseInt(document.getElementById("iNombreUtilisateur").value);
-                //Somme = 0
-                iFacto = 1;
-                //Pour i = 2 à iNombre
-                for (i = 2; i <= iNombre; i++) {
-                    // iSomme ← iSomme + i
-                    iFacto = iFacto * i;
-                }//fin pour
-                //  Ecrire "La factorielle est : ", Facto
-                document.getElementById("div_resultat_js").innerHTML = ("innerHTML La factorielle de " + iNombre + " est : " + iFacto);
-            }//fin
 
-            function Exo_5_7_jquery() {
-                //Variables iNombre, i, Somme en Entier
-                var iNombre;
-                var i;
-                var iFacto;
-                // Debut
-                //Ecrire "Entrez un nombre : "
-                //Lire iFacto
-                iNombre = parseInt($("#iNombreUtilisateur").val());
-                //Somme = 0
-                iFacto = 1;
-                //Pour i = 2 à iNombre
-                for (i = 2; i <= iNombre; i++) {
-                    // iSomme ← iSomme + i
-                    iFacto = iFacto * i;
-                }//fin pour
-                //  Ecrire "La factorielle est : ", Facto
-                $("#div_resultat_js").html("Bravo Jquery La factorielle de " + iNombre + " est : " + iFacto);
-            }//fin
         </script>
         <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
@@ -88,44 +82,47 @@
                 </div>
                 <div class="col-md-8">
                     <div id="accordion">
-                        <div class="card">
+                        <div class="card" id="exos">
                             <div class="card-body">
-                                <h4>Exercice 5.7</h4>
-                                <p>Ecrire un algorithme qui demande un nombre de départ, et qui calcule sa factorielle.
-                                    NB : la factorielle de 8, notée 8 !, vaut
-                                    1 x 2 x 3 x 4 x 5 x 6 x 7 x 8
-
+                                <h4>Exercice 5.3</h4>
+                                <p>a) Ecrire un algorithme qui demande un nombre de départ, et qui ensuite affiche les
+                                    dix nombres suivants. Par
+                                    exemple, si l'utilisateur entre le nombre 17, le programme affichera les nombres de
+                                    18 à 27
                                 </p>
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>
-                                    Variables iNombre, i, Facto en Entier<br/>
-                                    Debut<br/>
-                                    Ecrire "Entrez un nombre : <br/>
-                                    Lire iNombre<br/>
-                                    Facto ← 1<br/>
-                                    Pour i ← 2 à iNombre<br/>
-                                    Facto ← Facto * i<br/>
-                                    i Suivant<br/>
-                                    Ecrire "La factorielle est : ", Facto<br/>
-                                    Fin<br/>
-                                </p>
+                                <textarea rows="16" cols="88">
+                                    DEBUT
+                                        Variable iNum en numerique
+                                        Variable chain en caractère
+                                        Variable iNum_suivants en numerique
+                                        Ecrire "Les 10 nombres suivants sont : 
+                                        Tant que iNum < iNum_suivants
+                                            sHTML +=" " + (iNum + 1) + " " 
+                                            iNum=iNum + 1;
+                                        Fin Tant que 
+                                        ECRIRE sHTML
+                                    FIN 
+                                </textarea>
                             </div>
                             <div id="txt_javascript">
-                                <div>
-                                    <h3><div class="myResult" id="div_resultat"></h3></div> 
-                                    <h3><div class="myResult" id="div_resultat_js"></div></h3> 
-                                    <h3><div class="myResult" id="div_resultat_p"></div></h3> 
-                                    <div class="myResult"  id="div_resultat_php"><h3><?php echo $sMessage; ?></h3></div>
+
+                                <div class="myResult" id="div_resultat"></div>
+                                <div class="myResult" id="div_resultat_js"></div>
+                                <div class="myResult" id="div_resultat_p"></div>
+                                <div class="myResult" id="div_resultat_php">
+                                    <p><?php echo $sMessage; ?></p>
                                 </div>
-                                <form action="exo_7.php" method="POST">
+
+                                <form action="exo_5_3.php" method="POST">
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
                                         <div>
                                             <label for="iNombreUtilisateur">Veuillez saisir un nombre
-                                                :</label>
+                                                </label>
                                             <input type="text" name="iNombreUtilisateur" id="iNombreUtilisateur">
                                         </div>
                                     </div>
@@ -134,11 +131,11 @@
                                     </div>
                                 </form>
                                 <div class="language">
-                                    <button class="btn_green" id="btn_js" onClick="Exo_5_7()">JS WITH PROMPT</button>
+                                    <button class="btn_green" id="btn_js" onClick="Exo_5_3()">JS WITH PROMPT</button>
 
-                                    <button class="btn_green" onClick="Exo_5_7_innerHTML()"> JS WITH INNERHTML</button>
+                                    <button class="btn_green" onClick="Exo_5_3_innerHTML()"> JS WITH INNERHTML</button>
 
-                                    <button class="btn_green" onClick="Exo_5_7_jquery()">JQUERY !</button>
+                                    <button class="btn_green" onClick="Exo_5_3_jquery()">JQUERY !</button>
                                 </div>
                             </div>
                             <div class="card-header" id="headingOne">
@@ -159,25 +156,23 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-    function Exo_5_7_innerHTML() {
-        //Variables iNombre, i, Somme en Entier
-        var iNombre;
-        var i;
-        var iFacto;
-        // Debut
-        //Ecrire "Entrez un nombre : "
-        //Lire iFacto
-        iNombre = parseInt(document.getElementById("iNombreUtilisateur").value);
-        //Somme = 0
-        iFacto = 1;
-        //Pour i = 2 à iNombre
-        for (i = 2; i <= iNombre; i++) {
-            // iSomme ← iSomme + i
-            iFacto = iFacto * i;
-        }//fin pour
-        //  Ecrire "La factorielle est : ", Facto
-        document.getElementById("div_resultat_js").innerHTML = ("innerHTML La factorielle est : "+ iFacto);
-    }//fin
+        function Exo_5_3_innerHTML() {
+            //DEBUT
+            //Variable iNum en numerique
+            var iNum = parseInt(document.getElementById("iNombreUtilisateur").value);
+            // variable iNum_suivants en numerique
+            var iNum_suivants = iNum + 10;
+            // Ecrire "Les 10 nombres suivants sont : "
+            var sHTML = "Les 10 prochains nombres sont : ";
+            // Tant que iNum < iNum_suivants
+            while (iNum < iNum_suivants) {
+                sHTML += " " + (iNum + 1) + " ";
+                iNum = iNum + 1;
+                //Fin Tant que
+            }
+            document.getElementById("div_resultat_js").innerHTML = "innerHTML " + sHTML;
+            //FIN
+        }
                                     </code>
                                  </pre>
                                 </div>
@@ -200,25 +195,24 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-            function Exo_5_7_jquery() {
-                //Variables iNombre, i, Somme en Entier
-                var iNombre;
-                var i;
-                var iFacto;
-                // Debut
-                //Ecrire "Entrez un nombre : "
-                //Lire iFacto
-                iNombre = parseInt($("#iNombreUtilisateur").val());
-                //Somme = 0
-                iFacto = 1;
-                //Pour i = 2 à iNombre
-                for (i = 2; i <= iNombre; i++) {
-                    // iSomme ← iSomme + i
-                    iFacto = iFacto * i;
-                }//fin pour
-                //  Ecrire "La factorielle est : ", Facto
-               $("#div_resultat_js").html("Bravo Jquery La factorielle est : "+ iFacto);
-            }//fin
+    function Exo_5_3_jquery() {
+        //DEBUT
+        //Variable iNum en numerique
+        var iNum = parseInt($("#iNombreUtilisateur").val());
+        // variable iNum_suivants en numerique
+        var iNum_suivants = iNum + 10;
+        // Ecrire "Les 10 nombres suivants sont : "
+        var sHTML = "Les 10 prochains nombres sont : ";
+        // Tant que iNum < iNum_suivants
+        while (iNum < iNum_suivants) {
+            sHTML += " " + (iNum + 1) + " ";
+            iNum = iNum + 1;
+            //Fin Tant que
+        }
+        $("#div_resultat_js").html("Jquery " + sHTML);
+        //FIN
+    }
+                            
 
                                     </code>
                                  </pre>
@@ -243,28 +237,34 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-            $sMessage= "";
-
-            // SI $_POST["iRepUtilisateur"] EXISTE ET QUE $_POST["iRepUtilisateur"] N EST PAS VIDE ALORS
+    $sMessage= "";
+    // SI $_POST["iRepUtilisateur"] EXISTE ET QUE $_POST["iRepUtilisateur"] N EST PAS VIDE ALORS
     if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
     {
-        //Variables iNombre, i, Somme en Entier
-    
-        // Debut
-        //Ecrire "Entrez un nombre : "
-        //Lire iFacto
-        $iNombre = $_POST["iNombreUtilisateur"];
-        //Somme = 0
-        $iFacto = 1;
-        //Pour i = 2 à iNombre
-        for ($i = 2; $i <= $iNombre; $i++) {
-            // iSomme ← iSomme + i
-            $iFacto = $iFacto * $i;
-        }//fin pour
-        //  Ecrire "La factorielle est : ", Facto
-        $sMessage = "PHP La factorielle est : " .  $iFacto;
-    }//fin
-                                    
+        $chain="";
+        //DEBUT
+        //Variable iNum en numerique
+        //Variable chain en caractère
+        $iNum = $_POST["iNombreUtilisateur"];
+        // variable iNum_suivants en numerique
+        $iNum_suivants = $iNum + 10;
+        // Ecrire "Les 10 nombres suivants sont : "
+            $sHTML = "Les 10 prochains nombres sont : ";
+        // Tant que iNum < iNum_suivants
+        while ($iNum < $iNum_suivants) {
+            //iNum = iNum + 1
+            $iNum = $iNum + 1;
+            //chain = chain + espace + iNum
+            $chain = $chain . " ". $iNum;
+            //si inum < iNum_suivants
+            if($iNum <$iNum_suivants){
+            //chain = chain + ";"
+            $chain = $chain . ",";
+            }//finsi
+        } //Fin Tant que
+        $sMessage= "BRAVO PHP :  ". $sHTML . $chain;
+        //FIN
+    }
                 
                                     </code>
                                  </pre>

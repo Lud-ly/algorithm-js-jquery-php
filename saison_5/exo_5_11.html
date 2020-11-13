@@ -121,7 +121,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 5.11</h4>
-                                <p>Écrire un algorithme qui permette de connaître ses chances de gagner au tiercé,
+                                <p>
+                                    Écrire un algorithme qui permette de connaître ses chances de gagner au tiercé,
                                     quarté, quinté et autres impôts
                                     volontaires.
                                     On demande à l’utilisateur le nombre de chevaux partants, et le nombre de chevaux
@@ -145,25 +146,28 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>
-                                    Variables nbChevauxPart, nbChevauxJoue, i, ordre, desordre en Numérique<br />
-                                    Debut<br />
-                                    Ecrire "Entrez le nombre de chevaux partants : "<br />
-                                    Lire nbChevauxPart<br />
-                                    Ecrire "Entrez le nombre de chevaux joués :<br />
-                                    Lire nbChevauxJoue<br />
-                                    ordre = 1<br />
-                                    desordre = 1<br />
-                                    Pour i ← 1 à nbChevauxJoue<br />
-                                    ordre = ordre * (i + nbChevauxPart - nbChevauxJoue)<br />
-                                    desordre = desordre * i;<br />
-                                    Ecrire "Dans l’ordre, une chance sur ", ordre<br />
-                                    Ecrire "Dans le désordre, une chance sur ", ordre / desordre<br />
-                                    Fin<br />
+                                <textarea rows="25" cols="88">
+                                    Variables nbChevauxPart, nbChevauxJoue, 
+                                    i, ordre, desordre en Numérique
+                                    Debut
+                                        Ecrire "Entrez le nombre de chevaux partants : 
+                                        Lire nbChevauxPart
+                                        Ecrire "Entrez le nombre de chevaux joués :
+                                        Lire nbChevauxJoue
+                                        ordre = 1
+                                        desordre = 1
+                                        Pour i ← 1 à nbChevauxJoue
+                                            ordre = ordre * (i + nbChevauxPart - nbChevauxJoue)
+                                            desordre = desordre * i;
+                                        i Suivant
+                                        Ecrire "Dans l’ordre, une chance sur ", ordre
+                                        Ecrire "Dans le désordre, une chance sur ", ordre / desordre
+                                    Fin
+                                </textarea>
                             </div>
                             <div id="txt_javascript">
 
-                                <form action="exo_11.php" method="POST">
+                                <form action="exo_5_11.php" method="POST">
                                     <div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <h3>Tester l'algorithme : </h3>
