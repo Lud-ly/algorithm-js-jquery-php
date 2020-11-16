@@ -17,25 +17,13 @@
             <?php include('../commun/header.php');?>
         </header>
         <script>
-            /*function Crea() {
-                              var i = 0;
-                              for (i = 1; i <= 5; i++) {
-                                  var input = document.createElement("input");
-                                  var number = document.createElement("div");
-                                 // ligne.setAttribute("name", "iNombreUtilisateur");
-                                  input.setAttribute("id", "iNombreUtilisateur");
-                                 // document.getElementById("iNombreUtilisateur").appendChild(input);
-                                  number.innerHTML += "<h3>" + "Entrez le nombre" + i + "</h3>";
-                                  document.querySelector("div#noResult").appendChild(number);
-                                  document.querySelector("div#noResult").appendChild(input);
-                              }
-                          }*/
+
             function Exo_5_8() {
                 //Variables iNombre, i, iNombrePGrand, position en Numerique 
                 var iNombre;
                 var i = 0;
                 var iNombrePGrand = 0;
-                var position = 0;
+                var position;
                 //Debut
                 //position ← 0 
                 position = 0;
@@ -59,81 +47,88 @@
                 // Ecrire "Il a été saisi en position numéro ", position 
                 alert("Il a été saisi en position numéro " + position);
             }// Fin
+
+
+            /*------------------------------JS with INNERHTML--------------------*/
+
+            var iNombre;
+            var i = 0;
+            var j = 2;
+            var iNombrePGrand = 0;
+            var position = 0;
+            var iTab = [];
+
             function Exo_5_8_innerHTML() {
                 //Variables iNombre, i, iNombrePGrand, position en Numerique 
                 //Variables chain en caractere
-                var iNombre;
-                var i = 0;
-                var iNombrePGrand = 0;
-                var position = 0;
                 //Debut
                 //position ← 0 
-                var chain = "";
-                // Pour i ← 1 à 20 
-                iNombre1 = parseInt(document.getElementById("iNombreUtilisateur1").value);
-                iNombre2 = parseInt(document.getElementById("iNombreUtilisateur2").value);
-                iNombre3 = parseInt(document.getElementById("iNombreUtilisateur3").value);
-                iNombre4 = parseInt(document.getElementById("iNombreUtilisateur4").value);
-                iNombre5 = parseInt(document.getElementById("iNombreUtilisateur5").value);
-                chain = chain + " " + iNombre1 + " " + iNombre2 + " " + iNombre3 + " " + iNombre4 + " " + iNombre5;
-                // console.log(chain);
-                for (i = 1; i < chain.length; i++) {
+                // Si j < 20 
+                if (j < 10) {
+                    document.getElementById("div_resultat").innerHTML = ("Entrer le nombre n°" + j);
+                    iNombre = parseInt(document.getElementById("myVal").value);
+                    iTab.push(iNombre);
+                    j++;
+                }
+                for (i = 0; i < iTab.length; i++) {
                     //  Ecrire "Entrez un nombre :
                     // Lire iNombre 
-
                     //Si i = 1 ou iNombre > iNombrePGrand Alors 
-                    if (chain[i] > iNombrePGrand) {
+                    if (i == 1 || iTab[i] > iNombrePGrand) {
                         //iNombrePGrand=iNombre
-                        iNombrePGrand = chain[i];
+                        iNombrePGrand = iTab[i];
                         //  position ← i 
 
                         position = i;
                     }// FinSi 
-
-                }//Fin
+                }//i Suivant
                 //  Ecrire "Le nombre le plus grand était : ", iNombrePGrand
-                document.getElementById("div_resultat").innerHTML = ("Le nombre le plus grand était : " + iNombrePGrand);
+                document.getElementById("div_result_js").innerHTML = ("innerHTML Le nombre le plus grand était : " + iNombrePGrand);
                 // Ecrire "Il a été saisi en position numéro ", position 
-                document.getElementById("div_resultat_js").innerHTML = ("Il a été saisi en position numéro " + position);
+                document.getElementById("div_result").innerHTML = ("Il a été saisi en position numéro " + (position + 1));
+                document.getElementById("div_resultat_js").innerHTML = (iTab);
             }// Fin
+
+            /*------------------------------JS with JQUERY--------------------*/
+
+            var iNombre;
+            var i = 0;
+            var j = 2;
+            var iNombrePGrand = 0;
+            var position = 0;
+            var iTab = [];
 
             function Exo_5_8_jquery() {
                 //Variables iNombre, i, iNombrePGrand, position en Numerique 
-                //Variables chain en caractere
-                var iNombre;
-                var i = 0;
-                var iNombrePGrand = 0;
-                var position = 0;
+                //Variables Tableau iTab en Numérique
                 //Debut
                 //position ← 0 
-                var chain = "";
-                // Pour i ← 1 à 20 
-                iNombre1 = parseInt($("#iNombreUtilisateur1").val());
-                iNombre2 = parseInt($("#iNombreUtilisateur2").val());
-                iNombre3 = parseInt($("#iNombreUtilisateur3").val());
-                iNombre4 = parseInt($("#iNombreUtilisateur4").val());
-                iNombre5 = parseInt($("#iNombreUtilisateur5").val());
-                chain = chain + " " + iNombre1 + " " + iNombre2 + " " + iNombre3 + " " + iNombre4 + " " + iNombre5;
-                // console.log(chain);
-                for (i = 1; i < chain.length; i++) {
+                // Si j < 20 
+                if (j < 10) {
+                    $("#div_resultat").html("Entrer le nombre n°" + j);
+                    iNombre = parseInt($("#myVal").val());
+                    iTab.push(iNombre);
+                    j++;
+                }
+                for (i = 0; i < iTab.length; i++) {
                     //  Ecrire "Entrez un nombre :
                     // Lire iNombre 
-
                     //Si i = 1 ou iNombre > iNombrePGrand Alors 
-                    if (chain[i] > iNombrePGrand) {
+                    if (i == 1 || iTab[i] > iNombrePGrand) {
                         //iNombrePGrand=iNombre
-                        iNombrePGrand = chain[i];
+                        iNombrePGrand = iTab[i];
                         //  position ← i 
 
                         position = i;
                     }// FinSi 
-
-                }//Fin
+                }//i Suivant
                 //  Ecrire "Le nombre le plus grand était : ", iNombrePGrand
-                $("#div_resultat").html("Le nombre le plus grand était : " + iNombrePGrand);
+                $("#div_result_js").html("Jquery Le nombre le plus grand était : " + iNombrePGrand);
                 // Ecrire "Il a été saisi en position numéro ", position 
-                $("#div_resultat_js").html("Il a été saisi en position numéro " + position);
+                $("#div_result").html("Il a été saisi en position numéro " + (position + 1));
+                $("#div_resultat_js").html(iTab + " ");
             }// Fin
+
         </script>
         <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
@@ -166,8 +161,9 @@
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
                                 <textarea rows="16" cols="88">
-                                    Variables iNombre, i, iNombrePGrand, position en Numerique
-                                    Debut
+                                    Variables iNombre, i, iNombrePGrand, 
+                                    position en Numerique
+                                    Début
                                         position ← 0
                                         Pour i ← 1 à 20
                                             Ecrire "Entrez un nombre :
@@ -178,58 +174,55 @@
                                             FinSi
                                         i Suivant
                                         Fin
-                                        Ecrire "Le nombre le plus grand était : ", iNombrePGrand
-                                        Ecrire "Il a été saisi en position numéro ", position
+                                        Ecrire 
+                                            "Le plus grand était : ", iNombrePGrand
+                                        Ecrire 
+                                            "Il a été saisi en position numéro ", position
                                     Fin
                                 </textarea>
                             </div>
 
-                            <div id="txt_javascript">
-                                <div>
+                            <div id=" txt_javascript">
 
-                                    <form action="exo_5_8.php" method="POST">
-                                       
-                                            <hr width="75%" size="1px" color="olivedrab" />
-                                            <h3>Tester l'algorithme : </h3>
-                                            <div>
-                                                <label for="iNombreUtilisateur1">Veuillez saisir un nombre 1
-                                                    :</label>
-                                                <input type="text" name="iNombreUtilisateur1" id="iNombreUtilisateur1">
-                                                <label for="iNombreUtilisateur2">Veuillez saisir un nombre 2
-                                                    :</label>
-                                                <input type="text" name="iNombreUtilisateur2" id="iNombreUtilisateur2">
-                                                <label for="iNombreUtilisateur3">Veuillez saisir un nombre 3
-                                                    :</label>
-                                                <input type="text" name="iNombreUtilisateur3" id="iNombreUtilisateur3">
-                                                <label for="iNombreUtilisateur4">Veuillez saisir un nombre 4
-                                                    :</label>
-                                                <input type="text" name="iNombreUtilisateur4" id="iNombreUtilisateur4">
-                                                <label for="iNombreUtilisateur5">Veuillez saisir un nombre 5
-                                                    :</label>
-                                                <input type="text" name="iNombreUtilisateur5" id="iNombreUtilisateur5">
-                                            </div>
-                                            <div class="myResult" id="div_resultat"></div>
-                                            <div class="myResult" id="div_resultat_js"></div>
-                                            <div class="myResult" id="div_resultat_p"></div>
-                                            <div class="myResult" id="div_resultat_php">
-                                                <p><?php echo $sMessage; ?></p>
-                                                <p><?php echo $sMessage2; ?></p>
-                                                <p><?php echo $sMessage3; ?></p>
-                                            </div>
+                                <form action="exo_5_8.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <p>
+                                        <div class="myResult" id="div_resultat_js"></div>
+                                        <div class="myResult" id="div_result_js"></div>
+                                        <div class="myResult" id="div_result"></div>
+                                        <div class="myResult" id="div_resultat"></div>
+                                        </p>
                                         <div class="language">
-                                            <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                            <label for="myValue"> Entrer des valeurs :
+                                            </label>
+                                            <input type="text" name="myVal" id="myVal">
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_5_8_innerHTML()">JS WITH innerHTML</button>
+                                            <button type="button" value="Envoyer" id="lqueryok"
+                                                onclick="Exo_5_8_jquery()">JQUERY</button>
                                         </div>
-                                    </form>
-                                    <div class="language">
-                                        <button class="btn_green" id="btn_js" onClick="Exo_5_8()">JS WITH
-                                            PROMPT</button>
-
-                                        <button class="btn_green" onClick="Exo_5_8_innerHTML()"> JS WITH
-                                            INNERHTML</button>
-
-                                        <button class="btn_green" onClick="Exo_5_8_jquery()">JQUERY !</button>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <div class="language">
+                                            <button class="btn_green" id="btn_js" onClick="Exo_5_8()">JS WITH
+                                                PROMPT</button>
+                                        </div>
                                     </div>
-                                </div>
+                                    <hr width="75%" size="1px" color="olivedrab" />
+                                    <label for="myValue"> Entrer 10 valeurs avec des espaces :
+                                    </label>
+                                    <input type="text" name="myPhp" id="myPhp">
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                    <div class="myResult" id="div_resultat_php">
+                                        <p><?php echo $sMessage; ?></p>
+                                        <p><?php echo $sMessage2; ?></p>
+                                        <p><?php echo $sMessage3; ?></p>
+                                        <p><?php echo $sMessage4; ?></p>
+                                    </div>
+                                </form>
                             </div>
                             <div class="card-header" id="headingOne">
                                 <hr width="75%" size="1px" color="olivedrab" />
@@ -249,34 +242,42 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-    function Exo_5_8() {
+    var iNombre;
+    var i = 0;
+    var j = 2;
+    var iNombrePGrand = 0;
+    var position = 0;
+    var iTab = [];
+
+    function Exo_5_8_innerHTML() {
         //Variables iNombre, i, iNombrePGrand, position en Numerique 
-        var iNombre;
-        var i = 0;
-        var iNombrePGrand = 0;
-        var position = 0;
+        //Variables chain en caractere
         //Debut
         //position ← 0 
-        position = 0;
-        // Pour i ← 1 à 20 
-        alert("Entrez 5 nombres :");
-        for (i = 1; i <= 5; i++) {
-            //  Ecrire "Entrez un nombre :
+        // Si j < 20 
+        if (j < 10) {
+            document.getElementById("div_resultat").innerHTML = ("Entrer le nombre n°" + j);
+            iNombre = parseInt(document.getElementById("myVal").value);
+            iTab.push(iNombre);
+            j++;
+        }
+        for (i = 0; i < iTab.length; i++) {
+            //  Ecrire "Entrez un nombre :"
             // Lire iNombre 
-            iNombre = parseInt(prompt("Entrez le nombre " + i));
-            //Si i = 1 ou iNombre > iNombrePGrand Alors 
-            if (iNombre > iNombrePGrand) {
+                //Si i = 1 ou iNombre > iNombrePGrand Alors 
+            if (i==1 || iTab[i] > iNombrePGrand) {
                 //iNombrePGrand=iNombre
-                iNombrePGrand = iNombre
+                iNombrePGrand = iTab[i];
                 //  position ← i 
+
                 position = i;
             }// FinSi 
-
-        }//Fin
+        }//i Suivant
         //  Ecrire "Le nombre le plus grand était : ", iNombrePGrand
-        alert("Le nombre le plus grand était : " + iNombrePGrand);
+        document.getElementById("div_result_js").innerHTML = ("Le nombre le plus grand était : " + iNombrePGrand);
         // Ecrire "Il a été saisi en position numéro ", position 
-        alert("Il a été saisi en position numéro " + position);
+        document.getElementById("div_result").innerHTML = ("Il a été saisi en position numéro " + (position + 1));
+        document.getElementById("div_resultat_js").innerHTML = (iTab);
     }// Fin
                                     </code>
                                  </pre>
@@ -300,42 +301,42 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
+    var iNombre;
+    var i = 0;
+    var j = 2;
+    var iNombrePGrand = 0;
+    var position = 0;
+    var iTab = [];
+
     function Exo_5_8_jquery() {
         //Variables iNombre, i, iNombrePGrand, position en Numerique 
-        //Variables chain en caractere
-        var iNombre;
-        var i = 0;
-        var iNombrePGrand = 0;
-        var position = 0;
+        //Variables Tableau iTab en Numérique
         //Debut
         //position ← 0 
-        var chain = "";
-        // Pour i ← 1 à 20 
-        iNombre1 = parseInt($("#iNombreUtilisateur1").val());
-        iNombre2 = parseInt($("#iNombreUtilisateur2").val());
-        iNombre3 = parseInt($("#iNombreUtilisateur3").val());
-        iNombre4 = parseInt($("#iNombreUtilisateur4").val());
-        iNombre5 = parseInt($("#iNombreUtilisateur5").val());
-        chain = chain + " " + iNombre1 +" " + iNombre2+ " "+iNombre3+ " " + iNombre4+ " " + iNombre5;
-        // console.log(chain);
-        for (i = 1; i <chain.length; i++) {
-            //  Ecrire "Entrez un nombre :
+        // Si j < 20 
+        if (j < 10) {
+            $("#div_resultat").html("Entrer le nombre n°" + j);
+            iNombre = parseInt($("#myVal").val());
+            iTab.push(iNombre);
+            j++;
+        }
+        for (i = 0; i < iTab.length; i++) {
+            //  Ecrire "Entrez un nombre :"
             // Lire iNombre 
-            
             //Si i = 1 ou iNombre > iNombrePGrand Alors 
-            if (chain[i] > iNombrePGrand) {
+            if (i == 1 || iTab[i] > iNombrePGrand) {
                 //iNombrePGrand=iNombre
-                iNombrePGrand = chain[i];
+                iNombrePGrand = iTab[i];
                 //  position ← i 
-                
+
                 position = i;
             }// FinSi 
-
-        }//Fin
+        }//i Suivant
         //  Ecrire "Le nombre le plus grand était : ", iNombrePGrand
-        $("#div_resultat").html("Le nombre le plus grand était : " + iNombrePGrand);
+        $("#div_result_js").html("Jquery Le nombre le plus grand était : " + iNombrePGrand);
         // Ecrire "Il a été saisi en position numéro ", position 
-        $("#div_resultat_js").html("Il a été saisi en position numéro " + position);
+        $("#div_result").html("Il a été saisi en position numéro " + (position + 1));
+        $("#div_resultat_js").html(iTab + " ");
     }// Fin
                                     </code>
                                  </pre>
@@ -361,48 +362,41 @@
                                     <code data-language="php"> 
     $sMessage= "";
     $sMessage2= "";
-
-        // SI $_POST["iRepUtilisateur"] EXISTE ET QUE $_POST["iRepUtilisateur"] N EST PAS VIDE ALORS
-if ((isset($_POST["iNombreUtilisateur1"])) && (!(empty($_POST["iNombreUtilisateur1"]))))
-{
+    $sMessage3= "";
+    $sMessage4= "";
+    
+    // SI $_POST["myPhp"] EXISTE ET QUE $_POST["myPhp"] N EST PAS VIDE ALORS
+    if ((isset($_POST["myPhp"])) && (!(empty($_POST["myPhp"]))))
+    {
         //Variables iNombre, i, iNombrePGrand, position en Numerique 
-        //Variables chain en caractere
-            $iNombre;
+        //Variables Tableau(20) en numérique
+        //Debut
+        //position ← 0 
+        $iNombre;
         $i = 0;
         $iNombrePGrand = 0;
         $position = 0;
-        //Debut
-        //position ← 0 
-        $chain = [];
-        // Pour i ← 1 à 20 
-        $iNombre1 =  $_POST["iNombreUtilisateur1"];
-        $iNombre2 =$_POST["iNombreUtilisateur2"];
-        $iNombre3 = $_POST["iNombreUtilisateur3"];
-        $iNombre4 = $_POST["iNombreUtilisateur4"];
-        $iNombre5 = $_POST["iNombreUtilisateur5"];
-        $chain = $chain . " " . $iNombre1 ." " . $iNombre2. " ".$iNombre3. " " . $iNombre4. " " . $iNombre5;
-        // console.log(chain);
-        for ($i = 1; $i <= strlen($chain); $i++) {
-            //  Ecrire "Entrez un nombre :
-            // Lire iNombre 
+        $iTab = array(10);
             
+        $iTab = explode(" " ,$_POST["myPhp"]);
+            
+        for ($i = 0; $i < count($iTab); $i++) {
+            //  Ecrire "Entrez un nombre :"
+            // Lire iNombre 
             //Si i = 1 ou iNombre > iNombrePGrand Alors 
-            if ($chain[$i] > $iNombrePGrand) {
+            if ($i == 1 || $iTab[$i] > $iNombrePGrand) {
                 //iNombrePGrand=iNombre
-                $iNombrePGrand = $chain[$i];
+                $iNombrePGrand = $iTab[$i];
                 //  position ← i 
-                
-                $position = $chain[$i];
-            }// FinSi 
-
-        }//Fin
-        //  Ecrire "Le nombre le plus grand était : ", iNombrePGrand
-        // Ecrire "Il a été saisi en position numéro ", position 
-        $sMessage= "Le nombre le plus grand était : " . $iNombrePGrand;
-        $sMessage2= "Il a été saisi en position numéro " . $position;
     
-        
-        
+                $position = $i;
+            }// FinSi 
+        }//i Suivant
+        //  Ecrire "Le nombre le plus grand était : ", iNombrePGrand
+        $sMessage2 = ("PHP Le nombre le plus grand était : " . $iNombrePGrand);
+        // Ecrire "Il a été saisi en position numéro ", position 
+        $sMessage3 = ("Il a été saisi en position numéro " . ($position + 1));
+        $sMessage4 = implode("," ,$iTab);
     }// Fin
                 
                                     </code>

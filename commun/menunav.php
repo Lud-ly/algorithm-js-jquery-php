@@ -14,7 +14,7 @@
                             <li><a href="#">Lecture et Ecriture</a>
                             <ul>
                                 <li><a href="../saison_2/exo_1.php">Exercice 2.1</a></li>
-                                <li><a href="../saison_2/exo_2.php">Exercice 2.2</a></li>
+                                <li><a href="../saison_2/exo_2.php">Exercice 2.2<br/> Trouver le carré</a></li>
                                 <li><a href="../saison_2/exo_3.php">Exercice 2.3</a></li>
                                 <li><a href="../saison_2/exo_4.php">Exercice 2.4</a></li>
                             </ul>
@@ -50,7 +50,7 @@
                                 <li><a href="../saison_5/exo_5_8.php">Exercice 5.8</a></li>
                                 <li><a href="../saison_5/exo_5_9.php">Exercice 5.9</a></li>
                                 <li><a href="../saison_5/exo_5_10.php">Exercice 5.10</a></li>
-                                <li><a href="../saison_5/exo_5_11.php">Exercice 5.11</a></li>
+                                <li><a href="../saison_5/exo_5_11.php">Exercice 5.11<br/>Le tiercé</a></li>
                             </ul>
                             <li><a href="#">Les tableaux</a>
                             <ul>

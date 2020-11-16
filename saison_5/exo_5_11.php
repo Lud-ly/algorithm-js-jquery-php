@@ -3,7 +3,7 @@
 $sMessage= "";
 $sMessage2= "";
 //Variables nbChevauxPart, nbChevauxJoue, i, ordre, desordre en Numérique
-// SI $_POST["iRepUtilisateur"] EXISTE ET QUE $_POST["iRepUtilisateur"] N EST PAS VIDE ALORS
+// SI $_POST["nbChevauxPart"] EXISTE ET QUE $_POST["nbChevauxPart"] N EST PAS VIDE ALORS
 if ((isset($_POST["nbChevauxPart"])) && (!(empty($_POST["nbChevauxPart"]))))
 {
 	$ordre=1;

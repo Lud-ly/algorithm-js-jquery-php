@@ -8,39 +8,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <script>
-          function Exo_7_4(){
-       
-       var iNumArray = [6, 8, 10, 34, 12, 2];
-// Ecrire "Rang de la valeur à supprimer ?"
-// Lire S
-var S = parseInt(prompt("Enter Rang de la valeur à supprimer ?"));
+    <div class="home">
+        <header>
+            <!-- <?php include('../commun/header.php');?> -->
+        </header>
+        <script>
+            function Exo_7_4() {
+                var i = 0;
+                var iNumArray = [6, 8, 10, 34, 12, 2];
+                alert("tableau initial " + iNumArray);
+                // Ecrire "Rang de la valeur à supprimer ?"
+                // Lire S
+                var S = parseInt(prompt("Enter Rang de la valeur à supprimer ?"));
+                // Pour i ← S à iNumArray-2
+                for (i = S; i <= iNumArray.length - 2; i++) {
+                    //   iNumArray(i) ← iNumArray(i+1)
+                    iNumArray[i] = iNumArray[i + 1];
+                } // i suivant
+                // Redim iNumArray(N–1)
+                iNumArray.length = iNumArray.length - 1;
+                alert("Array elements after deletion : " + iNumArray.join(","));
+            }// Fin
 
-// Pour i ← S à iNumArray-2
-for(i=S;i<iNumArray-2;i++){
-//   iNumArray(i) ← iNumArray(i+1)
-    iNumArray[i] = iNumArray[i+1];
+            var iNumTab = [];
+            var i = 0;
+            var k = 2;
+            var S = 0;
+            var iNum = 0;
+            function Exo_7_4_innerHTML() {
+                if (iNumTab.length <=5) {
+                    iNumTab.push(parseInt(document.getElementById("myVal").value));
+                    document.getElementById("div_resultat_js").innerHTML = ("Entrer la valeur : " + k);
+                    k++;
 
-}// i suivant[
-iNumArray.length = [iNumArray-1];
-// Redim iNumArray(N–1)
-// Fin
-       alert("tableau initial "+ numArray);
-     
-     
+                }
+                console.log(iNumTab);
 
-       alert("Array elements after deletion-- " + numArray);
-       }
-    </script>
-    <div class="container-fluid ">
+                document.getElementById("div_result_js").innerHTML = ("element before deletion"+iNumTab);
+                // // Ecrire "Rang de la valeur à supprimer ?"
+                // // Lire S
+                if (iNumTab.length >= 5) {
+                    document.getElementById("div_resultat").innerHTML = ("Array elements choose deletion : " + iNumTab);
+                    S = (parseInt(document.getElementById("myRang").value));
+                    // // Pour i ← S à iNumArray-2
+                    for (i = S; i <= iNumTab.length - 2; i++) {
+                        //     //   iNumArray(i) ← iNumArray(i+1)
+                        iNumTab[i] = iNumTab[i + 1];
+                    } // i suivant
+                    // // Redim iNumArray(N–1)
+                    iNumTab.length = iNumTab.length - 1;
+                    document.getElementById("div_resultat").innerHTML = ("Array elements after deletion : " + iNumTab); 
+                }
+               
+            }// Fin
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -54,64 +80,91 @@ iNumArray.length = [iNumArray-1];
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 7.4</h4>
-                                <p>Ecrivez un algorithme qui permette à l’utilisateur de supprimer une valeur d’un tableau préalablement saisi.
-                                    L’utilisateur donnera l’indice de la valeur qu’il souhaite supprimer. Attention, il ne s’agit pas de remettre une valeur
-                                    à zéro, mais bel et bien de la supprimer du tableau lui-même ! Si le tableau de départ était :
+                                <p>Ecrivez un algorithme qui permette à l’utilisateur de supprimer une valeur d’un
+                                    tableau préalablement saisi.
+                                    L’utilisateur donnera l’indice de la valeur qu’il souhaite supprimer. Attention, il
+                                    ne s’agit pas de remettre une valeur
+                                    à zéro, mais bel et bien de la supprimer du tableau lui-même ! Si le tableau de
+                                    départ était :
                                     12 8 4 45 64 9 2
-                                    Et que l’utilisateur souhaite supprimer la valeur d’indice 4, le nouveau tableau sera :
+                                    Et que l’utilisateur souhaite supprimer la valeur d’indice 4, le nouveau tableau
+                                    sera :
                                     12 8 4 45 9 2
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
-                                </div>
-                                <div id=" txt_javascript">
+                                <h4>Pseudocode:</h4>
+                                <textarea rows="16" cols="88">
+                                    Variables Tableau T en Numérique
+                                    Variables S,i en Numérique
+                                    Début
+                                        Ecrire "Rang de la valeur à supprimer ?"
+                                        Lire S
+                                        Pour i ← S à N-2
+                                            T(i) ← T(i+1)
+                                        i suivant
+                                        Redim T(N–1)
+                                    Fin
+                                </textarea>
+                            </div>
+                            <div id=" txt_javascript">
 
-                                    <form action="exo_7_4.php" method="POST">
-                                        <div>
-                                            <hr width="75%" size="1px" color="olivedrab" />
-                                            <h3>Tester l'algorithme : </h3>
-                                            <label for="myPhp">"PHP Entrer les notes"
-                                            </label>
-                                            <input type="text" name="myPhp" id="myPhp">
-                                            <div class="myResult" id="div_resultat_php">
-                                                <p><?php echo $sMessage; ?></p>
-                                                <p><?php echo $sMessage2; ?></p>
-                                                <p><?php echo $sMessage3; ?></p>
-                                            </div>
-    
-                                            <div class="myResult" id="div_resultat"></div>
-                                            <div class="myResult" id="div_resultat_js"></div>
-                                            <input type="number" name="nombrePlat" id="nombreP">
-                                            <input type="button" value="Envoyer" id="ok" onclick="Exo_7_1_innerHTML()">
-                                        </div>
+                                <form action="exo_7_4.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <p>
+                                        <div class="myResult" id="div_resultat_js"></div>
+                                        <div class="myResult" id="div_result_js"></div>
+                                        <div class="myResult" id="div_result"></div>
+                                        <div class="myResult" id="div_resultat"></div>
+                                        </p>
+                                        <label for="myVal"> Entrer des valeurs :
+                                        </label>
+                                        <input type="text" name="myVal" id="myVal"><br/>
+                                        <label for="myRang"> Enter Rang de la valeur à supprimer :
+                                        </label>
+                                        <input type="text" name="myRang" id="myRang">
                                         <div class="language">
-                                            <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_7_4_innerHTML()">JS WITH innerHTML</button>
+                                            <button type="button" value="Envoyer" id="lqueryok"
+                                                onclick="Exo_5_8_jquery()">JQUERY</button>
                                         </div>
-                                    </form>
-                                    <div class="language">
-                                        <button class="btn_green" id="btn_js" onClick="Exo_7_4()">JS WITH
-                                            PROMPT</button>
-    
-                                        <button class="btn_green" onClick="Exo_6_3_innerHTML()"> JS WITH
-                                            INNERHTML</button>
-    
-                                        <button class="btn_green" onClick="Exo_6_3_jquery()">JQUERY !</button>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <div class="language">
+                                            <button class="btn_green" id="btn_js" onClick="Exo_7_4()">JS WITH
+                                                PROMPT</button>
+                                        </div>
                                     </div>
-                                </div>
+                                    <hr width="75%" size="1px" color="olivedrab" />
+                                    <label for="valPhp"> Entrer 10 valeurs avec des espaces :
+                                    </label>
+                                    <input type="text" name="valPhp" id="valPhp"><br/>
+                                    <label for="idPhp"> Entrer element to delete :
+                                    </label>
+                                    <input type="text" name="idPhp" id="idPhp">
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                    <div class="myResult" id="div_resultat_php">
+                                        <p><?php echo $sMessage; ?></p>
+                                        <p><?php echo $sMessage2; ?></p>
+                                        <p><?php echo $sMessage3; ?></p>
+                                    </div>
+                                </form>
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -133,15 +186,14 @@ iNumArray.length = [iNumArray-1];
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -192,7 +244,7 @@ iNumArray.length = [iNumArray-1];
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>
