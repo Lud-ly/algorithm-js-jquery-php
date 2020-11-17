@@ -84,7 +84,7 @@
                             </ul>
                             <li><a href="#">Multi dimensionnels</a>
                             <ul>
-                                <li><a href="../saison_8/exo_1.php">Exercice 8.1</a></li>
+                                <li><a href="../saison_8/exo_8_1.php">Exercice 8.1</a></li>
                                 <li><a href="../saison_8/exo_2.php">Exercice 8.2</a></li>
                                 <li><a href="../saison_8/exo_3.php">Exercice 8.3</a></li>
                                 <li><a href="../saison_8/exo_4.php">Exercice 8.4</a></li>

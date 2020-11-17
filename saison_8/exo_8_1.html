@@ -8,15 +8,73 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <!-- <?php include('../commun/header.php');?> -->
+        </header>
+        <script>
+            function Exo_8_1() {
+                //Variable Tableau twoDim(5, 12) en Entier
+                var twoDim = [[], []];
+                console.log(twoDim);
+                //Debut
+                //Pour i ← 0 à 5
+                for (var i = 0; i <= 5; i++) {
+                    twoDim[i] = new Array(6);
+                    for (var j = 0; j <= 12; j++) {
+                        // Pour j ← 0 à 12
+                        twoDim[i][j] = 0;
+                        // twoDim(i, j) ← 0
+                    }// j Suivant
+                    alert(twoDim);
+                } // i Suivant
+                console.log(twoDim);
+
+            }// Fin
+
+            function Exo_8_1_innerHTML() {
+                //Variable Tableau twoDim(5, 12) en Entier
+                var twoDim = [[], []];
+                console.log(twoDim);
+                //Debut
+                //Pour i ← 0 à 5
+                for (var i = 0; i <= 5; i++) {
+                    twoDim[i] = new Array(6);
+                    for (var j = 0; j <= 12; j++) {
+                        // Pour j ← 0 à 12
+                        twoDim[i][j] = 0;
+                        // twoDim(i, j) ← 0
+                    }// j Suivant
+
+                } // i Suivant
+                document.getElementById("div_resultat_js").innerHTML = ("innerHTML");
+                document.getElementById("div_result_js").innerHTML = (twoDim.join("<br/>"));
+            }// Fin
+
+            function Exo_8_1_jquery() {
+                //Variable Tableau twoDim(5, 12) en Entier
+                var twoDim = [[], []];
+                console.log(twoDim);
+                //Debut
+                //Pour i ← 0 à 5
+                for (var i = 0; i <= 5; i++) {
+                    twoDim[i] = new Array(6);
+                    for (var j = 0; j <= 12; j++) {
+                        // Pour j ← 0 à 12
+                        twoDim[i][j] = 0;
+                        // twoDim(i, j) ← 0
+                    }// j Suivant
+
+                } // i Suivant
+                $("#div_resultat_js").html("Jquery");
+               $("#div_result_js").html(twoDim.join("<br/>"));
+            }// Fin
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -34,21 +92,64 @@
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
-                                </div>
+                                <h4>Pseudocode:</h4>
+                                <textarea rows="16" cols="88">
+                                    Tableau twoDim(5, 12) en Entier
+                                    Debut
+                                        Pour i ← 0 à 5
+                                            Pour j ← 0 à 12
+                                                twoDim(i, j) ← 0
+                                            j Suivant
+                                        i Suivant
+                                    Fin
+                                </textarea>
+                            </div>
+                            <div id=" txt_javascript">
+
+                                <form action="exo_8_1.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <p>
+                                        <div class="myResult" id="div_resultat_js"></div>
+                                        <div class="myResult" id="div_result_js"></div>
+                                        <div class="myResult" id="div_result"></div>
+                                        </p>
+                                        <input type="text" name="myVal" id="myVal"
+                                            placeholder="Cliquez sur les boutons.."><br />
+                                        <div class="language">
+                                            <button type="button" value="Envoyer" id="ok"
+                                                onclick="Exo_8_1_innerHTML()">JS WITH innerHTML</button>
+                                            <button type="button" value="Envoyer" id="lqueryok"
+                                                onclick="Exo_8_1_jquery()">JQUERY</button>
+                                        </div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <div class="language">
+                                            <button class="btn_green" id="btn_js" onClick="Exo_8_1()">JS WITH
+                                                PROMPT</button>
+                                        </div>
+                                    </div>
+                                    <hr width="75%" size="1px" color="olivedrab" />
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                    <div class="myResult" id="div_resultat_php">
+                                        <p><?php echo $sMessage; ?></p>
+                                        <p><?php echo $sMessage2; ?></p>
+                                    </div>
+                                </form>
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -70,15 +171,14 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
@@ -129,7 +229,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

@@ -40,15 +40,14 @@
             var S = 0;
             var iNum = 0;
             function Exo_7_4_innerHTML() {
-                if (iNumTab.length <=5) {
+                if (iNumTab.length <= 5) {
                     iNumTab.push(parseInt(document.getElementById("myVal").value));
                     document.getElementById("div_resultat_js").innerHTML = ("Entrer la valeur : " + k);
                     k++;
-
                 }
                 console.log(iNumTab);
 
-                document.getElementById("div_result_js").innerHTML = ("element before deletion"+iNumTab);
+                document.getElementById("div_result_js").innerHTML = ("element before deletion : " + iNumTab);
                 // // Ecrire "Rang de la valeur à supprimer ?"
                 // // Lire S
                 if (iNumTab.length >= 5) {
@@ -61,9 +60,34 @@
                     } // i suivant
                     // // Redim iNumArray(N–1)
                     iNumTab.length = iNumTab.length - 1;
-                    document.getElementById("div_resultat").innerHTML = ("Array elements after deletion : " + iNumTab); 
+                    document.getElementById("div_resultat").innerHTML = ("Array elements after deletion : " + iNumTab);
                 }
-               
+
+            }// Fin
+
+            function Exo_7_4_jquery() {
+
+                if (iNumTab.length <= 5) {
+                    iNumTab.push(parseInt($("#myVal").val()));
+                    $("#div_resultat_js").html("Entrer la valeur : " + k);
+                    k++;
+                }
+                $("#div_result_js").html("element before deletion : " + iNumTab);
+                //Ecrire "Rang de la valeur à supprimer ?"
+                //Lire S
+                if (iNumTab.length >= 5) {
+                    $("#div_resultat").html("Array elements choose deletion : " + iNumTab);
+                    S = (parseInt($("#myRang").val()));
+                    //Pour i ← S à iNumArray-2
+                    for (i = S; i <= iNumTab.length - 2; i++) {
+                        //iNumArray(i) ← iNumArray(i+1)
+                        iNumTab[i] = iNumTab[i + 1];
+                    } // i suivant
+                    //Redim iNumArray(N–1)
+                    iNumTab.length = iNumTab.length - 1;
+                    $("#div_resultat").html("Jquery Array elements after deletion : " + iNumTab);
+                }
+
             }// Fin
         </script>
         <div class="container-fluid ">
@@ -121,7 +145,7 @@
                                         </p>
                                         <label for="myVal"> Entrer des valeurs :
                                         </label>
-                                        <input type="text" name="myVal" id="myVal"><br/>
+                                        <input type="text" name="myVal" id="myVal"><br />
                                         <label for="myRang"> Enter Rang de la valeur à supprimer :
                                         </label>
                                         <input type="text" name="myRang" id="myRang">
@@ -129,7 +153,7 @@
                                             <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_7_4_innerHTML()">JS WITH innerHTML</button>
                                             <button type="button" value="Envoyer" id="lqueryok"
-                                                onclick="Exo_5_8_jquery()">JQUERY</button>
+                                                onclick="Exo_7_4_jquery()">JQUERY</button>
                                         </div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <div class="language">
@@ -140,7 +164,7 @@
                                     <hr width="75%" size="1px" color="olivedrab" />
                                     <label for="valPhp"> Entrer 10 valeurs avec des espaces :
                                     </label>
-                                    <input type="text" name="valPhp" id="valPhp"><br/>
+                                    <input type="text" name="valPhp" id="valPhp"><br />
                                     <label for="idPhp"> Entrer element to delete :
                                     </label>
                                     <input type="text" name="idPhp" id="idPhp">
@@ -162,7 +186,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
                                 <hr size="1px" color="olivedrab" />
@@ -170,13 +194,36 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+    var iNumTab = [];
+    var i = 0;
+    var k = 2;
+    var S = 0;
+    var iNum = 0;
+    function Exo_7_4_innerHTML() {
+        if (iNumTab.length <=5) {
+            iNumTab.push(parseInt(document.getElementById("myVal").value));
+            document.getElementById("div_resultat_js").innerHTML = ("Entrer la valeur : " + k);
+            k++;
+        }
+        console.log(iNumTab);
+
+        document.getElementById("div_result_js").innerHTML = ("element before deletion"+iNumTab);
+        // // Ecrire "Rang de la valeur à supprimer ?"
+        // // Lire S
+        if (iNumTab.length >= 5) {
+            document.getElementById("div_resultat").innerHTML = ("Array elements choose deletion : " + iNumTab);
+            S = (parseInt(document.getElementById("myRang").value));
+            // // Pour i ← S à iNumArray-2
+            for (i = S; i <= iNumTab.length - 2; i++) {
+                //     //   iNumArray(i) ← iNumArray(i+1)
+                iNumTab[i] = iNumTab[i + 1];
+            } // i suivant
+            // // Redim iNumArray(N–1)
+            iNumTab.length = iNumTab.length - 1;
+            document.getElementById("div_resultat").innerHTML = ("Array elements after deletion : " + iNumTab); 
+        }
+        
+    }// Fin
                                     </code>
                                  </pre>
                                 </div>
@@ -199,15 +246,30 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
+    function Exo_7_4_jquery() {
 
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+        if (iNumTab.length <= 5) {
+            iNumTab.push(parseInt($("#myVal").val()));
+            $("#div_resultat_js").html("Entrer la valeur : " + k);
+            k++;
+        }
+        $("#div_result_js").html("element before deletion : " + iNumTab);
+        //Ecrire "Rang de la valeur à supprimer ?"
+        //Lire S
+        if (iNumTab.length >= 5) {
+            $("#div_resultat").html("Array elements choose deletion : " + iNumTab);
+            S = (parseInt($("#myRang").val()));
+            //Pour i ← S à iNumArray-2
+            for (i = S; i <= iNumTab.length - 2; i++) {
+                //iNumArray(i) ← iNumArray(i+1)
+                iNumTab[i] = iNumTab[i + 1];
+            } // i suivant
+            //Redim iNumArray(N–1)
+            iNumTab.length = iNumTab.length - 1;
+            $("#div_resultat").html("Jquery Array elements after deletion : " + iNumTab);
+        }
+
+    }// Fin
 
                                     </code>
                                  </pre>
@@ -232,8 +294,34 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+    $sMessage= "";
+    $sMessage2= "";
+    $sMessage3= "";
+    
+    $iNumTab = [];
+    $i = 2;
+    $S = 0;
+    $iNum = 0;
+    // SI $_POST["valPhp"] EXISTE ET QUE $_POST["valPhp"] N EST PAS VIDE ALORS
+        if ((isset($_POST["valPhp"])) && (!(empty($_POST["valPhp"]))))
+        {
+        
+        $iNumTab = explode(" ",$_POST["valPhp"]);
+    
+        $sMessage2 = ("Array elements choose deletion : " . implode("," ,$iNumTab));
+        $S = $_POST["idPhp"];
+    
+        // Pour i ← S à iNumArray-2
+        for ($i = $S; $i < count($iNumTab)-2; $i++) {
+        //iNumArray(i) ← iNumArray(i+1)
+            $iNumTab[$i] = $iNumTab[$i + 1];
+        } // i suivant
+    
+        //Redim iNumArray(N–1)
+        count($iNumTab)-1;
+        $sMessage3 = ("Array elements after deletion : " . implode("," ,$iNumTab)); 
+    
+    }// Fin
                 
                                     </code>
                                  </pre>

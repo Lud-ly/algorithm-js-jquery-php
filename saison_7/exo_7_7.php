@@ -19,7 +19,7 @@ if ((isset($_POST["myVal"])) && ((empty($_POST["myVal"]))))
 	count($t3,$mn);
    
 
-	while ($i <= $m && $j <= $n) {
+	while ($i < $m && $j < $n) {
 		if ($t1[$i] < $t2[$j]) {
 			$t3[$k++] = $t1[$i++];
 		}
@@ -27,7 +27,7 @@ if ((isset($_POST["myVal"])) && ((empty($_POST["myVal"]))))
 			$t3[$k++] = $t2[$j++];
 		}
 	}
-var_dump($t3);
+
 	$sMessage = ("Tableau 1 : " . implode("," ,$t1));
 	$sMessage2 = ("Tableau 2 : " .  implode("," ,$t2));
 	$sMessage3 = ("Tableau 3 : " . implode("," ,$t3));

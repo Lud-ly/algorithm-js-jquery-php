@@ -20,6 +20,7 @@
             function Exo_7_2() {
                 //  var aTableau = [];
                 var aTableau = [7, 84, 1, 69, 21, 18, 9, 98];
+                alert("Mon tableau initial : " + aTableau);
                 var ilPermute = true;
                 // TantQue Yapermute
                 while (ilPermute) {
@@ -32,28 +33,20 @@
                             aTableau[i] = aTableau[i - 1];
                             aTableau[i - 1] = temp;
                             ilPermute = true;
-                            // Finsi
-                        }
-                        // i suivant
-                    }
-                    // FinTantQue
-                    // FIN
-                }
+                           
+                        } // Finsi
+                    } // i suivant
+                }// FinTantQue
+                alert("Mon tableau trié : " + aTableau);
+            }// FIN
 
-                alert("Mon tableau trié : ");
-                for (i = 0; i <= 7; i++) {
-                    alert(aTableau[i] + " ");
-                }
-                alert(aTableau);
-            }
-            
-            var k =2;
+            var k = 2;
             function Exo_7_2_innerHTML() {
                 //  var iTab = [];
-                if(k<=5){
-                 iTab.push(document.getElementById("myVal").value);
-                 document.getElementById("div_resultat_js").innerHTML = ("Entrer la valeur : " + k);
-                 k++;
+                if (k <= 5) {
+                    iTab.push(document.getElementById("myVal").value);
+                    document.getElementById("div_resultat_js").innerHTML = ("Entrer la valeur : " + k);
+                    k++;
                 }
                 document.getElementById("div_resultat_js").innerHTML = (iTab);
                 var Permute = true;
@@ -69,8 +62,8 @@
                             iTab[i] = iTab[i - 1];
                             iTab[i - 1] = temp;
                             Permute = true;
-                            // Finsi
-                        }
+                            
+                        }// Finsi
                     } // i suivant
                 }// FinTantQue
 
@@ -80,19 +73,19 @@
 
             var positionMax;
             var temp;
-            var iTab=[];
-            var j=2;
+            var iTab = [];
+            var j = 2;
             function Exo_7_2_innerHTML_insert() {
                 //  var iTab = [];
-                if(j<=5){
-                 iTab.push(document.getElementById("myVal").value);
-                 document.getElementById("div_resultat_js").innerHTML = ("Entrer la valeur : " +j);
-                 j++;
+                if (j <= 5) {
+                    iTab.push(document.getElementById("myVal").value);
+                    document.getElementById("div_resultat_js").innerHTML = ("Entrer la valeur : " + j);
+                    j++;
                 }
-               
+
                 for (i = 0; i <= iTab.length - 2; i++) {
                     positionMax = i;
-                    for (j = i + 1; j <= iTab.length-1; j++) {
+                    for (j = i + 1; j <= iTab.length - 1; j++) {
                         if (iTab[j] > iTab[positionMax]) {
                             positionMax = j;
                         }
@@ -131,8 +124,25 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>a faire
-                                </p>
+                                <textarea rows="18" cols="88">
+                                    Variables Tableau iTab en Numérique
+                                    Variable booléen Permute
+                                    Variables positionMax,i,j,temp en Numérique
+                                    Début
+                                        Permute ← Vrai
+                                        TantQue Permute
+                                            Permute ← Faux
+                                            Pour i ← 0 à N - 2
+                                                Si t(i) < t(i + 1) Alors 
+                                                    temp ← t(i) 
+                                                    t(i) ← t(i + 1) 
+                                                    t(i + 1) ← temp 
+                                                    Permute ← Vrai
+                                                Finsi 
+                                            i suivant 
+                                        FinTantQue 
+                                    Fin 
+                                </textarea>
                             </div>
                             <div id=" txt_javascript">
 
@@ -143,7 +153,7 @@
                                         <label for="valPhp">"PHP Entrer des valeurs"
                                         </label>
                                         <input type="text" name="valPhp" id="valPhp">
-                                       <div class="myResult" id="div_resultat_php">
+                                        <div class="myResult" id="div_resultat_php">
                                             <p><?php echo $sMessage; ?></p>
                                             <p><?php echo $sMessage2; ?></p>
                                             <p><?php echo $sMessage3; ?></p>
@@ -167,7 +177,8 @@
 
                                     <button class="btn_green" onClick="Exo_7_2_innerHTML()"> TRI_A_BULLES JS</button>
 
-                                    <button class="btn_green" onClick="Exo_7_2_innerHTML_insert()">TRI_INSERTION JS</button>
+                                    <button class="btn_green" onClick="Exo_7_2_innerHTML_insert()">TRI_INSERTION
+                                        JS</button>
                                 </div>
                             </div>
                             <div class="card-header" id="headingOne">
@@ -186,13 +197,65 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+    var k = 2;
+    function Exo_7_2_innerHTML() {
+        //  var iTab = [];
+        if (k <= 5) {
+            iTab.push(document.getElementById("myVal").value);
+            document.getElementById("div_resultat_js").innerHTML = ("Entrer la valeur : " + k);
+            k++;
+        }
+        document.getElementById("div_resultat_js").innerHTML = (iTab);
+        var Permute = true;
+        // TantQue Permute
+        while (Permute) {
+            Permute = false;
+            // Pour i = 0 à 6
+            for (i = 0; i <= iTab.length; i++) {
+                // Si aTableau[i] > aTableau[i+1] alors
+
+                if (iTab[i] > iTab[i - 1]) {
+                    temp = iTab[i];
+                    iTab[i] = iTab[i - 1];
+                    iTab[i - 1] = temp;
+                    Permute = true;
+                    // Finsi
+                }
+            } // i suivant
+        }// FinTantQue
+
+        document.getElementById("div_resultat").innerHTML = ("Mon tableau tri à bulles : ");
+        document.getElementById("div_result").innerHTML = (iTab);
+    }// FIN
+
+    ---------------------------------------Insertion---------------------------------------------------------
+    var positionMax;
+    var temp;
+    var iTab = [];
+    var j = 2;
+    function Exo_7_2_innerHTML_insert() {
+        //  var iTab = [];
+        if (j <= 5) {
+            iTab.push(document.getElementById("myVal").value);
+            document.getElementById("div_resultat_js").innerHTML = ("Entrer la valeur : " + j);
+            j++;
+        }
+
+        for (i = 0; i <= iTab.length - 2; i++) {
+            positionMax = i;
+            for (j = i + 1; j <= iTab.length - 1; j++) {
+                if (iTab[j] > iTab[positionMax]) {
+                    positionMax = j;
+                }
+            }
+            temp = iTab[positionMax];
+            iTab[positionMax] = iTab[i];
+            iTab[i] = temp;
+        }
+
+        document.getElementById("div_resultat").innerHTML = ("Mon tableau tri par insertion : ");
+        document.getElementById("div_result").innerHTML = (iTab);
+    }// FIN
                                     </code>
                                  </pre>
                                 </div>
@@ -248,9 +311,35 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
-                
+    $sMessage= "";
+    $sMessage2= "";
+    $sMessage3= "";
+    
+    // SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"] N EST PAS VIDE ALORS
+    if ((isset($_POST["valPhp"])) && (!(empty($_POST["valPhp"]))))
+    {
+    $positionMax;
+    $temp;
+    
+        //  var iTab = [];
+        $iTab = explode(" ",$_POST["valPhp"]);
+        $sMessage = (implode("," ,$iTab));
+        for ($i = 0; $i <= count($iTab) - 2; $i++) {
+            $positionMax = $i;
+            for ($j = $i + 1; $j <=  count($iTab) - 1; $j++) {
+                if ($iTab[$j] > $iTab[$positionMax]) {
+                    $positionMax = $j;
+                }
+            }
+            $temp = $iTab[$positionMax];
+            $iTab[$positionMax] = $iTab[$i];
+            $iTab[$i] = $temp;
+        }
+    
+        $sMessage2 = ("Mon tableau tri par insertion : ");
+        $sMessage3 = (implode("," ,$iTab));
+    }// FIN
+
                                     </code>
                                  </pre>
                                 </div>
