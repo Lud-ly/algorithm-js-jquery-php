@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  ng-app='ngCheckers' lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,15 +9,137 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
     <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" href="../css/ngCheckers.css">
 </head>
 
-<body>
+<body ng-controller="checkersCtrl">
 <div class="home">
     <header>
     <?php include('../commun/header.php');?>
     </header>
+    <script>
+        /* function Exo_8_7_innerHTML() {
+    var i = 0;
+    var j= 0;
+   var pion_x;
+   var pion_y;
+   var twoDim = [[], []];
+			console.log(twoDim);
+			//Debut
+			//Pour i ← 0 à 5
+			for (var i = 0; i <10; i++) {
+				twoDim[i] = new Array(10);
+				for (var j = 0; j < 10; j++) {
+					// Pour j ← 0 à 12
+					twoDim[i][j] = 0;
+				   
+					// twoDim(i, j) ← 0
+				}// j Suivant
+
+			} // i Suivant
+		  
+		   alert("div_resultat_js").innerHTML=(twoDim.join("<br/>"));
+  
+	// pion_x = checkLine(res)-1;
+	// pion_y = checkCol(res)-1;
+	// twoDim[pion_x][pion_y] = 1;
+	// displayBoard();
+	// testMove(checkMove(res),pion_x,pion_y);
+
+	//end of for i
+
+
+}
+
+// function testMove( move,pion_x,pion_y){
+//     var res=0;
+//     var new_x,new_y;
+//    var correct = true;
+//     if(move==0){
+//         new_x=pion_x-1;
+//         new_y=pion_y-1;
+//     }
+//     else if(move==1){
+//         new_x=pion_x-1;
+//         new_y=pion_y+1;
+//     }
+//     else if(move==2){
+//         new_x=pion_x+1;
+//         new_y=pion_y-1;
+//     }
+//     else {
+//         new_x=pion_x+1;
+//         new_y=pion_y+1;
+//     }
+//     if (new_x <0 || new_x>9){
+//         correct = false;
+//     } else if(new_y <0 || new_y>9) {
+//         correct = false;
+//     }
+//     if(correct) {
+//         twoDim[pion_x][pion_y]=0;
+//         twoDim[new_x][new_y]=1;
+//         displayBoard();
+//     }
+//     else{
+//        alert("mouvement impossible");
+//     }
+
+// }
+// function checkLine( res ){
+//     correct = false;
+//    var res = 0;
+//     while(!correct) {
+//         res = (parseInt(prompt("Sur quelle ligne se trouve votre pion?")));
+	   
+//         if(res > 0 && res <=10) {
+//             correct = true;
+//         }
+//     }
+//     return res;
+// }
+// function checkCol( res ){
+//     correct = false;
+//    var res = 0;
+//     while(!correct) {
+	   
+//         res = (parseInt(prompt("Sur quelle colonne se trouve votre pion?")));
+//         if(res > 0 && res <=10) {
+//             correct = true;
+//         }
+//     }
+//     return res;
+// }
+// function checkMove( res) {
+//    correct = false;
+//     var res = 0;
+//     while (!correct) {
+//         res = (parseInt(prompt("Quel mouvement voulez-vous faire? 0 , 1 , 2 ou 3 : ")));
+//         if(res >=0 && res<=3){
+//             correct=true;
+//         }
+//     }
+//     //retourne le mouvement 0,1,2,3
+//     return res;
+// }
+
+// function displayBoard() {
+   
+//     for (var x = 0; x<10;x++) {
+	   
+//         for (var y =0; y<10;y++ ) {
+//           alert(twoDim[x][y] ) ;
+		   
+//         }
+	  
+//     }
+	
+// }
+
+//*/
+    </script>
     <div class="container-fluid ">
-            <h4>ALGORITHME ET PSEUDO-CODE:</h4>
+         <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
                 <div class="col-md-2 myAside">
@@ -45,6 +167,26 @@
                                     <p>a faire
                                     </p>
                                 </div>
+                                <h3>
+                                    <div>Player Turn : {{player}}</div>
+                                    <div>Red Score : {{redScore}}</div>
+                                    <div>Black Score : {{blackScore}}</div>
+                                  </h3>
+                                <div id="gameContainer">
+                                    <div>
+                                        <div class="row" ng-repeat="row in board">
+                                            <div class="square" ng-style="setClass(square)" ng-repeat="square in row track by $index" ng-click="select(square)">
+                                              <div ng-style="setStyling(square)" class="circle">
+                                                <span>{{square.isKing ? 'K' : ''}}</span>
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  
+
+                                 
+                               
                             <div class="card-header" id="headingOne">
                                 <hr width="75%" size="1px" color="olivedrab" />
                                 <p>Sous le capot</p>
@@ -55,7 +197,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
                                
                                 <hr size="1px" color="olivedrab" />
@@ -145,6 +287,8 @@
             </div>
         </div>
     </div>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/ngCheckers.js"></script> 
     <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
