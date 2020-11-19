@@ -1,14 +1,15 @@
 /*-------GENERAL--------*/
 body{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  background-image:linear-gradient(olivedrab ,#fff);
+  background-image:linear-gradient(rgba(113, 197, 30, 0.787) ,#fff);
   width: 100%;
 }
-h3,h4,h5,p{
+h3,h4,h5,p,div{
   display: block;
   font-family: 'Piazzolla', serif;
   letter-spacing: 1px;
   color:#333A40;
+  font-weight: 800;
  }
 li{
   list-style: none;
@@ -153,8 +154,8 @@ a{
     }
     #menu-accordeon li {
       background-color:#729EBF; 
-      background-image:-webkit-linear-gradient(top, olivedrab 0%,#c5e4c5 100%);
-      background-image: linear-gradient(to bottom, olivedrab 0%, #c5e4c5 100%);
+      background-image:-webkit-linear-gradient(top,chartreuse 0%, rgba(128, 255, 0, 0.192) 100%);
+      background-image: linear-gradient(to bottom, chartreuse 0%,  rgba(128, 255, 0, 0.192) 100%);
       border-radius: 6px;
       margin-bottom:2px;
       box-shadow: 2px 2px 2px #999;
@@ -182,10 +183,10 @@ a{
       font-size:1em
     }
     #menu-accordeon li:hover {
-       background: #c5e4c5;
+       background: chartreuse;
     }
     #menu-accordeon li li:hover {
-       background:#c5e4c5;
+       background:chartreuse;
     }
     #menu-accordeon ul li:last-child {
        border-radius: 0 0 6px 6px;
@@ -205,16 +206,15 @@ a{
         margin:20px;
         height: 60px;
         width: 120px;
-        background-color:olivedrab; 
-        background-image:-webkit-linear-gradient(top, olivedrab 0%, #c5e4c5 100%);
-        background-image: linear-gradient(to bottom, olivedrab 0%, #c5e4c5 100%);
+        background-color:#729EBF; 
+        background-image:-webkit-linear-gradient(top, chartreuse 0%,rgba(128, 255, 0, 0.192) 100%);
+        background-image: linear-gradient(to bottom, chartreuse 0%,rgba(128, 255, 0, 0.192) 100%);
         border-radius: 6px;
         box-shadow: 3px 3px 3px #999;
         border:solid 1px #333A40
       }
       .language button:hover{
-        background: #c5e4c5;
-        color: #000;
+        background: chartreuse;
       }
       .language input{
         margin-top: 30px;
@@ -247,22 +247,22 @@ a{
   }
   .cours a{
     color: #000;
-    margin:80px 50px;
+    margin:80px 0px;
     text-align: center;
     padding: 7px 20px!important;
     height: 40px!important;
     width: 100%!important;
     text-decoration: none;
     background-color:olivedrab; 
-    background-image:-webkit-linear-gradient(top, olivedrab 0%, #c5e4c5 100%);
-    background-image: linear-gradient(to bottom, olivedrab 0%, #c5e4c5 100%);
+    background-image:-webkit-linear-gradient(top, chartreuse 0%, rgba(128, 255, 0, 0.192) 100%);
+    background-image: linear-gradient(to bottom, chartreuse 0%, rgba(128, 255, 0, 0.192) 100%);
     border-radius: 6px;
     box-shadow: 3px 3px 3px #999;
     border:solid 1px #333A40
   }
     .cours button:hover,.cours a:hover{
-      background: #c5e4c5;
-      color: #000;
+      background: rgb(30, 31, 29);
+      color: #fff;
     }
     /*-----------FOOTER----------*/
 footer{
@@ -284,7 +284,7 @@ footer{
   height: 150px;
 }
    footer svg{
-    color: olivedrab;
+    color: chartreuse;
 
 
    }/* Tablettes 'n' Mobiles */

@@ -42,7 +42,7 @@
                 console.log(twoDim);
                 //Debut
                 //Pour i ← 0 à 5
-                for (var i = 0; i <= 5; i++) {
+                for (var i = 0; i <= 8; i++) {
                     twoDim[i] = new Array(6);
                     for (var j = 0; j <= 12; j++) {
                         // Pour j ← 0 à 12
@@ -61,9 +61,9 @@
                 console.log(twoDim);
                 //Debut
                 //Pour i ← 0 à 5
-                for (var i = 0; i <= 5; i++) {
+                for (var i = 0; i <= 12; i++) {
                     twoDim[i] = new Array(6);
-                    for (var j = 0; j <= 12; j++) {
+                    for (var j = 0; j <= 5; j++) {
                         // Pour j ← 0 à 12
                         twoDim[i][j] = 0;
                         // twoDim(i, j) ← 0
@@ -123,11 +123,6 @@
                                             <button type="button" value="Envoyer" id="lqueryok"
                                                 onclick="Exo_8_1_jquery()">JQUERY</button>
                                         </div>
-                                        <hr width="75%" size="1px" color="olivedrab" />
-                                        <div class="language">
-                                            <button class="btn_green" id="btn_js" onClick="Exo_8_1()">JS WITH
-                                                PROMPT</button>
-                                        </div>
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />
                                     <div class="language">
@@ -135,11 +130,18 @@
                                     </div>
                                     <div class="myResult" id="div_resultat_php">
                                         <p><?php echo $sMessage; ?></p>
-                                        <p><?php echo $sMessage2; ?></p>
+                                        <!-- <p><?php echo $sMessage2; ?></p> -->
+                                    </div>
+                                    <hr width="75%" size="1px" color="olivedrab" />
+                                    <div class="language">
+                                        <button class="btn_green" id="btn_js" onClick="Exo_8_1()">JS WITH
+                                            PROMPT</button>
                                     </div>
                                 </form>
                             </div>
                             <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Sous le capot</p>
                                 <div class="language">
                                     <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
                                         aria-expanded="true" aria-controls="collapseOne">
@@ -147,7 +149,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
                                 <hr size="1px" color="olivedrab" />

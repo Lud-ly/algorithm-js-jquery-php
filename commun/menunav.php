@@ -85,12 +85,12 @@
                             <li><a href="#">Multi dimensionnels</a>
                             <ul>
                                 <li><a href="../saison_8/exo_8_1.php">Exercice 8.1</a></li>
-                                <li><a href="../saison_8/exo_2.php">Exercice 8.2</a></li>
-                                <li><a href="../saison_8/exo_3.php">Exercice 8.3</a></li>
-                                <li><a href="../saison_8/exo_4.php">Exercice 8.4</a></li>
-                                <li><a href="../saison_8/exo_5.php">Exercice 8.5</a></li>
-                                <li><a href="../saison_8/exo_6.php">Exercice 8.6</a></li>
-                                <li><a href="../saison_8/exo_7.php">Exercice 8.7</a></li>
+                                <li><a href="../saison_8/exo_8_2.php">Exercice 8.2</a></li>
+                                <li><a href="../saison_8/exo_8_3.php">Exercice 8.3</a></li>
+                                <li><a href="../saison_8/exo_8_4.php">Exercice 8.4</a></li>
+                                <li><a href="../saison_8/exo_8_5.php">Exercice 8.5</a></li>
+                                <li><a href="../saison_8/exo_8_6.php">Exercice 8.6</a></li>
+                                <li><a href="../saison_8/exo_8_7.php">Exercice 8.7</a></li>
                             </ul>
                             <li><a href="#">Saison 9</a>
                             <ul>

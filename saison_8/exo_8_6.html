@@ -23,19 +23,18 @@
                 var j;
                 var iMax;
                 var jMax;
-                var T = [[1,50,16,2,55,9,2,35,24,25,15,2], [7,8,65,23,54,2,5,6]];
+                var T = [[1000, 50, 16, 2, 55, 9, 2, 30, 24, 25, 15, 2], [70, 8, 50, 23, 54, 2, 5, 600]];
+                alert("Voici le tableau 2dim: " + T);
                 // Tableau T(12, 8) en Numérique
                 // Debut
                 // iMax ← 0
                 // jMax ← 0
                 iMax = 0;
                 jMax = 0;
-                T[i]=T[0];
-                T[j]=T[1];
-                for (i = 0; i < 12; i++) {
-                    // Pour i ← 0 à 12
-                    for (j = 0; j < 8; j++) {
-                        // Pour j ← 0 à 8
+                // Pour i ← 0 à 12
+                for (i = 0; i < T.length; i++) {
+                    // Pour j ← 0 à 8
+                    for (j = 0; j < T[1].length; j++) {
                         // Si T(i, j) > T(iMax, jMax) Alors
                         if (T[i][j] > T[iMax][jMax]) {
                             // iMax ← i
@@ -43,15 +42,87 @@
                             iMax = i;
                             jMax = j;
                         } // FinSi
-                    }   // j Suivant
-                }// i Suivant
+                    }// j Suivant
+                }// i Suivant   
 
                 // Ecrire "Le plus grand élément est ", T(iMax, jMax)
                 // Ecrire "Il se trouve aux indices ", iMax, "; ", jMax
                 alert("Le plus grand élément est " + T[iMax][jMax]);
-                alert("Il se trouve aux indices " + iMax + "; " + jMax)
-               
+                alert("Il se trouve dans le tableau " + (iMax + 1) + " Position " + (jMax + 1))
             } // Fin
+
+            function Exo_8_6_innerHTML() {
+                // Variables i, j, iMax, jMax en Numérique
+                // Tableau T(12, 8) en Numérique
+                var i;
+                var j;
+                var iMax = 0;
+                var jMax = 0;
+                var iMin = 0;
+                var jMin = 0;
+                var T = [[10, 50, 16, 152, 55, 9, 24, 30, 124, 25, 15, 32], [70, 8, 50, 23, 54, 22, 51, 60]];
+                document.getElementById("div_resultat_js").innerHTML = ("Tableau 2dim: " + "[[" + T[0] + "],[" + T[1] + "]]");
+                // Debut
+                // Pour i ← 0 à 12
+                for (i = 0; i < T.length; i++) {
+                    // Pour j ← 0 à 8
+                    for (j = 0; j < T[1].length; j++) {
+                        // Si T(i, j) > T(iMax, jMax) Alors
+                        if (T[i][j] > T[iMax][jMax]) {
+                            // iMax ← i
+                            // jMax ← j
+                            iMax = i;
+                            jMax = j;
+                        } // FinSi
+                        if (T[i][j] < T[iMin][jMin]) {
+                            // iMin ← i
+                            // jMin ← j
+                            iMin = i;
+                            jMin = j;
+                        } // FinSi
+                    }// j Suivant
+                }// i Suivant   
+
+                // Ecrire "Le plus grand élément est ", T(iMax, jMax)
+                // Ecrire "Il se trouve aux indices ", iMax, "; ", jMax
+                document.getElementById("div_result_js").innerHTML = ("Le plus grand élément est " + T[iMax][jMax] + ", le plus petit élément est " + T[iMin][jMin]);
+                document.getElementById("div_result").innerHTML = ("Le grand se trouve dans le tableau " + (iMax + 1) + " position " + (jMax + 1) + ", le petit se trouve dans le tableau " + (iMin + 1) + " Position " + (jMin + 1));
+            } // Fin
+
+            function Exo_8_6_jquery() {
+                // Variables i, j, iMax, jMax en Numérique
+                var i;
+                var j;
+                var iMax;
+                var jMax;
+                var T = [[26, 10, 17, 2, 5, 9, 24, 30, 24, 25, 15, 2], [70, 8, 50, 23, 54, 2, 5, 60]];
+                $("#div_resultat_js").html("Tableau 2dim: " + "[[" + T[0] + "],[" + T[1] + "]]");
+                // Tableau T(12, 8) en Numérique
+                // Debut
+                // iMax ← 0
+                // jMax ← 0
+                iMax = 0;
+                jMax = 0;
+                // Pour i ← 0 à 12
+                for (i = 0; i < T.length; i++) {
+                    // Pour j ← 0 à 8
+                    for (j = 0; j < T[1].length; j++) {
+                        // Si T(i, j) > T(iMax, jMax) Alors
+                        if (T[i][j] > T[iMax][jMax]) {
+                            // iMax ← i
+                            // jMax ← j
+                            iMax = i;
+                            jMax = j;
+                        } // FinSi
+                    }// j Suivant
+                }// i Suivant   
+
+                // Ecrire "Le plus grand élément est ", T(iMax, jMax)
+                // Ecrire "Il se trouve aux indices ", iMax, "; ", jMax
+                $("#div_result_js").html("Jquery Le plus grand élément est " + T[iMax][jMax]);
+                $("#div_result").html("Il se trouve dans le tableau " + (iMax + 1) + " Position " + (jMax + 1))
+            } // Fin
+
         </script>
         <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
@@ -75,21 +146,21 @@
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
                                 <textarea rows="18" cols="88">
-                                     Variables i, j, iMax, jMax en Numérique
-                                     Tableau T(12, 8) en Numérique
-                                     Debut
-                                        iMax ← 0
-                                        jMax ← 0
-                                        Pour i ← 0 à 12
-                                            Pour j ← 0 à 8
-                                                Si T(i, j) > T(iMax, jMax) Alors
-                                                    iMax ← i
-                                                    jMax ← j
-                                                FinSi
-                                            j Suivant
-                                        i Suivant
-                                        Ecrire "Le plus grand élément est ", T(iMax, jMax)
-                                        Ecrire "Il se trouve aux indices ", iMax, "; ", jMax
+                                    Variables i, j, iMax, jMax en Numérique
+                                    Tableau T(12, 8) en Numérique
+                                    Debut
+                                            iMax ← 0
+                                            jMax ← 0
+                                            Pour i ← 0 à 12
+                                                Pour j ← 0 à 8
+                                                    Si T(i, j) > T(iMax, jMax) Alors
+                                                        iMax ← i
+                                                        jMax ← j
+                                                    FinSi
+                                                j Suivant
+                                            i Suivant
+                                            Ecrire "Le plus grand élément est ", T(iMax, jMax)
+                                            Ecrire "Il se trouve aux indices ", iMax, "; ", jMax
                                     Fin
                                 </textarea>
                             </div>
@@ -103,14 +174,14 @@
                                         <div class="myResult" id="div_resultat_js"></div>
                                         <div class="myResult" id="div_result_js"></div>
                                         <div class="myResult" id="div_result"></div>
+                                        <div class="myResult" id="div_resultat"></div>
+                                        <div class="myResult" id="resultat"></div>
                                         </p>
-                                        <input type="text" name="myVal" id="myVal"
-                                            placeholder="Cliquez sur les boutons.."><br />
                                         <div class="language">
                                             <button type="button" value="Envoyer" id="ok"
-                                                onclick="Exo_8_1_innerHTML()">JS WITH innerHTML</button>
+                                                onclick="Exo_8_6_innerHTML()">JS WITH innerHTML</button>
                                             <button type="button" value="Envoyer" id="lqueryok"
-                                                onclick="Exo_8_1_jquery()">JQUERY</button>
+                                                onclick="Exo_8_6_jquery()">JQUERY</button>
                                         </div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <div class="language">
@@ -119,16 +190,20 @@
                                         </div>
                                     </div>
                                     <hr width="75%" size="1px" color="olivedrab" />
+                                    <input type="text" name="myVal" id="myVal" placeholder="Cliquez le bouton.."><br />
                                     <div class="language">
                                         <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                     </div>
                                     <div class="myResult" id="div_resultat_php">
                                         <p><?php echo $sMessage; ?></p>
                                         <p><?php echo $sMessage2; ?></p>
+                                        <p><?php echo $sMessage3; ?></p>
                                     </div>
                                 </form>
                             </div>
                             <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Sous le capot</p>
                                 <div class="language">
                                     <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
                                         aria-expanded="true" aria-controls="collapseOne">
@@ -136,7 +211,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
                                 <hr size="1px" color="olivedrab" />
@@ -144,13 +219,39 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+    function Exo_8_6_innerHTML() {
+        // Variables i, j, iMax, jMax en Numérique
+        var i;
+        var j;
+        var iMax;
+        var jMax;
+        var T = [[1000,50,16,2,55,9,2,30,24,25,15,2],[70,8,50,23,54,2,5,600]];
+        document.getElementById("div_resultat_js").innerHTML = ("Voici le tableau 2dim: " + T);
+        // Tableau T(12, 8) en Numérique
+        // Debut
+        // iMax ← 0
+        // jMax ← 0
+        iMax = 0;
+        jMax = 0;
+            // Pour i ← 0 à 12
+        for (i = 0; i < T.length; i++) {
+        // Pour j ← 0 à 8
+            for (j = 0; j < T[1].length; j++) {
+                // Si T(i, j) > T(iMax, jMax) Alors
+                if (T[i][j] > T[iMax][jMax]) {
+                    // iMax ← i
+                    // jMax ← j
+                    iMax = i;
+                    jMax = j;
+                } // FinSi
+            }// j Suivant
+        }// i Suivant   
+    
+        // Ecrire "Le plus grand élément est ", T(iMax, jMax)
+        // Ecrire "Il se trouve aux indices ", iMax, "; ", jMax
+        document.getElementById("div_result_js").innerHTML =("Le plus grand élément est " + T[iMax][jMax]);
+        document.getElementById("div_result").innerHTML =("Il se trouve dans le tableau " + (iMax+1) + " Position " + (jMax+1))
+    } // Fin
                                     </code>
                                  </pre>
                                 </div>
@@ -173,15 +274,39 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
+function Exo_8_6_jquery() {
+    // Variables i, j, iMax, jMax en Numérique
+    var i;
+    var j;
+    var iMax;
+    var jMax;
+    var T = [[1000,50,16,2,55555,9,2,30,24,25,15,2],[70,8,50,23,54,2,5,6000]];
+    $("#div_resultat_js").html("Voici le tableau 2dim: " + T);
+    // Tableau T(12, 8) en Numérique
+    // Debut
+    // iMax ← 0
+    // jMax ← 0
+    iMax = 0;
+    jMax = 0;
+        // Pour i ← 0 à 12
+    for (i = 0; i < T.length; i++) {
+    // Pour j ← 0 à 8
+        for (j = 0; j < T[1].length; j++) {
+            // Si T(i, j) > T(iMax, jMax) Alors
+            if (T[i][j] > T[iMax][jMax]) {
+                // iMax ← i
+                // jMax ← j
+                iMax = i;
+                jMax = j;
+            } // FinSi
+        }// j Suivant
+    }// i Suivant   
 
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+    // Ecrire "Le plus grand élément est ", T(iMax, jMax)
+    // Ecrire "Il se trouve aux indices ", iMax, "; ", jMax
+    $("#div_result_js").html("Jquery Le plus grand élément est " + T[iMax][jMax]);
+    $("#div_result").html("Il se trouve dans le tableau " + (iMax+1) + " Position " + (jMax+1))
+} // Fin
 
                                     </code>
                                  </pre>
@@ -206,9 +331,48 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
-                
+    $sMessage= "";
+    $sMessage2= "";
+    $sMessage3= "";
+        // Variables i, j, iMax, jMax en Numérique
+        // SI $_POST["whyNot"] EXISTE ET QUE $_POST["whyNot"]  EST  VIDE ALORS
+    if ((isset($_POST["myVal"])) && ((empty($_POST["myVal"]))))
+    {
+        $i;
+        $j;
+        $iMax;
+        $jMax;
+        $T = 
+        [
+            [14,30,16,22,35,9,21,30,24,25,15,2],
+            [27,8,15,23,18,28,17,36]
+        ];
+        $sMessage = ("Tableau 2dim: " . "[[" . implode("," ,$T[0]) . "],[" . implode("," ,$T[1]) . "]]");
+        // Tableau T(12, 8) en Numérique
+        // Debut
+            // iMax ← 0
+            // jMax ← 0
+            $iMax = 0;
+            $jMax = 0;
+            // Pour i ← 0 à 12
+            for ($i = 0; $i < count($T); $i++) {
+            // Pour j ← 0 à 8
+            for ($j = 0; $j < count($T[1]); $j++) {
+                // Si T(i, j) > T(iMax, jMax) Alors
+                if ($T[$i][$j] > $T[$iMax][$jMax]) {
+                        // iMax ← i
+                        // jMax ← j
+                    $iMax = $i;
+                    $jMax = $j;
+                    } // FinSi
+                }// j Suivant
+            }// i Suivant   
+
+            // Ecrire "Le plus grand élément est ", T(iMax, jMax)
+            // Ecrire "Il se trouve aux indices ", iMax, "; ", jMax
+            $sMessage2 =("Le plus grand élément est " . $T[$iMax][$jMax]);
+            $sMessage3 =("Il se trouve dans le tableau " . ($iMax+1) . " position " . ($jMax+1));
+    }   // Fin
                                     </code>
                                  </pre>
                                 </div>
