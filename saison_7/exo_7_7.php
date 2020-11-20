@@ -15,12 +15,12 @@ if ((isset($_POST["myVal"])) && ((empty($_POST["myVal"]))))
 	$t2 = [2, 4, 6, 8, 10];
 	$m = count($t1);
 	$n = count($t2);
-	$mn=$m+$n;
+	$mn=($m+$n);
 	count($t3,$mn);
    
 
-	while ($i < $m && $j < $n) {
-		if ($t1[$i] < $t2[$j]) {
+	while ($i <= $m && $j <= $n) {
+		if ($t1[$i] <= $t2[$j]) {
 			$t3[$k++] = $t1[$i++];
 		}
 		else {

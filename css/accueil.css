@@ -55,8 +55,12 @@ a{
    .navbar-toggler-icon{
      color:olivedrab!important;
    }
-  
-
+   .fixed-top ul {
+     width: 100px!important;
+     display:flex;
+     flex-direction: row;
+   }
+ 
 .myAside{
     height: 1000px;
     box-shadow: 0px 0px 3px 2px #999;
@@ -154,10 +158,9 @@ a{
     }
     #menu-accordeon li {
       background-color:#729EBF; 
-      background-image:-webkit-linear-gradient(top,chartreuse 0%, rgba(128, 255, 0, 0.192) 100%);
-      background-image: linear-gradient(to bottom, chartreuse 0%,  rgba(128, 255, 0, 0.192) 100%);
+      background-image:-webkit-linear-gradient(top,#71c51ec9 0%, rgba(128, 255, 0, 0.192) 100%);
+      background-image: linear-gradient(to bottom, #71c51ec9 0%,  rgba(128, 255, 0, 0.192) 100%);
       border-radius: 6px;
-      margin-bottom:2px;
       box-shadow: 2px 2px 2px #999;
       border:solid 1px #333A40;
     }
@@ -169,7 +172,7 @@ a{
       background: #fff;
       box-shadow: none;
       border:none;
-      margin:0
+      margin:0;
     }
     #menu-accordeon a {
       display:block;
@@ -207,8 +210,8 @@ a{
         height: 60px;
         width: 120px;
         background-color:#729EBF; 
-        background-image:-webkit-linear-gradient(top, chartreuse 0%,rgba(128, 255, 0, 0.192) 100%);
-        background-image: linear-gradient(to bottom, chartreuse 0%,rgba(128, 255, 0, 0.192) 100%);
+        background-image:-webkit-linear-gradient(top, #71c51ec9 0%,rgba(128, 255, 0, 0.192) 100%);
+        background-image: linear-gradient(to bottom, #71c51ec9 0%,rgba(128, 255, 0, 0.192) 100%);
         border-radius: 6px;
         box-shadow: 3px 3px 3px #999;
         border:solid 1px #333A40
@@ -253,9 +256,9 @@ a{
     height: 40px!important;
     width: 100%!important;
     text-decoration: none;
-    background-color:olivedrab; 
-    background-image:-webkit-linear-gradient(top, chartreuse 0%, rgba(128, 255, 0, 0.192) 100%);
-    background-image: linear-gradient(to bottom, chartreuse 0%, rgba(128, 255, 0, 0.192) 100%);
+    background-color:#729EBF; 
+    background-image:-webkit-linear-gradient(top, #71c51ec9 0%, rgba(128, 255, 0, 0.192) 100%);
+    background-image: linear-gradient(to bottom,#71c51ec9 0%, rgba(128, 255, 0, 0.192) 100%);
     border-radius: 6px;
     box-shadow: 3px 3px 3px #999;
     border:solid 1px #333A40
@@ -302,6 +305,13 @@ footer{
     textarea{
       width: 80%;
      }
+     .content img{
+       width: 50%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      
+     }
     .contentRight img {
       margin: 0;
     }
@@ -323,6 +333,13 @@ footer{
     padding: 15px;
     height: 60px;
     width: 100%;
+  }
+  .content img{
+    width: 50%;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   
   }
   .contentRight img {
     margin: 0;
@@ -347,7 +364,14 @@ footer{
   .contentRight{
     margin: 0;
     height: 280px;
-  }  
+  } 
+  .content img{
+    width: 50%;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   
+  } 
   .card-body p{
     margin: 20px;
     padding:5px;
@@ -377,6 +401,13 @@ footer{
      margin: 0;
      height: 280px;
    }
+    .content img{
+       width: 50%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      
+     }
    .card-body p{
     margin: 0px;
     padding:10px;

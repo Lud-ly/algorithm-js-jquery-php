@@ -39,20 +39,20 @@ angular.module('ngCheckers', [])
       if (square.player === RED)
         return {"backgroundColor": "#FF0000"};
       else if (square.player === BLACK)
-        return {"backgroundColor":"black"};
+        return {"backgroundColor":"green"};
       return {"backgroundColor": "none"};
     }
 
     $scope.setClass = function(square) {
       if (square.y % 2 === 0) {
         if (square.x % 2 === 0) {
-          return {"backgroundColor": square.isChoice ? "green" : "#999"};
+          return {"backgroundColor": square.isChoice ? "chartreuse" : "#010"};
         } else {
           return {"backgroundColor": "white"};
         }
       } else {
         if (square.x % 2 === 1) {
-          return {"backgroundColor": square.isChoice ? "green" : "#999"};
+          return {"backgroundColor": square.isChoice ? "chartreuse" : "#010"};
         } else {
           return {"backgroundColor": "white"};
         }

@@ -18,13 +18,17 @@
         </header>
         <script>
             function Exo_7_3() {
+                //Variables Tableau en Numérique
+                //Variables iNbr,x en Numérique
                 var x = 1;
                 var t = [];
+                //Tant que x inférieur à 10
                 while (x < 10) {
-                    iNbr = parseFloat(prompt("enter 10 valeurs : " + x + "/10"));
+                    //Ecrire & Lire
+                     iNbr = parseFloat(prompt("enter 10 valeurs : " + x + "/10"));
                     t.push(iNbr);
                     x++;
-                }
+                }//Fin Tantque
                 alert(t);
                 // boucle principale: le point de départ se décale à chaque tour
                 // Pour i ← 0 à 10
@@ -32,22 +36,20 @@
                     // on examine tous les éléments suivants
                     // Pour j ← i + 1 à 11
                     for (j = i; j < 11; j++) {
-                        // Si t(j) < t(i) Alors
-                        if (t[j] < t[i]) {
+                        // Si t(j) > t(i) Alors
+                        if (t[j] > t[i]) {
                             // on fait l'échange !
                             // tempo ← t(i)
                             var tempo = t[i];
-                            t[i] = t[j];
-                            t[j] = tempo;
                             // t(i) ← t(j)
                             // t(j) ← tempo
-                            // Finsi
-                        }
-                        // j suivant
-                    }
+                            t[i] = t[j];
+                            t[j] = tempo;
+                        } // Finsi
+                    }// j suivant
                     // On a placé correctement l'élément numéro i, on passe à présent au suivant.
-                    // i suivant
-                }
+                }  // i suivant
+                //Ecrire le tableau,t
                 alert(t);
             }
         </script>
@@ -72,49 +74,33 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>a faire
-                                </p>
+                                <textarea rows="25" cols="88">
+                    Variables Tableau en Numérique
+                    Variables iNbr,x en Numérique
+                    Début
+                            Tant que x inférieur à 10
+                                Ecrire & Lire iNbr
+                            Fin Tantque
+                            boucle principale: le point de départ se décale à chaque tour
+                            Pour i ← 0 à 10
+                                on examine tous les éléments suivants
+                                Pour j ← i + 1 à 11
+                                    Si t(j) > t(i) Alors on fait l'échange ! 
+                                        tempo ← t(i) 
+                                        t(i) ← t(j)
+                                        t(j) ← tempo 
+                                    Finsi
+                                j suivant 
+                                On a placé correctement l'élément numéro i, 
+                                on passe à présent au suivant. 
+                            i suivant 
+                            Ecrire le tableau,t
+                    Fin
+                                </textarea>
                             </div>
-                            <div id=" txt_javascript">
-
-                                <form action="exo_7_3.php" method="POST">
-                                    <div>
-                                        <hr width="75%" size="1px" color="olivedrab" />
-                                        <h3>Tester l'algorithme : </h3>
-                                        <h4>
-                                            <div class="myResult" id="div_resultat_js"></div>
-                                            <div class="myResult" id="div_resultat"></div>
-                                        </h4>
-                                        <div class="language">
-                                            <label for="ivaleur">"Rentrez le nombre de valeurs à saisir (supérieur à 1)
-                                                : "
-                                            </label>
-                                            <input type="number" name="ivaleur" id="ivaleur">
-                                            <label for="iVal">"Rentrez les valeurs : "
-                                            </label>
-                                            <input type="number" name="iVal" id="iVal">
-                                            <button type="button" value="Envoyer" id="ok"
-                                                onclick="Exo_7_1_innerHTML()">JS WITH innerHTML</button>
-                                            <label for="Jyear">
-                                            </label>
-                                            <input type="number" name="Jyear" id="Jyear">
-                                            <button type="button" value="Envoyer" id="ok"
-                                                onclick="Exo_6_15_jquery()">JQUERY</button>
-                                            <button class="btn_green" id="btn_js" onClick="Exo_7_3()">JS WITH
-                                                PROMPT</button>
-                                        </div>
-                                        <hr width="75%" size="1px" color="olivedrab" />
-                                        <label for="myPhp">"PHP Entrer les notes"
-                                        </label>
-                                        <input type="text" name="myPhp" id="myPhp">
-                                        <div class="myResult" id="div_resultat_php">
-                                            <p><?php echo $sMessage; ?></p>
-                                        </div>
-                                    </div>
-                                    <div class="language">
-                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
-                                    </div>
-                                </form>
+                            <div id=" txt_javascript" class="language">
+                                <button class="btn_green" id="btn_js" onClick="Exo_7_3()">GO ALGO
+                                </button>
                             </div>
                             <div class="card-header" id="headingOne">
                                 <hr width="75%" size="1px" color="olivedrab" />
@@ -126,7 +112,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
                                 <hr size="1px" color="olivedrab" />
@@ -134,71 +120,41 @@
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
-                                    </code>
-                                 </pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <div class="language">
-                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        JQUERY
-                                    </button>
-                                </div>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                data-parent="#accordion">
-
-                                <hr size="1px" color="olivedrab" />
-                                <div class="myCode">
-                                    <pre>
-                                    JQUERY
-                                    <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
-
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
-
-                                    </code>
-                                 </pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <div class="language">
-                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        PHP
-                                    </button>
-                                </div>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                data-parent="#accordion">
-                                <hr size="1px" color="olivedrab" />
-                                <div class="myCode">
-                                    <pre>
-                                        PHP
-                                    <code data-language="php"> 
-                                   
-                                        include ('include/menunav.php');
-                                        global $db;
-                
+    function Exo_7_3() {
+        //Variables Tableau en Numérique
+        //Variables iNbr,x en Numérique
+        var x = 1;
+        var t = [];
+        //Tant que x inférieur à 10
+        while (x < 10) {
+            Ecrire & Lire
+            var iNbr = parseFloat(prompt("enter 10 valeurs : " + x + "/10"));
+            t.push(iNbr);
+            x++;
+        }//Fin Tantque
+        alert(t);
+        // boucle principale: le point de départ se décale à chaque tour
+        // Pour i ← 0 à 10
+        for (var i = 0; i < 10; i++) {
+            // on examine tous les éléments suivants
+            // Pour j ← i + 1 à 11
+            for (j = i; j < 11; j++) {
+                // Si t(j) > t(i) Alors
+                if (t[j] > t[i]) {
+                    // on fait l'échange !
+                    // tempo ← t(i)
+                    var tempo = t[i];
+                    // t(i) ← t(j)
+                    // t(j) ← tempo
+                    t[i] = t[j];
+                    t[j] = tempo;
+                } // Finsi
+            }// j suivant
+            // On a placé correctement l'élément numéro i, on passe à présent au suivant.
+        }  // i suivant
+        //Ecrire le tableau,t
+        alert(t);
+    }
                                     </code>
                                  </pre>
                                 </div>
