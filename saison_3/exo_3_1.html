@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoSite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
+</head>
+
+<body>
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+
+        <script type="text/javascript">
+            // ALGORITHME Exo_3_1
+            function Exo_3_1() {
+                // DEBUT
+                //iNombre en numerique
+                var iNombre;
+                //DEBUT
+                // ECRIRE "Donnez un nombre"
+                // Lire le Nombre
+                iNombre = parseInt(prompt("Donnez un nombre"));
+                // Si Nombre est supérieur à 0 alors
+                if (iNombre > 0) {
+                    //  Ecrire le Nombre est positif
+                    alert("le Nombre est positif !");
+                }
+                // sinonsi iNombre < 0 alors
+                else if (iNombre < 0) {
+                    alert("le Nombre est negatif !");
+                }
+                //Sinon
+                //  Ecrire le Nombre n'est pas évalué
+                else {
+                    alert("le Nombre n'est pas évalué !");
+                }
+                //Fin
+            }
+            ///////////////////////////////////////////////
+            // ALGORITHME Exo_3_1_innerHTML
+            function Exo_3_1_innerHTML() {
+                // DEBUT
+                //iNombre en numerique
+                var iNombre;
+                //DEBUT
+                // ECRIRE "Donnez un nombre"
+                // Lire le Nombre
+                iNombre = document.getElementById("iNombreUtilisateur").value;
+                // Si Nombre est supérieur à 0 alors
+                if (iNombre > 0) {
+                    //  Ecrire le Nombre est positif
+                    document.getElementById("div_resultat_js").innerHTML = "le Nombre est positif !";
+                }
+                // sinonsi iNombre < 0 alors
+                else if (iNombre < 0) {
+                    document.getElementById("div_resultat_js").innerHTML = "le Nombre est negatif !";
+                }
+                //Sinon
+                //  Ecrire le Nombre n'est pas évalué
+                else {
+                    document.getElementById("div_resultat_js").innerHTML = "le Nombre n'est pas évalué !!";
+                }
+                //Fin
+            }
+            // ALGORITHME Exo_3_1_jquery
+            function Exo_3_1_jquery() {
+                // DEBUT
+                //iNombre en numerique
+                var iNombre;
+                //DEBUT
+                // ECRIRE "Donnez un nombre"
+                // Lire le Nombre
+                iNombre = $("#iNombreUtilisateur").val();
+                // Si Nombre est supérieur à 0 alors
+                if (iNombre > 0) {
+                    //  Ecrire le Nombre est positif
+                    $("#div_resultat_js").html("Jquery le Nombre est positif !");
+                }
+                // sinonsi iNombre < 0 alors
+                else if (iNombre < 0) {
+                    $("#div_resultat_js").html("Jquery le Nombre est negatif !");
+                }
+                //Fin
+            }
+
+        </script>
+
+        <div class="container-fluid ">
+            <h4>ALGORITHME ET PSEUDO-CODE:</h4>
+            <hr width="75%" size="1px" color="#c5e4c5" />
+            <div class="row">
+                <div class="col-md-2 myAside">
+                    <?php
+                    include('../commun/menunav.php');
+                    ?>
+                </div>
+                <div class="col-md-8">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>Exercice 3.1</h4>
+                                <p>Ecrire un algorithme qui demande un nombre à l’utilisateur, et l’informe ensuite si
+                                    ce nombre est positif ou négatif
+                                    (on laisse de côté le cas où le nombre vaut zéro).
+
+                                </p>
+                            </div>
+
+                            <!-- Modal: modalPoll -->
+                            <div class="modal fade right" id="modalPoll-1" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false">
+                                <div class="modal-dialog modal-full-height modal-right modal-notify modal-info"
+                                    role="document">
+                                    <div class="modal-content">
+                                        <!--Header-->
+                                        <div class="modal-header">
+                                            <p class="heading lead">Feedback request
+                                            </p>
+
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true" class="white-text">×</span>
+                                            </button>
+                                        </div>
+
+                                        <!--Body-->
+                                        <div class="modal-body">
+                                            <div class="text-center">
+                                                <i class="far fa-file-alt fa-4x mb-3 animated rotateIn"></i>
+                                                <p>
+                                                    <strong>PSEUDO-CODE</strong>
+                                                </p>
+                                                <p>
+                                                    <strong>
+                                                        nombre en numerique<br />
+                                                        debut<br />
+                                                        ecrire "donnez un nombre"<br />
+                                                        lire le nombre<br />
+                                                        si nombre est supérieur à 0 alors<br />
+                                                        ecrire le nombre est positif<br />
+                                                        sinonsi nombre
+                                                        < 0 alors<br />
+                                                        ecrire le nombre est negatif<br />
+                                                        sinon<br />
+                                                        ecrire le nombre n'est pas évalué<br />
+                                                        fin<br />
+                                                    </strong>
+                                                </p>
+                                            </div>
+
+                                            <hr>
+
+                                            <!-- Radio -->
+                                            <p class="text-center">
+                                                <strong>Your rating</strong>
+                                            </p>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" name="group1" type="radio"
+                                                    id="radio-179" value="option1" checked>
+                                                <label class="form-check-label" for="radio-179">Very good</label>
+                                            </div>
+
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" name="group1" type="radio"
+                                                    id="radio-279" value="option2">
+                                                <label class="form-check-label" for="radio-279">Good</label>
+                                            </div>
+
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" name="group1" type="radio"
+                                                    id="radio-379" value="option3">
+                                                <label class="form-check-label" for="radio-379">Mediocre</label>
+                                            </div>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" name="group1" type="radio"
+                                                    id="radio-479" value="option4">
+                                                <label class="form-check-label" for="radio-479">Bad</label>
+                                            </div>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" name="group1" type="radio"
+                                                    id="radio-579" value="option5">
+                                                <label class="form-check-label" for="radio-579">Very bad</label>
+                                            </div>
+                                            <!-- Radio -->
+
+                                            <p class="text-center">
+                                                <strong>What could we improve?</strong>
+                                            </p>
+                                            <!--Basic textarea-->
+                                            <div class="md-form">
+                                                <textarea type="text" id="form79textarea"
+                                                    class="md-textarea form-control" rows="3"></textarea>
+                                                <label for="form79textarea">Your message</label>
+                                            </div>
+
+                                        </div>
+
+                                        <!--Footer-->
+                                        <div class="modal-footer justify-content-center">
+                                            <a type="button" class="btn btn-primary waves-effect waves-light">Send
+                                                <i class="fa fa-paper-plane ml-1"></i>
+                                            </a>
+                                            <a type="button" class="btn btn-outline-dark waves-effect"
+                                                data-dismiss="modal">Cancel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal: modalPoll -->
+                            <div class="language">
+                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#modalPoll-1">
+                                    PSEUDO-CODE</button>
+                            </div>
+
+
+                            <div id="txt_javascript">
+                                <hr width="75%" size="1px" color="#c5e4c5" />
+                                <h3>Tester l'algorithme : </h3>
+                                <div>
+                                    <label for="iNombreUtilisateur">Veuillez saisir un nombre
+                                        :</label>
+                                    <input type="text" name="iNombreUtilisateur" id="iNombreUtilisateur">
+                                </div>
+                                <div class="myResult" id="div_resultat_js"></div>
+                                <div class="language">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_3_1()">JS WITH PROMPT</button>
+                                  
+                                    <button class="btn_green" onClick="Exo_3_1_innerHTML()"> JS WITH INNERHTML</button>
+                                 
+                                    <button class="btn_green" onClick="Exo_3_1_jquery()">JQUERY !</button>
+                                </div>
+                                <hr width="75%" size="1px" color="#c5e4c5" />
+                                <form action="exo_3_1.php" method="POST">
+                                    <div>
+                                        <div id="div_resultat_php">
+                                            <h3><?php echo $sMessage; ?></h3>
+                                        </div>
+                                    </div>
+
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Voir les Codes</p>
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        JAVASCRIPT
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                    JAVASCRIPT
+                                    <code data-language="javascript"> 
+    function Exo_3_1_innerHTML() {
+        // DEBUT
+        //iNombre en numerique
+        var iNombre;
+        //DEBUT
+        // ECRIRE "Donnez un nombre"
+        // Lire le Nombre
+        iNombre = document.getElementById("iNombreUtilisateur").value;
+        // Si Nombre est supérieur à 0 alors
+        if (iNombre > 0) {
+            //  Ecrire le Nombre est positif
+            document.getElementById("div_resultat_js").innerHTML = "le Nombre est positif !";
+        }
+        // sinonsi iNombre < 0 alors
+        else if (iNombre < 0) {
+            document.getElementById("div_resultat_js").innerHTML = "le Nombre est negatif !";
+        }
+        //Sinon
+        //  Ecrire le Nombre n'est pas évalué
+        else {
+            document.getElementById("div_resultat_js").innerHTML = "le Nombre n'est pas évalué !!";
+        }
+        //Fin
+    }
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <div class="language">
+                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        JQUERY
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordion">
+
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                    JQUERY
+                                    <code data-language="javascript"> 
+    function Exo_3_1_jquery() {
+        // DEBUT
+        //iNombre en numerique
+        var iNombre;
+        //DEBUT
+        // ECRIRE "Donnez un nombre"
+        // Lire le Nombre
+        iNombre = $("#iNombreUtilisateur").val();
+        // Si Nombre est supérieur à 0 alors
+        if (iNombre > 0) {
+            //  Ecrire le Nombre est positif
+            $("#div_resultat_js").html("le Nombre est positif !");
+        }
+        // sinonsi iNombre < 0 alors
+        else if (iNombre < 0) {
+            $("#div_resultat_js").html("le Nombre est negatif !");
+        }
+        //Fin
+    }
+
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <div class="language">
+                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        PHP
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordion">
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                        PHP
+                                    <code data-language="php"> 
+                                   
+                                    
+    $sMessage= "";
+
+    // SI $_POST["iNombreUtilisateur"] EXISTE ET QUE $_POST["iNombreUtilisateur"] N EST PAS VIDE ALORS
+    if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
+    {
+        // VARIABLE iNombreUtilisateur en NUMERIQUE
+        // Inutile
+        $iNombreEsssai= $_POST["iNombreEsssai"];
+        $iNombreEsssai++;
+        
+        // ECRIRE "Entrez un nombre entre 1 et 3"
+        // LIRE iNombreUtilisateur
+        $iNombreUtilisateur= $_POST["iNombreUtilisateur"];
+        
+        // SI ((iNombreUtilisateur < 1) || (iNombreUtilisateur > 3)) ALORS
+        if (($iNombreUtilisateur < 0))
+        {
+            // ECRIRE "Erreur. Veuillez ressaisir un nombre entre 1 et 3."
+            $sMessage= "PHP Le nombre est negatif.";
+        } 
+        else if (($iNombreUtilisateur > 0)){
+            $sMessage= "PHP Le nombre est positif.";
+        }
+    }  
+                            
+                            
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-2 contentRight">
+                    <?php
+                    require ('../commun/contentRight.php');
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/rainbow-custom.min.js"></script>
+</body>
+<footer class="text-muted">
+    <?php
+        require ("../commun/footer.php");
+    ?>
+</footer>
+
+</html>

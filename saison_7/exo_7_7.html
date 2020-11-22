@@ -14,7 +14,7 @@
 <body>
     <div class="home">
         <header>
-            <?php include('../commun/header.php');?>
+            <!-- <?php include('../commun/header.php');?> -->
         </header>
         <script>
             var t3 = [];
@@ -22,26 +22,31 @@
             var j = 0;
             var k = 0;
             function Exo_7_7() {
+                //Variables Tableau t1,t2 pré-remplis et trié
+                //Variables Tableau t3 vide
+                //Variables m,n en Numérique
                 var t1 = [1, 3, 5, 7, 9];
-
                 var t2 = [2, 4, 6, 8, 10];
+                //Début
+                //m & n ← longueur t1,t2
+                //t3 ← longueur t1+t2
                 var m = t1.length;
                 var n = t2.length;
                 t3.length = m + n;
+                //Tant que i&j<m&n alors 
                 while (i <= m && j <= n) {
+                    //Si t1[i] < t2[j] alors 
                     if (t1[i] < t2[j]) {
                         t3[k++] = t1[i++];
-                    }
-                    else {
+                    } else {
                         t3[k++] = t2[j++];
-                    }
-                }
-                console.log(t3);
-
+                    }//FinSi
+                }//Fin Tantque 
+                //Ecrire les tableaux t1,t2,t3 
                 alert("tableau 1 : " + t1);
-                alert("tableau 2 : " + t2);
-                alert("tableau 3 : " + t3);
-            }
+                alert(" tableau 2 : " + t2);
+                alert(" tableau 3 : " + t3);
+            }//Fin
 
             function Exo_7_7_innerHTML() {
                 var t1 = [1, 3, 5, 7, 9];
@@ -59,17 +64,34 @@
                         t3[k++] = t2[j++];
                     }
                 }
-                console.log(t3);
-
                 document.getElementById("div_resultat_js").innerHTML = ("Tableau 1 : " + t1);
-                document.getElementById("div_result_js").innerHTML = ("Tableau 2 : " + t2);
-                document.getElementById("div_result").innerHTML = ("Tableau 3 : " + t3);
+                 document.getElementById("div_result_js").innerHTML = ("Tableau 2 : " + t2);
+                 document.getElementById("div_result").innerHTML = ("Tableau 3 trié : " + t3);
             }
-             // Fin
+
+            function Exo_7_7_jquery() {
+                var t1 = [3, 6, 9, 12, 15];
+                var t2 = [1, 5, 7, 13, 17];
+                var m = t1.length;
+                var n = t2.length;
+                t3.length = m + n;
+                while (i <= m && j <= n) {
+                    if (t1[i] < t2[j]) {
+                        t3[k++] = t1[i++];
+                    }
+                    else {
+                        t3[k++] = t2[j++];
+                    }
+                }
+                $("#div_resultat_js").html("Tableau 1 : " + t1);
+                $("#div_result_js").html("Tableau 2 : " + t2);
+                $("#div_result").html("Jquery Tableau 3 trié : " + t3);
+            }
+             
         </script>
-        <div class="container-fluid ">
+        <div class=" container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
-            <hr width="75%" size="1px" color="olivedrab" />
+            <hr width=" 75%" size="1px" color="olivedrab" />
             <div class="row">
                 <div class="col-md-2 myAside">
                     <?php
@@ -94,37 +116,23 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <p>
+                                <textarea rows="17" cols="88">
+                                    Variables Tableau t1,t2 pré-remplis et trié
+                                    Variables Tableau t3 vide
+                                    Variables m,n en Numérique
                                     Début
-                                    (...)
-                                    Afini ← faux
-                                    Bfini ← faux
-                                    ia ← 0
-                                    ib ← 0
-                                    ic ← -1
-                                    TantQue Non(Afini) ou Non(Bfini)
-                                    ic ← ic + 1
-                                    Redim C(ic)
-                                    Si Afini ou A(ia)>B(ib) Alors
-                                    C(ic) ← B(ib)
-                                    ib ← ib + 1
-                                    Bfini ← ib > n
-                                    Sinon
-                                    C(ic) ← A(ia)
-                                    ia ← ia + 1
-                                    Afini ← ia > m
-                                    FinSi
-                                    FinTantQue
+                                        m & n ← longueur t1,t2
+                                        t3 ← longueur t1+t2
+                                        Tant que i & j <= m & n alors
+                                            Si t1[i] < t2[j] alors 
+                                                t3[k++] = t1[i++];
+                                            Sinon
+                                                t3[k++] = t2[j++]
+                                            FinSi 
+                                        Fin Tantque
+                                        Ecrire les tableaux t1,t2,t3 
                                     Fin
-                                </p>
-                            </div>
-                            <div class="card-header" id="headingOne">
-                                <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
-                                        aria-expanded="true" aria-controls="collapseOne">
-                                        JAVASCRIPT
-                                    </button>
-                                </div>
+                                </textarea>
                             </div>
                             <div id=" txt_javascript">
 
@@ -137,13 +145,11 @@
                                         <div class="myResult" id="div_result_js"></div>
                                         <div class="myResult" id="div_result"></div>
                                         </p>
-                                        <input type="text" name="myVal" id="myVal"
-                                            placeholder="Cliquez sur les boutons.."><br />
                                         <div class="language">
                                             <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_7_7_innerHTML()">JS WITH innerHTML</button>
                                             <button type="button" value="Envoyer" id="lqueryok"
-                                                onclick="Exo_5_8_jquery()">JQUERY</button>
+                                                onclick="Exo_7_7_jquery()">JQUERY</button>
                                         </div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                         <div class="language">
@@ -160,14 +166,23 @@
                                         <p><?php echo $sMessage2; ?></p>
                                         <p><?php echo $sMessage3; ?></p>
                                     </div>
+                                    <input type="text" name="myVal" id="myVal"
+                                            placeholder="Click button.."><br />
                                 </form>
+                            </div>
+                            <div class="card-header" id="headingOne">
+                                <p>Sous le capot</p>
+                                <hr size="1px" color="olivedrab" />
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        JAVASCRIPT
+                                    </button>
+                                </div>
                             </div>
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
                                 <hr width="75%" size="1px" color="olivedrab" />
-                                <p>Sous le capot</p>
-
-                                <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
                                     JAVASCRIPT
@@ -216,15 +231,24 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
-
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+    function Exo_7_7_jquery() {
+        var t1 = [3, 6, 9, 12, 15];
+        var t2 = [1, 5, 7, 13, 17];
+        var m = t1.length;
+        var n = t2.length;
+        t3.length = m + n;
+        while (i <= m && j <= n) {
+            if (t1[i] < t2[j]) {
+                t3[k++] = t1[i++];
+            }
+            else {
+                t3[k++] = t2[j++];
+            }
+        }
+        $("#div_resultat_js").html("Tableau 1 : " + t1);
+        $("#div_result_js").html("Tableau 2 : " + t2);
+        $("#div_result").html("Jquery Tableau 3 trié : " + t3);
+    }
 
                                     </code>
                                  </pre>

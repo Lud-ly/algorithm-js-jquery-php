@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoSite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
+    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+</head>
+
+<body>
+<div class="home">
+    <header>
+    <?php include('../commun/header.php');?>
+    </header>
+    <div class="container-fluid ">
+            <h4>ALGORITHME ET PSEUDO-CODE:</h4>
+            <hr width="75%" size="1px" color="olivedrab" />
+            <div class="row">
+                <div class="col-md-2 myAside">
+                    <?php
+                    include('../commun/menunav.php');
+                    ?>
+                </div>
+                <div class="col-md-8">
+                    <div id="accordion">
+                        <div class="card"id="exos">
+                            <div class="card-body">
+                                <h4>Exercice 10.3</h4>
+                                <p>On travaille avec le fichier du carnet d’adresses en champs de largeur fixe.
+                                    Ecrivez un algorithme qui permet à l’utilisateur de saisir au clavier un nouvel individu qui sera ajouté à ce carnet
+                                    d’adresses
+                                </p>
+                            </div>
+                            <div class="pseudoCode">
+                                    <h4>Pseudocode:</h4>
+                                    <textarea rows="50" cols="88">
+            VARIABLES i, bDone en NUMERIQUE
+            VARIABLES sNouveauContenu en CARACTERE
+        
+            STRUCTURE Bottin
+                sNom en CARACTERE * 20
+                sPrenom en CARACTERE * 15
+                sTel en CARACTERE * 10
+                sMail en CARACTERE * 20
+            FIN STRUCTURE
+            VARIABLES sSaisiePersonne, ligne_personne en Bottin
+            TABLEAU aOfMesPersonnes[] en Bottin
+        DEBUT
+            ECRIRE "Entrez votre nom"
+            LIRE sSaisiePersonne.sNom
+            ECRIRE "Entrez votre prénom"
+            LIRE sSaisiePersonne.sPrenom
+            ECRIRE "Entrez votre numéro téléphone"
+            LIRE sSaisiePersonne.sTel
+            ECRIRE "Entrez votre email"
+            LIRE sSaisiePersonne.sMail
+        
+            i= -1
+            bDone= 0
+            OUVRIR "Carnet.txt" sur 19 pour Lecture
+            TANT QUE non EOF (19)
+                LireFichier 19, ligne_personne
+                SI (fonction_minuscule_sans_accent(sSaisiePersonne.sNom) < fonction_minuscule_sans_accent(ligne_personne.sNom)) ET (bDone == 0) ALORS
+                    i= i+1
+                    REDIM aOfMesPersonnes[i]
+                    aOfMesPersonnes[i]= sSaisiePersonne
+                    bDone= 1
+                FINSI
+                i= i+1
+                REDIM aOfMesPersonnes[i]
+                aOfMesPersonnes[i]= ligne_personne
+            FINTANTQUE
+            FERMER 19
+            
+            SI (bDone == 0) ALORS
+                i= i+1
+                REDIM aOfMesPersonnes[i]
+                aOfMesPersonnes[i]= sSaisiePersonne
+            FINSI
+            
+            sNouveauContenu= ""
+            POUR i de 0 à longueur(aOfMesPersonnes)-1, PAS DE 1
+                sNouveauContenu= sNouveauContenu + aOfMesPersonnes[i] + "\n"
+            i SUIVANT
+            
+            Ouvrir "Carnet.txt" sur 19 pour Ecriture
+            EcrireFichier 19, sNouveauContenu
+            FERMER 19
+        
+            ECRIRE sNouveauContenu
+        FIN
+                                    </textarea>
+                                </div>
+                                <div id=" txt_javascript">
+
+                                    <form action="exo_10_3.php" method="GET">
+                                        <div>
+                                            <hr width="75%" size="1px" color="olivedrab" />
+                                            <h3>Tester l'algorithme : </h3>
+                                        </div>
+                                       
+                                        <div class="language">
+                                            <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                        </div>
+                                        <div class="myResult" id="div_resultat_php">
+                                            <h3><?php echo $sTextFinal; ?></h3>
+                                        </div>
+                                      
+                                        <label for="sNom">"NOM "
+                                        </label>
+                                        <input type="text" name="sNom" id="sNom"><br/>
+                                        <label for="sPrenom">"PRENOM "
+                                        </label>
+                                        <input type="text" name="sPrenom" id="sPrenom"><br/>
+                                        <label for="sTel">"PHONE : "
+                                        </label>
+                                        <input type="tel" name="sTel" id="sTel"><br/>
+                                        <label for="sMail">"EMAIL"
+                                        </label>
+                                        <input type="email" name="sMail" id="sMail">
+                                    </form>
+                                </div>
+                            <div class="card-header" id="headingOne">
+                              <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Sous le capot</p>
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                       PHP
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+                                <div class="myCode">
+                                    <pre>
+                                   PHP
+                                    <code data-language="php"> 
+        //$sMessage="";
+        // ALGORITHME Exo_10_4
+    // On récupère les données
+    
+    $sNom= str_pad($_GET["sNom"], 20, " ");
+    $sPrenom= str_pad($_GET["sPrenom"], 20, " ");
+    $sTel= str_pad($_GET["sTel"], 10, " ");
+    $sMail= str_pad($_GET["sMail"], 20, " ");
+    
+    // Lire mon carnet pour :
+    //				- récupérer son contenu
+    //				- regarder où insérer mes nouvelles données
+    //				- Raison : ordre alphabétique
+    
+    $i= 0;
+    $bDone= 0;
+    $aOfMesPersonnes= [];
+    $aOfLigneFichier= [];
+    /*Ouverture du fichier en lecture seule*/
+    // Ouvrir "Carnet.txt" sur 19 pour Lecture
+    $handle = fopen('Carnet.txt', 'r');
+    /*Si on a réussi à ouvrir le fichier*/
+    if ($handle)
+    {
+        /*Tant que l'on est pas à la fin du fichier*/
+        // TantQue non EOF (19)
+        while (!feof($handle))
+        {
+            /*On lit la ligne courante*/
+            // LireFichier 19, ligne_personne
+            $buffer = fgets($handle);
+            if (strlen($buffer) > 3)	{
+                $aOfLigneFichier["nom"]= substr($buffer, 0, 20);
+                $aOfLigneFichier["prenom"]= substr($buffer, 20, 20);
+                $aOfLigneFichier["tel"]= substr($buffer, 40, 10);
+                $aOfLigneFichier["mail"]= substr($buffer, 50, 30);
+                // Dois je insérer ici ?
+                // SI (fonction_minuscule_sans_accent(saisiepersonne.sNom) < fonction_minuscule_sans_accent(ligne_personne.sNom)) ET (bDone == 0) ALORS
+                if ((strtolower($sNom) < strtolower($aOfLigneFichier["nom"])) && ($bDone == 0))	{
+                    // Mespersonnes(i)= saisiepersonne
+                    $aOfMesPersonnes[$i]["sNom"]= $sNom;
+                    $aOfMesPersonnes[$i]["sPrenom"]= $sPrenom;
+                    $aOfMesPersonnes[$i]["sTel"]= $sTel;
+                    $aOfMesPersonnes[$i]["sMail"]= $sMail;
+                    $i++;
+                    $bDone= 1;
+                }
+                // Mespersonnes(i)= ligne_personne
+                $aOfMesPersonnes[$i]["sNom"]= $aOfLigneFichier["nom"];
+                $aOfMesPersonnes[$i]["sPrenom"]= $aOfLigneFichier["prenom"];
+                $aOfMesPersonnes[$i]["sTel"]= $aOfLigneFichier["tel"];
+                $aOfMesPersonnes[$i]["sMail"]= $aOfLigneFichier["mail"];
+                $i++;
+            }
+        }
+        /*On ferme le fichier*/
+        fclose($handle);
+    }
+    // enlever l'indice de crée :
+    $i--;
+    
+    // dans le cas où je n'ai pas pu insérer (dernier elément du carnet)
+    // SI (bDone == 0) ALORS
+    if ($bDone == 0)	{
+        // Redim Mespersonnes(i)
+        // Mespersonnes(i)= saisiepersonne
+        $i++;
+        $aOfMesPersonnes[$i]["sNom"]= $sNom;
+        $aOfMesPersonnes[$i]["sPrenom"]= $sPrenom;
+        $aOfMesPersonnes[$i]["sTel"]= $sTel;
+        $aOfMesPersonnes[$i]["sMail"]= $sMail;
+        $bDone= 1;
+    }
+    
+    // Ecrire mon nouveau contenu dans carnet
+    // Ouvrir "Carnet.txt" sur 19 pour Ecriture
+    $sTextFinal= "";
+    for ($i= 0; $i<=count($aOfMesPersonnes); $i++)	{
+        $sTextFinal.= $aOfMesPersonnes[$i]["sNom"] . $aOfMesPersonnes[$i]["sPrenom"] . $aOfMesPersonnes[$i]["sTel"] . $aOfMesPersonnes[$i]["sMail"] . "\n" ;
+    }
+    
+    $handle = fopen('Carnet.txt', 'w');
+    if ($handle)	{
+        fputs($handle, $sTextFinal);
+        fclose($handle);
+    }
+    
+    //echo $sTextFinal;
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-2 contentRight">
+                <?php
+                    require ('../commun/contentRight.php');
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/rainbow-custom.min.js"></script>
+</body>
+<footer class="text-muted">
+    <?php
+        require ("../commun/footer.php");
+    ?>
+</footer>
+
+</html>

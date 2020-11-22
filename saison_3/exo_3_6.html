@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoSite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
+</head>
+
+<body>
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_3_6() {
+                //Variable age en Entier
+                // Début
+                //Ecrire "Entrez l’âge de l’enfant : "
+                //Lire age
+                age = parseInt(prompt("Entrez l’âge de l’enfant :"));
+                // Si age >= 20 Alors
+                if (age >= 20) {
+                    //Ecrire "Catégorie old Man"
+                    alert("Catégory old Man");
+                }
+                // Sinonsi age >= 12 Alors
+                else if (age >= 12) {
+                    //Ecrire "Catégorie Cadet"
+                    alert("Catégory Cadet");
+                }
+                // Sinonsi age >= 10 Alors
+                else if (age >= 10) {
+                    //Ecrire "Catégorie Minime"
+                    alert(" Catégory Minime");
+                }
+                // Sinonsi age >= 8 Alors
+                else if (age >= 8) {
+                    //Ecrire "Catégorie Pupille"
+                    alert("Catégory Pupille");
+                }
+                // Sinonsi age >= 6 Alors
+                else if (age >= 6) {
+                    //Ecrire "Catégorie Poussin"
+                    alert("Catégory Poussin");
+                }
+
+            }
+            function Exo_3_6_innerHTML() {
+                //Variable age en Entier
+                // Début
+                //Ecrire "Entrez l’âge de l’enfant : "
+                //Lire age
+                age = document.getElementById("iAgeUtilisateur").value;
+                // Si age >= 20 Alors
+                if (age >= 20) {
+                    //Ecrire "Catégorie old Man"
+                    document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML Catégorie old Man !";
+                }
+                // Sinonsi age >= 12 Alors
+                else if (age >= 12) {
+                    //Ecrire "Catégorie Cadet"
+                    document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML Catégorie Cadet !";
+                }
+                // Sinonsi age >= 10 Alors
+                else if (age >= 10) {
+                    //Ecrire "Catégorie Minime"
+                    document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML Catégorie Minime !";
+                }
+                // Sinonsi age >= 8 Alors
+                else if (age >= 8) {
+                    //Ecrire "Catégorie Pupille"
+                    document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML Catégorie Pupille !";
+                }
+                // Sinonsi age >= 6 Alors
+                else if (age >= 6) {
+                    //Ecrire "Catégorie Poussin"
+                    document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML Catégorie Poussin !";
+                }
+
+            }
+          
+            function Exo_3_6_jquery() {
+                //Variable age en Entier
+                // Début
+                //Ecrire "Entrez l’âge de l’enfant : "
+                //Lire age
+                age = $("#iAgeUtilisateur").val();
+                // Si age >= 20 Alors
+                if (age >= 20) {
+                    //Ecrire "Catégorie old Man"
+                    $("#div_resultat_js").html("Bravo jquery Catégorie old Man !");
+                }
+                // Sinonsi age >= 12 Alors
+                else if (age >= 12) {
+                    //Ecrire "Catégorie Cadet"
+                    $("#div_resultat_js").html("Bravo jquery Catégorie Cadet  !");
+                }
+                // Sinonsi age >= 10 Alors
+                else if (age >= 10) {
+                    //Ecrire "Catégorie Minime"
+                    $("#div_resultat_js").html("Bravo jquery Catégorie Minime  !");
+                }
+                // Sinonsi age >= 8 Alors
+                else if (age >= 8) {
+                    //Ecrire "Catégorie Pupille"
+                    $("#div_resultat_js").html("Bravo jquery Catégorie Pupille  !");
+                }
+                // Sinonsi age >= 6 Alors
+                else if (age >= 6) {
+                    //Ecrire "Catégorie Poussin"
+                    $("#div_resultat_js").html("Bravo jquery Catégorie Poussin  !");
+                }
+
+            }
+
+
+        </script>
+        <div class="container-fluid ">
+            <h4>ALGORITHME ET PSEUDO-CODE:</h4>
+            <hr width="75%" size="1px" color="olivedrab" />
+            <div class="row">
+                <div class="col-md-2 myAside">
+                    <?php
+                    include('../commun/menunav.php');
+                    ?>
+                </div>
+                <div class="col-md-8">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>Exercice 3.6</h4>
+                                <p>Ecrire un algorithme qui demande l’âge d’un enfant à l’utilisateur. Ensuite, il
+                                    l’informe de sa catégorie :
+                                    •"Poussin" de 6 à 7 ans
+                                    •"Pupille" de 8 à 9 ans
+                                    •"Minime" de 10 à 11 ans
+                                    •"Cadet" après 12 ans
+                                    Peut-on concevoir plusieurs algorithmes équivalents menant à ce résultat ?
+                                </p>
+                            </div>
+                            <div class="pseudoCode">
+                                <h4>Pseudocode:</h4>
+                                <textarea rows="15" cols="88">
+                                    Variable age en Entier
+                                    Début
+                                        Ecrire "Entrez l’âge de l’enfant : "
+                                        Lire age
+                                        Si age >= 12 Alors
+                                            Ecrire "Catégorie Cadet"
+                                        SinonSi age >= 10 Alors
+                                            Ecrire "Catégorie Minime"
+                                        SinonSi age >= 8 Alors
+                                            Ecrire "Catégorie Pupille"
+                                        SinonSi age >= 6 Alors
+                                            Ecrire "Catégorie Poussin"
+                                        Finsi
+                                    Fin
+                                </textarea>
+                            </div>
+                            <div id="txt_javascript">
+                               
+                                <form action="exo_3_6.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <div>
+                                            <label for="iAgeUtilisateur">Veuillez saisir l'age de l'enfant
+                                                :</label>
+                                            <input type="text" name="iAgeUtilisateur" id="iAgeUtilisateur">
+                                        </div>
+                                    </div>
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                </form>
+                                <div class="language">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_3_6()">JS WITH PROMPT</button>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button class="btn_green" onClick="Exo_3_6_innerHTML()"> JS WITH INNERHTML</button>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button class="btn_green" onClick="Exo_3_6_jquery()">JQUERY !</button>
+                                </div>
+                                <div>
+                                    <h3><div class="myResult" id="div_resultat"></div></h3>
+                                    <h3><div class="myResult" id="div_resultat_js"></div></h3> 
+                                    <h3><div class="myResult" id="div_resultat_p"></div></h3> 
+                                    <div class="myResult"  id="div_resultat_php"><h3><?php echo $sMessage; ?></h3></div>
+                                </div>
+                            </div>
+                            <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Voir les Codes</p>
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        JAVASCRIPT
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                    JAVASCRIPT
+                                    <code data-language="javascript"> 
+function Exo_3_6_innerHTML() {
+    //Variable age en Entier
+    // Début
+    //Ecrire "Entrez l’âge de l’enfant : "
+    //Lire age
+    age = document.getElementById("iAgeUtilisateur").value;
+    // Si age >= 20 Alors
+    if (age >= 20) {
+        //Ecrire "Catégorie old Man"
+        document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML Catégorie old Man !";
+    }
+    // Sinonsi age >= 12 Alors
+    else if (age >= 12) {
+        //Ecrire "Catégorie Cadet"
+        document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML Catégorie Cadet !";
+    }
+    // Sinonsi age >= 10 Alors
+    else if (age >= 10) {
+        //Ecrire "Catégorie Minime"
+        document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML Catégorie Minime !";
+    }
+    // Sinonsi age >= 8 Alors
+    else if (age >= 8) {
+        //Ecrire "Catégorie Pupille"
+        document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML Catégorie Pupille !";
+    }
+    // Sinonsi age >= 6 Alors
+    else if (age >= 6) {
+        //Ecrire "Catégorie Poussin"
+        document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML Catégorie Poussin !";
+    }
+
+}
+                            
+                            
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <div class="language">
+                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        JQUERY
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordion">
+
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                    JQUERY
+                                    <code data-language="javascript"> 
+    function Exo_3_6_jquery() {
+        //Variable age en Entier
+        // Début
+        //Ecrire "Entrez l’âge de l’enfant : "
+        //Lire age
+        age = $("#iAgeUtilisateur").val();
+        // Si age >= 20 Alors
+        if (age >= 20) {
+            //Ecrire "Catégorie old Man"
+            $("#div_resultat_js").html("Bravo jquery Catégorie old Man !");
+        }
+        // Sinonsi age >= 12 Alors
+        else if (age >= 12) {
+            //Ecrire "Catégorie Cadet"
+            $("#div_resultat_js").html("Bravo jquery Catégorie Cadet  !");
+        }
+        // Sinonsi age >= 10 Alors
+        else if (age >= 10) {
+            //Ecrire "Catégorie Minime"
+            $("#div_resultat_js").html("Bravo jquery Catégorie Minime  !");
+        }
+        // Sinonsi age >= 8 Alors
+        else if (age >= 8) {
+            //Ecrire "Catégorie Pupille"
+            $("#div_resultat_js").html("Bravo jquery Catégorie Pupille  !");
+        }
+        // Sinonsi age >= 6 Alors
+        else if (age >= 6) {
+            //Ecrire "Catégorie Poussin"
+            $("#div_resultat_js").html("Bravo jquery Catégorie Poussin  !");
+        }
+
+    }
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <div class="language">
+                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        PHP
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordion">
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                        PHP
+                                    <code data-language="php"> 
+$sMessage= "";
+
+// SI $_POST["iAgeUtilisateur"] EXISTE ET QUE $_POST["iAgeUtilisateur"] N EST PAS VIDE ALORS
+if ((isset($_POST["iAgeUtilisateur"])) && (!(empty($_POST["iAgeUtilisateur"]))))
+{
+        //Variable age en Entier
+        // Début
+    //Ecrire "Entrez l’âge de l’enfant : "
+    //Lire age
+    $iAgeUtilisateur= $_POST["iAgeUtilisateur"];
+    
+        // Si age >= 20 Alors
+    if ($iAgeUtilisateur >= 20) {
+        //Ecrire "Catégorie old Man"
+        $sMessage="Bravo PHP Catégorie old Man !";
+    }
+    // Sinonsi age >= 12 Alors
+    else if ($iAgeUtilisateur >= 12) {
+        //Ecrire "Catégorie Cadet"
+        $sMessage="Bravo PHP Catégorie Cadet !";
+    }
+    // Sinonsi age >= 10 Alors
+    else if ($iAgeUtilisateur >= 10) {
+        //Ecrire "Catégorie Minime"
+        $sMessage="Bravo PHP Catégorie Minime !";
+    }
+    // Sinonsi age >= 8 Alors
+    else if ($iAgeUtilisateur >= 8) {
+        //Ecrire "Catégorie Pupille"
+        $sMessage="Bravo PHP Catégorie Pupille !";
+    }
+    // Sinonsi age >= 6 Alors
+    else if ($iAgeUtilisateur >= 6) {
+        //Ecrire "Catégorie Poussin"
+        $sMessage="Bravo PHP Catégorie Poussin !";
+    }
+}  
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-2 contentRight">
+                    <?php
+                    require ('../commun/contentRight.php');
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/rainbow-custom.min.js"></script>
+</body>
+<footer class="text-muted">
+    <?php
+        require ("../commun/footer.php");
+    ?>
+</footer>
+
+</html>

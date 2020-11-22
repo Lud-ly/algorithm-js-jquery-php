@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoSite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
+</head>
+
+<body>
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+
+            function Exo_2_4() {
+                //VARIABLES VARIANT,VARIANT1,VARIANT2,VARIANT3,VARIANT4 EN STRING
+                var one = " Belle marquise "
+                var two = " Vos beaux yeux "
+                var three = " Me font "
+                var four = " Mourir d’amour "
+                //DEBUT
+                //ECRIRE one+two+three+four
+                alert(one + two + three + four);
+                //ECRIRE two+one+three+four
+                alert(two + one + three + four);
+                //ECRIRE one+two+four+three
+                alert(one + two + four + three);
+                //ECRIRE two+three+one+four
+                alert(two + three + one + four);
+                //ECRIRE two+three+one+four
+                alert(four + one + three + two);
+                //FIN
+            }
+            function Exo_2_4_innerHTML() {
+                //VARIABLES VARIANT,VARIANT1,VARIANT2,VARIANT3,VARIANT4 EN STRING
+                var sOne = " Belle marquise "
+                var sTwo = " Vos beaux yeux "
+                var sThree = " Me font "
+                var sFour = " Mourir d’amour "
+                //DEBUT
+                Variante = document.getElementById("Variante").value;
+                //SI VARIANT0 ALORS
+                //ECRIRE one+two+three+four
+                if (Variante == 0) {
+                    document.getElementById("div_resultat_js").innerHTML = ("innerHTML-> " + sOne + sTwo + sThree + sFour);
+                }
+                //SI VARIANT1 ALORS
+                //ECRIRE one+two+three+four
+                if (Variante == 1) {
+                    document.getElementById("div_resultat_js").innerHTML = ("innerHTML-> " + sThree + sTwo + sOne + sFour);
+                }
+                //SI VARIANT2 ALORS
+                else if (Variante == 2) {
+                    //ECRIRE two+one+three+four
+                    document.getElementById("div_resultat_js").innerHTML = ("innerHTML-> " + sTwo + sOne + sThree + four);
+                }
+                //SI VARIANT3 ALORS
+                else if (Variante == 3) {
+                    //ECRIRE one+two+four+three
+                    document.getElementById("div_resultat_js").innerHTML = ("innerHTML-> " + sOne + sTwo + sFour + sThree);
+                }
+                //ECRIRE two+three+one+four
+                //SI VARIANT4 ALORS
+                else if (Variante == 4) {
+                    //ECRIRE four + one + three + two
+                    document.getElementById("div_resultat_js").innerHTML = ("innerHTML-> " + sFour + sOne + sThree + sTwo);
+                }
+                //FIN
+            }
+            function Exo_2_4_jquery() {
+                //VARIABLES VARIANT,VARIANT1,VARIANT2,VARIANT3,VARIANT4 EN STRING
+                var sOne = " Belle marquise "
+                var sTwo = " Vos beaux yeux "
+                var sThree = " Me font "
+                var sFour = " Mourir d’amour "
+                //DEBUT
+                Variante = $("#Variante").val();
+                //SI VARIANT0 ALORS
+                //ECRIRE one+two+three+four
+                if (Variante == 0) {
+                    $("#div_resultat_js").html("jquery:" + sOne + sTwo + sThree + sFour);
+                }
+                //SI VARIANT1 ALORS
+                //ECRIRE one+two+three+four
+                if (Variante == 1) {
+                    $("#div_resultat_js").html("jquery: " + sThree + sTwo + sOne + sFour);
+                }
+                //SI VARIANT2 ALORS
+                else if (Variante == 2) {
+                    //ECRIRE two+one+three+four
+                    $("#div_resultat_js").html("jquery: " + sTwo + sOne + sThree + sFour);
+                }
+                //SI VARIANT3 ALORS
+                else if (Variante == 3) {
+                    //ECRIRE one+two+four+three
+                    $("#div_resultat_js").html("jquery: " + sOne + sTwo + sFour + sThree);
+                }
+                //ECRIRE two+three+one+four
+                //SI VARIANT4 ALORS
+                else if (Variante == 4) {
+                    //ECRIRE four + one + three + two
+                    $("#div_resultat_js").html("jquery: " + sFour + sOne + sThree + sTwo);
+                }
+                //FIN
+            }
+        </script>
+        <div class="container-fluid ">
+            <h4>ALGORITHME ET PSEUDO-CODE:</h4>
+            <hr width="75%" size="1px" color="olivedrab" />
+            <div class="row">
+                <div class="col-md-2 myAside">
+                    <?php
+                    include('../commun/menunav.php');
+                    ?>
+                </div>
+                <div class="col-md-8">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>Exercice 2.4</h4>
+                                <p>Ecrire un algorithme utilisant des variables de type chaîne de caractères, et
+                                    affichant quatre variantes
+                                    possibles de la célèbre « belle marquise, vos beaux yeux me font mourir d’amour ».
+                                    On ne se soucie pas de
+                                    la ponctuation, ni des majuscules.
+                                </p>
+                            </div>
+                            <div class="pseudoCode">
+                                <h4>Pseudocode:</h4>
+                                <textarea rows="18" cols="88">
+                                    Variables string sOne = " Belle marquise "
+                                    sTwo = " Vos beaux yeux " sThree = " Me font " 
+                                    sFour = " Mourir d’amour 
+                                    Variables string VARIANT1,VARIANT2,
+                                    VARIANT3,VARIANT4 
+                                    DEBUT
+                                        SI VARIANT1 ALORS
+                                                ECRIRE sOne+sTwo+sThree+sFour>
+                                        SI VARIANT2 ALORS
+                                                ECRIRE sTwo+sOne+sFour+sThree
+                                        SI VARIANT3 ALORS
+                                                ECRIRE sOne+sTwo+sFour+sThree
+                                        SI VARIANT4 ALORS
+                                                ECRIRE sFour + sOne + sThree + sTwo
+                                    FIN
+                                </textarea>
+                            </div>
+                            <div id="txt_javascript">
+                                <div>
+                                    <h3><div class="myResult" id="div_resultat"></h3></div> 
+                                    <h3><div class="myResult" id="div_resultat_js"></div></h3> 
+                                    <h3><div class="myResult" id="div_resultat_p"></div></h3> 
+                                    <div class="myResult"  id="div_resultat_php"><h3><?php echo $sMessage; ?></h3></div>
+                                </div>
+                                <form action="exo_2_4.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <div>
+                                            <label for="Variante">Choisir la variante à afficher 1,2,3 ou 4:
+                                                :</label>
+                                            <input type="text" name="Variante" id="Variante">
+                                        </div>
+                                    </div>
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                </form>
+                                <div class="language">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_2_4()">JS WITH PROMPT</button>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button class="btn_green" onClick="Exo_2_4_innerHTML()"> JS WITH INNERHTML</button>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button class="btn_green" onClick="Exo_2_4_jquery()">JQUERY !</button>
+                                </div>
+                            </div>
+                            <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Voir les Codes</p>
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        JAVASCRIPT
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                    JAVASCRIPT
+                                    <code data-language="javascript"> 
+                                   function Exo_2_4_innerHTML() {
+                //VARIABLES VARIANT,VARIANT1,VARIANT2,VARIANT3,VARIANT4 EN STRING
+                var sOne = " Belle marquise "
+                var sTwo = " Vos beaux yeux "
+                var sThree = " Me font "
+                var sFour = " Mourir d’amour "
+                //DEBUT
+                Variante = document.getElementById("Variante").value;
+                //SI VARIANT0 ALORS
+                //ECRIRE one+two+three+four
+                if (Variante == 0) {
+                    document.getElementById("div_resultat_js").innerHTML = ("innerHTML-> " + sOne + sTwo + sThree + sFour);
+                }
+                //SI VARIANT1 ALORS
+                //ECRIRE one+two+three+four
+                if (Variante == 1) {
+                    document.getElementById("div_resultat_js").innerHTML = ("innerHTML-> " + sThree + sTwo + sOne + sFour);
+                }
+                //SI VARIANT2 ALORS
+                else if (Variante == 2) {
+                    //ECRIRE two+one+three+four
+                    document.getElementById("div_resultat_js").innerHTML = ("innerHTML-> " + sTwo + sOne + sThree + four);
+                }
+                //SI VARIANT3 ALORS
+                else if (Variante == 3) {
+                    //ECRIRE one+two+four+three
+                    document.getElementById("div_resultat_js").innerHTML = ("innerHTML-> " + sOne + sTwo + sFour + sThree);
+                }
+                //ECRIRE two+three+one+four
+                //SI VARIANT4 ALORS
+                else if (Variante == 4) {
+                    //ECRIRE four + one + three + two
+                    document.getElementById("div_resultat_js").innerHTML = ("innerHTML-> " + sFour + sOne + sThree + sTwo);
+                }
+                //FIN
+            }
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <div class="language">
+                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        JQUERY
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordion">
+
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                    JQUERY
+                                    <code data-language="javascript"> 
+                                        function Exo_2_4_jquery() {
+                                            //VARIABLES VARIANT,VARIANT1,VARIANT2,VARIANT3,VARIANT4 EN STRING
+                                            var sOne = " Belle marquise "
+                                            var sTwo = " Vos beaux yeux "
+                                            var sThree = " Me font "
+                                            var sFour = " Mourir d’amour "
+                                            //DEBUT
+                                            Variante = $("#Variante").val();
+                                            //SI VARIANT0 ALORS
+                                            //ECRIRE one+two+three+four
+                                            if (Variante == 0) {
+                                               $("#div_resultat_js").html("jquery:"+sOne + sTwo + sThree + sFour);
+                                            }
+                                            //SI VARIANT1 ALORS
+                                            //ECRIRE one+two+three+four
+                                            if (Variante == 1) {
+                                                $("#div_resultat_js").html("jquery: "+sThree + sTwo + sOne + sFour);
+                                            }
+                                            //SI VARIANT2 ALORS
+                                            else if (Variante == 2) {
+                                                //ECRIRE two+one+three+four
+                                                $("#div_resultat_js").html("jquery: "+sTwo + sOne + sThree + sFour);
+                                            }
+                                            //SI VARIANT3 ALORS
+                                            else if (Variante == 3) {
+                                                //ECRIRE one+two+four+three
+                                               $("#div_resultat_js").html("jquery: "+sOne + sTwo + sFour + sThree);
+                                            }
+                                            //ECRIRE two+three+one+four
+                                            //SI VARIANT4 ALORS
+                                            else if (Variante == 4) {
+                                                //ECRIRE four + one + three + two
+                                                $("#div_resultat_js").html("jquery: "+sFour + sOne + sThree + sTwo);
+                                            }
+                                            //FIN
+                                        }
+
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <div class="language">
+                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        PHP
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordion">
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                        PHP
+                                    <code data-language="php"> 
+                                   
+                                        $sMessage="";
+                                        // SI $_POST["iNombreUtilisateur"] EXISTE ET QUE $_POST["iNombreUtilisateur"] N EST PAS VIDE ALORS
+                                        if ((isset($_POST["Variante"])) && (!(empty($_POST["Variante"]))))
+                                        {
+                                            //VARIABLES VARIANT,VARIANT1,VARIANT2,VARIANT3,VARIANT4 EN STRING
+                                            $sOne = " Belle marquise ";
+                                            $sTwo = " Vos beaux yeux ";
+                                            $sThree = " Me font ";
+                                            $sFour = " Mourir d’amour ";
+                                            //DEBUT
+                                            $Variante = $_POST["Variante"];
+                                            //SI VARIANT1 ALORS
+                                            //ECRIRE one+two+three+four
+                                            if ($Variante == 1) {
+                                                $sMessage = ("PHP->" . $sThree . $sTwo . $sOne . $sFour);
+                                            }
+                                            //SI VARIANT2 ALORS
+                                            if ($Variante == 2) {
+                                                //ECRIRE two+one+three+four
+                                                $sMessage = ("PHP->" . $sTwo . $sOne . $sThree . $sFour);
+                                            }
+                                            //SI VARIANT3 ALORS
+                                            if ($Variante == 3) {
+                                                //ECRIRE one+two+four+three
+                                            $sMessage = ("PHP-> ". $sOne . $sTwo . $sFour . $sThree);
+                                            }
+                                            //ECRIRE two+three+one+four
+                                            //SI VARIANT4 ALORS
+                                            if ($Variante == 4) {
+                                                //ECRIRE four + one + three + two
+                                                $sMessage = ("PHP-> ". $sFour . $sOne . $sThree . $sTwo);
+                                            }
+                                            //FIN
+                                        }
+                
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-2 contentRight">
+                    <?php
+                    require ('../commun/contentRight.php');
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/rainbow-custom.min.js"></script>
+</body>
+<footer class="text-muted">
+    <?php
+        require ("../commun/footer.php");
+    ?>
+</footer>
+
+</html>
