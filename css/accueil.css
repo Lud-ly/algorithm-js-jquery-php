@@ -67,7 +67,8 @@ a{
 }
 /*------CONTAINER CENTRAL------------*/
 .content{
-  box-shadow: 0px 0px 3px 2px #999;
+    box-shadow: 0px 0px 3px 2px #999;
+    background-image:linear-gradient(rgba(113, 197, 30, 0.787) ,#fff);
     height: 1000px;
     padding: 0px;
     margin-bottom: 100px;
@@ -76,7 +77,9 @@ a{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    
+    border-radius: 5px;
+    height: 400px;
+    width: 600px
    }
    .content h3{
     padding: 50px;
@@ -109,6 +112,10 @@ a{
    padding: 23px;
    
   }
+  .dropdown{
+    display: inline-block;
+  }
+  
 .language input{
   margin-right: 20px;
 }
@@ -157,9 +164,9 @@ a{
       text-align: center;
     }
     #menu-accordeon li {
-      background-color:#729EBF; 
-      background-image:-webkit-linear-gradient(top,#71c51ec9 0%, rgba(128, 255, 0, 0.192) 100%);
-      background-image: linear-gradient(to bottom, #71c51ec9 0%,  rgba(128, 255, 0, 0.192) 100%);
+      background-color:green; 
+      background-image:-webkit-linear-gradient(top,#fff 0%, whitesmoke 100%);
+      background-image: linear-gradient(to bottom, #71c51ec9 0%,  whitesmoke 100%);
       border-radius: 6px;
       box-shadow: 2px 2px 2px #999;
       border:solid 1px #333A40;
@@ -186,7 +193,8 @@ a{
       font-size:1em
     }
     #menu-accordeon li:hover {
-       background: chartreuse;
+       background: whitesmoke;
+       color: #000;
     }
     #menu-accordeon li li:hover {
        background:chartreuse;
@@ -197,6 +205,9 @@ a{
     }
     #menu-accordeon li:hover li {
       max-height: 15em;
+    }
+    #menu_collaps{
+      display: inline-block;
     }
     .language{
       display:flex;
@@ -209,9 +220,9 @@ a{
         margin:20px;
         height: 60px;
         width: 120px;
-        background-color:#729EBF; 
-        background-image:-webkit-linear-gradient(top, #71c51ec9 0%,rgba(128, 255, 0, 0.192) 100%);
-        background-image: linear-gradient(to bottom, #71c51ec9 0%,rgba(128, 255, 0, 0.192) 100%);
+        background-color:green; 
+        background-image:-webkit-linear-gradient(top,#fff 0%, whitesmoke 100%);
+      background-image: linear-gradient(to bottom, #71c51ec9 0%,  whitesmoke 100%);
         border-radius: 6px;
         box-shadow: 3px 3px 3px #999;
         border:solid 1px #333A40
@@ -256,9 +267,9 @@ a{
     height: 40px!important;
     width: 100%!important;
     text-decoration: none;
-    background-color:#729EBF; 
-    background-image:-webkit-linear-gradient(top, #71c51ec9 0%, rgba(128, 255, 0, 0.192) 100%);
-    background-image: linear-gradient(to bottom,#71c51ec9 0%, rgba(128, 255, 0, 0.192) 100%);
+    background-color:green; 
+    background-image:-webkit-linear-gradient(top,#fff 0%, whitesmoke 100%);
+      background-image: linear-gradient(to bottom, #71c51ec9 0%,  whitesmoke 100%);
     border-radius: 6px;
     box-shadow: 3px 3px 3px #999;
     border:solid 1px #333A40
@@ -307,7 +318,7 @@ footer{
      }
      .content img{
        width: 50%;
-      display: block;
+      display: none;
       margin-left: auto;
       margin-right: auto;
       
@@ -320,7 +331,13 @@ footer{
   #menu-accordeon {
    width: 110%;
    margin: 0;
+  display: none;
   }
+  .content{
+    height: 100px;
+    padding: 0px;
+    margin-bottom: 10px;
+    }
   .myAside{
     height: 750px;
   }
@@ -336,13 +353,16 @@ footer{
   }
   .content img{
     width: 50%;
-   display: block;
+   display: none;
    margin-left: auto;
    margin-right: auto;
-   
   }
-  .contentRight img {
+  .contentRight img{
+   display: none;
+  }
+  .contentRight{
     margin: 0;
+    height: 750px;
   }
 }
 
@@ -350,24 +370,34 @@ footer{
   #menu-accordeon {
     width: 100%;
    margin: 0;
+  display: none;
   }
+  .content{
+    height: 100px;
+      padding: 0px;
+      margin-bottom: 10px;
+    }
   .myAside{
     height: 750px;
-  }
+  } 
   textarea{
     width: 60%;
    }
   .cours a{
     height: 60px;
     width: 100%;
+    padding:15px;
     }
   .contentRight{
     margin: 0;
-    height: 280px;
+    height: 750px;
   } 
+  .contentRight img{
+  display: none;
+  }
   .content img{
     width: 50%;
-   display: block;
+   display: none;
    margin-left: auto;
    margin-right: auto;
    
@@ -383,17 +413,23 @@ footer{
   #menu-accordeon {
     width: 100%;
     margin: 0;
+  display: none;
    }
+   .content{
+    height: 100px;
+      padding: 0px;
+      margin-bottom: 10px;
+    }
    textarea{
    width: 60%;
   }
    .myAside{
-     height: 750px;
+     height: 280px;
    }
    .cours a{
      margin: 60px -3px;
      text-align: center;
-     padding: 15px;
+     padding: 5px;
      height: 60px;
      width: 100%;
      }
@@ -401,9 +437,12 @@ footer{
      margin: 0;
      height: 280px;
    }
+   .contentRight img{
+   display: none;
+  }
     .content img{
-       width: 50%;
-      display: block;
+       width: 30%;
+      display: none;
       margin-left: auto;
       margin-right: auto;
       

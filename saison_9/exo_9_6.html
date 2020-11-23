@@ -8,18 +8,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <script>
-    
-    </script>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_9_6() {
+                alert(Cesar(prompt("Entrer une phrase à crypter : "), 1));
+            }
+            function Exo_9_6_innerHTML() {
+                var chain = "";
+                chain = document.getElementById("myVal").value;
+                document.getElementById("div_resultat_js").innerHTML = ("Voici la phrase cryptée : " + Cesar(chain, 1));
+            }
+            function Exo_9_6_jquery() {
+                var chain = "";
+                chain = $("#myVal").val();
+                $("#div_resultat_js").html("Jquery Voici la phrase cryptée decalage de 2 : " + Cesar(chain, 2));
+            }
+            function Cesar(str, amount) {
+                if (amount < 0)
+                    return Cesar(str, amount + 26);
+
+                // variable res pour stocker le résultat
+                var res = '';
+                // Parcourir chaque caractère
+                for (var i = 0; i < str.length; i++) {
+                    // Récupérer le caractére que nous allons ajouter
+                    var c = str[i];
+                    // Vérifier si c'est une lettre
+                    if (c.match(/[a-z]/i)) {
+                        // Récupérer son code
+                        var code = str.charCodeAt(i);
+                        // Lettres majuscules
+                        if ((code >= 65) && (code <= 90))
+                            c = String.fromCharCode(((code - 65 + amount) % 26) + 65);
+                        // Lettres minuscules
+                        else if ((code >= 97) && (code <= 122))
+                            c = String.fromCharCode(((code - 97 + amount) % 26) + 97);
+                    }
+                    // Ajouter le caractére
+                    res += c;
+                }
+                // Résultat
+                return res;
+            };
+
+
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -33,79 +74,123 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 9.6</h4>
-                                <p>Un des plus anciens systèmes de cryptographie (aisément déchiffrable) consiste à décaler les lettres d’un message
-                                    pour le rendre illisible. Ainsi, les A deviennent des B, les B des C, etc. Ecrivez un algorithme qui demande une phrase
-                                    à l’utilisateur et qui la code selon ce principe. Comme dans le cas précédent, le codage doit s’effectuer au niveau de
+                                <p>Un des plus anciens systèmes de cryptographie (aisément déchiffrable) consiste à
+                                    décaler les lettres d’un message
+                                    pour le rendre illisible. Ainsi, les A deviennent des B, les B des C, etc. Ecrivez
+                                    un algorithme qui demande une phrase
+                                    à l’utilisateur et qui la code selon ce principe. Comme dans le cas précédent, le
+                                    codage doit s’effectuer au niveau de
                                     la variable stockant la phrase, et pas seulement à l’écran.
-                                    
+
                                 </p>
                             </div>
                             <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
-                                </div>
+                                <h4>Pseudocode:</h4>
+                                <textarea rows="18" cols="88">
+                                    Début
+                                        Variables res, c,i,code string
+                                        Parcourir chaque caractère
+                                        Pour i à longueur str
+                                            Récupérer le caractére que nous allons ajouter à c
+                                            Si c'est une lettre dans l'alphabet alors
+                                                Récupérer son code
+                                                Traiter Lettres majuscules
+                                            Sinonsi
+                                                Traiter Lettres minuscules
+                                        Ajouter le caractére
+                                        Stocker le résultat
+                                        i Suivant
+                                        Ecrire Le Résultat,res
+                                    Fin
+                                </textarea>
+                            </div>
+                            <div id=" txt_javascript">
+
+                                <form action="exo_9_6.php" method="POST">
+
+                                    <hr width="75%" size="1px" color="olivedrab" />
+                                    <h3>Tester l'algorithme : </h3>
+                                    <label for="myVal">Entrer une phrase à crypter :
+                                    </label>
+                                    <input type="text" name="myVal" id="myVal">
+
+                                    <h3>
+                                        <div class="myResult" id="div_resultat_js"></div>
+                                        <div class="myResult" id="div_result_js"></div>
+                                        <div class="myResult" id="div_resultat"></div>
+                                    </h3>
+                                    <div class="language">
+                                        <button type="button" value="Envoyer" id="ok" onclick="Exo_9_6_innerHTML()">JS
+                                            WITH innerHTML</button>
+                                        <button type="button" value="Envoyer" id="lqueryok"
+                                            onclick="Exo_9_6_jquery()">JQUERY</button>
+                                        <button class="btn_green" id="btn_js" onClick="Exo_9_6()">JS prompt</button>
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                    <div class="myResult" id="div_resultat_php">
+                                        <p><?php echo $sMessage; ?></p>
+                                    </div>
+                                </form>
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
-                                    JAVASCRIPT
+                                    JAVASCRIPT & JQUERY
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+    function Exo_9_6_innerHTML() {
+        var chain="";
+        chain = document.getElementById("myVal").value;
+        document.getElementById("div_resultat_js").innerHTML=("Voici la phrase cryptée : "+ Cesar(chain, 1));
+    }
+    function Exo_9_6_jquery() {
+        var chain="";
+        chain = $("#myVal").val();
+        $("#div_resultat_js").html("Jquery Voici la phrase cryptée decalage de 2 : "+ Cesar(chain, 2));
+    }
+    function Cesar(str, amount) {
+        if (amount < 0)
+            return Cesar(str, amount + 26);
+
+        // variable res pour stocker le résultat
+        var res = '';
+        // Parcourir chaque caractère
+        for (var i = 0; i < str.length; i++) {
+            // Récupérer le caractére que nous allons ajouter
+            var c = str[i];
+            // Vérifier si c'est une lettre
+            if (c.match(/[a-z]/i)) {
+                // Récupérer son code
+                var code = str.charCodeAt(i);
+                // Lettres majuscules
+                if ((code >= 65) && (code <= 90))
+                    c = String.fromCharCode(((code - 65 + amount) % 26) + 65);
+                // Lettres minuscules
+                else if ((code >= 97) && (code <= 122))
+                    c = String.fromCharCode(((code - 97 + amount) % 26) + 97);
+            }
+            // Ajouter le caractére
+            res += c;
+        }
+        // Résultat
+        return res;
+    };
                                     </code>
                                  </pre>
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <div class="language">
-                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
-                                        JQUERY
-                                    </button>
-                                </div>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                data-parent="#accordion">
-                        
-                                <hr size="1px" color="olivedrab" />
-                                <div class="myCode">
-                                    <pre>
-                                    JQUERY
-                                    <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
 
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
-
-                                    </code>
-                                 </pre>
-                                </div>
-                            </div>
-                        </div>
                         <div class="card">
                             <div class="card-header" id="headingThree">
                                 <div class="language">
@@ -124,8 +209,44 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+    $sMessage="";
+
+    // SI $_POST["valPhp"] EXISTE ET QUE $_POST["valPhp"] N EST PAS VIDE ALORS
+    if ((isset($_POST["myVal"])) && (!(empty($_POST["myVal"]))))
+    {
+        $chain="";
+        $chain = $_POST["myVal"];
+        $sMessage=("PHP La phrase cryptée : ". Cesar($chain, 1));
+    }
+    
+    function Cesar($str, $amount) {
+        if ($amount < 0)
+            return Cesar($str, $amount + 26);
+    
+        // variable pour stocker le résultat
+        $res = '';
+        $code;
+        // Parcourir chaque caractére
+        for ($i = 0; $i <=strlen($str); $i++) {
+            // Récupérer le caractére que nous allons ajouter
+                $c = $str[$i];
+            // Vérifier si c'est une lettre
+            //if ($c.preg_match('/[a-z]/',$i)) {
+                // Récupérer son code
+                $code = $str[$i];
+                // Lettres majuscules
+                if (($code >= 65) && ($code <= 90))
+                    $c = chr((($code - 65 + $amount) % 26) + 65);
+                // Lettres minuscules
+                if (($code >= 97) && ($code <= 122))
+                    $c = chr((($code - 97 + $amount) % 26) + 97);
+            //}
+            // Ajouter le caractére
+            $res = $c;
+        }
+        // Résultat
+        return $res;
+    };
                 
                                     </code>
                                  </pre>
@@ -136,7 +257,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

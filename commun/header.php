@@ -2,7 +2,9 @@
             <div class="collapse" id="navbarToggleExternalContent">
                 <div class="bg-light p-4">
                     <h5 class="text-black h4">Bienvenue</h5>
-                   
+                    <?php
+                        include('../commun/menuCollapse.php');
+                    ?>
                     <button class="btn btn-success plus">Python</button>
                     <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top"
                         title="Tooltip on top">
@@ -13,9 +15,6 @@
                         Plus
                     </button>
                     <i class="fas fa-clock"></i>
-                    <?php
-                        include('../commun/menunav.php');
-                        ?>
                 </div>
             </div>
             <nav class="navbar navbar-light bg-light">
@@ -26,7 +25,7 @@
                 </button>
                
                     <div class="myTitre">
-                    <img src="../img/Testtube.gif"height="60px">
+                  <img src="../img/Testtube.gif"height="60px">
                     </div>
             </nav>
         </div>

@@ -10,4 +10,4 @@
     </p>
     <img src="../img/giphy.gif"height="60px">
     <p>Exosdalgo is ©Ludovic Mouly example</p>
-    <p>how to Code ? <a href="https://ludovic-mouly.com" target="_blank">Visit the Site</a>
+    <p>how to Code ? <a href="https://afpa.com" target="_blank">Visit the Site</a>

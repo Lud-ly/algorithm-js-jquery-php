@@ -90,7 +90,7 @@
                             <ul>
                                 <li><a href="../saison_9/exo_9_5.php">Exercice 9.5</a></li>
                                 <li><a href="../saison_9/exo_9_6.php">Exercice 9.6</a></li>
-                                <li><a href="../saison_9/exo_9_7.php">Exercice 9.8</a></li>
+                                <li><a href="../saison_9/exo_9_8.php">Exercice 9.8</a></li>
                             </ul>
                             <li><a href="#">Les fichiers</a>
                             <ul>

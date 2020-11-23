@@ -8,15 +8,86 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
-    <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_9_8_glup() {
+                for (var i = 0; i < 1; i++) {
+                    document.getElementById("div_resultat_js").innerHTML = ("( 0 =< Glup =< 2) => : " + (Math.random() * 2 + (0)));
+                    document.getElementById("div_result_js").innerHTML = ("(1,35 =< Glup =< 1,65) => : " + (Math.random() * 1.65 + (1.35)));
+                    document.getElementById("resultat").innerHTML = ("(–1 =< Glup =< 1) => : " + (Math.random() * 1 + (-1)));
+                    document.getElementById("div_resultat").innerHTML = ("( –10,5 =< Glup =< +6,5) => : " + (Math.random() * 6.5 + (-10.5)));
+                }
+            }
+
+            function Exo_9_8() {
+
+                var jouer = String(prompt("Lancer les dés? True/False : "));
+
+                var FaceDe = [];
+
+                while (jouer) {
+
+                    //#3 tirages
+                    var tirage = [];
+                    tirage.push(Math.floor(Math.random() * 6) + 1);  //entre 1 et 6
+                    console.log(tirage);
+                    tirage.push(Math.floor(Math.random() * 6) + 1);
+                    tirage.push(Math.floor(Math.random() * 6) + 1);  //idem ci-dessus toujours entre 1 et 6
+
+                    //affichage du tirage et des points obtenus
+                    var points = 0;
+                    var i = 0;
+                    while (i <= 2) {
+
+                        points = points + tirage[i];
+                        i = i + 1;
+                    }
+                    alert(tirage);
+                    alert("Vous avez gagné " + (points) + " points à ce lancer");
+                    var rep = Boolean(prompt("rejouer? (o/n)"));
+                    if (rep != "o" && rep != "O") {
+                        jouer = false;
+                    }
+                }
+            }
+
+            function Exo_9_8_innerHTML() {
+                var jouer = document.getElementById("myVal").value;
+
+                while (jouer) {
+
+                    //#3 tirages
+                    var tirage = [];
+                    tirage.push(Math.floor(Math.random() * 6) + 1);  //entre 1 et 6
+                    tirage.push(Math.floor(Math.random() * 6) + 1);
+                    tirage.push(Math.floor(Math.random() * 6) + 1);  //idem ci-dessus toujours entre 1 et 6
+
+                    //affichage du tirage et des points obtenus
+                    var points = 0;
+                    var i = 0;
+                    while (i <= 2) {
+                        points = points + tirage[i];
+                        i = i + 1;
+
+                    }
+
+                    document.getElementById("div_resultat").innerHTML = (tirage);
+                    document.getElementById("div_resultat_js").innerHTML = ("Vous avez gagné " + (points) + " points à ce lancer");
+                    var rep = document.getElementById("restart").value;
+                    if (rep != "o" && rep != "O") {
+                        jouer = false;
+                    }
+                }
+            }
+        </script>
+        <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
@@ -31,42 +102,90 @@
                             <div class="card-body">
                                 <h4>Exercice 9.8</h4>
                                 <p>Ecrivez les algorithmes qui génèrent un Glup aléatoire tel que …
-                                     0 =< Glup =< 2
-                                     –1 =< Glup =< 1
-                                     1,35 =< Glup =< 1,65
-                                     Glup émule un dé à six faces
-                                     –10,5 =< Glup =< +6,5
-                                     Glup émule la somme du jet simultané de deux dés à six faces
-                                </p>
+                                     0 =< Glup=< 2  –1=< Glup=< 1  1,35=< Glup=< 1,65  Glup émule un dé à six faces
+                                         –10,5=< Glup=< +6,5  Glup émule la somme du jet simultané de deux dés à six
+                                        faces </p>
                             </div>
-                            <div class="pseudoCode">
-                                    <h4>Pseudocode:</h4>
-                                    <p>a faire
-                                    </p>
-                                </div>
+                            <div id=" txt_javascript">
+
+                                <form action="exo_9_8.php" method="POST">
+
+                                    <hr width="75%" size="1px" color="olivedrab" />
+                                    <h3>Tester l'algorithme : </h3>
+                                    <label for="myVal">Lancer les dés? True/False :
+                                    </label>
+                                    <input type="text" name="myVal" id="myVal"><br />
+                                    <h3>
+                                        <div class="myResult" id="div_resultat_js"></div>
+                                        <div class="myResult" id="div_result_js"></div>
+                                        <div class="myResult" id="resultat"></div>
+                                        <div class="myResult" id="div_resultat"></div>
+                                    </h3>
+                                    <div class="language">
+                                        <button type="button" value="Envoyer" id="ok"
+                                            onclick="Exo_9_8_innerHTML()">Lancer dès
+                                            innerHTML</button>
+                                    </div>
+                                    <hr width="75%" size="1px" color="olivedrab" />
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">GLUP PHP</button>
+                                        <button type="button" value="Envoyer" id="lqueryok"
+                                            onclick="Exo_9_8_glup()">GLUP</button>
+                                        <button class="btn_green" id="btn_js" onClick="Exo_9_8()">JS prompt</button>
+                                    </div>
+                                    <div class="myResult" id="div_resultat_php">
+                                        <p><?php echo $sMessage; ?></p>
+                                        <p><?php echo $sMessage2; ?></p>
+                                        <p><?php echo $sMessage3; ?></p>
+                                        <p><?php echo $sMessage4; ?></p>
+                                    </div>
+                                </form>
+                            </div>
                             <div class="card-header" id="headingOne">
                                 <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         JAVASCRIPT
                                     </button>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
-                               
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
                                     JAVASCRIPT
                                     <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
+function Exo_9_8_innerHTML() {
+    var jouer = document.getElementById("myVal").value;
+
+    while (jouer) {
+
+        //#3 tirages
+        var tirage = [];
+        tirage.push(Math.floor(Math.random() * 6) + 1);  //entre 1 et 6
+        console.log(tirage);
+        tirage.push(Math.floor(Math.random() * 6) + 1);
+        tirage.push(Math.floor(Math.random() * 6) + 1);  //idem ci-dessus toujours entre 1 et 6
+
+        //affichage du tirage et des points obtenus
+        var points = 0;
+        var i = 0;
+        while (i <= 2) {
+            points = points + tirage[i];
+            i = i + 1;
+
+        }
+
+        document.getElementById("div_resultat").innerHTML = (tirage);
+        document.getElementById("div_resultat_js").innerHTML = ("Vous avez gagné " + (points) + " points à ce lancer");
+        var rep = document.getElementById("restart").value;
+        if (rep != "o" && rep != "O") {
+            jouer = false;
+        }
+    }
+}
                                     </code>
                                  </pre>
                                 </div>
@@ -76,29 +195,50 @@
                             <div class="card-header" id="headingTwo">
                                 <div class="language">
                                     <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         JQUERY
                                     </button>
                                 </div>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordion">
-                        
+
                                 <hr size="1px" color="olivedrab" />
                                 <div class="myCode">
                                     <pre>
-                                    JQUERY
+                                    Js Prompt
                                     <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
+    function Exo_9_8() {
 
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
+        var jouer = String(prompt("Lancer les dés? True/False : "));
+
+        var FaceDe = [];
+
+        while (jouer) {
+
+            //#3 tirages
+            var tirage = [];
+            tirage.push(Math.floor(Math.random() * 6) + 1);  //entre 1 et 6
+            console.log(tirage);
+            tirage.push(Math.floor(Math.random() * 6) + 1);
+            tirage.push(Math.floor(Math.random() * 6) + 1);  //idem ci-dessus toujours entre 1 et 6
+
+            //affichage du tirage et des points obtenus
+            var points = 0;
+            var i = 0;
+            while (i <= 2) {
+
+                points = points + tirage[i];
+                i = i + 1;
+            }
+            alert(tirage);
+            alert("Vous avez gagné " + (points) + " points à ce lancer");
+            var rep = Boolean(prompt("rejouer? (o/n)"));
+            if (rep != "o" && rep != "O") {
+                jouer = false;
+            }
+        }
+    }
 
                                     </code>
                                  </pre>
@@ -123,8 +263,23 @@
                                         PHP
                                     <code data-language="php"> 
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
+    $sMessage="";$sMessage2="";$sMessage3="";$sMessage4="";
+
+    // SI $_POST["valPhp"] EXISTE ET QUE $_POST["valPhp"] N EST PAS VIDE ALORS
+    if ((isset($_POST["myVal"])) && (!(empty($_POST["myVal"]))))
+    {
+        for ($i = 0; $i < 1; $i++) {
+            $decimale = rand(1, 99);
+            $decimale2 = rand(35, 65);
+            $decimale3 = rand(1, 50);
+        
+            $sMessage=("PHP( 0 =< Glup =< 2) => : " . (rand(0,2)). ",".$decimale);
+            $sMessage2=("(1,35 =< Glup =< 1,65) => : " . (rand(1,1).",".$decimale2));
+            $sMessage3=("(–1 =< Glup =< 1) => : " . (rand(-1,99)/100));
+            $sMessage4=("( –10,5 =< Glup =< +6,5) => : " . (rand(6,-10)).",".$decimale3);
+        }
+    
+    }	
                 
                                     </code>
                                  </pre>
@@ -135,7 +290,7 @@
 
                 </div>
                 <div class="col-md-2 contentRight">
-                <?php
+                    <?php
                     require ('../commun/contentRight.php');
                     ?>
                 </div>

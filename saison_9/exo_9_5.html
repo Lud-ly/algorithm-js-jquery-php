@@ -22,16 +22,46 @@
                 var charDelete = 0;
                 var newPhrase = "";
                 phrase = String(prompt("Entrez une phrase : "));
-
+                alert(phrase);
                 charDelete = parseInt(prompt("Entrez le rang du caractère à supprimer : "));
 
-                phrase = phrase.substring(0, charDelete) + phrase.substring(charDelete + 1);
+                phrase = phrase.substr(0, charDelete) + phrase.substr(charDelete + 1);
                 alert(phrase);
                 newPhrase = String(prompt("Entrez la nouvelle phrase : "));
 
-                phrase = phrase.replace(phrase, newPhrase);
+                phrase = phrase.replace(phrase, newPhrase + phrase);
                 alert("Voici la nouvelle phrase est : " + phrase);
-             }
+            }
+
+            function Exo_9_5_innerHTML() {
+                var phrase = "";
+                var charDelete = 0;
+                var newPhrase = "";
+
+                phrase=(document.getElementById("myVal").value);
+                document.getElementById("div_resultat_js").innerHTML = ("Initial phrase : " + phrase);
+                charDelete =(document.getElementById("myRang").value);
+                phrase = phrase.substr(0, charDelete) + phrase.substr(charDelete + 1);
+                document.getElementById("div_result_js").innerHTML=("Phrase after delete : " + phrase);
+                newPhrase =(document.getElementById("newVal").value);
+                phrase = phrase.replace(phrase, newPhrase + phrase);
+                document.getElementById("div_resultat").innerHTML=("Voici la nouvelle phrase est : " + phrase);
+            }
+
+            function Exo_9_5_jquery() {
+                var phrase = "";
+                var charDelete = 0;
+                var newPhrase = "";
+
+                phrase=($("#myVal").val());
+               $("#div_resultat_js").html("Initial phrase : " + phrase);
+                charDelete =($("#myRang").val());
+                phrase = phrase.substr(0, charDelete) + phrase.substr(charDelete + 1);
+               $("#div_result_js").html("Phrase after delete : " + phrase);
+                newPhrase =($("#newVal").val());
+                phrase = phrase.replace(phrase, newPhrase + phrase);
+               $("#div_resultat").html("Jquery Voici la nouvelle phrase est : " + phrase);
+            }
         </script>
         <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
@@ -47,11 +77,11 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Exercice 9.5</h4>
-                                <textarea rows="9" cols="88">
-Ecrivez un algorithme qui demande une phrase à l’utilisateur. Celui-ci entrera
-ensuite le rang d’un caractère à
-supprimer, et la nouvelle phrase doit être affichée (on doit réellement supprimer le
-caractère dans la variable qui
+                                <textarea rows="7" cols="88">
+Ecrivez un algorithme qui demande une phrase à l’utilisateur. 
+Celui-ci entrera ensuite le rang d’un caractère à
+supprimer, et la nouvelle phrase doit être affichée 
+(on doit réellement supprimer le caractère dans la variable qui
 stocke la phrase, et pas uniquement à l’écran).
                                 </textarea>
                             </div>
@@ -76,16 +106,41 @@ stocke la phrase, et pas uniquement à l’écran).
                             <div id=" txt_javascript">
 
                                 <form action="exo_9_5.php" method="POST">
-                                    <div>
-                                        <hr width="75%" size="1px" color="olivedrab" />
-                                        <h3>Tester l'algorithme : </h3>
 
-                                        <div class="language">
-                                            <button class="btn_green" id="btn_js" onClick="Exo_9_5()">GO ALGO</button>
-                                        </div>
+                                    <hr width="75%" size="1px" color="olivedrab" />
+                                    <h3>Tester l'algorithme : </h3>
+                                    <label for="myVal">Entrer une phrase : 
+                                    </label>
+                                    <input type="text" name="myVal" id="myVal">
+                                    <label for="myRang">Entrez le rang du caractère à supprimer : 
+                                    </label>
+                                    <input type="number" name="myRang" id="myRang">
+                                    <label for="newVal">Entrez la nouvelle phrase : 
+                                    </label>
+                                    <input type="text" name="newVal" id="newVal">
+                                    <h3>
+                                        <div class="myResult" id="div_resultat_js"></div>
+                                        <div class="myResult" id="div_result_js"></div>
+                                        <div class="myResult" id="div_resultat"></div>
+                                        </h3>
+                                    <div class="language">
+                                        <button type="button" value="Envoyer" id="ok" onclick="Exo_9_5_innerHTML()">JS
+                                            WITH innerHTML</button>
+                                        <button type="button" value="Envoyer" id="lqueryok"
+                                            onclick="Exo_9_5_jquery()">JQUERY</button>
+                                        <button class="btn_green" id="btn_js" onClick="Exo_9_5()">JS prompt</button>
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                    <div class="myResult" id="div_resultat_php">
+                                        <p><?php echo $sMessage; ?></p>
+                                        <p><?php echo $sMessage2; ?></p>
+                                        <p><?php echo $sMessage3; ?></p>
+                                    </div>
                                 </form>
                             </div>
                             <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Sous le capot</p>
                                 <div class="language">
                                     <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
                                         aria-expanded="true" aria-controls="collapseOne">

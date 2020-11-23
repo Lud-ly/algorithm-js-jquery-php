@@ -86,7 +86,7 @@ if ($handle)	{
 	fclose($handle);
 }
 
-echo $sTextFinal;
+//echo $sTextFinal;
 	
 	require "exo_10_3.html";
 
