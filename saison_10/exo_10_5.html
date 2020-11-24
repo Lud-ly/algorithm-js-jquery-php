@@ -82,94 +82,57 @@ Debut
 Fin
                                     </textarea>
                                 </div>
-                            <div class="card-header" id="headingOne">
-                                <div class="language">
-                                    <button class="btn btn-secondary" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        JAVASCRIPT
-                                    </button>
+                                <div id=" txt_javascript">
+
+                                    <form action="exo_10_5.php" method="GET">
+                                       <hr width="75%" size="1px" color="olivedrab" />
+                                            <h3>Tester l'algorithme : </h3>
+                                    
+                                        <div class="language">
+                                            <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                        </div>
+                                        <div class="myResult" id="div_resultat_php">
+                                            <!-- <h3><?php echo $sTextFinal; ?></h3> -->
+                                        </div>
+                                      
+                                        <label for="sNom">"NOM "
+                                        </label>
+                                        <input type="text" name="sNom" id="sNom"><br/>
+                                       
+                                    </form>
                                 </div>
-                            </div>
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                                data-parent="#accordion">
-                               
-                                <hr size="1px" color="olivedrab" />
-                                <div class="myCode">
-                                    <pre>
-                                    JAVASCRIPT
-                                    <code data-language="javascript"> 
-                                    var a = 5;
-                                    var b = 15;
-                                    console.log("a", a, "b", b);
-                                    a = a + b
-                                    b = a - b
-                                    a = a - b
-                                    console.log("new a", a, "new b", b);
-                                    </code>
-                                 </pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <div class="language">
-                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
-                                        JQUERY
-                                    </button>
-                                </div>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                data-parent="#accordion">
+                    
                         
-                                <hr size="1px" color="olivedrab" />
-                                <div class="myCode">
-                                    <pre>
-                                    JQUERY
-                                    <code data-language="javascript"> 
-                                    a = 5;
-                                    b = 10;
-                                    c = 15;
-                                    console.log("a->", a, "b->", b, "c->", c);
-
-                                    a = a + b;
-                                    b = a - b;
-                                    a = a - b;
-                                    console.log("b->", b);
-
-                                    </code>
-                                 </pre>
+                                <div class="card-header" id="headingOne">
+                                    <div class="language">
+                                        <button class="btn btn-secondary" data-toggle="collapse"
+                                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                           PHP
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <div class="language">
-                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
-                                        data-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        PHP
-                                    </button>
-                                </div>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                data-parent="#accordion">
-                                <hr size="1px" color="olivedrab" />
-                                <div class="myCode">
-                                    <pre>
-                                        PHP
-                                    <code data-language="php"> 
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                    data-parent="#accordion">
                                    
-                                        include ('include/menunav.php');
-                                        global $db;
-                
-                                    </code>
-                                 </pre>
+                                    <hr size="1px" color="olivedrab" />
+                                    <div class="myCode">
+                                        <pre>
+                                        PHP
+                                        <code data-language="php"> 
+                                        var a = 5;
+                                        var b = 15;
+                                        console.log("a", a, "b", b);
+                                        a = a + b
+                                        b = a - b
+                                        a = a - b
+                                        console.log("new a", a, "new b", b);
+                                        </code>
+                                     </pre>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                       
                     </div>
+                </div>
 
                 </div>
                 <div class="col-md-2 contentRight">

@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 // Structure Bottin
 // Nom en Caractère * 20
 // Prénom en Caractère * 15
@@ -22,7 +25,7 @@
 //     Tantque Non EOF(1)
 //         i ← i + 1
 //         Redim MesPotes(i)
-//         LireFichier 1, MonPote
+//LireFichier 1, MonPote       
 //         Si MonPote.Nom = Ancien.Nom Alors
 //             Trouvé ← Vrai
 //             MonPote.Nom ← Nouveau

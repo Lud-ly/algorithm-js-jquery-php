@@ -78,7 +78,7 @@
                 //Si i est inférieur à tab_length
                 if (i <= tab_length) {
                     //Lire myTab de i
-                    myTab[i] = document.getElementById("myValue").value;
+                    myTab[i] = parseInt(document.getElementById("myValue").value);
                     //Ecrire myTab
                     document.getElementById("div_result").innerHTML = ("innerHTML tab non-trié " + myTab);
                     //i←i+1
@@ -185,7 +185,7 @@
                                         <div class="language">
                                             <label for="myValue"> Entrer des valeurs inner:
                                             </label>
-                                            <input type="text" name="myValue" id="myValue"><br />
+                                            <input type="number" name="myValue" id="myValue"><br />
                                             <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_6_17_innerHTML()">TRI_INSERTION innerHTML</button>
                                                 <button type="button" value="Envoyer" id="ok"

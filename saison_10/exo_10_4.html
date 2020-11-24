@@ -12,13 +12,226 @@
 </head>
 
 <body>
-<div class="home">
-    <header>
-    <?php include('../commun/header.php');?>
-    </header>
-    <div class="container-fluid ">
-           
-    </div>
+    <div class="home">
+        <header>
+        <?php include('../commun/header.php');?>
+        </header>
+        <div class="container-fluid ">
+                <h4>ALGORITHME ET PSEUDO-CODE:</h4>
+                <hr width="75%" size="1px" color="olivedrab" />
+                <div class="row">
+                    <div class="col-md-2 myAside">
+                        <?php
+                        include('../commun/menunav.php');
+                        ?>
+                    </div>
+                    <div class="col-md-8">
+                        <div id="accordion">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Exercice 10.5</h4>
+                                    <p>Ecrivez un algorithme qui permette de modifier un renseignement (pour simplifier, disons uniquement le nom de
+                                        famille) d’un membre du carnet d’adresses. Il faut donc demander à l’utilisateur quel est le nom à modifier, puis quel
+                                        est le nouveau nom, et mettre à jour le fichier. Si le nom recherché n'existe pas, le programme devra le signaler.
+                                        
+                                    </p>
+                                </div>
+                                <div class="pseudoCode">
+                                        <h4>Pseudocode:</h4>
+                                        <textarea rows="40" cols="88">
+    Structure Bottin
+    Nom en Caractère * 20
+    Prénom en Caractère * 15
+    Tel en caractère * 10
+    Mail en Caractère * 20
+    Fin Structure
+    Tableau Mespotes() en Bottin
+    Variables MonPote en Bottin
+    Variables Ancien, Nouveau en Caractère*20
+    Variables i, j en Numérique
+    Variable Trouvé en Booléen
+    Debut
+        Ecrire "Entrez le nom à modifier : "
+        Lire Ancien
+        Ecrire "Entrez le nouveau nom : "
+        Lire Nouveau
+        Ouvrir “Adresse.txt” sur 1 pour Lecture
+        i ← -1
+        Trouvé ← Faux
+        Tantque Non EOF(1)
+            i ← i + 1
+            Redim MesPotes(i)
+            LireFichier 1, MonPote
+            Si MonPote.Nom = Ancien.Nom Alors
+                Trouvé ← Vrai
+                MonPote.Nom ← Nouveau
+            FinSi
+            MesPotes(i) ← MonPote
+        FinTantQue
+        Fermer 1
+        Ouvrir "Adresse.txt" sur 1 pour Ecriture
+        Pour j ← 0 à i
+            EcrireFichier 1, MesPotes(j)
+        j Suivant
+        Fermer 1
+        Si Trouvé Alors
+            Ecrire "Modification effectuée"
+        Sinon
+            Ecrire "Nom inconnu. Aucune modification effectuée"
+        FinSi
+    Fin
+                                        </textarea>
+                                    </div>
+                                    <div id=" txt_javascript">
+
+                                        <form action="exo_10_4.php" method="GET">
+                                            <div>
+                                                <hr width="75%" size="1px" color="olivedrab" />
+                                                <h3>Tester l'algorithme : </h3>
+                                            </div>
+                                           
+                                            <div class="language">
+                                                <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                            </div>
+                                            <div class="myResult" id="div_resultat_php">
+                                                <h3><?php echo $sTextFinal; ?></h3>
+                                            </div>
+                                          
+                                            <label for="sNom">"NOM "
+                                            </label>
+                                            <input type="text" name="sNom" id="sNom"><br/>
+                                            <label for="sPrenom">"PRENOM "
+                                            </label>
+                                            <input type="text" name="sPrenom" id="sPrenom"><br/>
+                                            <label for="sTel">"PHONE : "
+                                            </label>
+                                            <input type="tel" name="sTel" id="sTel"><br/>
+                                            <label for="sMail">"EMAIL"
+                                            </label>
+                                            <input type="email" name="sMail" id="sMail">
+                                        </form>
+                                    </div>
+                        
+                            
+                                    <div class="card-header" id="headingOne">
+                                        <div class="language">
+                                            <button class="btn btn-secondary" data-toggle="collapse"
+                                                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                JAVASCRIPT
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                        data-parent="#accordion">
+                                       
+                                        <hr size="1px" color="olivedrab" />
+                                        <div class="myCode">
+                                            <pre>
+                                            PHP
+                                            <code data-language="php"> 
+        //$sMessage="";
+        // ALGORITHME Exo_10_4
+    // On récupère les données
+    
+    $sNom= str_pad($_GET["sNom"], 20, " ");
+    $sPrenom= str_pad($_GET["sPrenom"], 20, " ");
+    $sTel= str_pad($_GET["sTel"], 10, " ");
+    $sMail= str_pad($_GET["sMail"], 20, " ");
+    
+    // Lire mon carnet pour :
+    //				- récupérer son contenu
+    //				- regarder où insérer mes nouvelles données
+    //				- Raison : ordre alphabétique
+    
+    $i= 0;
+    $bDone= 0;
+    $aOfMesPersonnes= [];
+    $aOfLigneFichier= [];
+    /*Ouverture du fichier en lecture seule*/
+    // Ouvrir "Carnet.txt" sur 19 pour Lecture
+    $handle = fopen('Carnet.txt', 'r');
+    /*Si on a réussi à ouvrir le fichier*/
+    if ($handle)
+    {
+        /*Tant que l'on est pas à la fin du fichier*/
+        // TantQue non EOF (19)
+        while (!feof($handle))
+        {
+            /*On lit la ligne courante*/
+            // LireFichier 19, ligne_personne
+            $buffer = fgets($handle);
+            if (strlen($buffer) > 3)	{
+                $aOfLigneFichier["nom"]= substr($buffer, 0, 20);
+                $aOfLigneFichier["prenom"]= substr($buffer, 20, 20);
+                $aOfLigneFichier["tel"]= substr($buffer, 40, 10);
+                $aOfLigneFichier["mail"]= substr($buffer, 50, 30);
+                // Dois je insérer ici ?
+                // SI (fonction_minuscule_sans_accent(saisiepersonne.sNom) < fonction_minuscule_sans_accent(ligne_personne.sNom)) ET (bDone == 0) ALORS
+                if ((strtolower($sNom) < strtolower($aOfLigneFichier["nom"])) && ($bDone == 0))	{
+                    // Mespersonnes(i)= saisiepersonne
+                    $aOfMesPersonnes[$i]["sNom"]= $sNom;
+                    $aOfMesPersonnes[$i]["sPrenom"]= $sPrenom;
+                    $aOfMesPersonnes[$i]["sTel"]= $sTel;
+                    $aOfMesPersonnes[$i]["sMail"]= $sMail;
+                    $i++;
+                    $bDone= 1;
+                }
+                // Mespersonnes(i)= ligne_personne
+                $aOfMesPersonnes[$i]["sNom"]= $aOfLigneFichier["nom"];
+                $aOfMesPersonnes[$i]["sPrenom"]= $aOfLigneFichier["prenom"];
+                $aOfMesPersonnes[$i]["sTel"]= $aOfLigneFichier["tel"];
+                $aOfMesPersonnes[$i]["sMail"]= $aOfLigneFichier["mail"];
+                $i++;
+            }
+        }
+        /*On ferme le fichier*/
+        fclose($handle);
+    }
+    // enlever l'indice de crée :
+    $i--;
+    
+    // dans le cas où je n'ai pas pu insérer (dernier elément du carnet)
+    // SI (bDone == 0) ALORS
+    if ($bDone == 0)	{
+        // Redim Mespersonnes(i)
+        // Mespersonnes(i)= saisiepersonne
+        $i++;
+        $aOfMesPersonnes[$i]["sNom"]= $sNom;
+        $aOfMesPersonnes[$i]["sPrenom"]= $sPrenom;
+        $aOfMesPersonnes[$i]["sTel"]= $sTel;
+        $aOfMesPersonnes[$i]["sMail"]= $sMail;
+        $bDone= 1;
+    }
+    
+    // Ecrire mon nouveau contenu dans carnet
+    // Ouvrir "Carnet.txt" sur 19 pour Ecriture
+    $sTextFinal= "";
+    for ($i= 0; $i<+count($aOfMesPersonnes); $i++)	{
+        $sTextFinal.= $aOfMesPersonnes[$i]["sNom"] . $aOfMesPersonnes[$i]["sPrenom"] . $aOfMesPersonnes[$i]["sTel"] . $aOfMesPersonnes[$i]["sMail"] . "\n";
+    }
+    
+    $handle = fopen('Carnet.txt', 'w');
+    if ($handle)	{
+        fputs($handle, $sTextFinal);
+        fclose($handle);
+    }
+                                            </code>
+                                         </pre>
+                                        </div>
+                                    </div>
+                           
+                        </div>
+                    </div>
+    
+                    </div>
+                    <div class="col-md-2 contentRight">
+                    <?php
+                        require ('../commun/contentRight.php');
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
     <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

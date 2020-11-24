@@ -25,7 +25,7 @@
                 </button>
                
                     <div class="myTitre">
-                  <img src="../img/Testtube.gif"height="60px">
+                  <img src="../img/algorithme.jpg"height="60px">
                     </div>
             </nav>
         </div>

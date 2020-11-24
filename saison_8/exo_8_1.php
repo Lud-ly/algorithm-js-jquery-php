@@ -5,12 +5,11 @@ $sMessage= "";
 $i=0;
 $j=0;
 	//Variable Tableau twoDim(5, 12) en Entier
-	$twoDim =[];
-
-	
-	
-	
-	//Debut
+	$twoDim =array(
+		array(),
+		array()
+	);
+//Debut
 	//Pour i ← 0 à 5
 	for ($i = 0; $i<=5; $i++) {
 		
@@ -27,7 +26,7 @@ $j=0;
 		}	
 	} // i Suivant
 	
-	$sMessage= ($twoDim[1]);
+	$sMessage= ($twoDim[0]);
 	
 // Fin
 	

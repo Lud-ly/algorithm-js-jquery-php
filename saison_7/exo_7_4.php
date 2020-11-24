@@ -4,27 +4,27 @@ $sMessage2= "";
 $sMessage3= "";
 
 $iNumTab = [];
-$i = 2;
-$S = 0;
-$iNum = 0;
+$i = 0;
+$aResult = [];
+$iPos = 0;
+//$iNum = 0;
 // SI $_POST["valPhp"] EXISTE ET QUE $_POST["valPhp"] N EST PAS VIDE ALORS
  if ((isset($_POST["valPhp"])) && (!(empty($_POST["valPhp"]))))
  {
-	
 	$iNumTab = explode(" ",$_POST["valPhp"]);
-
+	$nbSaisi=$_POST["indicePhp"];
 	$sMessage2 = ("Array elements choose deletion : " . implode("," ,$iNumTab));
-	$S = $_POST["idPhp"];
 
 	// Pour i ← S à iNumArray-2
-	for ($i = $S; $i < count($iNumTab)-2; $i++) {
-    //iNumArray(i) ← iNumArray(i+1)
-		$iNumTab[$i] = $iNumTab[$i + 1];
+	for ($i = 0; $i < count($iNumTab); $i++) {
+		if($i <> $nbSaisi-1){
+			$aResult[$iPos]=$iNumTab[$i];
+			$iPos++;
+		}
 	} // i suivant
 
-	//Redim iNumArray(N–1)
-	count($iNumTab)-1;
-	$sMessage3 = ("Array elements after deletion : " . implode("," ,$iNumTab)); 
+
+	$sMessage3 = ("Array elements after deletion : " . implode("," ,$aResult)); 
 
 }// Fin
 	
