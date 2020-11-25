@@ -22,23 +22,24 @@
                 //nombre2 en numerique
                 var iNombre;
                 var iNombre2;
-                // debut
-                // ecrire nombre1="donnez un nombre n°1 
-                // ecrire nombre2="donnez un nombre n°2 
-                //lire nombre1 et nombre2
+                // Début
+                // Ecrire nombre1="donnez un nombre n°1 
+                // Ecrire nombre2="donnez un nombre n°2 
+                //Lire nombre1 et nombre2
                 iNombre = parseInt(prompt("Donnez un nombre"));
                 iNombre2 = parseInt(prompt("Donnez un 2eme nombre"));
-                // si nombre1 ET nombre2 >0 alors
-                //ecrire alert le produit est positif
-                if (iNombre > 0 && iNombre2 > 0) {
+                // Si  iNombre * inombre2 est supérieur à 0 alors
+                //Ecrire le produit est positif
+                if (iNombre * iNombre2 > 0) {
                     alert("Bravo prompt le produit est positif");
                 }
-                //sinonsi nombre1 ET nombre2 inferieur 0 alors
-                //ecrire alert le produit est negatif
-                else if (iNombre < 0 && iNombre2 < 0) {
+                // Si  iNombre * inombre2 est inférieur à 0 alors
+                //Ecrire le produit est négatif
+                else if (iNombre * iNombre2 < 0) {
                     alert("Bravo prompt le produit est negatif");
                 }
-                else if (iNombre == 0 || iNombre2 == 0) {
+                 // Si  iNombre * inombre2 est egal à 0 alors
+                else if (iNombre * iNombre2 == 0) {
                     alert("Bravo prompt le produit est null");
                 }
                 // fin
@@ -56,16 +57,17 @@
                 //lire nombre1 et nombre2
                 iNombre = document.getElementById("iNombreUtilisateur").value;
                 iNombre2 = document.getElementById("iNombreUtilisateur2").value;
-                // Si Nombre est supérieur à 0 alors
-                if (iNombre > 0 && iNombre2 > 0) {
+                // Si  iNombre * inombre2 est supérieur à 0 alors
+                if (iNombre * iNombre2 > 0) {
                     //  Ecrire le Nombre est positif
                     document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML le produit est positif !";
                 }
-                // sinonsi iNombre < 0 alors
-                else if (iNombre < 0 && iNombre2 < 0) {
+                 // sinonsi  iNombre * inombre2 < 0 alors
+                else if (iNombre * iNombre2 < 0) {
+                     //  Ecrire le Nombre est négatif
                     document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML le produit est negatif !";
                 }
-                else if (iNombre == 0 || iNombre2 == 0) {
+                else if (iNombre * iNombre2 == 0) {
                     //  Ecrire le Nombre est null
                     document.getElementById("div_resultat_js").innerHTML = " Bravo innerHTML le Nombre est null !";
                 }
@@ -83,17 +85,17 @@
                 //lire nombre1 et nombre2
                 iNombre = $("#iNombreUtilisateur").val();
                 iNombre2 = $("#iNombreUtilisateur2").val();
-                // Si Nombre est supérieur à 0 alors
-                if (iNombre > 0 && iNombre2 > 0) {
+                // Si  iNombre * inombre2 est supérieur à 0 alors
+                if (iNombre * iNombre2 > 0) {
                     //  Ecrire le Nombre est positif
                     $("#div_resultat_js").html("Bravo Jquery le produit est positif !");
                 }
-                // sinonsi iNombre < 0 alors
-                else if (iNombre < 0 && iNombre2 < 0) {
+                // sinonsi  iNombre * inombre2 < 0 alors
+                else if (iNombre * iNombre2 < 0) {
                     $("#div_resultat_js").html("Bravo Jquery le produit est negatif !");
                 }
-                // sinonsi iNombre ou inombre2  = 0 alors
-                else if (iNombre == 0 || iNombre2 == 0) {
+                // sinonsi iNombre * inombre2  = 0 alors
+                else if (iNombre * iNombre2 == 0) {
                     //  Ecrire le Nombre est null
                     $("#div_resultat_js").html(" Bravo jquery le Nombre est null !")
                 }
@@ -122,16 +124,17 @@
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
                                 <textarea rows="15" cols="88"> 
-                                    Variables Nombre1 & 2 en numerique
+                                    Variables nombre1,nombre2 en numerique
                                     Début
-                                        Ecrire "donnez un nombre"
-                                        Lire le nombre
-                                        Si Nombre1&2 est supérieur à 0 alors
-                                            Ecrire le nombre est positif
-                                        Sinonsi Nombre1&2< 0 alors
-                                            Ecrire le nombre est negatif
-                                        Sinonsi le nombre1&2 = 0 alors
-                                            Ecrire le nombre est null
+                                        Ecrire nombre1="donnez un nombre n°1 "
+                                        Ecrire nombre2="donnez un nombre n°2 "
+                                        Lire nombre1 et nombre2
+                                        Si produit de nombre1 * nombre2 >0 alors
+                                            Ecrire  le nombre est positif
+                                        Si produit de nombre1 * nombre2 inferieur 0 alors
+                                        Ecrire  le nombre est negatif
+                                        Si produit de nombre1 * nombre2 égale 0 alors
+                                        Ecrire  le nombre est null
                                     Fin
                                 </textarea>
                             </div>
@@ -154,6 +157,12 @@
                                         <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                     </div>
                                 </form>
+                                <div>
+                                    <h3><div class="myResult" id="div_resultat"></div></h3> 
+                                    <h3><div class="myResult" id="div_resultat_js"></div></h3> 
+                                    <h3><div class="myResult" id="div_resultat_p"></div></h3> 
+                                    <div class="myResult"  id="div_resultat_php"><h3><?php echo $sMessage; ?></h3></div>
+                                </div>
                                 <div class="language">
                                     <button class="btn_green" id="btn_js" onClick="Exo_3_5()">JS WITH PROMPT</button>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
@@ -161,16 +170,10 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                     <button class="btn_green" onClick="Exo_3_5_jquery()">JQUERY !</button>
                                 </div>
-                                <div>
-                                    <h3><div class="myResult" id="div_resultat"></h3></div> 
-                                    <h3><div class="myResult" id="div_resultat_js"></div></h3> 
-                                    <h3><div class="myResult" id="div_resultat_p"></div></h3> 
-                                    <div class="myResult"  id="div_resultat_php"><h3><?php echo $sMessage; ?></h3></div>
-                                </div>
                             </div>
                             <div class="card-header" id="headingOne">
                                 <hr width="75%" size="1px" color="olivedrab" />
-                                <p>Voir les Codes</p>
+                                <p>Sous le capot</p>
                                 <div class="language">
                                     <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
                                         aria-expanded="true" aria-controls="collapseOne">

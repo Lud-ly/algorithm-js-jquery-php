@@ -5,15 +5,18 @@
                     <?php
                         include('../commun/menuCollapse.php');
                     ?>
-                    <button class="btn btn-success plus">Python</button>
-                    <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top"
+                    <button class="btn btn-secondary plus">Python</button>
+                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
                         title="Tooltip on top">
                         Java
                     </button>
-                    <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top"
+                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
                         title="Tooltip on top">
                         Plus
                     </button>
+                    <?php
+                    include('../commun/myModal.php');
+                    ?>
                     <i class="fas fa-clock"></i>
                 </div>
             </div>
@@ -23,9 +26,8 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-               
                     <div class="myTitre">
-                  <img src="../img/algorithme.jpg"height="60px">
+                  <a  href="../accueil/accueil.php"><img src="../img/algorithme.jpg"height="60px"></a>
                     </div>
             </nav>
         </div>

@@ -1,6 +1,6 @@
                
                         <div class="dropdown">
-                                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Les Variables
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">1.Les Variables
                                 <span class="caret"></span></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="../saison_1/exo_1_1.php">Exercice 1.1</a>
@@ -16,7 +16,7 @@
                         </div>
                                                     
                         <div class="dropdown">
-                                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Lecture et Ecriture
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">2.Lecture et Ecriture
                                 <span class="caret"></span></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="../saison_2/exo_2_1.php">Exercice 2.1</a>
@@ -27,7 +27,7 @@
                         </div>   
                           
                         <div class="dropdown">
-                                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Tests
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">3.Tests
                                 <span class="caret"></span></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="../saison_3/exo_3_1.php">Exercice 3.1</a>
@@ -40,22 +40,22 @@
                         </div>  
                            
                         <div class="dropdown">
-                                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Logique
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">4.Logique
                                 <span class="caret"></span></button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="../saison_4/exo_1.php">Exercice 4.1</a>
-                                <a class="dropdown-item" href="../saison_4/exo_2.php">Exercice 4.2</a>
-                                <a class="dropdown-item" href="../saison_4/exo_3.php">Exercice 4.3</a>
-                                <a class="dropdown-item" href="../saison_4/exo_4.php">Exercice 4.4</a>
-                                <a class="dropdown-item" href="../saison_4/exo_5.php">Exercice 4.5</a>
-                                <a class="dropdown-item" href="../saison_4/exo_6.php">Exercice 4.6</a>
-                                <a class="dropdown-item" href="../saison_4/exo_7.php">Exercice 4.7</a>
-                                <a class="dropdown-item" href="../saison_4/exo_8.php">Exercice 4.8</a>
+                                <a class="dropdown-item" href="../saison_4/exo_4_1.php">Exercice 4.1</a>
+                                <a class="dropdown-item" href="../saison_4/exo_4_2.php">Exercice 4.2</a>
+                                <a class="dropdown-item" href="../saison_4/exo_4_3.php">Exercice 4.3</a>
+                                <a class="dropdown-item" href="../saison_4/exo_4_4.php">Exercice 4.4</a>
+                                <a class="dropdown-item" href="../saison_4/exo_4_5.php">Exercice 4.5</a>
+                                <a class="dropdown-item" href="../saison_4/exo_4_6.php">Exercice 4.6</a>
+                                <a class="dropdown-item" href="../saison_4/exo_4_7.php">Exercice 4.7</a>
+                                <a class="dropdown-item" href="../saison_4/exo_4_8.php">Exercice 4.8</a>
                             </div>
                         </div>     
                           
                         <div class="dropdown">
-                                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Les Boucles
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">5.Les Boucles
                                 <span class="caret"></span></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="../saison_5/exo_5_1.php">Exercice 5.1</a>
@@ -73,7 +73,7 @@
                         </div> 
                         
                         <div class="dropdown">
-                                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Les Tableaux
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">6.Les Tableaux
                                 <span class="caret"></span></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="../saison_6/exo_6_1.php">Exercice 6.1</a>
@@ -97,7 +97,7 @@
                         </div> 
 
                         <div class="dropdown">
-                                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Techniques rusées
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">7.Techniques rusées
                                 <span class="caret"></span></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="../saison_7/exo_7_1.php">Exercice 7.1</a>
@@ -109,7 +109,7 @@
                         </div> 
                            
                         <div class="dropdown">
-                                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Mdivti-dimensionnels
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">8.Multi-dimensionnels
                                 <span class="caret"></span></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="../saison_8/exo_8_1.php">Exercice 8.1</a>
@@ -119,7 +119,7 @@
                         </div>  
                         
                         <div class="dropdown">
-                                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Functon Native
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">9.Functon Native
                                 <span class="caret"></span></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="../saison_9/exo_9_5.php">Exercice 9.5</a>
@@ -130,7 +130,7 @@
                            
                         
                         <div class="dropdown">
-                                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Les fichiers
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">10.Les fichiers
                                 <span class="caret"></span></button>
                             <div class="dropdown-menu">
                                <a class="dropdown-item" href="../saison_10/exo_10_3.php">Exercice 10.3</a>

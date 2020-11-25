@@ -6,7 +6,6 @@ body{
 }
 h3,h4,h5,p,div{
   display: block;
-  font-family: 'Piazzolla', serif;
   letter-spacing: 1px;
   color:#333A40;
   font-weight: 900;
@@ -19,25 +18,26 @@ a{
   text-decoration: none;
 }
 .home{
-  width:75%;
+  width:85%;
   margin: 0 auto;
   background-color: #fff;
-  box-shadow: 0px 0px 3px 2px #999;
+  box-shadow: 0px 0px 1px 3px #999;
 }
 
 /*----------CONTAINER-----------*/
 .container-fluid{
-  margin-top:200px;
+  margin-top:150px;
   margin-bottom: 100px;
 }
   .container-fluid h4{
     margin-bottom: 10px;
+    font-size: 30px;
     padding: 40px;
     font-weight: 500;
   }
   .container-fluid hr{
     margin-bottom: 50px;
-    color: #c5e4c5!important;
+    color: #999!important;
   }
   /*--------NAVBAR------------*/
 .fixed-top{
@@ -94,7 +94,7 @@ a{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-color: #d8e4d8;
+    background-color: #dae0da;
     border: none;
   }
   .pseudoCode h4{
@@ -111,8 +111,8 @@ a{
   }
   .dropdown{
     display: inline-block;
+    margin: 5px;
   }
-  
 .language input{
   margin-right: 20px;
 }
@@ -124,23 +124,23 @@ a{
     text-align: center;
   }
   .txt_javascript{
-    background-color:  #d8e4d8;
+    background-color:  #dae0da;
   }
   form{
     padding: 30px;
     border-radius: 6px;
-    background-color:  #d8e4d8;
+    background-color:  #dae0da;
   }
   .myResult{
-    background-color:  #d8e4d8;
+    background-color:  #dae0da;
   }
   form h3{
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
     .card-body p{
       margin:0;
       width: 100%;
-      border:1px solid olivedrab; 
+      border:1px solid #000; 
       border-radius: 6px;
       padding:30px;
       font-weight: 500;
@@ -258,22 +258,28 @@ a{
   }
   .cours a{
     color: #000;
-    margin:80px 0px;
+    margin:25px 0px;
     text-align: center;
-    padding: 7px 20px!important;
-    height: 40px!important;
+    padding: 25px!important;
+    height: 80px!important;
     width: 100%!important;
     text-decoration: none;
-    background-color:green; 
+    background-color:chartreuse; 
     background-image:-webkit-linear-gradient(top,#fff 0%, whitesmoke 100%);
-      background-image: linear-gradient(to bottom, #999 0%,  whitesmoke 100%);
+    background-image: linear-gradient(to bottom, #999 0%,  whitesmoke 100%);
     border-radius: 6px;
     box-shadow: 3px 3px 3px #999;
     border:solid 1px #333A40
   }
     .cours button:hover,.cours a:hover{
-      background: rgb(30, 31, 29);
-      color: #fff;
+      background: chartreuse;
+    }
+    .cours h5{
+      text-align: center;
+      padding: 15px;
+      margin: 20px;
+      border:solid 1px #333A40;
+      border-radius: 6px;
     }
     /*-----------FOOTER----------*/
 footer{
@@ -295,29 +301,31 @@ footer{
   height: 150px;
 }
    footer svg{
-    color: chartreuse;
+    color: #999;
 
 
    }/* Tablettes 'n' Mobiles */
    @media only screen and (max-width: 1524px) {
     #menu-accordeon {
-      width: 110%;
-      margin: 0;
+      width: 80%;
      }
     .cours a{
     text-align: center;
-    margin: 80px 0;
-    height: 60px;
-    width: 100%;
+    margin:25px 21px;
+    font-size: 15px;
+    }
+    .cours h5{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 15px;
+      border:none;
     }
     textarea{
       width: 80%;
      }
      .content img{
-       width: 50%;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
       
      }
     .contentRight img {
@@ -331,7 +339,7 @@ footer{
   display: block;
   }
   .content{
-    height: 100px;
+    height: 200px;
     padding: 0px;
     margin-bottom: 10px;
     }
@@ -342,11 +350,18 @@ footer{
     width: 60%;
    }
   .cours a{
-    margin: 80px 0;
+    margin: 20px 0;
     text-align: center;
-    padding: 15px;
+    padding: 5px;
     height: 60px;
     width: 100%;
+  }
+  .cours h5{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    border:none;
   }
   .content img{
     width: 50%;
@@ -370,20 +385,29 @@ footer{
   display: none;
   }
   .content{
-    height: 100px;
+    height: 200px;
       padding: 0px;
       margin-bottom: 10px;
     }
   .myAside{
-    height: 750px;
+    height:0;
   } 
   textarea{
-    width: 60%;
+    width: 100%;
    }
   .cours a{
-    height: 60px;
+    height: 30px;
+    text-align: center;
     width: 100%;
-    padding:15px;
+    padding:5px;
+    font-size: 10px;
+    }
+    .cours h5{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 15px;
+      border:none;
     }
   .contentRight{
     margin: 0;
@@ -404,6 +428,9 @@ footer{
     padding:5px;
     font-size: 18px;
   }
+  footer{
+    font-size: 10px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -412,8 +439,14 @@ footer{
     margin: 0;
   display: none;
    }
+   .container-fluid h4{
+    margin-bottom:0;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+  }
    .content{
-    height: 100px;
+    height: 200px;
       padding: 0px;
       margin-bottom: 10px;
     }
@@ -421,15 +454,22 @@ footer{
    width: 60%;
   }
    .myAside{
-     height: 280px;
+     height: 0;
    }
    .cours a{
-     margin: 60px -3px;
+     margin:0;
      text-align: center;
      padding: 5px;
      height: 60px;
      width: 100%;
      }
+     .cours h5{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 15px;
+      border:none;
+    }
    .contentRight{
      margin: 0;
      height: 280px;
@@ -448,6 +488,9 @@ footer{
     margin: 0px;
     padding:10px;
     font-size: 18px;
+  }
+  footer{
+    font-size: 10px;
   }  
 }
 

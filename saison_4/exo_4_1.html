@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoSite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/accueil.css">
+</head>
+
+<body>
+    <div class="home">
+        <header>
+            <?php include('../commun/header.php');?>
+        </header>
+        <script>
+            function Exo_4_1() {
+                // DEBUT
+                //VARIABLE tutu en numerique
+                //VARIABLE toto en numerique
+                //VARIABLE sTata ="ok"
+                var Tutu;
+                var Toto;
+                var sTata = "ok";
+                //ecrire entrez une valeur pour tutu
+                //ecrire entrez une valeur pour toto
+                //tutu et toto
+                Tutu = parseInt(prompt("entrez une valeur pour Tutu"));
+                Toto = parseInt(prompt("entrez une valeur pour Toto"));
+                //loi de morgan
+                //Si Tutu <= Toto + 4 ET sTata <> "OK" Alors
+                if (Tutu <= Toto + 4 && sTata!="ok") {
+                    // Tutu ← Tutu - 1
+                    Tutu -= 1;
+                }
+                // Sinon
+                else {
+                    // Tutu ← Tutu + 1
+                    Tutu += 1;
+                }
+                alert("loi de Morgan Tutu vaut " + Tutu);
+                //fin
+            }
+
+            function Exo_4_1_innerHTML() {
+                // DEBUT
+                //VARIABLE tutu en numerique
+                //VARIABLE toto en numerique
+                //VARIABLE sTata ="ok"
+                var Tutu;
+                var Toto;
+                var sTata = "ok";
+                //ecrire entrez une valeur pour tutu
+                //ecrire entrez une valeur pour toto
+                //tutu et toto
+                Tutu = document.getElementById("iValeurTutu").value;
+                Toto = document.getElementById("iValeurToto").value;
+
+                //loi de morgan
+                //Si Tutu <= Toto + 4 ET sTata <> "OK" Alors
+                if (Tutu <= Toto + 4 && sTata!="ok") {
+                    // Tutu ← Tutu - 1
+                    Tutu -= 1;
+                }
+                // Sinon
+                else {
+                    // Tutu ← Tutu + 1
+                    Tutu += 1;
+                }
+                document.getElementById("div_resultat_js").innerHTML = ("Merci innerHTML Tutu vaut" +Tutu);
+                //fin
+            }
+            function Exo_4_1_jquery() {
+                // DEBUT
+                //variable tutu en numerique
+                //variable toto en numerique
+                //VARIABLE sTata ="ok"
+                var Tutu;
+                var Toto;
+                var sTata = "ok";
+                //ecrire entrez une valeur pour tutu
+                //ecrire entrez une valeur pour toto
+                //tutu et toto
+                Tutu = $("#iValeurTutu").val();
+                Toto = $("#iValeurToto").val();
+
+                //loi de morgan
+                //Si Tutu <= Toto + 4 ET sTata = "OK" Alors
+                if (Tutu <= Toto + 4 && sTata!="ok") {
+                    // Tutu ← Tutu - 1
+                    Tutu = Tutu-1;
+                }
+                // Sinon
+                else {
+                    // Tutu ← Tutu + 1
+                    Tutu = Tutu+1;
+                }
+                $("#div_resultat_js").html("Merci jquery Tutu vaut "+Tutu);
+                //fin
+            }
+        </script>
+
+
+        <div class="container-fluid ">
+            <h4>ALGORITHME ET PSEUDO-CODE:</h4>
+            <hr width="75%" size="1px" color="olivedrab" />
+            <div class="row">
+                <div class="col-md-2 myAside">
+                    <?php
+                    include('../commun/menunav.php');
+                    ?>
+                </div>
+                <div class="col-md-8">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>Exercice 4.1</h4>
+                                <p>Formulez un algorithme équivalent à l’algorithme suivant :
+                                    Si Tutu > Toto + 4 OU Tata = "OK" Alors
+                                    Tutu ← Tutu + 1
+                                    Sinon
+                                    Tutu ← Tutu – 1
+                                    Finsi
+                                </p>
+                            </div>
+                            <div class="pseudoCode">
+                                <h4>Pseudocode:</h4>
+                                <textarea rows="13" cols="88">
+                                    Variables tutu,toto en Numérique
+                                    Variables tata en caractère
+                                    Début
+                                        Ecrire "entrez une valeur pour tutu"
+                                        Ecrire entrez une valeur pour toto
+                                        Lire tutu et toto
+                                            Si Tutu <= Toto + 4 OU Tata <> "OK" Alors
+                                                Tutu ← Tutu + 1
+                                            Sinon
+                                                Tutu ← Tutu - 1
+                                            Finsi
+                                    Fin
+                                </textarea>
+                            </div>
+                            <div id="txt_javascript">
+                                <form action="exo_4_1.php" method="POST">
+                                    <div>
+                                        <hr width="75%" size="1px" color="olivedrab" />
+                                        <h3>Tester l'algorithme : </h3>
+                                        <div>
+                                            <p>Loi de Morgan</p>
+                                            <label for="iValeurTutu">Veuillez entrer une valeur pour tutu
+                                                :</label>
+                                            <input type="text" name="iValeurTutu" id="iValeurTutu">
+                                            <label for="iValeurToto">Veuillez entrer une valeur pour toto
+                                                :</label>
+                                            <input type="text" name="iValeurToto" id="iValeurToto">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="myResult" id="div_resultat"></div>
+                                        <div class="myResult" id="div_resultat_js"></div> 
+                                        <div class="myResult" id="div_resultat_p"></div>
+                                        <div class="myResult"  id="div_resultat_php">
+                                            <h3><?php echo $sMessage; ?></h3>
+                                        </div>
+                                    </div>
+                                    <div class="language">
+                                        <button class="btn_green" type="submit">ALLEZ PHP !</button>
+                                    </div>
+                                </form>
+                                <div class="language">
+                                    <button class="btn_green" id="btn_js" onClick="Exo_4_1()">JS WITH PROMPT</button>
+                                   
+                                    <button class="btn_green" onClick="Exo_4_1_innerHTML()"> JS WITH INNERHTML</button>
+                                  
+                                    <button class="btn_green" onClick="Exo_4_1_jquery()">JQUERY !</button>
+                                </div>
+                            </div>
+                           
+                            <div class="card-header" id="headingOne">
+                                <hr width="75%" size="1px" color="olivedrab" />
+                                <p>Sous le Capot</p>
+                                <div class="language">
+                                    <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        JAVASCRIPT
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                    JAVASCRIPT
+                                    <code data-language="javascript"> 
+        function Exo_4_1_innerHTML() {
+            // DEBUT
+            //VARIABLE tutu en numerique
+            //VARIABLE toto en numerique
+            //VARIABLE sTata ="ok"
+            var Tutu;
+            var Toto;
+            var sTata = "ok";
+            //ecrire entrez une valeur pour tutu
+            //ecrire entrez une valeur pour toto
+            //tutu et toto
+            Tutu = document.getElementById("iValeurTutu").value;
+            Toto = document.getElementById("iValeurToto").value;
+
+            //loi de morgan
+            //Si Tutu <= Toto + 4 ET sTata <> "OK" Alors
+            if (Tutu <= Toto + 4 && sTata!="ok") {
+                // Tutu ← Tutu - 1
+                Tutu -= 1;
+            }
+            // Sinon
+            else {
+                // Tutu ← Tutu + 1
+                Tutu += 1;
+            }
+            document.getElementById("div_resultat_js").innerHTML = (Tutu);
+            //fin
+        }
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <div class="language">
+                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        JQUERY
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordion">
+
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                    JQUERY
+                                    <code data-language="javascript"> 
+        function Exo_4_1_jquery() {
+            // DEBUT
+            //variable tutu en numerique
+            //variable toto en numerique
+            //VARIABLE sTata ="ok"
+            var Tutu;
+            var Toto;
+            var sTata = "ok";
+            //ecrire entrez une valeur pour tutu
+            //ecrire entrez une valeur pour toto
+            //tutu et toto
+            Tutu = $("#iValeurTutu").val();
+            Toto = $("#iValeurToto").val();
+
+            //loi de morgan
+            //Si Tutu <= Toto + 4 ET sTata = "OK" Alors
+            if (Tutu <= Toto + 4 && sTata!="ok") {
+                // Tutu ← Tutu - 1
+                Tutu = Tutu-1;
+            }
+            // Sinon
+            else {
+                // Tutu ← Tutu + 1
+                Tutu = Tutu+1;
+            }
+            $("#div_resultat_js").html("Merci jquery Tutu vaut "+Tutu);
+            //fin
+        }
+
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <div class="language">
+                                    <button class="btn btn-secondary collapsed" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        PHP
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordion">
+                                <hr size="1px" color="olivedrab" />
+                                <div class="myCode">
+                                    <pre>
+                                        PHP
+                                    <code data-language="php"> 
+                                   
+    $sMessage= "";
+    // DEBUT
+    //VARIABLE tutu en numerique
+    //VARIABLE toto en numerique
+    //VARIABLE sTata ="ok"
+    //inutile php
+    //SI $_POST["iNombreUtilisateur"] EXISTE ET QUE $_POST["iNombreUtilisateur"] N EST PAS VIDE ALORS
+    if ((isset($_POST["iValeurTutu"])) && (!(empty($_POST["iValeurTutu"]))))
+    {
+    //ecrire entrez une valeur pour tutu
+    //ecrire entrez une valeur pour toto
+    //tutu et toto
+    $sTata="ok";
+    $iValeurTutu= $_POST["iValeurTutu"];
+    $iValeurToto= $_POST["iValeurToto"];
+    //loi de morgan
+    //Si Tutu <= Toto + 4 ET sTata <> "OK" Alors
+    if($iValeurTutu <= $iValeurToto + 4 && $sTata<>"ok") {
+        // Tutu ← Tutu - 1
+        $iValeurTutu = $iValeurTutu-1;
+    }
+    // Sinon
+    else {
+        // Tutu ← Tutu + 1
+        $iValeurTutu = $iValeurTutu+1;
+    }
+    $sMessage= ("Merci PHP Tutu vaut : " . $iValeurTutu);
+    //fin
+    }
+                                    </code>
+                                 </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-2 contentRight">
+                    <?php
+                    require ('../commun/contentRight.php');
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/rainbow-custom.min.js"></script>
+</body>
+<footer class="text-muted">
+    <?php
+        require ("../commun/footer.php");
+    ?>
+</footer>
+
+</html>

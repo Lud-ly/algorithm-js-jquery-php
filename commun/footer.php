@@ -9,5 +9,5 @@
         </a>
     </p>
     <img src="../img/giphy.gif"height="60px">
-    <p>Exosdalgo is ©Ludovic Mouly example</p>
+    <p>Exosdalgo is ©Ludovic Mouly Example 2020</p>
     <p>how to Code ? <a href="https://afpa.com" target="_blank">Visit the Site</a>

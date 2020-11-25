@@ -2,18 +2,30 @@
 
 
 
-
+$sNom="";$sPrenom="";$sTel="";$sMail="";
 // Structure Bottin
 // Nom en Caractère * 20
 // Prénom en Caractère * 15
 // Tel en caractère * 10
 // Mail en Caractère * 20
 // Fin Structure
+$sNom= str_pad($_GET["sNom"], 20, " ");
+$sPrenom= str_pad($_GET["sPrenom"], 20, " ");
+$sTel= str_pad($_GET["sTel"], 10, " ");
+$sMail= str_pad($_GET["sMail"], 20, " ");
+
 // Tableau Mespotes() en Bottin
 // Variables MonPote en Bottin
 // Variables Ancien, Nouveau en Caractère*20
 // Variables i, j en Numérique
 // Variable Trouvé en Booléen
+$i= 0;
+$j= 0;
+$sAncien="";
+$sNouveau="";
+$aMespotes= [];
+$aOfLigneFichier= [];
+$trouvé=false;
 // Debut
 //     Ecrire "Entrez le nom à modifier : "
 //     Lire Ancien

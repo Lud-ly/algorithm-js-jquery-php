@@ -8,20 +8,19 @@
 			{
 				// VARIABLE iNombreUtilisateur en NUMERIQUE
 				// Inutile
-				$iNombreEsssai= $_POST["iNombreEsssai"];
-				$iNombreEsssai++;
 				
-				// ECRIRE "Entrez un nombre entre 1 et 3"
-				// LIRE iNombreUtilisateur
+				//
+				// ECRIRE & LIRE iNombreUtilisateur
 				$iNombreUtilisateur= $_POST["iNombreUtilisateur"];
 				
-				// SI ((iNombreUtilisateur < 1) || (iNombreUtilisateur > 3)) ALORS
-				if (($iNombreUtilisateur < 0))
+				// SI ((iNombreUtilisateur < 0)ALORS
+				if ($iNombreUtilisateur < 0)
 				{
-					// ECRIRE "Erreur. Veuillez ressaisir un nombre entre 1 et 3."
+					// ECRIRE "Erreur. PHP Le nombre est negatif."
 					$sMessage= "PHP Le nombre est negatif.";
 				} 
-				else if (($iNombreUtilisateur >= 0)){
+				// ECRIRE "Erreur. PHP Le nombre est negatif."
+				if ($iNombreUtilisateur >= 0){
 					$sMessage= "PHP Le nombre est positif.";
 				}
 			}  

@@ -22,23 +22,23 @@
                 //nombre2 en numerique
                 var iNombre;
                 var iNombre2;
-                // debut
-                // ecrire nombre1="donnez un nombre n°1 
-                // ecrire nombre2="donnez un nombre n°2 
+                // Début
+                // Ecrire nombre1="donnez un nombre n°1 
+                // Ecrire nombre2="donnez un nombre n°2 
                 //lire nombre1 et nombre2
                 iNombre = parseInt(prompt("Donnez un nombre"));
                 iNombre2 = parseInt(prompt("Donnez un 2eme nombre"));
-                // si nombre1 ET nombre2 >0 alors
-                //ecrire alert le produit est positif
-                if (iNombre > 0 && iNombre2 > 0) {
+                // Si produit des Nombres est supérieur à 0 alors
+                //Ecrire le produit est positif
+                if (iNombre *iNombre2 > 0) {
                     alert("Bravo prompt le produit est positif");
                 }
-                //sinonsi nombre1 ET nombre2 inferieur 0 alors
-                //ecrire alert le produit est negatif
-                else if (iNombre < 0 && iNombre2 < 0) {
-                    alert("Bravo prompt le produit est negatif");
+                // Si produit des Nombres est inférieur à 0 alors
+                //Ecrire  le produit est négatif
+                if (iNombre * iNombre2 < 0) {
+                    alert("Bravo prompt le produit est négatif");
                 }
-                // fin
+                // Fin
             }
 
             function Exo_3_2_innerHTML() {
@@ -48,42 +48,44 @@
                 var iNombre;
                 var iNombre2;
                 //DEBUT
-                // ecrire nombre1="donnez un nombre n°1 
-                // ecrire nombre2="donnez un nombre n°2 
-                //lire nombre1 et nombre2
+                // Ecrire nombre1="donnez un nombre n°1 
+                // Ecrire nombre2="donnez un nombre n°2 
+                //Lire nombre1 et nombre2
                 iNombre = document.getElementById("iNombreUtilisateur").value;
                 iNombre2 = document.getElementById("iNombreUtilisateur2").value;
-                // Si Nombre est supérieur à 0 alors
-                if (iNombre > 0 && iNombre2 > 0) {
+                // Si produit des Nombres est supérieur à 0 alors
+                if (iNombre * iNombre2 > 0) {
                     //  Ecrire le Nombre est positif
                     document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML le produit est positif !";
                 }
-                // sinonsi iNombre < 0 alors
-                else if(iNombre < 0 && iNombre2 < 0) {
-                    document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML le produit est negatif !";
+               // Si produit des Nombres est inférieur à 0 alors
+                if(iNombre * iNombre2 < 0) {
+                     //  Ecrire le Nombre est négatif
+                    document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML le produit est négatif !";
                 }
                 //Fin
             }
             function Exo_3_2_jquery() {
                 // DEBUT
-                //nombre en numerique
-                //nombre2 en numerique
+                //iNombre en numerique
+                //iNombre2 en numerique
                 var iNombre;
                 var iNombre2;
                 //DEBUT
-                // ecrire nombre1="donnez un nombre n°1 
-                // ecrire nombre2="donnez un nombre n°2 
-                //lire nombre1 et nombre2
+                // Ecrire nombre1="donnez un nombre n°1 
+                // Ecrire nombre2="donnez un nombre n°2 
+                //Lire nombre1 et nombre2
                 iNombre = $("#iNombreUtilisateur").val();
                 iNombre2 = $("#iNombreUtilisateur2").val();
-                // Si Nombre est supérieur à 0 alors
-                if (iNombre > 0 && iNombre2 > 0) {
+                // Si produit des Nombres est supérieur à 0 alors
+                if (iNombre * iNombre2 > 0) {
                     //  Ecrire le Nombre est positif
                     $("#div_resultat_js").html("Bravo Jquery le produit est positif !");
                 }
-                // sinonsi iNombre < 0 alors
-                else if(iNombre < 0 && iNombre2 < 0) {
-                    $("#div_resultat_js").html("Bravo Jquery le produit est negatif !");
+                // Si produit des Nombres est inférieur à 0 alors
+               if(iNombre * iNombre2 < 0) {
+                     //  Ecrire le Nombre est négatif
+                    $("#div_resultat_js").html("Bravo Jquery le produit est négatif !");
                 }
                 //Fin
             }
@@ -117,9 +119,9 @@
                                         Ecrire nombre1="donnez un nombre n°1 "
                                         Ecrire nombre2="donnez un nombre n°2 "
                                         Lire nombre1 et nombre2
-                                        Si nombre1 ET nombre2 >0 alors
+                                        Si produit de nombre1 * nombre2 >0 alors
                                             Ecrire  le nombre est positif
-                                        Sinonsi nombre1 ET nombre2 inferieur 0 alors
+                                        Si produit de nombre1 * nombre2 inferieur 0 alors
                                         Ecrire  le nombre est negatif
                                     Fin
                                 </textarea>
@@ -143,7 +145,14 @@
                                         <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                     </div>
                                 </form>
-                               
+                                <div>
+                                    <div class="myResult"  id="div_resultat_php">
+                                        <h3><?php echo $sMessage; ?></h3>
+                                    </div>
+                                    <h3><div class="myResult" id="div_resultat"></div> </h3>
+                                    <h3><div class="myResult" id="div_resultat_js"></div></h3> 
+                                    <h3><div class="myResult" id="div_resultat_p"></div></h3> 
+                                </div>
                                 <div class="language">
                                     <button class="btn_green" id="btn_js" onClick="Exo_3_2()">JS WITH PROMPT</button>
                                    
@@ -151,16 +160,11 @@
                                   
                                     <button class="btn_green" onClick="Exo_3_2_jquery()">JQUERY !</button>
                                 </div>
-                                <div>
-                                    <div class="myResult"  id="div_resultat_php"><h3><?php echo $sMessage; ?></h3></div>
-                                    <h3><div class="myResult" id="div_resultat"></div> </h3>
-                                    <h3><div class="myResult" id="div_resultat_js"></div></h3> 
-                                    <h3><div class="myResult" id="div_resultat_p"></div></h3> 
-                                </div>
+                               
                             </div>
                             <div class="card-header" id="headingOne">
                                 <hr width="75%" size="1px" color="olivedrab" />
-                                <p>Voir les Codes</p>
+                                <p>Sous le capot</p>
                                 <div class="language">
                                     <button class="btn btn-secondary" data-toggle="collapse" data-target="#collapseOne"
                                         aria-expanded="true" aria-controls="collapseOne">
@@ -183,22 +187,23 @@
         var iNombre;
         var iNombre2;
         //DEBUT
-        // ecrire nombre1="donnez un nombre n°1 
-        // ecrire nombre2="donnez un nombre n°2 
-        //lire nombre1 et nombre2
+        // Ecrire nombre1="donnez un nombre n°1" 
+        // Ecrire nombre2="donnez un nombre n°2"
+        //Lire nombre1 et nombre2
         iNombre = document.getElementById("iNombreUtilisateur").value;
         iNombre2 = document.getElementById("iNombreUtilisateur2").value;
-        // Si Nombre est supérieur à 0 alors
-        if (iNombre > 0 && iNombre2 > 0) {
+        // Si produit des Nombres est supérieur à 0 alors
+        if (iNombre * iNombre2 > 0) {
             //  Ecrire le Nombre est positif
             document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML le produit est positif !";
         }
-        // sinonsi iNombre < 0 alors
-        else if(iNombre < 0 && iNombre2 < 0) {
-            document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML le produit est negatif !";
+        // Si produit des Nombres est inférieur à 0 alors
+        if(iNombre * iNombre2 < 0) {
+                //  Ecrire le Nombre est négatif
+            document.getElementById("div_resultat_js").innerHTML = "Bravo innerHTML le produit est négatif !";
         }
         //Fin
-     }
+    }
                                     </code>
                                  </pre>
                                 </div>
@@ -221,29 +226,30 @@
                                     <pre>
                                     JQUERY
                                     <code data-language="javascript"> 
-    function Exo_3_2_jquery() {
-        // DEBUT
-        //nombre en numerique
-        //nombre2 en numerique
-        var iNombre;
-        var iNombre2;
-        //DEBUT
-        // ecrire nombre1="donnez un nombre n°1 
-        // ecrire nombre2="donnez un nombre n°2 
-        //lire nombre1 et nombre2
-        iNombre = $("#iNombreUtilisateur").val();
-        iNombre2 = $("#iNombreUtilisateur2").val();
-        // Si Nombre est supérieur à 0 alors
-        if (iNombre > 0 && iNombre2 > 0) {
-            //  Ecrire le Nombre est positif
-            $("#div_resultat_js").html("Bravo Jquery le produit est positif !");
-        }
-        // sinonsi iNombre < 0 alors
-        else if(iNombre < 0 && iNombre2 < 0) {
-            $("#div_resultat_js").html("Bravo Jquery le produit est negatif !");
-        }
-        //Fin
+function Exo_3_2_jquery() {
+    // DEBUT
+    //iNombre en numerique
+    //iNombre2 en numerique
+    var iNombre;
+    var iNombre2;
+    //DEBUT
+    // Ecrire nombre1="donnez un nombre n°1 
+    // Ecrire nombre2="donnez un nombre n°2 
+    //Lire nombre1 et nombre2
+    iNombre = $("#iNombreUtilisateur").val();
+    iNombre2 = $("#iNombreUtilisateur2").val();
+    // Si produit des Nombres est supérieur à 0 alors
+    if (iNombre * iNombre2 > 0) {
+        //  Ecrire le Nombre est positif
+        $("#div_resultat_js").html("Bravo Jquery le produit est positif !");
     }
+    // Si produit des Nombres est inférieur à 0 alors
+    if(iNombre * iNombre2 < 0) {
+            //  Ecrire le Nombre est négatif
+        $("#div_resultat_js").html("Bravo Jquery le produit est négatif !");
+    }
+    //Fin
+}
 
                                     </code>
                                  </pre>
@@ -269,26 +275,31 @@
                                     <code data-language="php"> 
                                    
     $sMessage= "";
+    $sMessage2= "";
     // VARIABLE iNombreUtilisateur en NUMERIQUE
     // VARIABLE iNombreUtilisateur2 en NUMERIQUE
     // Inutile
     if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
             {
     //DEBUT
-    // ecrire nombre1="donnez un nombre n°1 
-    // ecrire nombre2="donnez un nombre n°2 
-    //lire nombre1 et nombre2
+    // Ecrire nombre1="donnez un nombre n°1 
+    // Ecrire nombre2="donnez un nombre n°2 
+    //Lire nombre1 et nombre2
     $iNombreUtilisateur= $_POST["iNombreUtilisateur"];
     $iNombreUtilisateur2= $_POST["iNombreUtilisateur2"];
-    // Si Nombre est supérieur à 0 alors
-    if ($iNombreUtilisateur > 0 && $iNombreUtilisateur2 > 0) 
+    // Si produit des Nombres est supérieur à 0 alors
+    if ($iNombreUtilisateur * $iNombreUtilisateur2 > 0) 
         {
             //  Ecrire le Nombre est positif
             $sMessage= "Bravo PHP le Nombre est positif";
         }  
-        // sinonsi iNombre < 0 alors
-    else if($iNombreUtilisateur < 0 && $iNombreUtilisateur2 < 0) {
+        // Si produit des Nombres est inférieur à 0 alors
+    if($iNombreUtilisateur * $iNombreUtilisateur2 < 0) {
+            //Ecrire  le produit est négatif
             $sMessage= "Bravo PHP le Nombre est negatif !";
+    }
+    if(($iNombreUtilisateur < 0 && $iNombreUtilisateur2 > 0) || ($iNombreUtilisateur > 0 && $iNombreUtilisateur2 < 0)) {
+        $sMessage2= "Bravo PHP Il y a un Nombre positif et un negatif !";
     }
     //Fin	
             }

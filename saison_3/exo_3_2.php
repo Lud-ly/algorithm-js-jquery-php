@@ -6,19 +6,20 @@
 	if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
 			{
 	//DEBUT
-	// ecrire nombre1="donnez un nombre n°1 
-	// ecrire nombre2="donnez un nombre n°2 
-	//lire nombre1 et nombre2
+	// Ecrire nombre1="donnez un nombre n°1 
+	// Ecrire nombre2="donnez un nombre n°2 
+	//Lire nombre1 et nombre2
 	$iNombreUtilisateur= $_POST["iNombreUtilisateur"];
 	$iNombreUtilisateur2= $_POST["iNombreUtilisateur2"];
-	// Si Nombre est supérieur à 0 alors
-	if ($iNombreUtilisateur > 0 && $iNombreUtilisateur2 > 0) 
+	// Si produit des Nombres est supérieur à 0 alors
+	if ($iNombreUtilisateur * $iNombreUtilisateur2 > 0) 
 		{
 			//  Ecrire le Nombre est positif
 			$sMessage= "Bravo PHP le Nombre est positif";
 		}  
-		// sinonsi iNombre < 0 alors
-	else if($iNombreUtilisateur < 0 && $iNombreUtilisateur2 < 0) {
+		// Si produit des Nombres est inférieur à 0 alors
+	if($iNombreUtilisateur * $iNombreUtilisateur2 < 0) {
+		 //Ecrire  le produit est négatif
 			$sMessage= "Bravo PHP le Nombre est negatif !";
 	}
 	//Fin	

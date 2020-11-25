@@ -13,17 +13,19 @@
 				// LIRE iNombreUtilisateur
 				$iNombreUtilisateur= $_POST["iNombreUtilisateur"];
 				
-				if($iNombreUtilisateur == 0){
-					$sMessage= "PHP Le nombre est null.";
-				}
 				// SI ((iNombreUtilisateur < 0))  ALORS
 				if($iNombreUtilisateur < 0)
 				{
 					// ECRIRE " PHP Le nombre est negatif.
 					$sMessage= "PHP Le nombre est negatif.";
 				} 
-				else if($iNombreUtilisateur > 0){
+				// SI ((iNombreUtilisateur > 0))  ALORS
+				if($iNombreUtilisateur > 0){
 					$sMessage= "PHP Le nombre est positif.";
+				}
+				// SI ((iNombreUtilisateur = 0))  ALORS
+				if($iNombreUtilisateur == 0){
+					$sMessage= "PHP Le nombre est null.";
 				}
 				
 			}	

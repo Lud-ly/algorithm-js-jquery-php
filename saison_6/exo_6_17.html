@@ -72,18 +72,18 @@
             var i = 1;
             var j = 1;
             var myTab = [];
-            var tab_length = 10;
+            var myVal=0;
+            //var tab_length = 10;
 
             function Exo_6_17_innerHTML() {
                 //Si i est inférieur à tab_length
-                if (i <= tab_length) {
-                    //Lire myTab de i
-                    myTab[i] = parseInt(document.getElementById("myValue").value);
-                    //Ecrire myTab
-                    document.getElementById("div_result").innerHTML = ("innerHTML tab non-trié " + myTab);
-                    //i←i+1
-                    i++;
+                for(x=0;x<=99;x++){
+                    myVal = ((Math.random() * 10)*10); 
+                    myTab.push(myVal.toFixed(1));
                 }
+              
+                document.getElementById("div_result").innerHTML = ("innerHTML 100 valeurs dans tab non-trié " + myTab);
+                 
                 //Passer myTab dans la function tri_insertion
                 tri_insertion(myTab);
                 //Ecrire "myTab trié par insertion",myTab
@@ -139,35 +139,35 @@
                             </div>
                             <div class="pseudoCode">
                                 <h4>Pseudocode:</h4>
-                                <textarea rows="16" cols="88">
-                                 FUNCTION TRI_INSERTION
+                                <textarea rows="30" cols="88">
+        FUNCTION TRI_INSERTION
 
-                                    Variables iValeur,j,i en Numérique
-                                    Début
-                                        Pour i←0 à longueur de tab
-                                            on prends la valeur à l'index i
-                                            index de départ 0
-                                            j←i
-                                            Tant que j est supérieur à 0 et tab[j]est supérieur à iValeur alors
-                                                On décale j à j-1
-                                                j←j-1
-                                            Fin de tant que
-                                        i Suivant
-                                        tab[j] ← iValeur
-                                    Fin
-                        -----------------------------------------
-                                    Variables Tableau myTab en Numérique
-                                    Variables tab_length←100,j,i en Numérique
-                                   
-                                    Début
-                                        Si i est inférieur à tab_length
-                                            Lire myTab de i
-                                            Ecrire myTab
-                                            i←i+1
-                                        FinSi    
-                                        Passer myTab dans la function tri_insertion
-                                        Ecrire "myTab trié par insertion",myTab   
-                                    Fin
+        Variables iValeur,j,i en Numérique
+        Début
+            Pour i←0 à longueur de tab
+                on prends la valeur à l'index i
+                index de départ 0
+                j←i
+                Tant que j est supérieur à 0 et tab[j]est supérieur à iValeur alors
+                    On décale j à j-1
+                    j←j-1
+                Fin de tant que
+            i Suivant
+            tab[j] ← iValeur
+        Fin
+-----------------------------------------
+        Variables Tableau myTab en Numérique
+        Variables tab_length←100,j,i en Numérique
+        
+        Début
+            Si i est inférieur à tab_length
+                Lire myTab de i
+                Ecrire myTab
+                i←i+1
+            FinSi    
+            Passer myTab dans la function tri_insertion
+            Ecrire "myTab trié par insertion",myTab   
+        Fin
                                 </textarea>
                             </div>
                             <div id=" txt_javascript">
@@ -183,13 +183,13 @@
                                         </p>
 
                                         <div class="language">
-                                            <label for="myValue"> Entrer des valeurs inner:
+                                            <label for="myValue"> Entrer dix valeurs pour jquery:
                                             </label>
                                             <input type="number" name="myValue" id="myValue"><br />
                                             <button type="button" value="Envoyer" id="ok"
+                                            onclick="Exo_6_17_jquery()">TRI_INSERTION_JQUERY</button>
+                                            <button type="button" value="Envoyer" id="ok"
                                                 onclick="Exo_6_17_innerHTML()">TRI_INSERTION innerHTML</button>
-                                                <button type="button" value="Envoyer" id="ok"
-                                                onclick="Exo_6_17_jquery()">TRI_INSERTION_JQUERY</button>
                                         </div>
                                         <hr width="75%" size="1px" color="olivedrab" />
                                     </div>

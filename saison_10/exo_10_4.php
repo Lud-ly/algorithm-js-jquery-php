@@ -1,6 +1,5 @@
 <?php
 
-//$sMessage="";
 	// ALGORITHME Exo_10_4
 // On récupère les données
 
@@ -76,7 +75,7 @@ if ($bDone == 0)	{
 
 // Ecrire mon nouveau contenu dans carnet
 // Ouvrir "Carnet.txt" sur 19 pour Ecriture
-$sTextFinal= "";
+$sTextFinal= " ";
 for ($i= 0; $i<count($aOfMesPersonnes); $i++)	{
 	$sTextFinal.= $aOfMesPersonnes[$i]["sNom"] . $aOfMesPersonnes[$i]["sPrenom"] . $aOfMesPersonnes[$i]["sTel"] . $aOfMesPersonnes[$i]["sMail"] . "\n";
 }
