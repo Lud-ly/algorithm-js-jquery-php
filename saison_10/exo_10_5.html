@@ -9,12 +9,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/monokai.css">
     <link rel="stylesheet" type="text/css"media="screen" href="../css/accueil.css">
+    <link rel="stylesheet" type="text/css"media="screen" href="../css/global.css">
+    <link rel="stylesheet" type="text/css"media="screen" href="../css/media.css">
 </head>
 
 <body>
 <div class="home">
     <header>
-    <?php include('../commun/header.php');?>
+    <!-- <?php include('../commun/header.php');?> -->
     </header>
     <div class="container-fluid ">
             <h4>ALGORITHME ET PSEUDO-CODE:</h4>
@@ -92,12 +94,16 @@ Fin
                                             <button class="btn_green" type="submit">ALLEZ PHP !</button>
                                         </div>
                                         <div class="myResult" id="div_resultat_php">
-                                            <!-- <h3><?php echo $sTextFinal; ?></h3> -->
+                                            <h3><?php echo $sTextFinal; ?></h3>
+                                            <p><?php echo $sMessage; ?></p>
                                         </div>
                                       
-                                        <label for="sNom">"NOM "
+                                        <label for="sNomAncien">Entrez le nom à modifier :
                                         </label>
-                                        <input type="text" name="sNom" id="sNom"><br/>
+                                        <input type="text" name="sNomAncien" id="sNomAncien"><br/>
+                                        <label for=" sNouveauNom">Entrez le nouveau nom :
+                                        </label>
+                                        <input type="text" name=" sNouveauNom" id="sNouveauNom"><br/>
                                        
                                     </form>
                                 </div>

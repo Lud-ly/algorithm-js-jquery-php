@@ -1,62 +1,92 @@
 <?php
-
-
-
-$sNom="";$sPrenom="";$sTel="";$sMail="";
-// Structure Bottin
-// Nom en Caractère * 20
-// Prénom en Caractère * 15
-// Tel en caractère * 10
-// Mail en Caractère * 20
-// Fin Structure
-$sNom= str_pad($_GET["sNom"], 20, " ");
-$sPrenom= str_pad($_GET["sPrenom"], 20, " ");
-$sTel= str_pad($_GET["sTel"], 10, " ");
-$sMail= str_pad($_GET["sMail"], 20, " ");
-
-// Tableau Mespotes() en Bottin
-// Variables MonPote en Bottin
-// Variables Ancien, Nouveau en Caractère*20
-// Variables i, j en Numérique
-// Variable Trouvé en Booléen
+// // SI $_POST["valPhp"] EXISTE ET QUE $_POST["valPhp"] N EST PAS VIDE ALORS
+// if ((isset($_GET["sNomAncien"])) && (!(empty($_GET["sNomAncien"]))))
+// {
+ $sNomAncien= str_pad($_GET["sNomAncien"], 20, " ");
+ $sNouveauNom= str_pad($_GET["sNouveauNom"], 20, " ");
+var_dump($sNouveauNom);
 $i= 0;
-$j= 0;
-$sAncien="";
-$sNouveau="";
-$aMespotes= [];
+$bDone= 0;
+$aOfMesPersonnes= [];
 $aOfLigneFichier= [];
-$trouvé=false;
-// Debut
-//     Ecrire "Entrez le nom à modifier : "
-//     Lire Ancien
-//     Ecrire "Entrez le nouveau nom : "
-//     Lire Nouveau
-//     Ouvrir “Adresse.txt” sur 1 pour Lecture
-//     i ← -1
-//     Trouvé ← Faux
-//     Tantque Non EOF(1)
-//         i ← i + 1
-//         Redim MesPotes(i)
-//LireFichier 1, MonPote       
-//         Si MonPote.Nom = Ancien.Nom Alors
-//             Trouvé ← Vrai
-//             MonPote.Nom ← Nouveau
-//         FinSi
-//         MesPotes(i) ← MonPote
-//     FinTantQue
-//     Fermer 1
-//     Ouvrir "Adresse.txt" sur 1 pour Ecriture
-//     Pour j ← 0 à i
-//         EcrireFichier 1, MesPotes(j)
-//     j Suivant
-//     Fermer 1
-//     Si Trouvé Alors
-//         Ecrire "Modification effectuée"
-//     Sinon
-//         Ecrire "Nom inconnu. Aucune modification effectuée"
-//     FinSi
-// Fin
+
+$myUsers = fopen('MesPotes.txt','r');
+
+if ($myUsers)
+{
+	$trouve=false;
+	/*Tant que l'on est pas à la fin du fichier*/
+	// TantQue non EOF (19)
+	while (!feof($myUsers))
+	{
+		/*On lit la ligne courante*/
+		// LireFichier 19, ligne_personne
+		$buffer = fgets($myUsers);
+		if (strlen($buffer) > 3)	{
+			$aOfLigneFichier["nom"]= substr($buffer, 0, 20);
+			$aOfLigneFichier["NomAncien"]= substr($buffer, 0, 20);
+			$aOfLigneFichier["NouveauNom"]= substr($buffer, 0, 20);
+			
+			// Dois je insérer ici ?
+			if(($aOfLigneFichier[$i]["sNom"])==($aOfLigneFichier[$i]["sNomAncien"])){
+				
+				$aOfMesPersonnes[$i]["sNom"]=$sNouveauNom;
+				$i++;
+			}
+			$trouve=true;
+			// Mespersonnes(i)= ligne_personne
+			$aOfMesPersonnes[$i]["sNom"]= $aOfLigneFichier["nom"];
+			//$aOfMesPersonnes[$i]["sNouveauNom"]= $aOfLigneFichier["nouveauNom"];
+			$i++;
+		}
+	}
+	/*On ferme le fichier*/
+	fclose($myUsers);
+}
+$i--;
+// enlever l'indice de crée :
+
+
+// dans le cas où je n'ai pas pu insérer (dernier elément du carnet)
+// SI (bDone == 0) ALORS
+if ($bDone == 0)	{
+	// Redim Mespersonnes(i)
+	// Mespersonnes(i)= saisiepersonne
+	$i++;
+	$aOfMesPersonnes[$i]["sNom"]= $sNom;
 	
+	$bDone= 1;
+}
+
+// Ecrire mon nouveau contenu dans carnet
+// Ouvrir "MesPotes.txt" sur 19 pour Ecriture
+$sTextFinal= "";
+
+for ($i= 0; $i<count($aOfMesPersonnes); $i++)	{
+	$sTextFinal.= $aOfMesPersonnes[$i]["sNom"] . " \n ";
+}
+$myUsers = fopen('MesPotes.txt', 'w');
+
+if ($myUsers)	{
+	fputs($myUsers, $sTextFinal);
+	fclose($myUsers);
+}
+$sMessage="";
+// Si Trouvé Alors
+if($trouve==true){
+//         Ecrire "Modification effectuée"
+$sMessage="Modification effectuée";
+}
+//Sinon
+else{
+// Ecrire "Nom inconnu. Aucune modification effectuée"
+$sMessage="Nom inconnu. Aucune modification effectuée";
+//     FinSi
+}
+
+
+		
+// }	
 	require "exo_10_5.html";
 
 ?>

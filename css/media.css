@@ -1,0 +1,206 @@
+/* Tablettes 'n' Mobiles */
+@media only screen and (max-width: 1524px) {
+    #menu-accordeon {
+      width: 80%;
+     }
+    .cours a{
+    text-align: center;
+    font-size: 15px;
+    }
+    .cours h5{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 15px;
+      border:none;
+    }
+    textarea{
+      width: 80%;
+     }
+     .content img{
+      display: block;
+      width: 60%!important;
+     }
+    .contentRight img {
+      margin: 0;
+      width: 60%;
+    }
+  }
+@media only screen and (max-width: 1024px) {
+  #menu-accordeon {
+   width: 110%;
+   margin: 0;
+  display: block;
+  }
+  .content{
+    height: 200px;
+    padding: 0px;
+    margin-bottom: 10px;
+    }
+  .myAside{
+    height: 750px;
+  }
+  textarea{
+    width: 60%;
+   }
+  .cours a{
+    margin: 20px 0;
+    text-align: center;
+    padding: 5px;
+    height: 60px;
+    width: 100%;
+  }
+  .cours h5{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    border:none;
+  }
+  .content img{
+    width: 50%;
+   display: none;
+   margin-left: auto;
+   margin-right: auto;
+  }
+  .contentRight img{
+   display: none;
+  }
+  .contentRight{
+    margin: 0;
+    height: 750px;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  #menu-accordeon {
+    width: 100%;
+   margin: 0;
+  display: none;
+  }
+  .content{
+    height: 200px;
+      padding: 0px;
+      margin-bottom: 10px;
+    }
+  .myAside{
+    height:0;
+  } 
+  textarea{
+    width: 100%;
+   }
+  .cours a{
+    height: 30px;
+    text-align: center;
+    width: 100%;
+    padding:5px;
+    font-size: 10px;
+    }
+    .cours h5{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 15px;
+      border:none;
+    }
+  .contentRight{
+    margin: 0;
+    height: 750px;
+  } 
+  .contentRight img{
+  display: none;
+  }
+  .content img{
+    width: 50%;
+   display: none;
+   margin-left: auto;
+   margin-right: auto;
+   
+  } 
+  .card-body p{
+    margin: 20px;
+    padding:5px;
+    font-size: 18px;
+  }
+  footer{
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #menu-accordeon {
+    width: 100%;
+    margin: 0;
+  display: none;
+   }
+   .container-fluid h4{
+    margin-bottom:0;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+  }
+   .content{
+    height: 200px;
+      padding: 0px;
+      margin-bottom: 10px;
+    }
+   textarea{
+   width: 60%;
+  }
+   .myAside{
+     height: 0;
+   }
+   .cours a{
+     margin:0;
+     text-align: center;
+     padding: 5px;
+     height: 60px;
+     width: 100%;
+     }
+     .cours h5{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 15px;
+      border:none;
+    }
+   .contentRight{
+     margin: 0;
+     height: 280px;
+   }
+   .contentRight img{
+   display: none;
+  }
+    .content img{
+       width: 30%;
+      display: none;
+      margin-left: auto;
+      margin-right: auto;
+      
+     }
+   .card-body p{
+    margin: 0px;
+    padding:10px;
+    font-size: 18px;
+  }
+  footer{
+    font-size: 10px;
+  }  
+}
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (max-width: 380px) {
+}
+
+@media only screen and (max-width: 320px) {
+}
+
+/* IE10+ CSS */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)	{
+}
+
+/* IE Edge 12+ CSS */ 
+@supports (-ms-accelerator:true) {
+}
