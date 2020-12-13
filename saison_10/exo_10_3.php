@@ -9,6 +9,8 @@ $aOfLigneFichier= [];
 $myUsers = fopen('Users.txt','r');
 if ($myUsers)
 {
+	/*Tant que l'on est pas à la fin du fichier*/
+	// TantQue non EOF (19)
 	while (!feof($myUsers))
 	{
 		/*On lit la ligne courante*/

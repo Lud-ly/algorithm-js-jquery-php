@@ -1,6 +1,9 @@
 <?php
 
-	// ALGORITHME Exo_10_4
+$sTextFinal= " ";
+	// // SI $_GET["sNom"] N EST PAS VIDE ALORS
+ if ((!(empty($_GET["sNom"]))))
+ {
 // On récupère les données
 
 $sNom= str_pad($_GET["sNom"], 20, " ");
@@ -75,9 +78,9 @@ if ($bDone == 0)	{
 
 // Ecrire mon nouveau contenu dans carnet
 // Ouvrir "Carnet.txt" sur 19 pour Ecriture
-$sTextFinal= " ";
+
 for ($i= 0; $i<count($aOfMesPersonnes); $i++)	{
-	$sTextFinal.= $aOfMesPersonnes[$i]["sNom"] . $aOfMesPersonnes[$i]["sPrenom"] . $aOfMesPersonnes[$i]["sTel"] . $aOfMesPersonnes[$i]["sMail"] . "\n";
+	$sTextFinal .= $aOfMesPersonnes[$i]["sNom"] . $aOfMesPersonnes[$i]["sPrenom"] . $aOfMesPersonnes[$i]["sTel"] . $aOfMesPersonnes[$i]["sMail"] . "\n";
 }
 
 $handle = fopen('Carnet.txt', 'w');
@@ -87,7 +90,7 @@ if ($handle)	{
 }
 
 //echo $sTextFinal;
-	
+ }	
 	
 	require "exo_10_4.html";
 

@@ -23,9 +23,7 @@
             <hr width="75%" size="1px" color="olivedrab" />
             <div class="row">
                 <div class="col-md-2 myAside">
-                    <?php
-                    include('../commun/menunav.php');
-                    ?>
+                    <?php include('../commun/menunav.php'); ?>
                 </div>
                 <div class="col-md-8">
                     <div id="accordion">
@@ -97,7 +95,9 @@ Fin
                                             <h3><?php echo $sTextFinal; ?></h3>
                                             <p><?php echo $sMessage; ?></p>
                                         </div>
-                                      
+                                        <label for="sNom">Ajouter un nouveau nom :
+                                        </label>
+                                        <input type="text" name="sNom" id="sNom"><br/>
                                         <label for="sNomAncien">Entrez le nom à modifier :
                                         </label>
                                         <input type="text" name="sNomAncien" id="sNomAncien"><br/>

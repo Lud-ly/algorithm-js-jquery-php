@@ -1,92 +1,97 @@
 <?php
-// // SI $_POST["valPhp"] EXISTE ET QUE $_POST["valPhp"] N EST PAS VIDE ALORS
-// if ((isset($_GET["sNomAncien"])) && (!(empty($_GET["sNomAncien"]))))
-// {
- $sNomAncien= str_pad($_GET["sNomAncien"], 20, " ");
- $sNouveauNom= str_pad($_GET["sNouveauNom"], 20, " ");
-var_dump($sNouveauNom);
+$sTextFinal= " ";
+// // SI $_GET["sNom"] N EST PAS VIDE ALORS
+if ((!(empty($_GET["sNom"]))))
+{
+// On récupère les données
+
+$sNom= str_pad($_GET["sNom"], 20, " ");
+$sPrenom= str_pad($_GET["sPrenom"], 20, " ");
+$sTel= str_pad($_GET["sTel"], 10, " ");
+$sMail= str_pad($_GET["sMail"], 20, " ");
+
+// Lire mon carnet pour :
+//				- récupérer son contenu
+//				- regarder où insérer mes nouvelles données
+//				- Raison : ordre alphabétique
+
 $i= 0;
 $bDone= 0;
 $aOfMesPersonnes= [];
 $aOfLigneFichier= [];
-
-$myUsers = fopen('MesPotes.txt','r');
-
-if ($myUsers)
+/*Ouverture du fichier en lecture seule*/
+// Ouvrir "Carnet.txt" sur 19 pour Lecture
+$handle = fopen('Carnet.txt', 'r');
+/*Si on a réussi à ouvrir le fichier*/
+if ($handle)
 {
-	$trouve=false;
-	/*Tant que l'on est pas à la fin du fichier*/
-	// TantQue non EOF (19)
-	while (!feof($myUsers))
-	{
-		/*On lit la ligne courante*/
-		// LireFichier 19, ligne_personne
-		$buffer = fgets($myUsers);
-		if (strlen($buffer) > 3)	{
-			$aOfLigneFichier["nom"]= substr($buffer, 0, 20);
-			$aOfLigneFichier["NomAncien"]= substr($buffer, 0, 20);
-			$aOfLigneFichier["NouveauNom"]= substr($buffer, 0, 20);
-			
-			// Dois je insérer ici ?
-			if(($aOfLigneFichier[$i]["sNom"])==($aOfLigneFichier[$i]["sNomAncien"])){
-				
-				$aOfMesPersonnes[$i]["sNom"]=$sNouveauNom;
-				$i++;
-			}
-			$trouve=true;
-			// Mespersonnes(i)= ligne_personne
-			$aOfMesPersonnes[$i]["sNom"]= $aOfLigneFichier["nom"];
-			//$aOfMesPersonnes[$i]["sNouveauNom"]= $aOfLigneFichier["nouveauNom"];
+/*Tant que l'on est pas à la fin du fichier*/
+// TantQue non EOF (19)
+while (!feof($handle))
+{
+	/*On lit la ligne courante*/
+	// LireFichier 19, ligne_personne
+	$buffer = fgets($handle);
+	if (strlen($buffer) > 3)	{
+		$aOfLigneFichier["nom"]= substr($buffer, 0, 20);
+		$aOfLigneFichier["prenom"]= substr($buffer, 20, 20);
+		$aOfLigneFichier["tel"]= substr($buffer, 40, 10);
+		$aOfLigneFichier["mail"]= substr($buffer, 50, 30);
+		// Dois je insérer ici ?
+		// SI (fonction_minuscule_sans_accent(saisiepersonne.sNom) < fonction_minuscule_sans_accent(ligne_personne.sNom)) ET (bDone == 0) ALORS
+		if ((strtolower($sNom) < strtolower($aOfLigneFichier["nom"])) && ($bDone == 0))	{
+			// Mespersonnes(i)= saisiepersonne
+			$aOfMesPersonnes[$i]["sNom"]= $sNom;
+			$aOfMesPersonnes[$i]["sPrenom"]= $sPrenom;
+			$aOfMesPersonnes[$i]["sTel"]= $sTel;
+			$aOfMesPersonnes[$i]["sMail"]= $sMail;
 			$i++;
+			$bDone= 1;
 		}
+		// Mespersonnes(i)= ligne_personne
+		$aOfMesPersonnes[$i]["sNom"]= $aOfLigneFichier["nom"];
+		$aOfMesPersonnes[$i]["sPrenom"]= $aOfLigneFichier["prenom"];
+		$aOfMesPersonnes[$i]["sTel"]= $aOfLigneFichier["tel"];
+		$aOfMesPersonnes[$i]["sMail"]= $aOfLigneFichier["mail"];
+		$i++;
 	}
-	/*On ferme le fichier*/
-	fclose($myUsers);
 }
-$i--;
+/*On ferme le fichier*/
+fclose($handle);
+}
 // enlever l'indice de crée :
+$i--;
+
 
 
 // dans le cas où je n'ai pas pu insérer (dernier elément du carnet)
 // SI (bDone == 0) ALORS
 if ($bDone == 0)	{
-	// Redim Mespersonnes(i)
-	// Mespersonnes(i)= saisiepersonne
-	$i++;
-	$aOfMesPersonnes[$i]["sNom"]= $sNom;
-	
-	$bDone= 1;
+// Redim Mespersonnes(i)
+// Mespersonnes(i)= saisiepersonne
+$i++;
+$aOfMesPersonnes[$i]["sNom"]= $sNom;
+$aOfMesPersonnes[$i]["sPrenom"]= $sPrenom;
+$aOfMesPersonnes[$i]["sTel"]= $sTel;
+$aOfMesPersonnes[$i]["sMail"]= $sMail;
+$bDone= 1;
 }
 
 // Ecrire mon nouveau contenu dans carnet
-// Ouvrir "MesPotes.txt" sur 19 pour Ecriture
-$sTextFinal= "";
+// Ouvrir "Carnet.txt" sur 19 pour Ecriture
 
 for ($i= 0; $i<count($aOfMesPersonnes); $i++)	{
-	$sTextFinal.= $aOfMesPersonnes[$i]["sNom"] . " \n ";
-}
-$myUsers = fopen('MesPotes.txt', 'w');
-
-if ($myUsers)	{
-	fputs($myUsers, $sTextFinal);
-	fclose($myUsers);
-}
-$sMessage="";
-// Si Trouvé Alors
-if($trouve==true){
-//         Ecrire "Modification effectuée"
-$sMessage="Modification effectuée";
-}
-//Sinon
-else{
-// Ecrire "Nom inconnu. Aucune modification effectuée"
-$sMessage="Nom inconnu. Aucune modification effectuée";
-//     FinSi
+$sTextFinal .= $aOfMesPersonnes[$i]["sNom"] . $aOfMesPersonnes[$i]["sPrenom"] . $aOfMesPersonnes[$i]["sTel"] . $aOfMesPersonnes[$i]["sMail"] . "\n";
 }
 
+$handle = fopen('Carnet.txt', 'w');
+if ($handle)	{
+fputs($handle, $sTextFinal);
+fclose($handle);
+}
 
-		
-// }	
+//echo $sTextFinal;
+}	
 	require "exo_10_5.html";
 
 ?>
