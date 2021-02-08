@@ -5,7 +5,7 @@
 	//VARIABLE toto en numerique
 	//VARIABLE sTata ="ok"
 	//inutile php
-	//SI $_POST["iNombreUtilisateur"] EXISTE ET QUE $_POST["iNombreUtilisateur"] N EST PAS VIDE ALORS
+	//SI $_POST["iValeurTutu"] EXISTE ET QUE $_POST["iValeurTutu"] N EST PAS VIDE ALORS
 	if ((isset($_POST["iValeurTutu"])) && (!(empty($_POST["iValeurTutu"]))))
 	{
 	//ecrire entrez une valeur pour tutu
