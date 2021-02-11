@@ -7,7 +7,7 @@
 			if ((isset($_POST["iNombreUtilisateur"])) && (!(empty($_POST["iNombreUtilisateur"]))))
 			{
 				// VARIABLE iNombreUtilisateur en NUMERIQUE
-				// Inutile
+				// Inutile de les déclarer en php
 				
 				//
 				// ECRIRE & LIRE iNombreUtilisateur
